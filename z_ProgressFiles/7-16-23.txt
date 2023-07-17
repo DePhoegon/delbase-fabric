@@ -1,0 +1,24 @@
+Added
+-Wood Slab Class
+= Added Stripping Action
+-Block Replacer
+= Under Events
+== Incomplete
+-RegList
+-Some Ash Blocks
+= Slab/ GenBlock
+-BaseModBlock
+= Added support for FuelTimes
+= Added support for Burning by fire in world
+== Still need to finish up the event listening to blocks destroyed by Fireblock
+-BaseModItems
+= Added Support for fuel Burn times
+== Not likely to be used
+
+Fixed
+- Wrong AppendTOolTip for blocks
+
+'Finished'
+- Base Types Tooltips
+
+Still Highly Not ready

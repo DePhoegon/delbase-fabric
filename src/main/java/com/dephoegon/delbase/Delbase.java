@@ -1,9 +1,6 @@
 package com.dephoegon.delbase;
 
-import com.dephoegon.delbase.aid.event.BlockOnFireCallBack;
-import com.dephoegon.delbase.aid.util.burntReplacer;
-import com.dephoegon.delbase.item.BlockCutterItems;
-import com.dephoegon.delbase.item.ShiftingDyes;
+import com.dephoegon.delbase.aid.util.regLists;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,8 +14,7 @@ public class Delbase implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		BlockOnFireCallBack.EVENT.register(new burntReplacer());
-		BlockCutterItems.registerItems();
-		ShiftingDyes.registerItems();
+		regLists.RegisterFirstList();
+		regLists.RegisterSecondList();
 	}
 }
