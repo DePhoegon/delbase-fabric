@@ -1,7 +1,10 @@
 package com.dephoegon.delbase;
 
+import com.dephoegon.delbase.aid.event.BlockOnFireCallBack;
+import com.dephoegon.delbase.aid.util.burntReplacer;
+import com.dephoegon.delbase.item.BlockCutterItems;
+import com.dephoegon.delbase.item.ShiftingDyes;
 import net.fabricmc.api.ModInitializer;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,10 +17,8 @@ public class Delbase implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
+		BlockOnFireCallBack.EVENT.register(new burntReplacer());
+		BlockCutterItems.registerItems();
+		ShiftingDyes.registerItems();
 	}
 }

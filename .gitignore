@@ -38,6 +38,7 @@ run/mods
 run/patchouli_books
 run/resourcepacks
 run/saves
+run/resources
 run/options.txt
 run/*.json
 run/crash-reports

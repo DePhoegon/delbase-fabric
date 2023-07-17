@@ -17,6 +17,9 @@
 	"entrypoints": {
 		"main": [
 			"com.dephoegon.delbase.Delbase"
+		],
+		"client": [
+			"com.dephoegon.delbase.DelbaseClient"
 		]
 	},
 	"mixins": [

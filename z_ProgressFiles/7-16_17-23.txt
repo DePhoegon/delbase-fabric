@@ -1,0 +1,79 @@
+Started
+--------
+
+Added -- Not Complete
+-Base Block types
+= General Block
+= Gravity Block
+= Axis Block
+= Slab Block
+= Stair Block
+= Fence Block
+= Fence Gate Block
+= HorizontalFacingBlockBaseEntities
+-Events
+= Interface
+== BlockBurntUp Event
+= ModBlock Check
+= typeSelector
+== Used by Dyes to swap collars of blocks
+- Aided Utility
+= Block Array List
+== Incomplete due to missing Glowstone Block Varients
+== Incomplete due to not being ready to setup the calls for the array lists to be checked.
+==== For use alongside Not yet inplace Colorlogic
+= Burnt Replacer
+== Fabric Replacement to class method in forge
+=== AshBlocks not registered yet
+=== Missing Methods to replace Every Varient (Stairs/Slabs/Logs/wood/walls/fences/fencegates)
+= ColorMixInteractions
+== Not Ready to put in yet
+= kb & KeyBindings
+== Not Properly Registered Yet
+-Mixins
+= FireBlock
+== Injection @ block destroy call
+=== Not ready yet, need ASH blocks registered, Needs Burnt Replacer Finished,
+=== Will act as normal for nonmod 'burnable' blocks
+=== Will not call for the world to destroy the block for mod bocks, but instead call an alternative block destroyer that will replace it with the correct Ash block
+-Items
+= BlockCutterItems
+== Not Ready yet
+=== Need Block Cutter in place
+
+Added -- Complete
+- Block Dye class
+= Calls TypeSelector based on block
+= Tooltips
+- Aided Util
+= DyeList
+== Ready to be called onwhen ColorMixInteractions is to be used.
+- Items
+= Shift Dyes
+== Complete
+=== Still Missing The Blocks it would be swapping out
+- Full Language en_us.json
+
+PlaceHolders Inserted
+- Models Files (Block & Items)
+= Excluding BlockStates Models
+- Textures
+
+-Missing....  ALOT
+
+Not Ready Yet
+-Ash Block Registration
+
+-----------------
+
+Spent Time Figuring out Custom Events (May Not use what I got)
+Lead into Mixins
+Spent times figuring how to use Mixins
+Got FireBlock Mixin to work
+- Still kinda pissed that there is no block on fire event in fabric.
+Can Extend Items & use the base method for registering Items
+-Must call method in the class where the items are being registered
+Spent time working out the rough basics of the KeyBinds, Not properly registered yet
+
+
+Regret taking on Conversion of base mod from Forge to Fabric
