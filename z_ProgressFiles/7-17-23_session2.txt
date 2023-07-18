@@ -1,0 +1,30 @@
+Added
+-Base Block Clases
+=sandBlock
+=SolidSandBLock
+-Override to FallingBlock to gravBlock
+-onUse Axe stripping to all base blocks (excluding Block Entity)
+=ActionResult
+-updated Base Block classes
+-Registered BLock ArrayList
+= Glowstone Blocks for 'checkFallLock' commented out
+== not Registered yet
+-RegLists
+= Client Registry Method to be callsed from the Client only entrypoint
+-blockstates in assets
+-block model overrides in the minecraft namespace
+-loot_tables
+-replaced pack icon
+-ModBlock boolean method
+= Inside it's own class, in case to be used with other overrides
+
+Updated
+-lang en_us file
+-AshBlock Replacement call inside fireBlockMixin for ModBlocks
+
+Finished
+-blockReplacer Class
+= Stairs, Slabs, Pillars, Fences, FenceGates, Walls
+-burntReplacer Class
+= Calls blockReplacer methods & uses World.setblockstate() directly gen & gravityblocks.
+-Registered Keybinds

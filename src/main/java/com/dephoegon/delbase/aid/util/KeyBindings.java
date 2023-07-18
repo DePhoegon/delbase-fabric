@@ -1,5 +1,6 @@
 package com.dephoegon.delbase.aid.util;
 
+import com.dephoegon.delbase.Delbase;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -14,4 +15,5 @@ public class KeyBindings {
     private static KeyBinding registerKB_Keys(String name, int keyCode) {
         return KeyBindingHelper.registerKeyBinding(new KeyBinding(name, InputUtil.Type.KEYSYM, keyCode, "tooltip.key.category"));
     }
+    public static void registerKeyBinds() { Delbase.LOGGER.info("Registering KeyBinds for "+Delbase.Delbase_ID); }
 }

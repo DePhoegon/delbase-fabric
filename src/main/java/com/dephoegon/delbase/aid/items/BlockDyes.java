@@ -60,7 +60,7 @@ public class BlockDyes extends DyeItem {
             if (block instanceof genBlock || getGeneral_list().contains(defaultBlockState)) {
                 return gen_select(world, blockpos, defaultBlockState, block, player, dye_hand);
             }
-            if (block instanceof gravBlock || getGravity_list().contains(defaultBlockState)) {
+            if (block instanceof modSandBlock || getGravity_list().contains(defaultBlockState)) {
                 return grav_select(world, blockpos, defaultBlockState, block, player, dye_hand);
             }
             if (block instanceof stairBlock || getStair_list().contains(defaultBlockState)) {

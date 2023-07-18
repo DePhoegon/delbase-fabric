@@ -2,51 +2,30 @@ package com.dephoegon.delbase.aid.util;
 
 import com.dephoegon.delbase.aid.block.stock.*;
 import com.dephoegon.delbase.aid.event.BlockOnFireCallBack;
+import com.dephoegon.delbase.aid.event.blockReplacer;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ConnectingBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
+
+import static com.dephoegon.delbase.block.ash.ashBlocks.*;
 
 public class burntReplacer implements BlockOnFireCallBack {
 
     @Override
     public void onBlockOnFire(World world, BlockPos pos, BlockState state) {
-        System.out.println("Block is on fire @ pos " + pos);
+        System.out.println("Block destroyed by Fire @ pos " + pos);
     }
-    public void AshBlock(World world, BlockPos blockpos, BlockState state) {
+    public static void AshBlock(World world, BlockPos blockpos, @NotNull BlockState state) {
         Block block = state.getBlock();
-        if (block instanceof axisBlock) {
-
-        }
-        if (block instanceof slabBlock) {
-
-        }
-        if (block instanceof genBlock) {
-
-        }
-        if (block instanceof gravBlock) {
-
-        }
-        if (block instanceof stairBlock) {
-
-        }
-        if (block instanceof wallBlock) {
-
-        }
-        if (block instanceof fenceBlock) {
-            fenceReplace(world, blockpos, state, null);
-        }
-        if (block instanceof fenceGateBlock) {
-
-        }
-    }
-    private static void fenceReplace(@NotNull World world, BlockPos pos, @NotNull BlockState blockState, @NotNull BlockState defaultReplacementState) {
-        boolean east = blockState.get(ConnectingBlock.EAST);
-        boolean west = blockState.get(ConnectingBlock.WEST);
-        boolean north = blockState.get(ConnectingBlock.NORTH);
-        boolean south = blockState.get(ConnectingBlock.SOUTH);
-        world.setBlockState(pos, defaultReplacementState.with(ConnectingBlock.SOUTH, south).with(ConnectingBlock.NORTH, north).with(ConnectingBlock.EAST, east).with(ConnectingBlock.WEST, west));
+        if (block instanceof axisBlock) { blockReplacer.AxisPlacement(world, blockpos, state, ASH_LOG.getDefaultState()); }
+        if (block instanceof slabBlock) { blockReplacer.SlabPlacement(world, blockpos, state, ASH_SLAB.getDefaultState()); }
+        if (block instanceof genBlock) { world.setBlockState(blockpos, ASH_BLOCK.getDefaultState()); }
+        if (block instanceof modSandBlock) { world.setBlockState(blockpos, ASH_BLOCK.getDefaultState()); }
+        if (block instanceof stairBlock) { blockReplacer.StairPlacement(world, blockpos, state, ASH_STAIR.getDefaultState()); }
+        if (block instanceof wallBlock) { blockReplacer.WallPlacement(world, blockpos, state, ASH_WALL.getDefaultState()); }
+        if (block instanceof fenceBlock) { blockReplacer.FencePlacement(world, blockpos, state, ASH_FENCE.getDefaultState()); }
+        if (block instanceof fenceGateBlock) { blockReplacer.FenceGatePlacement(world, blockpos, state, ASH_FENCE_BLOCK.getDefaultState()); }
     }
 }

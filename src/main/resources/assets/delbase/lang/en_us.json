@@ -1193,7 +1193,7 @@
   "tooltip.delbase.sand.solid.flavor": "§7§oIs attracted to itself, to the exclusion of gravity.",
   "tooltip.delbase.sand.solid.info": "§7§oDoes not fall",
 
-  "tooltip.key.category": "Delbase Tooltip Hotkeys",
+  "tooltip.key.category": "Delbase Tooltip Hotkeys (Keyboard Keys Only)",
   "tooltip.key.shift": "Show First Tooltip",
   "tooltip.key.ctrl": "Show Second Tooltip"
 }

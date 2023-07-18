@@ -6,7 +6,6 @@ import com.dephoegon.delbase.block.baseModBlocks;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Material;
 import net.minecraft.block.SlabBlock;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.sound.BlockSoundGroup;
 
 public class slabWood extends baseModBlocks {
@@ -24,12 +23,11 @@ public class slabWood extends baseModBlocks {
         SlabBlock hold;
         if (fuelTime > 0) {
             hold = (SlabBlock) registerBlock(name,
-                    new woodSlab(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedSlab),
-                    ItemGroup.BUILDING_BLOCKS, true, fuelTime, burnChance, burnSpread);
+                    new woodSlab(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedSlab), true, fuelTime, burnChance, burnSpread);
         } else {
             hold = (SlabBlock) registerBlock(name,
-                    new woodSlab(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedSlab),
-                    ItemGroup.BUILDING_BLOCKS);
+                    new woodSlab(FabricBlockSettings.of(Material.WOOD).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedSlab)
+            );
         }
         return hold;
     }

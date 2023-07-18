@@ -1,5 +1,7 @@
 package com.dephoegon.delbase.aid.util;
 
+import com.dephoegon.delbase.aid.block.grav.nonColoredSolidSandBlock;
+import com.dephoegon.delbase.aid.block.stock.energySlab;
 import net.minecraft.block.Block;
 import org.jetbrains.annotations.NotNull;
 
@@ -31,16 +33,12 @@ public abstract class blockArrayList {
     }
     private static ArrayList<Object> getFall_hold() { return fall_hold; }
     public static boolean checkFallLock(@NotNull Block block) {
-        // Temp Override
-        return false;
-        /*
-        return block.getDefaultState() == GLOWSTONE_SLAB.get().getDefaultState() ||
-                    block.getDefaultState() == GLOWSTONE_STAIR.get().getDefaultState() ||
-                    block.getDefaultState() == GLOWSTONE_WALL.get().getDefaultState() ||
-                    block instanceof energySlab ||
-                    block instanceof solidSandBlock ||
+        // block.getDefaultState() == GLOWSTONE_SLAB.get().getDefaultState() ||
+        //                    block.getDefaultState() == GLOWSTONE_STAIR.get().getDefaultState() ||
+        //                    block.getDefaultState() == GLOWSTONE_WALL.get().getDefaultState() ||
+        return block instanceof energySlab ||
+                    block instanceof nonColoredSolidSandBlock ||
                     getFall_hold().contains(block.getDefaultState());
-        */
     }
 
     // Color swapping matching list

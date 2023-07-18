@@ -10,7 +10,7 @@ public class modBlockCheck {
         if (block instanceof fenceBlock) { out = true; }
         if (block instanceof fenceGateBlock) { out = true; }
         if (block instanceof genBlock) { out = true; }
-        if (block instanceof gravBlock) { out = true; }
+        if (block instanceof modSandBlock) { out = true; }
         if (block instanceof stairBlock) { out = true; }
         if (block instanceof wallBlock) { out = true; }
         return out;
