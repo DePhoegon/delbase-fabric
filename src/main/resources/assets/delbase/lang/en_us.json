@@ -1177,6 +1177,7 @@
   "block.delbase.birch_leaf_fence_gate": "Birch Leafy Fence Gate",
 
   "block.delbase.block_cutting_station": "Block Processing Station",
+  "block.delbase.block_cutting_station_tooltip": "Crafting Stairs, Slabs, Walls, Fences & FenceGates",
 
   "block.delbase.hardened_oak_planks": "Hardened Oak Planks",
 

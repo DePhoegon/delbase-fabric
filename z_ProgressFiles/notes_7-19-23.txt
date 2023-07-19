@@ -1,0 +1,18 @@
+Static
+---
+Its just a value
+That’s all it is
+Just a value you can access anywhere
+Will@be the exact same no mather where you access it
+---
+
+final
+--
+Final just means it can’t change
+If you don’t have it static and just final the value still can’t change, but for a diff instance it can be a diff value
+--
+
+static final
+--
+Static final makes it a constant because it can’t change and its the same value no mather where you access it
+--

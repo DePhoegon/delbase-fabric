@@ -1,0 +1,71 @@
+Added
+- The Base Classes for The Blocks that will have Color Variants
+- Base Class for block cutter
+-- Does not extend from any modded classes
+== Extends from BlockwithEntity & implements BlockEntityProvider
+== Included the 5 VoxelShapes
+=== NORTH, SOUTH, EAST, WEST, & FAILED
+==== Failed to be used incase the Horizontal_Facing properity is some how invalid
+=== Adjusted The call for fabric
+- Block Cutting Station
+-- As BLock Entity
+-- extends BlockEntity & implements NamedScreenHandlerFactory, ImplementedInventory, SidedInventory, Inventory
+--- NamedScreeen for naming
+--- ImplementedInventory for inventory tings
+--- SidedInventory for controlling how things like hoppers can interact with it
+=== will block items from being inserted into output slot via sided access
+=== will only allow plan items to be inserted into plan slot via sided access
+=== will not allow plan items to be inserted into input slot via sided access
+=== top/up sided access only accesses input
+=== sides (North/East/South/West) sided access only accesses plan slot
+=== bottom/down sided access only accesses output
+--- & Inventory things to get screen supported with.
+- input slot class
+-- will not allow plan items to go into the slot (player)
+- output slot class
+-- will not allow any items to be placed in the slot (player)
+- plan slot class
+-- will only allow plan items to go into the slot (player)
+- machineblock class
+-- registering base block for block entity
+- blockenties class
+-- registering block entities of the base blocks
+- Helper class
+-- public boolean method used in the slot class files
+--- returns if said Item can be put into a given slot.
+- List arrays
+-- Contains arrays of items
+--- Currently only plan slot item arrays exist
+- Tool tip for Block Crafting station
+
+
+
+Registered
+- Block Entity -> block cutting station
+- Block -> Block cutting sation
+- block Cutter Plan Items
+- Screen for Block cutting station
+- screen handler for modded screens handlers
+- screen handler for block cutting station
+
+Removed
+- old classes related to the block cutter
+
+Tripped on
+- private static final &  private final
+-- block entity -> Inventory
+--- static made them share only 1 inventory
+
+Not Done
+- Did not implement Crafting yet for block cutting
+- Did not fix loot table errors yet
+
+Did Do
+- Minor logic moving of some Class files
+- Clarify definitions
+- Make Notes
+- Make Sample Code text file for reference
+
+To Do
+- recheck all base classes to ensure none of them are missing
+-- Do so in assumed done sections

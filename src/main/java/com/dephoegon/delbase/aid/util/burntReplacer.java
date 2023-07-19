@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 
-import static com.dephoegon.delbase.block.ash.ashBlocks.*;
+import static com.dephoegon.delbase.block.general.ashBlocks.*;
 
 public class burntReplacer implements BlockOnFireCallBack {
 

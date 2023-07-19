@@ -1,4 +1,4 @@
-package com.dephoegon.delbase.block.ash;
+package com.dephoegon.delbase.block.general;
 
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.stock.*;
