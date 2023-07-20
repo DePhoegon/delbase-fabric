@@ -1,0 +1,24 @@
+Added
+- Json Recipe Support
+- Support classes for Crafting
+- Conditional logic
+- Custom Logger
+-- meant to write error files directly to a directory instead of the console log.
+-- custom class setup
+- Default Variables for crafting related things
+- Global Variables for Crafting related things.
+- brought over the logic structure from the crafting
+- adapted what needed to be adapted.
+
+Registered
+- ModRecipes
+
+To do
+- Add in Commnands to set & enable or disable them
+
+Clarification
+- Changed bingAI_sample-code to markdown instead of text
+-- Put entire answers including the feedback and provided code to look back and read for context & clarification
+- Sanity Checking Questions and double checking results.
+
+Research Bits & pieces, followed up questions & clarification questions.

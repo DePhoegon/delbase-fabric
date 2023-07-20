@@ -1,6 +1,7 @@
 package com.dephoegon.delbase.aid.util;
 
 import com.dephoegon.delbase.aid.event.BlockOnFireCallBack;
+import com.dephoegon.delbase.aid.world.serverVariableAccess;
 import com.dephoegon.delbase.block.entity.blockEntities;
 import com.dephoegon.delbase.block.general.ashBlocks;
 import com.dephoegon.delbase.block.general.machineBlock;
@@ -9,6 +10,7 @@ import com.dephoegon.delbase.block.slabs.slabSandEnergy;
 import com.dephoegon.delbase.block.slabs.slabWood;
 import com.dephoegon.delbase.item.BlockCutterItems;
 import com.dephoegon.delbase.item.ShiftingDyes;
+import com.dephoegon.delbase.recipe.modRecipes;
 import com.dephoegon.delbase.screen.blockCuttingStationScreen;
 import com.dephoegon.delbase.screen.screenHandlers;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
@@ -25,6 +27,8 @@ public class regLists {
     // Blocks & Classes that need to be registered first before called ont by others
     public static void RegisterFirstList() {
         BlockOnFireCallBack.EVENT.register(new burntReplacer());
+        serverVariableAccess variableAccess = new serverVariableAccess();
+        variableAccess.init();
         machineBlock.registerModBlocks();
         blockEntities.registerAllBlockEntities();
         blockArrayList.setBlockArrays();
@@ -37,5 +41,6 @@ public class regLists {
         ShiftingDyes.registerItems();
         slabWood.registerWoodSlabs();
         slabSandEnergy.registerColoredSandSlabs();
+        modRecipes.registerRecipes();
     }
 }

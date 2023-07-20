@@ -19,6 +19,10 @@ repositories {
 }
 
 dependencies {
+	modImplementation "org.slf4j:slf4j-api:1.7.32"
+	include "org.slf4j:slf4j-api:1.7.32"
+	modImplementation "ch.qos.logback:logback-classic:1.2.6"
+	include "ch.qos.logback:logback-classic:1.2.6"
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
