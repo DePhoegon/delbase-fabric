@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Random;
 
 import static com.dephoegon.delbase.aid.world.defaultVariables.dNetherriteBonusRolls;
-import static com.dephoegon.delbase.aid.world.globalVariables.*;
+import static com.dephoegon.delbase.aid.world.StaticGlobalVariables.*;
 import static net.minecraft.item.Items.*;
 
 public class TierRandomDropAid {

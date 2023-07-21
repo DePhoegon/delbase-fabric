@@ -4,7 +4,6 @@ import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.items.BlockDyes;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.DyeColor;
 
 public class ShiftingDyes extends BaseItems {
@@ -30,6 +29,6 @@ public class ShiftingDyes extends BaseItems {
     public static void registerItems() {
         Delbase.LOGGER.info("Registering "+Delbase.Delbase_ID+" Dye Items");
     }
-    private static Item ShiftDyeHelper(DyeColor color, String name, String shift) { return registerItem(name, new BlockDyes(color, new FabricItemSettings().maxCount(64).group(ItemGroup.MISC), "tooltip.delbase.info.shift.more", shift, "")); }
+    private static Item ShiftDyeHelper(DyeColor color, String name, String shift) { return registerItem(name, new BlockDyes(color, new FabricItemSettings().maxCount(64).group(Delbase.DELBASE_ITEMS), "tooltip.delbase.info.shift.more", shift, "")); }
     private static Item ShiftDyeHelper(DyeColor color, String name) { return ShiftDyeHelper(color, name, "tooltip.delbase.color.shifter"); }
 }

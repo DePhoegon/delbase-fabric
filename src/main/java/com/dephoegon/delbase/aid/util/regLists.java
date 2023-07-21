@@ -29,6 +29,7 @@ public class regLists {
         BlockOnFireCallBack.EVENT.register(new burntReplacer());
         serverVariableAccess variableAccess = new serverVariableAccess();
         variableAccess.init();
+        new delbaseLogger("mod-errors", "crash-reports", "delbase-errors.log");
         machineBlock.registerModBlocks();
         blockEntities.registerAllBlockEntities();
         blockArrayList.setBlockArrays();

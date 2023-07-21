@@ -1,0 +1,41 @@
+Updated
+- .gitignore
+-- Included new folder in the run
+- ch.qos.logback:logback-classic to 1.2.9
+- blockArrayList
+-- Split checking a block if it is able to hold sand into 2 booleans
+--- Check if part of a class
+--- Check if it is part of a special block list
+- assigned currently registered stuff to custom Item groups
+
+Fixed
+- DelbaseLogger
+-- Swapped it to being called with the values & its own name.
+-- Fixed accidental level conflicts with the default logger.
+- split the GlobalVariables into 2 classes
+-- Static & Non-Static versions
+- Config file now properly saves to the world save folder & gets read from.
+
+Added
+- More support Class files
+- 2 Item Groups
+-- Block & Items
+
+Removed
+- XML configuration file for the logger
+-- Was causing problems loading the game for some reason.
+
+Prep work
+- added BlockColoring Class to be used to set the upcoming leaves colors
+-- Just a class file & a blank Method.
+
+To Do
+- Double check Delbase Logger to see if it's working
+- Introduce safety catches for reading from the file
+-- Catch out of bounds values
+-- Catch invalid values
+- Fix tag assigned to the block cutter.
+- Test One Base File, instead of 2
+
+Did Do
+- More Problem-Solving things and probing questions.

@@ -11,8 +11,9 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
+import java.util.ArrayList;
+
 public class baseModBlocks {
-    private static final ItemGroup group = ItemGroup.BUILDING_BLOCKS;
     protected static Block registerBlock(String name, Block block) { return registerBlock(name, block, false, 0, 0, 0); }
     protected static Block registerBlock(String name, Block block, int burnChance, int burnSpread) { return registerBlock(name, block, true, 0, burnChance, burnSpread); }
     protected static Block registerBlock(String name, Block block, int fuelTime) { return registerBlock(name, block, false, fuelTime, 0, 0); }
@@ -22,11 +23,19 @@ public class baseModBlocks {
         if (burnable) { FlammableBlockRegistry.getDefaultInstance().add(hold, burnChance, burnSpread); }
         return hold;
     }
-    private static Item registerBlockItem(String name, Block block) { return Registry.register(Registry.ITEM, new Identifier(Delbase.Delbase_ID, name), new BlockItem(block, new FabricItemSettings().group(baseModBlocks.group))); }
+    private static Item registerBlockItem(String name, Block block) {
+        ItemGroup group = isAltGroup(name) ? Delbase.DELBASE_ITEMS : Delbase.DELBASE_BLOCKS;
+        return Registry.register(Registry.ITEM, new Identifier(Delbase.Delbase_ID, name), new BlockItem(block, new FabricItemSettings().group(group)));
+    }
     @SuppressWarnings("UnusedReturnValue")
     private static Item registerBlockItem(String name, Block block, int fuelTime) {
         Item hold = registerBlockItem(name, block);
         FuelRegistry.INSTANCE.add(hold, fuelTime);
         return hold;
+    }
+    private static boolean isAltGroup(String name) {
+        ArrayList<String> check = new ArrayList<>();
+        check.add("block_cutting_station");
+        return check.contains(name);
     }
 }

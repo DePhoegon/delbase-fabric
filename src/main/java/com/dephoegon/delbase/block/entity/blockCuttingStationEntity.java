@@ -32,7 +32,7 @@ import java.util.Optional;
 import static com.dephoegon.delbase.aid.recipe.TierRandomDropAid.*;
 import static com.dephoegon.delbase.aid.recipe.countAid.netheriteDiamondBonus;
 import static com.dephoegon.delbase.aid.world.defaultVariables.*;
-import static com.dephoegon.delbase.aid.world.globalVariables.*;
+import static com.dephoegon.delbase.aid.world.StaticGlobalVariables.*;
 import static com.dephoegon.delbase.item.BlockCutterItems.*;
 import static net.minecraft.item.Items.DIAMOND;
 

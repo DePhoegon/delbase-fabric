@@ -1,6 +1,6 @@
 package com.dephoegon.delbase.aid.world;
 
-import static com.dephoegon.delbase.aid.world.globalVariables.*;
+import static com.dephoegon.delbase.aid.world.StaticGlobalVariables.*;
 
 public class defaultVariables {
     public static final int dStationCraftTime = 50;

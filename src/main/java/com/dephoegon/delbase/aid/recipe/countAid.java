@@ -5,7 +5,7 @@ import net.minecraft.item.ArmorItem;
 import org.jetbrains.annotations.NotNull;
 
 import static com.dephoegon.delbase.aid.world.defaultVariables.*;
-import static com.dephoegon.delbase.aid.world.globalVariables.*;
+import static com.dephoegon.delbase.aid.world.StaticGlobalVariables.*;
 
 public class countAid {
 

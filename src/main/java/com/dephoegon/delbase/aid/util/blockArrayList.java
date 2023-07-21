@@ -1,5 +1,6 @@
 package com.dephoegon.delbase.aid.util;
 
+import com.dephoegon.delbase.aid.block.colorshift.grav.solidSandBlock;
 import com.dephoegon.delbase.aid.block.grav.nonColoredSolidSandBlock;
 import com.dephoegon.delbase.aid.block.stock.energySlab;
 import net.minecraft.block.Block;
@@ -29,18 +30,19 @@ public abstract class blockArrayList {
         fall_set.add(REDSTONE_BLOCK.getDefaultState());
         fall_set.add(REDSTONE_LAMP.getDefaultState());
         fall_set.add(GLOWSTONE.getDefaultState());
+        // if (block.getDefaultState() == GLOWSTONE_SLAB.getDefaultState()) { return true; }
+        // add in the Glowstone blocks to this list.
         fall_hold = fall_set;
+    }
+    private static boolean checkBlockClass(Block block) {
+       if (block instanceof energySlab) { return true; }
+       if (block instanceof nonColoredSolidSandBlock) { return true; }
+        return block instanceof solidSandBlock;
     }
     private static ArrayList<Object> getFall_hold() { return fall_hold; }
     public static boolean checkFallLock(@NotNull Block block) {
-        // block.getDefaultState() == GLOWSTONE_SLAB.get().getDefaultState() ||
-        //                    block.getDefaultState() == GLOWSTONE_STAIR.get().getDefaultState() ||
-        //                    block.getDefaultState() == GLOWSTONE_WALL.get().getDefaultState() ||
-        return block instanceof energySlab ||
-                    block instanceof nonColoredSolidSandBlock ||
-                    getFall_hold().contains(block.getDefaultState());
+        return checkBlockClass(block) || getFall_hold().contains(block.getDefaultState());
     }
-
     // Color swapping matching list
     private static void setTerracotta_list() {
         ArrayList<Object> terracotta_set = new ArrayList<>();
