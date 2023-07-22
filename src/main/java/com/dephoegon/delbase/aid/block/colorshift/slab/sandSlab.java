@@ -1,11 +1,10 @@
 package com.dephoegon.delbase.aid.block.colorshift.slab;
 
 import com.dephoegon.delbase.aid.block.stock.slabBlock;
-import net.minecraft.block.SlabBlock;
 import org.jetbrains.annotations.NotNull;
 
 public class sandSlab extends slabBlock {
-    public sandSlab(Settings settings, @NotNull String normToolTip, String shiftToolTip, String ctrlToolTip, SlabBlock StrippedSlabBlock) {
-        super(settings, normToolTip, shiftToolTip, ctrlToolTip, StrippedSlabBlock);
+    public sandSlab(Settings settings, @NotNull String normToolTip, String shiftToolTip, String ctrlToolTip) {
+        super(settings, normToolTip, shiftToolTip, ctrlToolTip, null);
     }
 }

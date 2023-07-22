@@ -7,11 +7,8 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
-import java.util.ArrayList;
 
 public class baseModBlocks {
     protected static Block registerBlock(String name, Block block) { return registerBlock(name, block, false, 0, 0, 0); }
@@ -24,18 +21,10 @@ public class baseModBlocks {
         return hold;
     }
     private static Item registerBlockItem(String name, Block block) {
-        ItemGroup group = isAltGroup(name) ? Delbase.DELBASE_ITEMS : Delbase.DELBASE_BLOCKS;
-        return Registry.register(Registry.ITEM, new Identifier(Delbase.Delbase_ID, name), new BlockItem(block, new FabricItemSettings().group(group)));
+        return Registry.register(Registry.ITEM, new Identifier(Delbase.Delbase_ID, name), new BlockItem(block, new FabricItemSettings().group(Delbase.DELBASE_BLOCKS)));
     }
-    @SuppressWarnings("UnusedReturnValue")
-    private static Item registerBlockItem(String name, Block block, int fuelTime) {
+    private static void registerBlockItem(String name, Block block, int fuelTime) {
         Item hold = registerBlockItem(name, block);
         FuelRegistry.INSTANCE.add(hold, fuelTime);
-        return hold;
-    }
-    private static boolean isAltGroup(String name) {
-        ArrayList<String> check = new ArrayList<>();
-        check.add("block_cutting_station");
-        return check.contains(name);
     }
 }

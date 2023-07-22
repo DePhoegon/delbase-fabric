@@ -1,0 +1,35 @@
+Adjustments
+- Class files for blocks adjusted to remove Stripped blockstate as an option. (Excluding wood versions)
+- Added woodFence & woodFenceGate
+
+Removed
+- Custom Logger
+== was not functioning properly
+
+Fixed
+- Config file
+
+Removed
+- org.slf4j:slf4j-api:1.7.32
+- ch.qos.logback:logback-classic:1.2.9
+== No longer going to be used
+== could have gotten the Logger to work, but was ended up being redundant work for no extra benefit over using the included logger.
+==== Got lost in the weeds real deep.
+
+Config File adjustments
+- set a cool-down on writing the config file.
+-- Now will only read the file in on Server Started event
+- Modified saving file
+-- Will now verify all the values have a value
+-- will only do it if the current values are not the same as the ones in the file
+-- will only do it on a cool-down
+-- can be triggered by loading or unloading a dimension/aka server level.
+
+Added
+- Cut sand Stones (PillarBlock) versions.
+
+Time Spent
+- Alot of time was spent ironing the Config file setup
+- Time was spent ironing out the (now removed) alternative Logger
+- typing
+- going over code stability, functionality, & coding definitions with aid.
