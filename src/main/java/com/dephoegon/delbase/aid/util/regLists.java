@@ -54,20 +54,27 @@ public class regLists {
     public static void RegisterSecondList() {
         //sand
         gravColorSolidSand.registerColoredSands();
+        sandFences.registerSandFences();
+        slabSandEnergy.registerColoredSandSlabs();
         //Items
         BlockCutterItems.registerItems();
         ShiftingDyes.registerItems();
         //Woods
         slabWood.registerWoodSlabs();
-        slabSandEnergy.registerColoredSandSlabs();
         //SandStones
         axisCutSandStones.registerCutSandStones();
         chiseledSandStoneFences.registerChiseledSandStoneFences();
+        sandStoneFences.registerSandStoneFences();
+        smoothSandStoneFences.registerSandStoneFences();
         //Concrete
         concreteFences.registerConcreteFences();
         //Misc
         fenceMisc.registerMiscFences();
         //leafys
         leafFences.registerLeafFences();
+        //quartz
+        quartzFences.registerQuartzFences();
+        //Stone
+        stoneFences.registerStoneFences();
     }
 }
