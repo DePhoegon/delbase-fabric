@@ -24,6 +24,7 @@ public class Delbase implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		regLists.RegisterBaseEvents();
 		regLists.RegisterFirstList();
 		regLists.RegisterSecondList();
 	}

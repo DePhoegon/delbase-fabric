@@ -2,10 +2,14 @@ package com.dephoegon.delbase.aid.util;
 
 import com.dephoegon.delbase.aid.event.BlockOnFireCallBack;
 import com.dephoegon.delbase.aid.world.serverVariableAccess;
+import com.dephoegon.delbase.block.axis.axisCutSandStones;
 import com.dephoegon.delbase.block.entity.blockEntities;
+import com.dephoegon.delbase.block.fence.*;
 import com.dephoegon.delbase.block.general.ashBlocks;
+import com.dephoegon.delbase.block.general.genSandStones;
 import com.dephoegon.delbase.block.general.machineBlock;
 import com.dephoegon.delbase.block.gravity.gravColorSands;
+import com.dephoegon.delbase.block.gravity.gravColorSolidSand;
 import com.dephoegon.delbase.block.slabs.slabSandEnergy;
 import com.dephoegon.delbase.block.slabs.slabWood;
 import com.dephoegon.delbase.item.BlockCutterItems;
@@ -25,22 +29,45 @@ public class regLists {
         HandledScreens.register(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, blockCuttingStationScreen::new);
     }
     // Blocks & Classes that need to be registered first before called ont by others
-    public static void RegisterFirstList() {
+    public static void RegisterBaseEvents() {
         BlockOnFireCallBack.EVENT.register(new burntReplacer());
         serverVariableAccess variableAccess = new serverVariableAccess();
         variableAccess.init();
+        blockArrayList.setBlockArrays();
+        modRecipes.registerRecipes();
+    }
+    public static void RegisterFirstList() {
+        //blockCutter
         machineBlock.registerModBlocks();
         blockEntities.registerAllBlockEntities();
-        blockArrayList.setBlockArrays();
+        //Ash
         ashBlocks.registerAshBlocks();
+        //Sand
+        genSandStones.registerSandStone();
+        //SandStones
+        gravColorSands.registerColoredSands();
+        cutSandStoneFence.registerCutSandStoneFences();
+        //Stripped Woods
+
     }
     // Rest of the common blocks
     public static void RegisterSecondList() {
-        gravColorSands.registerColoredSands();
+        //sand
+        gravColorSolidSand.registerColoredSands();
+        //Items
         BlockCutterItems.registerItems();
         ShiftingDyes.registerItems();
+        //Woods
         slabWood.registerWoodSlabs();
         slabSandEnergy.registerColoredSandSlabs();
-        modRecipes.registerRecipes();
+        //SandStones
+        axisCutSandStones.registerCutSandStones();
+        chiseledSandStoneFences.registerChiseledSandStoneFences();
+        //Concrete
+        concreteFences.registerConcreteFences();
+        //Misc
+        fenceMisc.registerMiscFences();
+        //leafys
+        leafFences.registerLeafFences();
     }
 }
