@@ -51,7 +51,6 @@ public class fenceMisc extends baseModBlocks {
     public static FenceGateBlock SHROOMLIGHT_FENCE_GATE = noToolTipFgAid("shroomlight_fence_gate", SHROOMLIGHT, 15);
     public static FenceBlock MAGMA_BLOCK_FENCE = noToolTipFAid("magma_block_fence", MAGMA_BLOCK, 3);
     public static FenceGateBlock MAGMA_BLOCK_FENCE_GATE = noToolTipFgAid("magma_block_fence_gate", MAGMA_BLOCK, 3);
-    public static FenceBlock NETHERBRICK_FENCE = noToolTipFAid("netherbrick_fence", NETHER_BRICKS);
     public static FenceGateBlock NETHERBRICK_FENCE_GATE = noToolTipFgAid("netherbrick_fence_gate", NETHER_BRICKS);
     public static FenceBlock RED_NETHERBRICK_FENCE = noToolTipFAid("red_netherbrick_fence", RED_NETHER_BRICKS);
     public static FenceGateBlock RED_NETHERBRICK_FENCE_GATE = noToolTipFgAid("red_netherbrick_fence_gate", RED_NETHER_BRICKS);

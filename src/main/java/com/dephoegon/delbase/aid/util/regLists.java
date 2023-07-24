@@ -5,9 +5,7 @@ import com.dephoegon.delbase.aid.world.serverVariableAccess;
 import com.dephoegon.delbase.block.axis.axisCutSandStones;
 import com.dephoegon.delbase.block.entity.blockEntities;
 import com.dephoegon.delbase.block.fence.*;
-import com.dephoegon.delbase.block.general.ashBlocks;
-import com.dephoegon.delbase.block.general.genSandStones;
-import com.dephoegon.delbase.block.general.machineBlock;
+import com.dephoegon.delbase.block.general.*;
 import com.dephoegon.delbase.block.gravity.gravColorSands;
 import com.dephoegon.delbase.block.gravity.gravColorSolidSand;
 import com.dephoegon.delbase.block.slabs.slabSandEnergy;
@@ -64,6 +62,8 @@ public class regLists {
         //SandStones
         axisCutSandStones.registerCutSandStones();
         chiseledSandStoneFences.registerChiseledSandStoneFences();
+        genSmoothSandStones.registerSmoothSandStoneBlock();
+        genChiseledSandStones.registerChiseledSandStoneBlock();
         sandStoneFences.registerSandStoneFences();
         smoothSandStoneFences.registerSandStoneFences();
         //Concrete

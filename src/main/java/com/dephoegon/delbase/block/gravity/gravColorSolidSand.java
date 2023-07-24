@@ -27,7 +27,7 @@ public class gravColorSolidSand extends baseModBlocks {
     public static final SandBlock PINK_SOLID_SAND = colorSolidSandHelper(0xffc0cb, "pink_solid_sand", PINK_SAND);
     public static final SandBlock GRAY_SOLID_SAND = colorSolidSandHelper(0x808080, "gray_solid_sand", GRAY_SAND);
     public static final SandBlock PURPLE_SOLID_SAND = colorSolidSandHelper(0x800080, "purple_solid_sand", PURPLE_SAND);
-    public static final SandBlock CYAN_SOLID_SAND = colorSolidSandHelper(0x00ffff, "purple_solid_sand", CYAN_SAND);
+    public static final SandBlock CYAN_SOLID_SAND = colorSolidSandHelper(0x00ffff, "cyan_solid_sand", CYAN_SAND);
     public static final SandBlock BLUE_SOLID_SAND = colorSolidSandHelper(0x0000ff, "blue_solid_sand", BLUE_SAND);
     public static final SandBlock GREEN_SOLID_SAND = colorSolidSandHelper(0x008000, "green_solid_sand", GREEN_SAND);
     public static final SandBlock BROWN_SOLID_SAND = colorSolidSandHelper(0x714e32, "brown_solid_sand", BROWN_SAND);

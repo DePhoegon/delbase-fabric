@@ -17,12 +17,12 @@ import static net.minecraft.block.Blocks.SANDSTONE;
 public class sandStoneFences extends baseModBlocks {
     public static FenceBlock WHITE_SAND_STONE_FENCE = noToolTipFAid("white_sand_stone_fence", WHITE_SAND_STONE);
     public static FenceGateBlock WHITE_SAND_STONE_FENCE_GATE = noToolTipFgAid("white_sand_stone_fence_gate", WHITE_SAND_STONE);
-    public static FenceBlock ORANGE_SAND_STONE_FENCE = noToolTipFAid("orange_fence", ORANGE_SAND_STONE);
+    public static FenceBlock ORANGE_SAND_STONE_FENCE = noToolTipFAid("orange_sand_stone_fence", ORANGE_SAND_STONE);
     public static FenceGateBlock ORANGE_SAND_STONE_FENCE_GATE = noToolTipFgAid("orange_sand_stone_fence_gate", ORANGE_SAND_STONE);
     public static FenceBlock MAGENTA_SAND_STONE_FENCE = noToolTipFAid("magenta_sand_stone_fence", MAGENTA_SAND_STONE);
     public static FenceGateBlock MAGENTA_SAND_STONE_FENCE_GATE = noToolTipFgAid("magenta_sand_stone_fence_gate", MAGENTA_SAND_STONE);
     public static FenceBlock LIGHT_BLUE_SAND_STONE_FENCE = noToolTipFAid("light_blue_sand_stone_fence", LIGHT_BLUE_SAND_STONE);
-    public static FenceGateBlock LIGHT_BLUE_SAND_STONE_FENCE_GATE = noToolTipFgAid("light_blue_fence_gate", LIGHT_BLUE_SAND_STONE);
+    public static FenceGateBlock LIGHT_BLUE_SAND_STONE_FENCE_GATE = noToolTipFgAid("light_blue_sand_stone_fence_gate", LIGHT_BLUE_SAND_STONE);
     public static FenceBlock YELLOW_SAND_STONE_FENCE = noToolTipFAid("yellow_sand_stone_fence", YELLOW_SAND_STONE);
     public static FenceGateBlock YELLOW_SAND_STONE_FENCE_GATE = noToolTipFgAid("yellow_sand_stone_fence_gate", YELLOW_SAND_STONE);
     public static FenceBlock LIME_SAND_STONE_FENCE = noToolTipFAid("lime_sand_stone_fence", LIME_SAND_STONE);
