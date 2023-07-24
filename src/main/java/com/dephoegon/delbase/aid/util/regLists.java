@@ -46,7 +46,7 @@ public class regLists {
         gravColorSands.registerColoredSands();
         cutSandStoneFence.registerCutSandStoneFences();
         //Stripped Woods
-
+        strippedWoodenFences.registerStrippedWoodenFences();
     }
     // Rest of the common blocks
     public static void RegisterSecondList() {
@@ -59,6 +59,7 @@ public class regLists {
         ShiftingDyes.registerItems();
         //Woods
         slabWood.registerWoodSlabs();
+        woodenFences.registerWoodenFences();
         //SandStones
         axisCutSandStones.registerCutSandStones();
         chiseledSandStoneFences.registerChiseledSandStoneFences();
@@ -70,11 +71,14 @@ public class regLists {
         concreteFences.registerConcreteFences();
         //Misc
         fenceMisc.registerMiscFences();
+        misc.registerMiscBlock();
         //leafys
         leafFences.registerLeafFences();
         //quartz
         quartzFences.registerQuartzFences();
         //Stone
         stoneFences.registerStoneFences();
+        //terracotta
+        terracottaFences.registerTerracottaFences();
     }
 }

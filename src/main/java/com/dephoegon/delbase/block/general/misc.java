@@ -10,6 +10,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import static net.minecraft.block.Blocks.STONE;
 
 public class misc extends baseModBlocks {
+    public static Block HARDENED_OAK_PLANKS = noToolTipAid("hardened_oak_planks");
 
     private static Block noToolTipAid(String name) { return genBlockRegAid(name, "", "", ""); }
     @SuppressWarnings("SameParameterValue")
