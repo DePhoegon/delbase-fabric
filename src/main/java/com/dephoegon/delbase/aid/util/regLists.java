@@ -10,6 +10,7 @@ import com.dephoegon.delbase.block.gravity.gravColorSands;
 import com.dephoegon.delbase.block.gravity.gravColorSolidSand;
 import com.dephoegon.delbase.block.slabs.*;
 import com.dephoegon.delbase.block.stair.*;
+import com.dephoegon.delbase.block.wall.*;
 import com.dephoegon.delbase.item.BlockCutterItems;
 import com.dephoegon.delbase.item.ShiftingDyes;
 import com.dephoegon.delbase.recipe.modRecipes;
@@ -48,6 +49,7 @@ public class regLists {
         strippedWoodenFences.registerStrippedWoodenFences();
         slabStrippedWoods.registerWoodSlabs();
         stairStrippedWoods.registerWoodStairs();
+        wallStrippedWoods.registerWoodWalls();
     }
     // Rest of the common blocks
     public static void RegisterSecondList() {
@@ -57,6 +59,7 @@ public class regLists {
         slabSandsEnergy.registerColoredSandSlabs();
         slabSands.registerColoredSands();
         stairSands.registerColoredSands();
+        wallSands.registerColoredSands();
         //Items
         BlockCutterItems.registerItems();
         ShiftingDyes.registerItems();
@@ -64,6 +67,7 @@ public class regLists {
         slabWood.registerWoodSlabs();
         woodenFences.registerWoodenFences();
         stairWoods.registerWoodStairs();
+        wallWoods.registerWoodWalls();
         //SandStones
         axisCutSandStones.registerCutSandStones();
         genSmoothSandStones.registerSmoothSandStoneBlock();
@@ -84,19 +88,27 @@ public class regLists {
         stairCutSandStones.registerCutSandStoneStairs();
         stairSandStones.registerCutSandStoneStairs();
         stairSmoothSandStones.registerCutSandStoneStairs();
+        wallChiseledSandStones.registerChiseledSandStonewalls();
+        wallCutSandStones.registerCutSandStonewalls();
+        wallSandStones.registerSandStonewalls();
+        wallSmoothSandStones.registerSmoothSandStonewalls();
         //Concrete
         concreteFences.registerConcreteFences();
         slabConcrete.registerConcreteSlab();
         stairConcrete.registerConcreteStair();
+        wallConcrete.registerConcreteWall();
         //Misc
         fenceMisc.registerMiscFences();
         misc.registerMiscBlock();
         slabMisc.registerMiscFences();
         stairMisc.registerMiscFences();
+        wallMisc.registerMiscFences();
+        wallQuartz.registerConcreteWall();
         //leafys
         leafFences.registerLeafFences();
         slabLeaves.registerLeafSlabs();
         stairLeaves.registerLeafStairs();
+        hedgeLeaves.registerLeafSlabs();
         //quartz
         quartzFences.registerQuartzFences();
         slabQuartz.registerConcreteSlab();
@@ -107,5 +119,6 @@ public class regLists {
         terracottaFences.registerTerracottaFences();
         slabTerracotta.registerTerracottaSlab();
         stairTerracotta.registerTerracottaStair();
+        wallTerracotta.registerTerracottaWall();
     }
 }
