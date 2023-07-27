@@ -9,7 +9,6 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.dephoegon.delbase.block.general.genSandStones.*;
-import static com.dephoegon.delbase.block.general.genSandStones.BLACK_SAND_STONE;
 
 public class slabSmoothSandStonesEnergy extends baseModBlocks {
     public static final SlabBlock BLOOD_SMOOTH_SAND_STONE_SLAB_ENERGY = noToolTipAid("blood_smooth_sand_stone_slab_energy", BLOOD_SAND_STONE);
