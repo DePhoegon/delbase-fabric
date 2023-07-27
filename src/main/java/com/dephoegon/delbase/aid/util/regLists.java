@@ -8,8 +8,7 @@ import com.dephoegon.delbase.block.fence.*;
 import com.dephoegon.delbase.block.general.*;
 import com.dephoegon.delbase.block.gravity.gravColorSands;
 import com.dephoegon.delbase.block.gravity.gravColorSolidSand;
-import com.dephoegon.delbase.block.slabs.slabSandEnergy;
-import com.dephoegon.delbase.block.slabs.slabWood;
+import com.dephoegon.delbase.block.slabs.*;
 import com.dephoegon.delbase.item.BlockCutterItems;
 import com.dephoegon.delbase.item.ShiftingDyes;
 import com.dephoegon.delbase.recipe.modRecipes;
@@ -41,19 +40,20 @@ public class regLists {
         //Ash
         ashBlocks.registerAshBlocks();
         //Sand
-        genSandStones.registerSandStone();
-        //SandStones
         gravColorSands.registerColoredSands();
-        cutSandStoneFence.registerCutSandStoneFences();
+        //SandStones
+        genSandStones.registerSandStone();
         //Stripped Woods
         strippedWoodenFences.registerStrippedWoodenFences();
+        slabStrippedWoods.registerWoodSlabs();
     }
     // Rest of the common blocks
     public static void RegisterSecondList() {
         //sand
         gravColorSolidSand.registerColoredSands();
         sandFences.registerSandFences();
-        slabSandEnergy.registerColoredSandSlabs();
+        slabSandsEnergy.registerColoredSandSlabs();
+        slabSands.registerColoredSands();
         //Items
         BlockCutterItems.registerItems();
         ShiftingDyes.registerItems();
@@ -62,23 +62,39 @@ public class regLists {
         woodenFences.registerWoodenFences();
         //SandStones
         axisCutSandStones.registerCutSandStones();
-        chiseledSandStoneFences.registerChiseledSandStoneFences();
         genSmoothSandStones.registerSmoothSandStoneBlock();
         genChiseledSandStones.registerChiseledSandStoneBlock();
+
+        chiseledSandStoneFences.registerChiseledSandStoneFences();
+        cutSandStoneFence.registerCutSandStoneFences();
         sandStoneFences.registerSandStoneFences();
         smoothSandStoneFences.registerSandStoneFences();
+
+        slabChiseledSandStones.registerCutSandStoneSlabs();
+        slabChiseledSandStonesEnergy.registerCutSandStoneSlabEnergy();
+        slabCutSandStones.registerCutSandStoneSlabs();
+        slabCutSandStonesEnergy.registerCutSandStoneSlabEnergy();
+        slabSandStones.registerCutSandStoneSlabs();
+        slabSandStonesEnergy.registerCutSandStoneSlabs();
+        slabSmoothSandStones.registerCutSandStoneSlabs();
+        slabSmoothSandStonesEnergy.registerCutSandStoneSlabs();
         //Concrete
         concreteFences.registerConcreteFences();
+        slabConcrete.registerConcreteSlab();
         //Misc
         fenceMisc.registerMiscFences();
         misc.registerMiscBlock();
+        slabMisc.registerMiscFences();
         //leafys
         leafFences.registerLeafFences();
+        slabLeaves.registerLeafSlabs();
         //quartz
         quartzFences.registerQuartzFences();
+        slabQuartz.registerConcreteSlab();
         //Stone
         stoneFences.registerStoneFences();
         //terracotta
         terracottaFences.registerTerracottaFences();
+        slabTerracotta.registerTerracottaSlab();
     }
 }

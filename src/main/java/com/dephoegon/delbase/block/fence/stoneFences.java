@@ -13,22 +13,22 @@ import net.minecraft.sound.BlockSoundGroup;
 import static net.minecraft.block.Blocks.*;
 
 public class stoneFences extends baseModBlocks {
-    public static FenceBlock STONE_FENCE = noToolTipFAid("stone_fence", STONE, BlockSoundGroup.STONE);
-    public static FenceGateBlock STONE_FENCE_GATE = noToolTipFgAid("stone_fence_gate", STONE, BlockSoundGroup.STONE);
-    public static FenceBlock COBBLESTONE_FENCE = noToolTipFAid("cobblestone_fence", COBBLESTONE, BlockSoundGroup.STONE);
-    public static FenceGateBlock COBBLESTONE_FENCE_GATE = noToolTipFgAid("cobblestone_fence_gate", COBBLESTONE, BlockSoundGroup.STONE);
-    public static FenceBlock DEEPSLATE_FENCE = noToolTipFAid("deepslate_fence", DEEPSLATE, BlockSoundGroup.DEEPSLATE);
-    public static FenceGateBlock DEEPSLATE_FENCE_GATE = noToolTipFgAid("deepslate_fence_gate", DEEPSLATE, BlockSoundGroup.DEEPSLATE);
-    public static FenceBlock COBBLED_DEEPSLATE_FENCE = noToolTipFAid("cobbled_deepslate_fence", COBBLED_DEEPSLATE, BlockSoundGroup.DEEPSLATE);
-    public static FenceGateBlock COBBLED_DEEPSLATE_FENCE_GATE = noToolTipFgAid("cobbled_deepslate_fence_gate", COBBLED_DEEPSLATE, BlockSoundGroup.DEEPSLATE);
-    public static FenceBlock DEEPSLATE_TILE_FENCE = noToolTipFAid("deepslate_tile_fence", DEEPSLATE_TILES, BlockSoundGroup.DEEPSLATE);
-    public static FenceGateBlock DEEPSLATE_TILE_FENCE_GATE = noToolTipFgAid("deepslate_tile_fence_gate", DEEPSLATE_TILES, BlockSoundGroup.DEEPSLATE);
-    public static FenceBlock POLISHED_DEEPSLATE_FENCE = noToolTipFAid("polished_deepslate_fence", POLISHED_DEEPSLATE, BlockSoundGroup.DEEPSLATE);
-    public static FenceGateBlock POLISHED_DEEPSLATE_FENCE_GATE = noToolTipFgAid("polished_deepslate_fence_gate", POLISHED_DEEPSLATE, BlockSoundGroup.DEEPSLATE);
-    public static FenceBlock DEEPSLATE_BRICK_FENCE = noToolTipFAid("deepslate_brick_fence", DEEPSLATE_BRICKS, BlockSoundGroup.DEEPSLATE);
-    public static FenceGateBlock DEEPSLATE_BRICK_FENCE_GATE = noToolTipFgAid("deepslate_brick_fence_gate", DEEPSLATE_BRICKS, BlockSoundGroup.DEEPSLATE);
-    public static FenceBlock BRICK_FENCE = noToolTipFAid("brick_fence", BRICKS, BlockSoundGroup.NETHER_BRICKS);
-    public static FenceGateBlock BRICK_FENCE_GATE = noToolTipFgAid("brick_fence_gate", BRICKS, BlockSoundGroup.NETHER_BRICKS);
+    public static final FenceBlock STONE_FENCE = noToolTipFAid("stone_fence", STONE, BlockSoundGroup.STONE);
+    public static final FenceGateBlock STONE_FENCE_GATE = noToolTipFgAid("stone_fence_gate", STONE, BlockSoundGroup.STONE);
+    public static final FenceBlock COBBLESTONE_FENCE = noToolTipFAid("cobblestone_fence", COBBLESTONE, BlockSoundGroup.STONE);
+    public static final FenceGateBlock COBBLESTONE_FENCE_GATE = noToolTipFgAid("cobblestone_fence_gate", COBBLESTONE, BlockSoundGroup.STONE);
+    public static final FenceBlock DEEPSLATE_FENCE = noToolTipFAid("deepslate_fence", DEEPSLATE, BlockSoundGroup.DEEPSLATE);
+    public static final FenceGateBlock DEEPSLATE_FENCE_GATE = noToolTipFgAid("deepslate_fence_gate", DEEPSLATE, BlockSoundGroup.DEEPSLATE);
+    public static final FenceBlock COBBLED_DEEPSLATE_FENCE = noToolTipFAid("cobbled_deepslate_fence", COBBLED_DEEPSLATE, BlockSoundGroup.DEEPSLATE);
+    public static final FenceGateBlock COBBLED_DEEPSLATE_FENCE_GATE = noToolTipFgAid("cobbled_deepslate_fence_gate", COBBLED_DEEPSLATE, BlockSoundGroup.DEEPSLATE);
+    public static final FenceBlock DEEPSLATE_TILE_FENCE = noToolTipFAid("deepslate_tile_fence", DEEPSLATE_TILES, BlockSoundGroup.DEEPSLATE);
+    public static final FenceGateBlock DEEPSLATE_TILE_FENCE_GATE = noToolTipFgAid("deepslate_tile_fence_gate", DEEPSLATE_TILES, BlockSoundGroup.DEEPSLATE);
+    public static final FenceBlock POLISHED_DEEPSLATE_FENCE = noToolTipFAid("polished_deepslate_fence", POLISHED_DEEPSLATE, BlockSoundGroup.DEEPSLATE);
+    public static final FenceGateBlock POLISHED_DEEPSLATE_FENCE_GATE = noToolTipFgAid("polished_deepslate_fence_gate", POLISHED_DEEPSLATE, BlockSoundGroup.DEEPSLATE);
+    public static final FenceBlock DEEPSLATE_BRICK_FENCE = noToolTipFAid("deepslate_brick_fence", DEEPSLATE_BRICKS, BlockSoundGroup.DEEPSLATE);
+    public static final FenceGateBlock DEEPSLATE_BRICK_FENCE_GATE = noToolTipFgAid("deepslate_brick_fence_gate", DEEPSLATE_BRICKS, BlockSoundGroup.DEEPSLATE);
+    public static final FenceBlock BRICK_FENCE = noToolTipFAid("brick_fence", BRICKS, BlockSoundGroup.NETHER_BRICKS);
+    public static final FenceGateBlock BRICK_FENCE_GATE = noToolTipFgAid("brick_fence_gate", BRICKS, BlockSoundGroup.NETHER_BRICKS);
 
     private static FenceBlock noToolTipFAid(String name, Block block, BlockSoundGroup soundGroup) { return fenceBlockAid(name, block, soundGroup, "","", "", null); }
     private static FenceGateBlock noToolTipFgAid(String name, Block block, BlockSoundGroup soundGroup) { return fenceGateBlockAid(name, block, soundGroup, "","", "", null); }

@@ -13,16 +13,16 @@ import net.minecraft.sound.BlockSoundGroup;
 import static net.minecraft.block.Blocks.*;
 
 public class quartzFences extends baseModBlocks {
-    public static FenceBlock QUARTZ_BRICKS_FENCE = noToolTipFAid("quartz_bricks_fence", QUARTZ_BRICKS);
-    public static FenceGateBlock QUARTZ_BRICKS_FENCE_GATE = noToolTipFgAid("quartz_bricks_fence_gate", QUARTZ_BRICKS);
-    public static FenceBlock QUARTZ_BLOCK_FENCE = noToolTipFAid("quartz_block_fence", QUARTZ_BLOCK);
-    public static FenceGateBlock QUARTZ_BLOCK_FENCE_GATE = noToolTipFgAid("quartz_block_fence_gate", QUARTZ_BLOCK);
-    public static FenceBlock SMOOTH_QUARTZ_FENCE = noToolTipFAid("smooth_quartz_fence", SMOOTH_QUARTZ);
-    public static FenceGateBlock SMOOTH_QUARTZ_FENCE_GATE = noToolTipFgAid("smooth_quartz_fence_gate", SMOOTH_QUARTZ);
-    public static FenceBlock CHISELED_QUARTZ_BLOCK_FENCE = noToolTipFAid("chiseled_quartz_block_fence", CHISELED_QUARTZ_BLOCK);
-    public static FenceGateBlock CHISELED_QUARTZ_BLOCK_FENCE_GATE = noToolTipFgAid("chiseled_quartz_block_fence_gate", CHISELED_QUARTZ_BLOCK);
-    public static FenceBlock QUARTZ_PILLAR_FENCE = noToolTipFAid("quartz_pillar_fence", QUARTZ_BLOCK);
-    public static FenceGateBlock QUARTZ_PILLAR_FENCE_GATE = noToolTipFgAid("quartz_pillar_fence_gate", QUARTZ_BLOCK);
+    public static final FenceBlock QUARTZ_BRICKS_FENCE = noToolTipFAid("quartz_bricks_fence", QUARTZ_BRICKS);
+    public static final FenceGateBlock QUARTZ_BRICKS_FENCE_GATE = noToolTipFgAid("quartz_bricks_fence_gate", QUARTZ_BRICKS);
+    public static final FenceBlock QUARTZ_BLOCK_FENCE = noToolTipFAid("quartz_block_fence", QUARTZ_BLOCK);
+    public static final FenceGateBlock QUARTZ_BLOCK_FENCE_GATE = noToolTipFgAid("quartz_block_fence_gate", QUARTZ_BLOCK);
+    public static final FenceBlock SMOOTH_QUARTZ_FENCE = noToolTipFAid("smooth_quartz_fence", SMOOTH_QUARTZ);
+    public static final FenceGateBlock SMOOTH_QUARTZ_FENCE_GATE = noToolTipFgAid("smooth_quartz_fence_gate", SMOOTH_QUARTZ);
+    public static final FenceBlock CHISELED_QUARTZ_BLOCK_FENCE = noToolTipFAid("chiseled_quartz_block_fence", CHISELED_QUARTZ_BLOCK);
+    public static final FenceGateBlock CHISELED_QUARTZ_BLOCK_FENCE_GATE = noToolTipFgAid("chiseled_quartz_block_fence_gate", CHISELED_QUARTZ_BLOCK);
+    public static final FenceBlock QUARTZ_PILLAR_FENCE = noToolTipFAid("quartz_pillar_fence", QUARTZ_BLOCK);
+    public static final FenceGateBlock QUARTZ_PILLAR_FENCE_GATE = noToolTipFgAid("quartz_pillar_fence_gate", QUARTZ_BLOCK);
 
     private static FenceBlock noToolTipFAid(String name, Block block) { return fenceBlockAid(name, block, "","", ""); }
     private static FenceGateBlock noToolTipFgAid(String name, Block block) { return fenceGateBlockAid(name, block, "","", ""); }

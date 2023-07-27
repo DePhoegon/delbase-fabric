@@ -13,7 +13,6 @@ import static net.minecraft.block.Blocks.RED_SAND;
 import static net.minecraft.block.Blocks.SAND;
 
 public class gravColorSolidSand extends baseModBlocks {
-
     public static final SandBlock SOLID_SAND = colorSolidSandHelper(14406560, "solid_sand", SAND);
     public static final SandBlock RED_SOLID_SAND = colorSolidSandHelper(11098145, "red_solid_sand", RED_SAND);
     public static final SandBlock BLOOD_SOLID_SAND = colorSolidSandHelper(0xff0000, "blood_solid_sand", BLOOD_SAND);
