@@ -17,6 +17,7 @@ public class stairMisc extends baseModBlocks {
     public static final StairsBlock DRIED_KELP_STAIR = noToolTipFAid("dried_kelp_stair", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 4001, 5, 10);
     public static final StairsBlock GLOWSTONE_STAIR = noToolTipFAid("glowstone_stair", GLOWSTONE, 15);
     public static final StairsBlock BASALT_STAIR = noToolTipFAid("basalt_stair", BASALT);
+    public static final StairsBlock COBBLED_BASALT_STAIR = noToolTipFAid("cobbled_basalt_stair", BASALT);
     public static final StairsBlock POLISHED_BASALT_STAIR = noToolTipFAid("polished_basalt_stair", BASALT);
     public static final StairsBlock SMOOTH_BASALT_STAIR = noToolTipFAid("smooth_basalt_stair", BASALT);
     public static final StairsBlock RAW_COPPER_STAIR = noToolTipFAid("raw_copper_stair", RAW_COPPER_BLOCK, BlockSoundGroup.METAL);

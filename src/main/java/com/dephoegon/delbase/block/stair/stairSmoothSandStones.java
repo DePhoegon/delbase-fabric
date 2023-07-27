@@ -9,12 +9,8 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.dephoegon.delbase.block.general.genSandStones.*;
-import static net.minecraft.block.Blocks.RED_SANDSTONE;
-import static net.minecraft.block.Blocks.SANDSTONE;
 
 public class stairSmoothSandStones extends baseModBlocks {
-    public static final StairsBlock SMOOTH_SAND_STONE_STAIR = noToolTipAid("blood_smooth_sand_stone_stair", SANDSTONE);
-    public static final StairsBlock RED_SMOOTH_SAND_STONE_STAIR = noToolTipAid("red_smooth_sand_stone_stair", RED_SANDSTONE);
     public static final StairsBlock BLOOD_SMOOTH_SAND_STONE_STAIR = noToolTipAid("blood_smooth_sand_stone_stair", BLOOD_SAND_STONE);
     public static final StairsBlock WHITE_SMOOTH_SAND_STONE_STAIR = noToolTipAid("white_smooth_sand_stone_stair", WHITE_SAND_STONE);
     public static final StairsBlock ORANGE_SMOOTH_SAND_STONE_STAIR = noToolTipAid("orange_smooth_sand_stone_stair", ORANGE_SAND_STONE);

@@ -13,7 +13,7 @@ import static net.minecraft.block.Blocks.RED_SANDSTONE;
 import static net.minecraft.block.Blocks.SANDSTONE;
 
 public class wallCutSandStones extends baseModBlocks {
-    public static final WallBlock CUT_SAND_STONE_WALL = noToolTipAid("blood_cut_sand_stone_wall", SANDSTONE);
+    public static final WallBlock CUT_SAND_STONE_WALL = noToolTipAid("cut_sand_stone_wall", SANDSTONE);
     public static final WallBlock RED_CUT_SAND_STONE_WALL = noToolTipAid("red_cut_sand_stone_wall", RED_SANDSTONE);
     public static final WallBlock BLOOD_CUT_SAND_STONE_WALL = noToolTipAid("blood_cut_sand_stone_wall", BLOOD_SAND_STONE);
     public static final WallBlock WHITE_CUT_SAND_STONE_WALL = noToolTipAid("white_cut_sand_stone_wall", WHITE_SAND_STONE);

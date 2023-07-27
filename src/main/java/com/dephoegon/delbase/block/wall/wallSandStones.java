@@ -9,12 +9,8 @@ import net.minecraft.block.WallBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.dephoegon.delbase.block.general.genSandStones.*;
-import static net.minecraft.block.Blocks.RED_SANDSTONE;
-import static net.minecraft.block.Blocks.SANDSTONE;
 
 public class wallSandStones extends baseModBlocks {
-    public static final WallBlock SAND_STONE_WALL = noToolTipAid("blood_sand_stone_wall", SANDSTONE);
-    public static final WallBlock RED_SAND_STONE_WALL = noToolTipAid("red_sand_stone_wall", RED_SANDSTONE);
     public static final WallBlock BLOOD_SAND_STONE_WALL = noToolTipAid("blood_sand_stone_wall", BLOOD_SAND_STONE);
     public static final WallBlock WHITE_SAND_STONE_WALL = noToolTipAid("white_sand_stone_wall", WHITE_SAND_STONE);
     public static final WallBlock ORANGE_SAND_STONE_WALL = noToolTipAid("orange_sand_stone_wall", ORANGE_SAND_STONE);

@@ -13,6 +13,7 @@ import static net.minecraft.block.Blocks.*;
 public class slabLeaves extends baseModBlocks {
     public static final SlabBlock OAK_LEAF_SLAB = noToolTipAid("oak_leaf_slab", OAK_LEAVES);
     public static final SlabBlock JUNGLE_LEAF_SLAB = noToolTipAid("jungle_leaf_slab", JUNGLE_LEAVES);
+    public static final SlabBlock SPRUCE_LEAF_SLAB = noToolTipAid("spruce_leaf_slab", SPRUCE_LEAVES);
     public static final SlabBlock BIRCH_LEAF_SLAB = noToolTipAid("birch_leaf_slab", BIRCH_LEAVES);
     public static final SlabBlock ACACIA_LEAF_SLAB = noToolTipAid("acacia_leaf_slab", ACACIA_LEAVES);
     public static final SlabBlock DARK_OAK_LEAF_SLAB = noToolTipAid("dark_oak_leaf_slab", DARK_OAK_LEAVES);

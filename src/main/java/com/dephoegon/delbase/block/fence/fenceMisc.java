@@ -77,7 +77,7 @@ public class fenceMisc extends baseModBlocks {
         return (FenceBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), norm, shift, ctrl, null), true, fuelTime, burnChance, burnSpread);
     }
     private static FenceGateBlock fenceGateBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, int fuelTime, int burnChance, int burnSpread, String norm, String shift, String ctrl) {
-        return (FenceGateBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), norm, shift, ctrl, null), true, fuelTime, burnChance, burnSpread);
+        return (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), norm, shift, ctrl, null), true, fuelTime, burnChance, burnSpread);
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceBlock fenceBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {

@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "delbase:spruce_wood_stair",
+    "delbase:oak_wood_stair",
+    "delbase:dark_oak_wood_stair",
+    "delbase:acacia_wood_stair",
+    "delbase:jungle_wood_stair",
+    "delbase:birch_wood_stair",
+    "delbase:spruce_log_stair",
+    "delbase:oak_log_stair",
+    "delbase:dark_oak_log_stair",
+    "delbase:acacia_log_stair",
+    "delbase:jungle_log_stair",
+    "delbase:birch_log_stair",
+    "delbase:stripped_spruce_wood_stair",
+    "delbase:stripped_oak_wood_stair",
+    "delbase:stripped_dark_oak_wood_stair",
+    "delbase:stripped_acacia_wood_stair",
+    "delbase:stripped_jungle_wood_stair",
+    "delbase:stripped_birch_wood_stair",
+    "delbase:stripped_spruce_log_stair",
+    "delbase:stripped_oak_log_stair",
+    "delbase:stripped_dark_oak_log_stair",
+    "delbase:stripped_acacia_log_stair",
+    "delbase:stripped_jungle_log_stair",
+    "delbase:stripped_birch_log_stair"
+  ]
+}

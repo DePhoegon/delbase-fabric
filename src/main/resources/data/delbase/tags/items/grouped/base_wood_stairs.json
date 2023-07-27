@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:spruce_stairs",
+    "minecraft:oak_stairs",
+    "minecraft:dark_oak_stairs",
+    "minecraft:acacia_stairs",
+    "minecraft:jungle_stairs",
+    "minecraft:birch_stairs"
+  ]
+}

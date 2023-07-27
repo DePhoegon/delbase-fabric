@@ -9,8 +9,12 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.dephoegon.delbase.block.general.genSandStones.*;
+import static net.minecraft.block.Blocks.RED_SANDSTONE;
+import static net.minecraft.block.Blocks.SANDSTONE;
 
 public class slabChiseledSandStones extends baseModBlocks {
+    public static final SlabBlock CHISELED_SAND_STONE_SLAB = noToolTipAid("chiseled_sand_stone_slab", SANDSTONE);
+    public static final SlabBlock RED_CHISELED_SAND_STONE_SLAB = noToolTipAid("red_chiseled_sand_stone_slab", RED_SANDSTONE);
     public static final SlabBlock BLOOD_CHISELED_SAND_STONE_SLAB = noToolTipAid("blood_chiseled_sand_stone_slab", BLOOD_SAND_STONE);
     public static final SlabBlock WHITE_CHISELED_SAND_STONE_SLAB = noToolTipAid("white_chiseled_sand_stone_slab", WHITE_SAND_STONE);
     public static final SlabBlock ORANGE_CHISELED_SAND_STONE_SLAB = noToolTipAid("orange_chiseled_sand_stone_slab", ORANGE_SAND_STONE);

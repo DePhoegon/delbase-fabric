@@ -12,10 +12,12 @@ import static net.minecraft.block.Blocks.*;
 
 public class wallMisc extends baseModBlocks {
     public static final WallBlock END_STONE_WALL = noToolTipFAid("end_stone_wall", END_STONE);
+    public static final WallBlock PURPUR_BLOCK_WALL = noToolTipFAid("purpur_block_wall", PURPUR_BLOCK);
     public static final WallBlock BONE_BLOCK_WALL = noToolTipFAid("bone_block_wall", BONE_BLOCK, BlockSoundGroup.BONE);
     public static final WallBlock DRIED_KELP_WALL = noToolTipFAid("dried_kelp_wall", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 4001, 5, 10);
     public static final WallBlock GLOWSTONE_WALL = noToolTipFAid("glowstone_wall", GLOWSTONE, 15);
     public static final WallBlock BASALT_WALL = noToolTipFAid("basalt_wall", BASALT);
+    public static final WallBlock COBBLED_BASALT_WALL = noToolTipFAid("cobbled_basalt_wall", BASALT);
     public static final WallBlock POLISHED_BASALT_WALL = noToolTipFAid("polished_basalt_wall", BASALT);
     public static final WallBlock SMOOTH_BASALT_WALL = noToolTipFAid("smooth_basalt_wall", BASALT);
     public static final WallBlock RAW_COPPER_WALL = noToolTipFAid("raw_copper_wall", RAW_COPPER_BLOCK, BlockSoundGroup.METAL);

@@ -9,8 +9,12 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.dephoegon.delbase.block.general.genSandStones.*;
+import static net.minecraft.block.Blocks.RED_SANDSTONE;
+import static net.minecraft.block.Blocks.SANDSTONE;
 
 public class slabSandStonesEnergy extends baseModBlocks {
+    public static final SlabBlock SAND_STONE_SLAB_ENERGY = noToolTipAid("sand_stone_slab_energy", SANDSTONE);
+    public static final SlabBlock RED_SAND_STONE_SLAB_ENERGY = noToolTipAid("red_sand_stone_slab_energy", RED_SANDSTONE);
     public static final SlabBlock BLOOD_SAND_STONE_SLAB_ENERGY = noToolTipAid("blood_sand_stone_slab_energy", BLOOD_SAND_STONE);
     public static final SlabBlock WHITE_SAND_STONE_SLAB_ENERGY = noToolTipAid("white_sand_stone_slab_energy", WHITE_SAND_STONE);
     public static final SlabBlock ORANGE_SAND_STONE_SLAB_ENERGY = noToolTipAid("orange_sand_stone_slab_energy", ORANGE_SAND_STONE);

@@ -15,6 +15,7 @@ public class stairLeaves extends baseModBlocks {
     public static final StairsBlock OAK_LEAF_STAIR = noToolTipAid("oak_leaf_stair", OAK_LEAVES);
     public static final StairsBlock JUNGLE_LEAF_STAIR = noToolTipAid("jungle_leaf_stair", JUNGLE_LEAVES);
     public static final StairsBlock BIRCH_LEAF_STAIR = noToolTipAid("birch_leaf_stair", BIRCH_LEAVES);
+    public static final StairsBlock SPRUCE_LEAF_STAIR = noToolTipAid("spruce_leaf_stair", SPRUCE_LEAVES);
     public static final StairsBlock ACACIA_LEAF_STAIR = noToolTipAid("acacia_leaf_stair", ACACIA_LEAVES);
     public static final StairsBlock DARK_OAK_LEAF_STAIR = noToolTipAid("dark_oak_leaf_stair", DARK_OAK_LEAVES);
     public static final StairsBlock AZALEA_LEAF_STAIR = noToolTipAid("azalea_leaf_stair", AZALEA_LEAVES);

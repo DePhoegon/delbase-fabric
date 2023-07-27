@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "delbase:dried_kelp_stair",
+    "delbase:shroomlight_stair",
+    "#delbase:stairs/stair_leaves_woodlike"
+  ]
+}

@@ -13,7 +13,7 @@ import static net.minecraft.block.Blocks.RED_SANDSTONE;
 import static net.minecraft.block.Blocks.SANDSTONE;
 
 public class wallChiseledSandStones extends baseModBlocks {
-    public static final WallBlock CHISELED_SAND_STONE_WALL = noToolTipAid("blood_chiseled_sand_stone_wall", SANDSTONE);
+    public static final WallBlock CHISELED_SAND_STONE_WALL = noToolTipAid("chiseled_sand_stone_wall", SANDSTONE);
     public static final WallBlock RED_CHISELED_SAND_STONE_WALL = noToolTipAid("red_chiseled_sand_stone_wall", RED_SANDSTONE);
     public static final WallBlock BLOOD_CHISELED_SAND_STONE_WALL = noToolTipAid("blood_chiseled_sand_stone_wall", BLOOD_SAND_STONE);
     public static final WallBlock WHITE_CHISELED_SAND_STONE_WALL = noToolTipAid("white_chiseled_sand_stone_wall", WHITE_SAND_STONE);

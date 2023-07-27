@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "delbase:dried_kelp_fence_gate",
+    "delbase:shroomlight_fence_gate",
+    "#delbase:fences/leaves_fence_gates"
+  ]
+}

@@ -13,7 +13,7 @@ import static net.minecraft.block.Blocks.RED_SANDSTONE;
 import static net.minecraft.block.Blocks.SANDSTONE;
 
 public class wallSmoothSandStones extends baseModBlocks {
-    public static final WallBlock SMOOTH_SAND_STONE_WALL = noToolTipAid("blood_smooth_sand_stone_wall", SANDSTONE);
+    public static final WallBlock SMOOTH_SAND_STONE_WALL = noToolTipAid("smooth_sand_stone_wall", SANDSTONE);
     public static final WallBlock RED_SMOOTH_SAND_STONE_WALL = noToolTipAid("red_smooth_sand_stone_wall", RED_SANDSTONE);
     public static final WallBlock BLOOD_SMOOTH_SAND_STONE_WALL = noToolTipAid("blood_smooth_sand_stone_wall", BLOOD_SAND_STONE);
     public static final WallBlock WHITE_SMOOTH_SAND_STONE_WALL = noToolTipAid("white_smooth_sand_stone_wall", WHITE_SAND_STONE);

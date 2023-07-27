@@ -14,6 +14,7 @@ public class hedgeLeaves extends baseModBlocks {
     public static final WallBlock OAK_HEDGE = noToolTipAid("oak_hedge", OAK_LEAVES);
     public static final WallBlock JUNGLE_HEDGE = noToolTipAid("jungle_hedge", JUNGLE_LEAVES);
     public static final WallBlock BIRCH_HEDGE = noToolTipAid("birch_hedge", BIRCH_LEAVES);
+    public static final WallBlock SPRUCE_HEDGE = noToolTipAid("spruce_hedge", SPRUCE_LEAVES);
     public static final WallBlock ACACIA_HEDGE = noToolTipAid("acacia_hedge", ACACIA_LEAVES);
     public static final WallBlock DARK_OAK_HEDGE = noToolTipAid("dark_oak_hedge", DARK_OAK_LEAVES);
     public static final WallBlock AZALEA_HEDGE = noToolTipAid("azalea_hedge", AZALEA_LEAVES);

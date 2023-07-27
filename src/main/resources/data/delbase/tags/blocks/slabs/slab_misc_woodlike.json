@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "delbase:dried_kelp_slab",
+    "delbase:shroomlight_slab",
+    "#delbase:slabs/slab_leaves"
+  ]
+}
