@@ -9,7 +9,6 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static net.minecraft.block.Blocks.*;
-import static net.minecraft.block.Blocks.BLACK_CONCRETE;
 
 public class stairConcrete extends baseModBlocks {
     public static final StairsBlock RED_CONCRETE_STAIR = noToolTipAid("red_concrete_stair", RED_CONCRETE);

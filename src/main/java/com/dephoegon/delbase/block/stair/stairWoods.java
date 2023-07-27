@@ -10,7 +10,6 @@ import net.minecraft.sound.BlockSoundGroup;
 
 import static com.dephoegon.delbase.block.stair.stairStrippedWoods.*;
 import static net.minecraft.block.Blocks.*;
-import static net.minecraft.block.Blocks.BIRCH_WOOD;
 
 public class stairWoods extends baseModBlocks {
     public static final StairsBlock SPRUCE_WOOD_STAIR = noTooltipHelper("spruce_wood_stair", SPRUCE_WOOD, STRIPPED_SPRUCE_WOOD_STAIR, true);

@@ -9,7 +9,6 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.dephoegon.delbase.block.general.genSandStones.*;
-import static com.dephoegon.delbase.block.general.genSandStones.BLACK_SAND_STONE;
 import static net.minecraft.block.Blocks.RED_SANDSTONE;
 import static net.minecraft.block.Blocks.SANDSTONE;
 

@@ -9,7 +9,6 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static net.minecraft.block.Blocks.*;
-import static net.minecraft.block.Blocks.BIRCH_WOOD;
 
 public class stairStrippedWoods extends baseModBlocks {
     public static final StairsBlock STRIPPED_SPRUCE_WOOD_STAIR = noTooltipHelper("stripped_spruce_wood_stair", SPRUCE_WOOD, true);
