@@ -11,5 +11,6 @@ public class DelbaseClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         RegisterClientFirst();
+
     }
 }
