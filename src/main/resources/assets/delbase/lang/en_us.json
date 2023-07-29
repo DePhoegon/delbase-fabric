@@ -1180,8 +1180,8 @@
 
   "block.delbase.hardened_oak_planks": "Hardened Oak Planks",
 
-  "itemGroup.dephoegon_blocks": "DePhoegons' Blocks",
-  "itemGroup.dephoegon_items": "DePhoegons' Items",
+  "itemGroup.delbase.dephoegon_blocks": "DePhoegons' Blocks",
+  "itemGroup.delbase.dephoegon_items": "DePhoegons' Items",
 
   "tooltip.delbase.info.more": "§7§oDefault Keys\nShift for More Details \nControl for Flavor Text",
   "tooltip.delbase.info.control.more": "§7§oHold Control for Flavor Text",

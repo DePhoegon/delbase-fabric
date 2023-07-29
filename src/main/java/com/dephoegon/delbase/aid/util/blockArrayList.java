@@ -4,10 +4,21 @@ import com.dephoegon.delbase.aid.block.colorshift.grav.solidSandBlock;
 import com.dephoegon.delbase.aid.block.grav.nonColoredSolidSandBlock;
 import com.dephoegon.delbase.aid.block.stock.energySlab;
 import net.minecraft.block.Block;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
+import static com.dephoegon.delbase.block.fence.fenceMisc.GLOWSTONE_FENCE;
+import static com.dephoegon.delbase.block.fence.fenceMisc.GLOWSTONE_FENCE_GATE;
+import static com.dephoegon.delbase.block.fence.leafFences.*;
+import static com.dephoegon.delbase.block.slabs.slabLeaves.*;
+import static com.dephoegon.delbase.block.slabs.slabMisc.GLOWSTONE_SLAB;
+import static com.dephoegon.delbase.block.stair.stairLeaves.*;
+import static com.dephoegon.delbase.block.stair.stairMisc.GLOWSTONE_STAIR;
+import static com.dephoegon.delbase.block.wall.hedgeLeaves.*;
+import static com.dephoegon.delbase.block.wall.wallMisc.GLOWSTONE_WALL;
 import static net.minecraft.block.Blocks.*;
 
 public abstract class blockArrayList {
@@ -22,6 +33,21 @@ public abstract class blockArrayList {
     private static ArrayList<Object> fall_hold = new ArrayList<>();
     private static ArrayList<Object> concretePowder_list = new ArrayList<>();
     private static ArrayList<Object> sand_list = new ArrayList<>();
+    private static final ArrayList<? extends Block> birchLeaves = new ArrayList<>();
+    private static final ArrayList<? extends Block> spruceLeaves = new ArrayList<>();
+    private static final ArrayList<? extends Block> coloredLeaves = new ArrayList<>();
+    @Contract(value = " -> new", pure = true)
+    public static Block @NotNull [] getBirchLeaves() {
+        return new Block[]{BIRCH_HEDGE, BIRCH_LEAF_FENCE, BIRCH_LEAF_FENCE_GATE, BIRCH_LEAF_SLAB, BIRCH_LEAF_STAIR};
+    }
+    @Contract(value = " -> new", pure = true)
+    public static Block @NotNull [] getSpruceLeaves() {
+        return new Block[]{SPRUCE_HEDGE, SPRUCE_LEAF_FENCE, SPRUCE_LEAF_FENCE_GATE, SPRUCE_LEAF_SLAB, SPRUCE_LEAF_STAIR};
+    }
+    @Contract(value = " -> new", pure = true)
+    public static Block @NotNull [] getColoredLeaves() {
+        return new Block[]{OAK_HEDGE, JUNGLE_HEDGE, ACACIA_HEDGE, DARK_OAK_HEDGE, OAK_LEAF_FENCE, JUNGLE_LEAF_FENCE, ACACIA_LEAF_FENCE, DARK_OAK_LEAF_FENCE, OAK_LEAF_FENCE_GATE, ACACIA_LEAF_FENCE_GATE, JUNGLE_LEAF_FENCE_GATE, DARK_OAK_LEAF_FENCE_GATE, OAK_LEAF_SLAB, JUNGLE_LEAF_SLAB, ACACIA_LEAF_SLAB, DARK_OAK_LEAF_SLAB, OAK_LEAF_STAIR, JUNGLE_LEAF_STAIR, ACACIA_LEAF_STAIR, DARK_OAK_LEAF_STAIR};
+    }
 
     // Blocks for holding up falling blocks, outside custom classes
     private static void setFall_hold() {
@@ -30,7 +56,11 @@ public abstract class blockArrayList {
         fall_set.add(REDSTONE_BLOCK.getDefaultState());
         fall_set.add(REDSTONE_LAMP.getDefaultState());
         fall_set.add(GLOWSTONE.getDefaultState());
-        // if (block.getDefaultState() == GLOWSTONE_SLAB.getDefaultState()) { return true; }
+        fall_set.add(GLOWSTONE_SLAB.getDefaultState());
+        fall_set.add(GLOWSTONE_STAIR.getDefaultState());
+        fall_set.add(GLOWSTONE_FENCE.getDefaultState());
+        fall_set.add(GLOWSTONE_FENCE_GATE.getDefaultState());
+        fall_set.add(GLOWSTONE_WALL.getDefaultState());
         // add in the Glowstone blocks to this list.
         fall_hold = fall_set;
     }

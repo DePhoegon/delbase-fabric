@@ -1,8 +1,12 @@
 package com.dephoegon.delbase;
 
+import com.dephoegon.delbase.aid.event.blockColoring;
 import com.dephoegon.delbase.aid.util.regLists;
 import com.dephoegon.delbase.block.general.machineBlock;
 import com.dephoegon.delbase.item.BlockCutterItems;
+import net.fabricmc.api.ClientModInitializer;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -11,7 +15,9 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class Delbase implements ModInitializer {
+import static com.dephoegon.delbase.aid.util.regLists.RegisterClientFirst;
+
+public class Delbase implements ModInitializer, ClientModInitializer {
 	public static final String Delbase_ID = "delbase";
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -27,5 +33,11 @@ public class Delbase implements ModInitializer {
 		regLists.RegisterBaseEvents();
 		regLists.RegisterFirstList();
 		regLists.RegisterSecondList();
+	}
+	@Override
+	@Environment(EnvType.CLIENT)
+	public void onInitializeClient() {
+		RegisterClientFirst();
+		blockColoring.setLeafColors();
 	}
 }

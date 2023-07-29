@@ -31,9 +31,9 @@ public class BlockDyes extends DyeItem {
     private final String tip2;
     public BlockDyes(DyeColor color, Settings settings, @NotNull String normToolTip, String shiftToolTip, String ctrlToolTip) {
         super(color, settings);
-        if(normToolTip.equals("")) { tip0 = null; } else { tip0 = normToolTip; }
-        if(shiftToolTip.equals("")) { tip1 = null; } else { tip1 = shiftToolTip; }
-        if(ctrlToolTip.equals("")) { tip2 = null; } else { tip2 = ctrlToolTip; }
+        if(normToolTip.isEmpty()) { tip0 = null; } else { tip0 = normToolTip; }
+        if(shiftToolTip.isEmpty()) { tip1 = null; } else { tip1 = shiftToolTip; }
+        if(ctrlToolTip.isEmpty()) { tip2 = null; } else { tip2 = ctrlToolTip; }
     }
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> toolTip, TooltipContext context) {
         super.appendTooltip(stack, world, toolTip, context);

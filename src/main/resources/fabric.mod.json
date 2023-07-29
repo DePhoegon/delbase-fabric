@@ -19,7 +19,7 @@
 			"com.dephoegon.delbase.Delbase"
 		],
 		"client": [
-			"com.dephoegon.delbase.DelbaseClient"
+			"com.dephoegon.delbase.Delbase"
 		]
 	},
 	"mixins": [
