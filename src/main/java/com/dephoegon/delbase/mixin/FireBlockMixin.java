@@ -1,6 +1,5 @@
 package com.dephoegon.delbase.mixin;
 
-import com.dephoegon.delbase.aid.event.BlockOnFireCallBack;
 import net.minecraft.block.FireBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -15,7 +14,7 @@ import static com.dephoegon.delbase.aid.util.burntReplacer.AshBlock;
 public class FireBlockMixin {
     @Redirect(method = "trySpreadingFire", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/World;removeBlock(Lnet/minecraft/util/math/BlockPos;Z)Z"))
     private boolean onRemoveBlock(World world, BlockPos pos, boolean move) {
-        BlockOnFireCallBack.EVENT.invoker().onBlockOnFire(world, pos, world.getBlockState(pos));
+        // BlockOnFireCallBack.EVENT.invoker().onBlockOnFire(world, pos, world.getBlockState(pos));
         if (isModBlock(world.getBlockState(pos).getBlock())) {
             AshBlock(world, pos, world.getBlockState(pos));
         } else { return world.removeBlock(pos, move); }

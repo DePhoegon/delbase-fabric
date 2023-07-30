@@ -20,7 +20,7 @@ public class hedgeLeaves extends baseModBlocks {
     public static final WallBlock AZALEA_HEDGE = noToolTipAid("azalea_hedge", AZALEA_LEAVES);
     public static final WallBlock FLOWERING_AZALEA_HEDGE = noToolTipAid("flowering_azalea_hedge", FLOWERING_AZALEA_LEAVES);
 
-    private static WallBlock noToolTipAid(String name, Block block) { return cutSandStoneHelper(name, block, "", "", ""); }
-    private static WallBlock cutSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new wallBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS), norm, Shift, Ctrl, null), 5, 10); }
+    private static WallBlock noToolTipAid(String name, Block block) { return leafWallHelper(name, block, "", "", ""); }
+    private static WallBlock leafWallHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new wallBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS), norm, Shift, Ctrl, null), 30, 60); }
     public static void registerLeafSlabs() { Delbase.LOGGER.info("Registering Leaf Hedges for "+Delbase.Delbase_ID); }
 }

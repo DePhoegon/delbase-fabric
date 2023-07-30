@@ -35,11 +35,11 @@ public class leafFences extends baseModBlocks {
     private static FenceGateBlock noToolTipFgAid(String name, Block block) { return fenceGateBlockAid(name, block, "","", ""); }
     @SuppressWarnings("SameParameterValue")
     private static FenceBlock fenceBlockAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null), 5, 10);
+        return  (FenceBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null), 30, 60);
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceGateBlock fenceGateBlockAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null), 5, 10);
+        return  (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null), 30, 60);
     }
     public static void registerLeafFences() { Delbase.LOGGER.info("Registering Leaf Fences for "+Delbase.Delbase_ID); }
 }

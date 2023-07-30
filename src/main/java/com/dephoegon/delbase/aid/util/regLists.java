@@ -1,6 +1,6 @@
 package com.dephoegon.delbase.aid.util;
 
-import com.dephoegon.delbase.aid.event.BlockOnFireCallBack;
+import com.dephoegon.delbase.aid.event.blockColoring;
 import com.dephoegon.delbase.aid.world.serverVariableAccess;
 import com.dephoegon.delbase.block.axis.axisCutSandStones;
 import com.dephoegon.delbase.block.entity.blockEntities;
@@ -26,10 +26,10 @@ public class regLists {
         BlockRenderLayerMap.INSTANCE.putBlock(machineBlock.BLOCK_CUTTER_BLOCK, RenderLayer.getCutout());
         KeyBindings.registerKeyBinds();
         HandledScreens.register(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, blockCuttingStationScreen::new);
+        blockColoring.setLeafColors();
     }
     // Blocks & Classes that need to be registered first before called ont by others
     public static void RegisterBaseEvents() {
-        BlockOnFireCallBack.EVENT.register(new burntReplacer());
         serverVariableAccess variableAccess = new serverVariableAccess();
         variableAccess.init();
         blockArrayList.setBlockArrays();

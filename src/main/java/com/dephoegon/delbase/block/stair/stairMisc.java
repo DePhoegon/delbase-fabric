@@ -14,7 +14,7 @@ import static net.minecraft.block.Blocks.*;
 public class stairMisc extends baseModBlocks {
     public static final StairsBlock END_STONE_STAIR = noToolTipFAid("end_stone_stair", END_STONE);
     public static final StairsBlock BONE_BLOCK_STAIR = noToolTipFAid("bone_block_stair", BONE_BLOCK, BlockSoundGroup.BONE);
-    public static final StairsBlock DRIED_KELP_STAIR = noToolTipFAid("dried_kelp_stair", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 4001, 5, 10);
+    public static final StairsBlock DRIED_KELP_STAIR = noToolTipFAid("dried_kelp_stair", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 4001, 15, 30);
     public static final StairsBlock GLOWSTONE_STAIR = noToolTipFAid("glowstone_stair", GLOWSTONE, 15);
     public static final StairsBlock BASALT_STAIR = noToolTipFAid("basalt_stair", BASALT);
     public static final StairsBlock COBBLED_BASALT_STAIR = noToolTipFAid("cobbled_basalt_stair", BASALT);

@@ -20,7 +20,7 @@ public class slabLeaves extends baseModBlocks {
     public static final SlabBlock AZALEA_LEAF_SLAB = noToolTipAid("azalea_leaf_slab", AZALEA_LEAVES);
     public static final SlabBlock FLOWERING_AZALEA_LEAF_SLAB = noToolTipAid("flowering_azalea_leaf_slab", FLOWERING_AZALEA_LEAVES);
 
-    private static SlabBlock noToolTipAid(String name, Block block) { return cutSandStoneHelper(name, block, "", "", ""); }
-    private static SlabBlock cutSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new slabBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS), norm, Shift, Ctrl, null), 5, 10); }
+    private static SlabBlock noToolTipAid(String name, Block block) { return leafSlabHelper(name, block, "", "", ""); }
+    private static SlabBlock leafSlabHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new slabBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS), norm, Shift, Ctrl, null), 30, 60); }
     public static void registerLeafSlabs() { Delbase.LOGGER.info("Registering Leaf Slabs for "+Delbase.Delbase_ID); }
 }

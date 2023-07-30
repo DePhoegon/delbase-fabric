@@ -13,7 +13,7 @@ import static net.minecraft.block.Blocks.*;
 public class slabMisc extends baseModBlocks {
     public static final SlabBlock END_STONE_SLAB = noToolTipFAid("end_stone_slab", END_STONE);
     public static final SlabBlock BONE_BLOCK_SLAB = noToolTipFAid("bone_block_slab", BONE_BLOCK, BlockSoundGroup.BONE);
-    public static final SlabBlock DRIED_KELP_SLAB = noToolTipFAid("dried_kelp_slab", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 4001, 5, 10);
+    public static final SlabBlock DRIED_KELP_SLAB = noToolTipFAid("dried_kelp_slab", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 4001, 15, 30);
     public static final SlabBlock GLOWSTONE_SLAB = noToolTipFAid("glowstone_slab", GLOWSTONE, 15);
     public static final SlabBlock BASALT_SLAB = noToolTipFAid("basalt_slab", BASALT);
     public static final SlabBlock POLISHED_BASALT_SLAB = noToolTipFAid("polished_basalt_slab", BASALT);

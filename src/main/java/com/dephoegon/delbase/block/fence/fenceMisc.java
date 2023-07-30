@@ -43,8 +43,8 @@ public class fenceMisc extends baseModBlocks {
     public static final FenceGateBlock CHISELED_POLISHED_BLACKSTONE_FENCE_GATE = noToolTipFgAid("chiseled_polished_blackstone_fence_gate", CHISELED_POLISHED_BLACKSTONE);
     public static final FenceBlock BONE_BLOCK_FENCE = noToolTipFAid("bone_block_fence", BONE_BLOCK, BlockSoundGroup.BONE);
     public static final FenceGateBlock BONE_BLOCK_FENCE_GATE = noToolTipFgAid("bone_block_fence_gate", BONE_BLOCK, BlockSoundGroup.BONE);
-    public static final FenceBlock DRIED_KELP_FENCE = noToolTipFAid("dried_kelp_fence", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 1600, 5, 10);
-    public static final FenceGateBlock DRIED_KELP_FENCE_GATE = noToolTipFgAid("dried_kelp_fence_gate", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 1600, 5, 10);
+    public static final FenceBlock DRIED_KELP_FENCE = noToolTipFAid("dried_kelp_fence", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 1600, 15, 30);
+    public static final FenceGateBlock DRIED_KELP_FENCE_GATE = noToolTipFgAid("dried_kelp_fence_gate", DRIED_KELP_BLOCK, BlockSoundGroup.GRASS, 1600, 15, 30);
     public static final FenceBlock NETHERRACK_FENCE = noToolTipFAid("netherrack_fence", NETHERRACK, BlockSoundGroup.NETHERRACK);
     public static final FenceGateBlock NETHERRACK_FENCE_GATE = noToolTipFgAid("netherrack_fence_gate", NETHERRACK,BlockSoundGroup.NETHERRACK);
     public static final FenceBlock SHROOMLIGHT_FENCE = noToolTipFAid("shroomlight_fence", SHROOMLIGHT, BlockSoundGroup.SHROOMLIGHT, 15);
