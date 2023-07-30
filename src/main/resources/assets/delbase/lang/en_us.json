@@ -1183,7 +1183,7 @@
   "itemGroup.delbase.dephoegon_blocks": "DePhoegons' Blocks",
   "itemGroup.delbase.dephoegon_items": "DePhoegons' Items",
 
-  "tooltip.delbase.info.more": "§7§oDefault Keys\nShift for More Details \nControl for Flavor Text",
+  "tooltip.delbase.info.more": "§7§oHas Tooltips Default Left Shift & Control",
   "tooltip.delbase.info.control.more": "§7§oHold Control for Flavor Text",
   "tooltip.delbase.info.shift.more": "§7§oHold Shift for More Details",
   "tooltip.delbase.color.shifter": "§7§oUse on Colorful Blocks to change its' color",
