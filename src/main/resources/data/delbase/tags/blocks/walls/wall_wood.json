@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "delbase:ash_wall",
     "delbase:stripped_spruce_wood_wall",
     "delbase:stripped_oak_wood_wall",
     "delbase:stripped_warped_hyphae_wall",

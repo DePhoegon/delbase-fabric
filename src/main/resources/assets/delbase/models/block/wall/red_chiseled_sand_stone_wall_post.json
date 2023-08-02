@@ -2,6 +2,6 @@
   "parent": "delbase:block/template/wall_post",
   "textures": {
     "wall": "minecraft:block/chiseled_red_sandstone",
-    "top": "minecraft:block/red_sandstone_top"
+    "top": "delbase:block/red_sandstone_top"
   }
 }

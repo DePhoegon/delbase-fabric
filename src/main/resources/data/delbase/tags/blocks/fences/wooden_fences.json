@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "delbase:ash_fence",
     "delbase:acacia_wood_fence",
     "delbase:acacia_log_fence",
     "delbase:birch_wood_fence",

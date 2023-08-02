@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "delbase:ash_wall",
     "#delbase:walls/wall_chiseled_sand_stone",
     "#delbase:walls/wall_concrete",
     "#delbase:walls/wall_cut_sand_stone",

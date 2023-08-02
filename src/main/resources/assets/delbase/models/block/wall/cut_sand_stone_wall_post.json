@@ -1,7 +1,7 @@
 {
   "parent": "delbase:block/template/wall_post",
   "textures": {
-    "wall": "minecraft:block/cut_sandstone",
-    "top": "minecraft:block/sandstone_top"
+    "wall": "delbase:block/cut_sandstone",
+    "top": "delbase:block/sandstone_top"
   }
 }

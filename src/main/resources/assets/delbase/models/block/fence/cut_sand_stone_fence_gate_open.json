@@ -1,7 +1,7 @@
 {
 "parent": "delbase:block/template/fence_gate_open",
 "textures": {
-"texture": "minecraft:block/sandstone_top",
-"postside": "minecraft:block/cut_sandstone"
+"texture": "delbase:block/sandstone_top",
+"postside": "delbase:block/cut_sandstone"
 }
 }

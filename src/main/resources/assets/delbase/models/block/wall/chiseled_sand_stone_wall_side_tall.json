@@ -2,6 +2,6 @@
   "parent": "delbase:block/template/wall_side_tall",
   "textures": {
     "wall": "minecraft:block/chiseled_sandstone",
-    "top": "minecraft:block/sandstone_top"
+    "top": "delbase:block/sandstone_top"
   }
 }
