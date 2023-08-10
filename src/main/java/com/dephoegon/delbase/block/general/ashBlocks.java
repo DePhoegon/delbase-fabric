@@ -17,7 +17,7 @@ public class ashBlocks extends baseModBlocks {
     public static final WallBlock ASH_WALL = (WallBlock) registerBlock("ash_wall", new wallBlock(ashBlock, "","","", null), 10000);
     public static final Block ASH_BLOCK = registerBlock("ash_block", new genBlock(ashBlock,"", "", "", null), 16000);
     public static final FenceBlock ASH_FENCE = (FenceBlock) registerBlock("ash_fence", new fenceBlock(ashBlock, "", "","", null), 5000);
-    public static final FenceGateBlock ASH_FENCE_BLOCK = (FenceGateBlock) registerBlock("ash_fence_gate", new fenceGateBlock(ashBlock, "","","", null), 5000);
+    public static final FenceGateBlock ASH_FENCE_GATE = (FenceGateBlock) registerBlock("ash_fence_gate", new fenceGateBlock(ashBlock, "","","", null), 5000);
 
     public static void registerAshBlocks() { Delbase.LOGGER.info("Registering Ash Blocks for "+Delbase.Delbase_ID); }
 }

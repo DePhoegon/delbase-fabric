@@ -1,15 +1,11 @@
 package com.dephoegon.delbase.aid.util;
 
-import com.dephoegon.delbase.aid.block.stock.*;
 import com.dephoegon.delbase.aid.event.BlockOnFireCallBack;
 import com.dephoegon.delbase.aid.event.blockReplacer;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
+import net.minecraft.block.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
-
-import static com.dephoegon.delbase.block.general.ashBlocks.*;
 
 public class burntReplacer implements BlockOnFireCallBack {
 
@@ -19,13 +15,12 @@ public class burntReplacer implements BlockOnFireCallBack {
     }
     public static void AshBlock(World world, BlockPos blockpos, @NotNull BlockState state) {
         Block block = state.getBlock();
-        if (block instanceof axisBlock) { blockReplacer.AxisPlacement(world, blockpos, state, ASH_LOG.getDefaultState()); }
-        if (block instanceof slabBlock) { blockReplacer.SlabPlacement(world, blockpos, state, ASH_SLAB.getDefaultState()); }
-        if (block instanceof genBlock) { world.setBlockState(blockpos, ASH_BLOCK.getDefaultState()); }
-        if (block instanceof modSandBlock) { world.setBlockState(blockpos, ASH_BLOCK.getDefaultState()); }
-        if (block instanceof stairBlock) { blockReplacer.StairPlacement(world, blockpos, state, ASH_STAIR.getDefaultState()); }
-        if (block instanceof wallBlock) { blockReplacer.WallPlacement(world, blockpos, state, ASH_WALL.getDefaultState()); }
-        if (block instanceof fenceBlock) { blockReplacer.FencePlacement(world, blockpos, state, ASH_FENCE.getDefaultState()); }
-        if (block instanceof fenceGateBlock) { blockReplacer.FenceGatePlacement(world, blockpos, state, ASH_FENCE_BLOCK.getDefaultState()); }
+        if (block instanceof PillarBlock) { blockReplacer.AxisPlacement(world, blockpos, state); return; }
+        if (block instanceof SlabBlock) { blockReplacer.SlabPlacement(world, blockpos, state); return; }
+        if (block instanceof StairsBlock) { blockReplacer.StairPlacement(world, blockpos, state); return; }
+        if (block instanceof WallBlock) { blockReplacer.WallPlacement(world, blockpos, state); return; }
+        if (block instanceof FenceBlock) { blockReplacer.FencePlacement(world, blockpos, state); return; }
+        if (block instanceof FenceGateBlock) { blockReplacer.FenceGatePlacement(world, blockpos, state); return; }
+        if (block != null) { blockReplacer.DefaultPlacement(world, blockpos); }
     }
 }

@@ -25,7 +25,7 @@ public class Delbase implements ModInitializer, ClientModInitializer {
 	public static final ItemGroup DELBASE_BLOCKS = FabricItemGroupBuilder.build(new Identifier(Delbase_ID, "dephoegon_blocks"),
 			() -> new ItemStack(machineBlock.BLOCK_CUTTER_BLOCK));
 	public static final ItemGroup DELBASE_ITEMS = FabricItemGroupBuilder.build(new Identifier(Delbase_ID, "dephoegon_items"),
-			() -> new ItemStack(BlockCutterItems.ARMOR_COMPOUND));
+			() -> new ItemStack(BlockCutterItems.WALL_PLANS));
 
 	@Override
 	public void onInitialize() {

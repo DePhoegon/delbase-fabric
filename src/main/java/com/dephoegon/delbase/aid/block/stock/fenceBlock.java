@@ -32,9 +32,9 @@ public class fenceBlock extends FenceBlock {
     private final BlockState strippedState;
     public fenceBlock(Settings settings, @NotNull String normToolTip, String shiftToolTip, String ctrlToolTip, FenceBlock StrippedFenceBlock) {
         super(settings);
-        if(normToolTip.equals("")) { tip0 = null; } else { tip0 = normToolTip; }
-        if(shiftToolTip.equals("")) { tip1 = null; } else { tip1 = shiftToolTip; }
-        if(ctrlToolTip.equals("")) { tip2 = null; } else { tip2 = ctrlToolTip; }
+        if(normToolTip.isEmpty()) { tip0 = null; } else { tip0 = normToolTip; }
+        if(shiftToolTip.isEmpty()) { tip1 = null; } else { tip1 = shiftToolTip; }
+        if(ctrlToolTip.isEmpty()) { tip2 = null; } else { tip2 = ctrlToolTip; }
         strippedState = StrippedFenceBlock != null ? StrippedFenceBlock.getDefaultState() : null;
     }
     public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> toolTip, TooltipContext options) {
