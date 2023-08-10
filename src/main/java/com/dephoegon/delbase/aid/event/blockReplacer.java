@@ -44,9 +44,16 @@ public class blockReplacer {
     }
     public static void AxisPlacement(@NotNull World world, BlockPos pos, @NotNull BlockState blockState) { AxisPlacement(world, pos, blockState, ASH_LOG.getDefaultState()); }
     public static void AxisPlacement(@NotNull World world, BlockPos pos, @NotNull BlockState blockState, @NotNull BlockState defaultReplacementState) {
-        if (!(blockState.getBlock() instanceof PillarBlock)) { return; }
-        Direction.Axis axis = blockState.get(PillarBlock.AXIS);
-        world.setBlockState(pos, defaultReplacementState.with(PillarBlock.AXIS, axis));
+        AxisPlacement(world, pos, blockState, defaultReplacementState, false);
+    }
+    public static void AxisPlacement(@NotNull World world, BlockPos pos, @NotNull BlockState blockState, @NotNull BlockState defaultReplacementState, boolean cut_lock) {
+        if (cut_lock) { world.setBlockState(pos, defaultReplacementState); } else {
+            if (!(blockState.getBlock() instanceof PillarBlock)) {
+                return;
+            }
+            Direction.Axis axis = blockState.get(PillarBlock.AXIS);
+            world.setBlockState(pos, defaultReplacementState.with(PillarBlock.AXIS, axis));
+        }
     }
     public static void FencePlacement(@NotNull World world, BlockPos pos, @NotNull BlockState blockState) { FencePlacement(world, pos, blockState, ASH_FENCE.getDefaultState()); }
     public static void FencePlacement(@NotNull World world, BlockPos pos, @NotNull BlockState blockState, @NotNull BlockState defaultReplacementState) {

@@ -4,9 +4,12 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "FireBlockMixin",
-    "FallingBlockMixin"
+    "FallingBlockMixin",
+    "DeadBushBlockMixin",
+    "CactusBlockMixin",
+    "SugarCaneBlockMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }
