@@ -2,11 +2,10 @@ package com.dephoegon.delbase.mixin;
 
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlab;
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlabEnergy;
+import com.dephoegon.delbase.aid.block.colorshift.stair.sandStair;
 import com.dephoegon.delbase.aid.block.stock.modSandBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.CactusBlock;
-import net.minecraft.block.SlabBlock;
+import net.minecraft.block.*;
+import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.block.enums.SlabType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.WorldView;
@@ -26,6 +25,10 @@ public class CactusBlockMixin {
         if (groundBlock instanceof sandSlab || groundBlock instanceof sandSlabEnergy) {
             SlabType type = world.getBlockState(pos.down()).get(SlabBlock.TYPE);
             if (type != SlabType.BOTTOM) { cir.setReturnValue(true); }
+        }
+        if (groundBlock instanceof sandStair) {
+            BlockHalf half = world.getBlockState(pos.down()).get(StairsBlock.HALF);
+            if (half == BlockHalf.TOP) { cir.setReturnValue(true); }
         }
     }
 }

@@ -2,10 +2,13 @@ package com.dephoegon.delbase.mixin;
 
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlab;
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlabEnergy;
+import com.dephoegon.delbase.aid.block.colorshift.stair.sandStair;
 import com.dephoegon.delbase.aid.block.stock.modSandBlock;
 import net.minecraft.block.*;
+import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.block.enums.SlabType;
 import net.minecraft.fluid.FluidState;
+import net.minecraft.state.property.Properties;
 import net.minecraft.tag.FluidTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -21,18 +24,24 @@ public class SugarCaneBlockMixin {
     @Inject(method = "canPlaceAt", at = @At("HEAD"), cancellable = true)
     private void canPlaceAt(@NotNull BlockState state, @NotNull WorldView world, @NotNull BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         boolean modBLock = false;
+        boolean waterLoggable = false;
         Block groundBlock = world.getBlockState(pos.down()).getBlock();
         if (groundBlock instanceof modSandBlock) { modBLock = true; }
         if (groundBlock instanceof sandSlab || groundBlock instanceof sandSlabEnergy) {
             SlabType type = world.getBlockState(pos.down()).get(SlabBlock.TYPE);
-            if (type != SlabType.BOTTOM) { modBLock = true; }
+            if (type != SlabType.BOTTOM) { modBLock = true; waterLoggable = true;}
+        }
+        if (groundBlock instanceof sandStair) {
+            BlockHalf half = world.getBlockState(pos.down()).get(StairsBlock.HALF);
+            if (half == BlockHalf.TOP) { modBLock = true; waterLoggable = true;}
         }
         if (modBLock) {
             BlockPos blockPos = pos.down();
             for (Direction direction : Direction.Type.HORIZONTAL) {
                 BlockState blockState2 = world.getBlockState(blockPos.offset(direction));
                 FluidState fluidState = world.getFluidState(blockPos.offset(direction));
-                if (!fluidState.isIn(FluidTags.WATER) && !blockState2.isOf(Blocks.FROSTED_ICE)) continue;
+                boolean waterLogged = waterLoggable ? world.getBlockState(blockPos).get(Properties.WATERLOGGED) : false;
+                if (!fluidState.isIn(FluidTags.WATER) && !blockState2.isOf(Blocks.FROSTED_ICE) && !waterLogged) continue;
                 cir.setReturnValue(true);
             }
         }
