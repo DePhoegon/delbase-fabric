@@ -24,7 +24,7 @@ public class regLists {
     //Client Only, Reg.
     public static void RegisterClientFirst() {
         BlockRenderLayerMap.INSTANCE.putBlock(machineBlock.BLOCK_CUTTER_BLOCK, RenderLayer.getCutout());
-        KeyBindings.registerKeyBinds();
+        ModKeyBindings.registerKeyBinds();
         HandledScreens.register(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, blockCuttingStationScreen::new);
         blockColoring.setLeafColors();
     }
