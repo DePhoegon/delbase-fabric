@@ -1,5 +1,6 @@
 package com.dephoegon.delbase;
 
+import com.dephoegon.delbase.aid.util.kb;
 import com.dephoegon.delbase.aid.util.regLists;
 import com.dephoegon.delbase.block.general.machineBlock;
 import com.dephoegon.delbase.item.BlockCutterItems;
@@ -35,5 +36,8 @@ public class Delbase implements ModInitializer, ClientModInitializer {
 	}
 	@Override
 	@Environment(EnvType.CLIENT)
-	public void onInitializeClient() { RegisterClientFirst(); }
+	public void onInitializeClient() {
+		RegisterClientFirst();
+		kb.keyBinds();
+	}
 }
