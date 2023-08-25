@@ -32,7 +32,7 @@ public class FallingBlockMixin extends Block {
     /**
      * @author
      * DePhoegon
-     * @reason
+     * &#064;reason
      * Moves Falling Control into FallingBlocks with Targeted Controls & passing through other gravity blocks as normal.
      * Unable to achieve total bypass by injection & Redirection is not suited as it would be falling by that point already.
      */

@@ -33,6 +33,6 @@
 		"fabric-key-binding-api-v1": "*"
 	},
 	"suggests": {
-		"another-mod": "DePhoegon"
+		"another-mod": "delchoco"
 	}
 }
