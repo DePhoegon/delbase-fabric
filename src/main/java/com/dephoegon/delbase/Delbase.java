@@ -1,8 +1,11 @@
 package com.dephoegon.delbase;
 
 import com.dephoegon.delbase.aid.util.regLists;
+import com.dephoegon.delbase.aid.world.config;
 import com.dephoegon.delbase.block.general.machineBlock;
 import com.dephoegon.delbase.item.BlockCutterItems;
+import dev.toma.configuration.Configuration;
+import dev.toma.configuration.config.format.ConfigFormats;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -26,14 +29,14 @@ public class Delbase implements ModInitializer, ClientModInitializer {
 			() -> new ItemStack(machineBlock.BLOCK_CUTTER_BLOCK));
 	public static final ItemGroup DELBASE_ITEMS = FabricItemGroupBuilder.build(new Identifier(Delbase_ID, "dephoegon_items"),
 			() -> new ItemStack(BlockCutterItems.WALL_PLANS));
+	public static config configHolder;
 
-	@Override
 	public void onInitialize() {
+		configHolder = Configuration.registerConfig(config.class, ConfigFormats.json()).getConfigInstance();
 		regLists.RegisterBaseEvents();
 		regLists.RegisterFirstList();
 		regLists.RegisterSecondList();
 	}
-	@Override
 	@Environment(EnvType.CLIENT)
 	public void onInitializeClient() { RegisterClientFirst(); }
 }

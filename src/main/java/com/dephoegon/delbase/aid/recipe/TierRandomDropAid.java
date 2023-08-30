@@ -6,8 +6,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
-import static com.dephoegon.delbase.aid.world.defaultVariables.dNetherriteBonusRolls;
-import static com.dephoegon.delbase.aid.world.StaticGlobalVariables.*;
+import static com.dephoegon.delbase.Delbase.configHolder;
 import static net.minecraft.item.Items.*;
 
 public class TierRandomDropAid {
@@ -45,7 +44,7 @@ public class TierRandomDropAid {
         return stone;
     }
     public static @NotNull SimpleInventory netheriteToolsBonus(int diamond) {
-        int bonusSize = getValueOrDefault(getStaticNetherriteBonusRolls(), dNetherriteBonusRolls);
+        int bonusSize = configHolder.netherriteBonusRolls;
         SimpleInventory stone = new SimpleInventory(bonusSize+diamond);
         for (int i = 0; i < diamond; i++) {
             stone.setStack(i, new ItemStack(DIAMOND));
@@ -58,7 +57,7 @@ public class TierRandomDropAid {
         return stone;
     }
     public static @NotNull SimpleInventory ToolsBonus() {
-        int bonusSize = getValueOrDefault(getStaticNetherriteBonusRolls(), dNetherriteBonusRolls);
+        int bonusSize = configHolder.netherriteBonusRolls;
         SimpleInventory stone = new SimpleInventory(bonusSize);
         for (int i = 0; i < bonusSize; i++) {
             Random random = new Random();

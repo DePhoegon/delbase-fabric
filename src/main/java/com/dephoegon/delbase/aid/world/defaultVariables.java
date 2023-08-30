@@ -1,30 +1,26 @@
 package com.dephoegon.delbase.aid.world;
 
-import static com.dephoegon.delbase.aid.world.StaticGlobalVariables.*;
-
-public class defaultVariables {
-    public static final int dStationCraftTime = 50;
-    public static final int dWoodSalvageRolls = 2;
-    public static final int dStoneSalvageRolls = 2;
-    public static final int dNetherriteBonusRolls = 2;
-    public static final int dNetherriteChestDiamondBonus = 3;
-    public static final int dNetherriteHelmetDiamondBonus = 2;
-    public static final int dNetherriteLeggingsDiamondBonus = 3;
-    public static final int dNetherriteBootsDiamondBonus = 1;
-    public static final int dNetherriteSwordDiamondBonus = 1;
-    public static final int dNetherriteAxeDiamondBonus = 1;
-    public static final int dNetherritePickAxeDiamondBonus = 1;
-    public static void setDefaultValues() {
-        setStoneSalvageRolls(dStoneSalvageRolls);
-        setNetherriteBonusRolls(dNetherriteBonusRolls);
-        setStationCraftTime(dStationCraftTime);
-        setWoodSalvageRolls(dWoodSalvageRolls);
-        setNetherriteChestDiamondBonus(dNetherriteChestDiamondBonus);
-        setNetherriteHelmetDiamondBonus(dNetherriteHelmetDiamondBonus);
-        setNetherriteLeggingsDiamondBonus(dNetherriteLeggingsDiamondBonus);
-        setNetherriteBootsDiamondBonus(dNetherriteBootsDiamondBonus);
-        setNetherriteSwordDiamondBonus(dNetherriteSwordDiamondBonus);
-        setNetherriteAxeDiamondBonus(dNetherriteAxeDiamondBonus);
-        setNetherritePickAxeDiamondBonus(dNetherritePickAxeDiamondBonus);
+public enum defaultVariables {
+    dSTATION_CRAFT_TIME(10, 50, 100),
+    dWOOD_SALVAGE_ROLLS(1, 2, 4),
+    dSTONE_SALVAGE_ROLLS(1, 2, 4),
+    dNETHERITE_BONUS_ROLLS(1, 2, 4),
+    dNETHERITE_CHEST_DIAMOND_BONUS(1, 3, 5),
+    dNETHERITE_HELMET_DIAMOND_BONUS(1, 2, 4),
+    dNETHERITE_LEGGINGS_DIAMOND_BONUS(1, 3, 5),
+    dNETHERITE_BOOTS_DIAMOND_BONUS(1, 1, 3),
+    dNETHERITE_SWORD_DIAMOND_BONUS(1, 1, 3),
+    dNETHERITE_AXE_DIAMOND_BONUS(1, 1, 3),
+    dNETHERITE_PICKAXE_DIAMOND_BONUS(1, 1, 3);
+    private final int Min;
+    private final int Default;
+    private final int Max;
+    defaultVariables(int Minimum, int Default, int Maximum) {
+        this.Min = Minimum;
+        this.Default = Default;
+        this.Max = Maximum;
     }
+    public int getMin() { return this.Min; }
+    public int getDefault() { return this.Default; }
+    public int getMax() { return this.Max; }
 }

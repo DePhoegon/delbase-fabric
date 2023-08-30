@@ -1,7 +1,6 @@
 package com.dephoegon.delbase.aid.util;
 
 import com.dephoegon.delbase.aid.event.blockColoring;
-import com.dephoegon.delbase.aid.world.serverVariableAccess;
 import com.dephoegon.delbase.block.axis.axisCutSandStones;
 import com.dephoegon.delbase.block.entity.blockEntities;
 import com.dephoegon.delbase.block.fence.*;
@@ -30,8 +29,6 @@ public class regLists {
     }
     // Blocks & Classes that need to be registered first before called ont by others
     public static void RegisterBaseEvents() {
-        serverVariableAccess variableAccess = new serverVariableAccess();
-        variableAccess.init();
         blockArrayList.setBlockArrays();
         modRecipes.registerRecipes();
     }

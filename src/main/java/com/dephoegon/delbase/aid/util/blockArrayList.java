@@ -8,7 +8,6 @@ import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import static com.dephoegon.delbase.block.fence.fenceMisc.GLOWSTONE_FENCE;
 import static com.dephoegon.delbase.block.fence.fenceMisc.GLOWSTONE_FENCE_GATE;

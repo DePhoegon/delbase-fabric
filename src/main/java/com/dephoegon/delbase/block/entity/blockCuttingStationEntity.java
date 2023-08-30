@@ -29,10 +29,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
+import static com.dephoegon.delbase.Delbase.configHolder;
 import static com.dephoegon.delbase.aid.recipe.TierRandomDropAid.*;
 import static com.dephoegon.delbase.aid.recipe.countAid.netheriteDiamondBonus;
-import static com.dephoegon.delbase.aid.world.defaultVariables.*;
-import static com.dephoegon.delbase.aid.world.StaticGlobalVariables.*;
 import static com.dephoegon.delbase.item.BlockCutterItems.*;
 import static net.minecraft.item.Items.DIAMOND;
 
@@ -44,7 +43,7 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(invSize, ItemStack.EMPTY);
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = getValueOrDefault(getStaticStationCraftTime(), dStationCraftTime);
+    private int maxProgress = configHolder.stationCraftTime;
     public blockCuttingStationEntity(BlockPos pos, BlockState state) {
         super(blockEntities.BLOCK_CUTTER_ENTITY, pos, state);
         this.propertyDelegate = new PropertyDelegate() {
@@ -192,15 +191,15 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
                         skipOutputSlot = true;
                         keyString = "netherite";
                         if (le_item instanceof SwordItem) {
-                            count = getValueOrDefault(getStaticNetherriteSwordDiamondBonus(), dNetherriteSwordDiamondBonus);
+                            count = configHolder.netherriteSwordDiamondBonus;
                         }
                         if (le_item instanceof AxeItem) {
-                            count = getValueOrDefault(getStaticNetherriteAxeDiamondBonus(), dNetherriteAxeDiamondBonus);
+                            count = configHolder.netherriteAxeDiamondBonus;
                         }
                         if (le_item instanceof PickaxeItem) {
-                            count = getValueOrDefault(getStaticNetherritePickAxeDiamondBonus(), dNetherritePickAxeDiamondBonus);
+                            count = configHolder.netherritePickAxeDiamondBonus;
                         }
-                        if (le_item instanceof HoeItem) {
+                        if (le_item instanceof HoeItem || le_item instanceof ShovelItem) {
                             count = 1;
                         }
                     }
@@ -219,12 +218,12 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
                 int returnSize;
                 SimpleInventory stone = null;
                 if (keyString.equals("stone")) {
-                    returnSize = getValueOrDefault(getStaticStoneSalvageRolls(), dStoneSalvageRolls);
+                    returnSize = configHolder.stoneSalvageRolls;
                     stone = stoneContainer(returnSize);
                     //stone confetti
                 }
                 if (keyString.equals("wood")){
-                    returnSize = getValueOrDefault(getStaticWoodSalvageRolls(), dWoodSalvageRolls);
+                    returnSize = configHolder.woodSalvageRolls;
                     stone = woodContainer(returnSize);
                     //wooden confetti
                 }
