@@ -32,7 +32,7 @@ public class Delbase implements ModInitializer, ClientModInitializer {
 	public static config configHolder;
 
 	public void onInitialize() {
-		configHolder = Configuration.registerConfig(config.class, ConfigFormats.json()).getConfigInstance();
+		configHolder = Configuration.registerConfig(config.class, ConfigFormats.yaml()).getConfigInstance();
 		regLists.RegisterBaseEvents();
 		regLists.RegisterFirstList();
 		regLists.RegisterSecondList();
