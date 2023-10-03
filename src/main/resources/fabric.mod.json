@@ -3,9 +3,9 @@
 	"id": "delbase",
 	"version": "${version}",
 	"name": "DePhoegons Reclaim",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "This is a decoration & resource reclamation mod.\nThe aesthetic of the pack is meant to be in-line the base game visuals.\nThe resource reclamation aspects are designed around non-modded armors.\nSupport/patch mods will be needed to extend to modded items/materials.",
 	"authors": [
-		"Me!"
+		"DePhoegon"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -26,8 +26,8 @@
 		"delbase.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.14.21",
-		"minecraft": "~1.18.2",
+		"fabricloader": ">=0.14.22",
+		"minecraft": "~1.19.2",
 		"java": ">=17",
 		"fabric-api": "*",
 		"fabric-key-binding-api-v1": "*"
