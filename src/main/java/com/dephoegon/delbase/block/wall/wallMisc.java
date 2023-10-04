@@ -32,6 +32,14 @@ public class wallMisc extends baseModBlocks {
     public static final WallBlock MAGMA_BLOCK_WALL = noToolTipFAid("magma_block_wall", MAGMA_BLOCK, 3);
     public static final WallBlock DEEPSLATE_WALL = noToolTipFAid("deepslate_wall", DEEPSLATE, BlockSoundGroup.DEEPSLATE);
     public static final WallBlock STONE_WALL = noToolTipFAid("stone_wall", STONE, BlockSoundGroup.STONE);
+    public static final WallBlock PACKED_MUD_WALL = noToolTipFAid("packed_mud_wall", PACKED_MUD, BlockSoundGroup.PACKED_MUD);
+    public static final WallBlock SCULK_WALL = noToolTipFAid("sculk_wall", SCULK, BlockSoundGroup.SCULK);
+    public static final WallBlock MUD_WALL = noToolTipFAid("mud_wall", MUD, BlockSoundGroup.MUD);
+    public static final WallBlock MUDDY_MANGROVE_ROOT_WALL = noToolTipFAid("muddy_mangrove_root_wall", MUDDY_MANGROVE_ROOTS, BlockSoundGroup.MUDDY_MANGROVE_ROOTS);
+    public static final WallBlock MANGROVE_ROOT_WALL = noToolTipFAid("mangrove_root_wall", MANGROVE_ROOTS, BlockSoundGroup.MANGROVE_ROOTS, 0, 30, 60);
+    public static final WallBlock OCHRE_FROGLIGHT_WALL = noToolTipFAid("ochre_froglight_wall", OCHRE_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
+    public static final WallBlock VERDANT_FROGLIGHT_WALL = noToolTipFAid("verdant_froglight_wall", VERDANT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
+    public static final WallBlock PEARLESCENT_FROGLIGHT_WALL = noToolTipFAid("pearlescent_froglight_wall", PEARLESCENT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
 
     private static WallBlock noToolTipFAid(String name, Block block) { return wallBlockAid(name, block, BlockSoundGroup.STONE, "","", ""); }
     private static WallBlock noToolTipFAid(String name, Block block, BlockSoundGroup blockSoundGroup) { return wallBlockAid(name, block, blockSoundGroup, "","", ""); }

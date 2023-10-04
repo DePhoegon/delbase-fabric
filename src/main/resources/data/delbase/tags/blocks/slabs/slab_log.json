@@ -9,6 +9,7 @@
     "delbase:stripped_acacia_log_slab",
     "delbase:stripped_jungle_log_slab",
     "delbase:stripped_birch_log_slab",
+    "delbase:stripped_mangrove_log_slab",
     "delbase:spruce_log_slab",
     "delbase:oak_log_slab",
     "delbase:warped_stem_slab",
@@ -16,6 +17,7 @@
     "delbase:dark_oak_log_slab",
     "delbase:acacia_log_slab",
     "delbase:jungle_log_slab",
-    "delbase:birch_log_slab"
+    "delbase:birch_log_slab",
+    "delbase:mangrove_log_slab"
   ]
 }

@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Block Bench",
 	"texture_size": [64, 64],
+	"render_type": "translucent",
 	"textures": {
 		"0": "delbase:block/block_slicer",
 		"particle": "delbase:block/block_slicer"

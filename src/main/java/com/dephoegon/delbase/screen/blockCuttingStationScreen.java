@@ -30,7 +30,7 @@ public class blockCuttingStationScreen extends HandledScreen<blockCuttingStation
     }
     @Override
     protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
-        RenderSystem.setShader(GameRenderer::getPositionShader);
+        RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F,1.0F,1.0F,1.0F);
         Item item = handler.getSlot(blockCuttingStationEntity.planSlot).getStack().getItem();
         if (listArrays.getFullPlanSlotArray().contains(item)) {

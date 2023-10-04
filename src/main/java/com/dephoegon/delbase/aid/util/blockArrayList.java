@@ -9,15 +9,17 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
-import static com.dephoegon.delbase.block.fence.fenceMisc.GLOWSTONE_FENCE;
-import static com.dephoegon.delbase.block.fence.fenceMisc.GLOWSTONE_FENCE_GATE;
+import static com.dephoegon.delbase.block.fence.fenceMisc.*;
 import static com.dephoegon.delbase.block.fence.leafFences.*;
 import static com.dephoegon.delbase.block.slabs.slabLeaves.*;
 import static com.dephoegon.delbase.block.slabs.slabMisc.GLOWSTONE_SLAB;
+import static com.dephoegon.delbase.block.slabs.slabMisc.MANGROVE_ROOT_SLAB;
 import static com.dephoegon.delbase.block.stair.stairLeaves.*;
 import static com.dephoegon.delbase.block.stair.stairMisc.GLOWSTONE_STAIR;
+import static com.dephoegon.delbase.block.stair.stairMisc.MANGROVE_ROOT_STAIR;
 import static com.dephoegon.delbase.block.wall.hedgeLeaves.*;
 import static com.dephoegon.delbase.block.wall.wallMisc.GLOWSTONE_WALL;
+import static com.dephoegon.delbase.block.wall.wallMisc.MANGROVE_ROOT_WALL;
 import static net.minecraft.block.Blocks.*;
 
 public abstract class blockArrayList {
@@ -46,6 +48,18 @@ public abstract class blockArrayList {
     @Contract(value = " -> new", pure = true)
     public static Block @NotNull [] getColoredLeaves() {
         return new Block[]{OAK_HEDGE, JUNGLE_HEDGE, ACACIA_HEDGE, DARK_OAK_HEDGE, OAK_LEAF_FENCE, JUNGLE_LEAF_FENCE, ACACIA_LEAF_FENCE, DARK_OAK_LEAF_FENCE, OAK_LEAF_FENCE_GATE, ACACIA_LEAF_FENCE_GATE, JUNGLE_LEAF_FENCE_GATE, DARK_OAK_LEAF_FENCE_GATE, OAK_LEAF_SLAB, JUNGLE_LEAF_SLAB, ACACIA_LEAF_SLAB, DARK_OAK_LEAF_SLAB, OAK_LEAF_STAIR, JUNGLE_LEAF_STAIR, ACACIA_LEAF_STAIR, DARK_OAK_LEAF_STAIR};
+    }
+    @Contract(value = " -> new", pure = true)
+    public static Block @NotNull [] getMangroveLeaves() {
+        return new Block[]{MANGROVE_HEDGE, MANGROVE_LEAF_FENCE, MANGROVE_LEAF_SLAB, MANGROVE_LEAF_STAIR, MANGROVE_LEAF_FENCE_GATE};
+    }
+    @Contract(value = " -> new", pure = true)
+    public static Block @NotNull [] getMiscCutout() {
+        return new Block[]{MANGROVE_ROOT_FENCE, MANGROVE_ROOT_FENCE_GATE_BLOCK, MANGROVE_ROOT_SLAB, MANGROVE_ROOT_STAIR, MANGROVE_ROOT_WALL};
+    }
+    @Contract(value = " -> new", pure = true)
+    public static Block @NotNull [] getNonColoredLeaves() {
+        return new Block[] {AZALEA_HEDGE, AZALEA_LEAF_FENCE, AZALEA_LEAF_SLAB, AZALEA_LEAF_FENCE_GATE, AZALEA_LEAF_STAIR, FLOWERING_AZALEA_HEDGE, FLOWERING_AZALEA_LEAF_FENCE, FLOWERING_AZALEA_LEAF_FENCE_GATE, FLOWERING_AZALEA_LEAF_SLAB, FLOWERING_AZALEA_LEAF_STAIR};
     }
 
     // Blocks for holding up falling blocks, outside custom classes

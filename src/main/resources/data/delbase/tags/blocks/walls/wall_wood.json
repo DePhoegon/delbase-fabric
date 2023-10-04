@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "delbase:ash_wall",
     "delbase:stripped_spruce_wood_wall",
     "delbase:stripped_oak_wood_wall",
     "delbase:stripped_warped_hyphae_wall",
@@ -10,6 +9,7 @@
     "delbase:stripped_acacia_wood_wall",
     "delbase:stripped_jungle_wood_wall",
     "delbase:stripped_birch_wood_wall",
+    "delbase:stripped_mangrove_wood_wall",
     "delbase:spruce_wood_wall",
     "delbase:oak_wood_wall",
     "delbase:warped_hyphae_wall",
@@ -17,6 +17,7 @@
     "delbase:dark_oak_wood_wall",
     "delbase:acacia_wood_wall",
     "delbase:jungle_wood_wall",
-    "delbase:birch_wood_wall"
+    "delbase:birch_wood_wall",
+    "delbase:mangrove_wood_wall"
   ]
 }

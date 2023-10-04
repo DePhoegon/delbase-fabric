@@ -15,6 +15,7 @@
     "delbase:magma_block_wall",
     "delbase:coal_block_wall",
     "delbase:stone_wall",
-    "delbase:deepslate_wall"
+    "delbase:deepslate_wall",
+    "delbase:packed_mud_wall"
   ]
 }

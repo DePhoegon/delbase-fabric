@@ -4,6 +4,7 @@
     "delbase:glowstone_slab",
     "delbase:chiseled_quartz_slab",
     "delbase:quartz_brick_slab",
-    "delbase:quartz_pillar_slab"
+    "delbase:quartz_pillar_slab",
+    "delbase:sculk_slab"
   ]
 }

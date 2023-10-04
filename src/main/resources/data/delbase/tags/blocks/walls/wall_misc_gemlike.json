@@ -6,6 +6,7 @@
     "delbase:smooth_quartz_wall",
     "delbase:chiseled_quartz_wall",
     "delbase:quartz_brick_wall",
-    "delbase:quartz_pillar_wall"
+    "delbase:quartz_pillar_wall",
+    "delbase:sculk_wall"
   ]
 }

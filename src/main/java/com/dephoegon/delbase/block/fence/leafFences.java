@@ -26,20 +26,24 @@ public class leafFences extends baseModBlocks {
     public static final FenceBlock DARK_OAK_LEAF_FENCE = noToolTipFAid("dark_oak_leaf_fence", DARK_OAK_LEAVES);
     public static final FenceGateBlock DARK_OAK_LEAF_FENCE_GATE = noToolTipFgAid("dark_oak_leaf_fence_gate", DARK_OAK_LEAVES);
     public static final FenceBlock AZALEA_LEAF_FENCE = noToolTipFAid("azalea_leaf_fence", AZALEA_LEAVES);
-    public static final FenceGateBlock AZALEA_LEAF_FENCE_GATE = noToolTipFgAid("azalea_leaf_fence_gate", AZALEA_LEAVES);
-    public static final FenceBlock FLOWERING_AZALEA_LEAF_FENCE = noToolTipFAid("flowering_azalea_leaf_fence", FLOWERING_AZALEA_LEAVES);
+    public static final FenceGateBlock AZALEA_LEAF_FENCE_GATE = noToolTipFgAid("azalea_leaf_fence_gate", AZALEA_LEAVES, BlockSoundGroup.AZALEA_LEAVES);
+    public static final FenceBlock FLOWERING_AZALEA_LEAF_FENCE = noToolTipFAid("flowering_azalea_leaf_fence", FLOWERING_AZALEA_LEAVES, BlockSoundGroup.FLOWERING_AZALEA);
     public static final FenceGateBlock FLOWERING_AZALEA_LEAF_FENCE_GATE = noToolTipFgAid("flowering_azalea_leaf_fence_gate", FLOWERING_AZALEA_LEAVES);
+    public static final FenceBlock MANGROVE_LEAF_FENCE = noToolTipFAid("mangrove_leaf_fence", MANGROVE_LEAVES, BlockSoundGroup.GLASS);
+    public static final FenceGateBlock MANGROVE_LEAF_FENCE_GATE = noToolTipFgAid("mangrove_leaf_fence_gate", MANGROVE_LEAVES, BlockSoundGroup.GLASS);
 
 
-    private static FenceBlock noToolTipFAid(String name, Block block) { return fenceBlockAid(name, block, "","", ""); }
-    private static FenceGateBlock noToolTipFgAid(String name, Block block) { return fenceGateBlockAid(name, block, "","", ""); }
+    private static FenceBlock noToolTipFAid(String name, Block block) { return fenceBlockAid(name, block, BlockSoundGroup.GRASS, "","", ""); }
+    private static FenceBlock noToolTipFAid(String name, Block block, BlockSoundGroup group) { return fenceBlockAid(name, block, group, "","", ""); }
+    private static FenceGateBlock noToolTipFgAid(String name, Block block) { return fenceGateBlockAid(name, block, BlockSoundGroup.GLASS, "","", ""); }
+    private static FenceGateBlock noToolTipFgAid(String name, Block block, BlockSoundGroup group) { return fenceGateBlockAid(name, block, group, "","", ""); }
     @SuppressWarnings("SameParameterValue")
-    private static FenceBlock fenceBlockAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null), 30, 60);
+    private static FenceBlock fenceBlockAid(String name, Block block, BlockSoundGroup group, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
+        return  (FenceBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(group).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null), 30, 60);
     }
     @SuppressWarnings("SameParameterValue")
-    private static FenceGateBlock fenceGateBlockAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null), 30, 60);
+    private static FenceGateBlock fenceGateBlockAid(String name, Block block, BlockSoundGroup group, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
+        return  (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(group).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null), 30, 60);
     }
     public static void registerLeafFences() { Delbase.LOGGER.info("Registering Leaf Fences for "+Delbase.Delbase_ID); }
 }

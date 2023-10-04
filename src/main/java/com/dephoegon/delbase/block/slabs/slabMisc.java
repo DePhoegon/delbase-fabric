@@ -29,6 +29,14 @@ public class slabMisc extends baseModBlocks {
     public static final SlabBlock SHROOMLIGHT_SLAB = noToolTipFAid("shroomlight_slab", SHROOMLIGHT, BlockSoundGroup.SHROOMLIGHT, 15);
     public static final SlabBlock MAGMA_BLOCK_SLAB = noToolTipFAid("magma_block_slab", MAGMA_BLOCK, 3);
     public static final SlabBlock DEEPSLATE_SLAB = noToolTipFAid("deepslate_slab", DEEPSLATE, BlockSoundGroup.DEEPSLATE);
+    public static final SlabBlock PACKED_MUD_SLAB = noToolTipFAid("packed_mud_slab", PACKED_MUD, BlockSoundGroup.PACKED_MUD);
+    public static final SlabBlock SCULK_SLAB = noToolTipFAid("sculk_slab", SCULK, BlockSoundGroup.SCULK);
+    public static final SlabBlock MUD_SLAB = noToolTipFAid("mud_slab", MUD, BlockSoundGroup.MUD);
+    public static final SlabBlock MUDDY_MANGROVE_ROOT_SLAB = noToolTipFAid("muddy_mangrove_root_slab", MUDDY_MANGROVE_ROOTS, BlockSoundGroup.MUDDY_MANGROVE_ROOTS);
+    public static final SlabBlock MANGROVE_ROOT_SLAB = noToolTipFAid("mangrove_root_slab", MANGROVE_ROOTS, BlockSoundGroup.MANGROVE_ROOTS, 0, 30, 60);
+    public static final SlabBlock OCHRE_FROGLIGHT_SLAB = noToolTipFAid("ochre_froglight_slab", OCHRE_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
+    public static final SlabBlock VERDANT_FROGLIGHT_SLAB = noToolTipFAid("verdant_froglight_slab", VERDANT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
+    public static final SlabBlock PEARLESCENT_FROGLIGHT_SLAB = noToolTipFAid("pearlescent_froglight_slab", PEARLESCENT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
 
     private static SlabBlock noToolTipFAid(String name, Block block) { return slabBlockAid(name, block, BlockSoundGroup.STONE, "","", ""); }
     private static SlabBlock noToolTipFAid(String name, Block block, BlockSoundGroup blockSoundGroup) { return slabBlockAid(name, block, blockSoundGroup, "","", ""); }

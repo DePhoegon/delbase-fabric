@@ -1,6 +1,7 @@
 package com.dephoegon.delbase.aid.util;
 
 import com.dephoegon.delbase.aid.event.blockColoring;
+import com.dephoegon.delbase.aid.world.serverAccess;
 import com.dephoegon.delbase.block.axis.axisCutSandStones;
 import com.dephoegon.delbase.block.entity.blockEntities;
 import com.dephoegon.delbase.block.fence.*;
@@ -22,13 +23,14 @@ import net.minecraft.client.render.RenderLayer;
 public class regLists {
     //Client Only, Reg.
     public static void RegisterClientFirst() {
-        BlockRenderLayerMap.INSTANCE.putBlock(machineBlock.BLOCK_CUTTER_BLOCK, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(machineBlock.BLOCK_CUTTER_STATION, RenderLayer.getCutout());
         ModKeyBindings.registerKeyBinds();
         HandledScreens.register(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, blockCuttingStationScreen::new);
         blockColoring.setLeafColors();
     }
     // Blocks & Classes that need to be registered first before called ont by others
     public static void RegisterBaseEvents() {
+        itemGroupLogic.registerItemGroups();
         blockArrayList.setBlockArrays();
         modRecipes.registerRecipes();
     }
@@ -117,5 +119,9 @@ public class regLists {
         slabTerracotta.registerTerracottaSlab();
         stairTerracotta.registerTerracottaStair();
         wallTerracotta.registerTerracottaWall();
+
+
+        //Post Items
+        serverAccess.init();
     }
 }

@@ -27,6 +27,8 @@ public class slabStrippedWoods extends baseModBlocks {
     public static final SlabBlock STRIPPED_JUNGLE_LOG_SLAB = noTooltipHelper("stripped_jungle_log_slab", JUNGLE_WOOD, true);
     public static final SlabBlock STRIPPED_BIRCH_WOOD_SLAB = noTooltipHelper("stripped_birch_wood_slab", BIRCH_WOOD, true);
     public static final SlabBlock STRIPPED_BIRCH_LOG_SLAB = noTooltipHelper("stripped_birch_log_slab", BIRCH_WOOD, true);
+    public static final SlabBlock STRIPPED_MANGROVE_WOOD_SLAB = noTooltipHelper("stripped_mangrove_wood_slab", MANGROVE_WOOD, true);
+    public static final SlabBlock STRIPPED_MANGROVE_LOG_SLAB = noTooltipHelper("stripped_mangrove_log_slab", MANGROVE_WOOD, true);
 
     private static SlabBlock noTooltipHelper(String name, Block block, boolean Burns) {
         if (Burns) { return woodSlabHelper(name, block, "", "", "", null, 3001, 5, 10); }

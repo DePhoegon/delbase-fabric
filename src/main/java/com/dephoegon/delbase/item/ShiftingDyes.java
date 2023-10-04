@@ -29,6 +29,6 @@ public class ShiftingDyes extends BaseItems {
     public static void registerItems() {
         Delbase.LOGGER.info("Registering "+Delbase.Delbase_ID+" Dye Items");
     }
-    private static Item ShiftDyeHelper(DyeColor color, String name, String shift) { return registerItem(name, new BlockDyes(color, new FabricItemSettings().maxCount(64).group(Delbase.DELBASE_ITEMS), "tooltip.delbase.info.shift.more", shift, "")); }
+    private static Item ShiftDyeHelper(DyeColor color, String name, String shift) { return registerItem(name, new BlockDyes(color, new FabricItemSettings().maxCount(64), "tooltip.delbase.info.shift.more", shift, "")); }
     private static Item ShiftDyeHelper(DyeColor color, String name) { return ShiftDyeHelper(color, name, "tooltip.delbase.color.shifter"); }
 }
