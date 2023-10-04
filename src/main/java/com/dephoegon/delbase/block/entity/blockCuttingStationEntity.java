@@ -110,7 +110,7 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new blockCuttingStationScreenHandler(syncId, inv, this);
+        return new blockCuttingStationScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);

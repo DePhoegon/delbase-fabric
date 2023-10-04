@@ -1,0 +1,5 @@
+Fixed Things
+- Changed Sand Names
+- fixed Energetic Sand Slab Textures
+- Fixed energetic sand slab type to allow dead bushes & sugar cane planting.
+- Fixed UI for block cutting station, animated arrow.

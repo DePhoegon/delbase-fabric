@@ -9,17 +9,21 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import org.jetbrains.annotations.NotNull;
 
 import static com.dephoegon.delbase.block.entity.blockCuttingStationEntity.*;
 
 public class blockCuttingStationScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private final PropertyDelegate propertyDelegate;
     public blockCuttingStationScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(blockCuttingStationEntity.invSize));
+        this(syncId, playerInventory, new SimpleInventory(blockCuttingStationEntity.invSize), new ArrayPropertyDelegate(2));
     }
-    public blockCuttingStationScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
+    public blockCuttingStationScreenHandler(int syncId, @NotNull PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
         super(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, syncId);
         checkSize(inventory, blockCuttingStationEntity.invSize);
         this.inventory = inventory;
@@ -27,9 +31,20 @@ public class blockCuttingStationScreenHandler extends ScreenHandler {
         this.addSlot(new inputSlot(inventory, inputSlot, 57, 18));
         this.addSlot(new outSlot(inventory, outSlot, 80, 60));
         this.addSlot(new planSlot(inventory, planSlot, 103, 18));
+        this.propertyDelegate = delegate;
 
         addPlayerInventory(playerInventory);
         addPlayerHotBar(playerInventory);
+
+        addProperties(delegate);
+    }
+    public boolean isCrafting() { return propertyDelegate.get(0) > 0; }
+    public int getScaleProgress() {
+        int progress = this.propertyDelegate.get(0);
+        int maxProgress = this.propertyDelegate.get(1);
+        int progressArrowSize = 26;
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
     @Override
     public boolean canUse(PlayerEntity player) {

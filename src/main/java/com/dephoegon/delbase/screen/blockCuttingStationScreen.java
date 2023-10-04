@@ -44,6 +44,10 @@ public class blockCuttingStationScreen extends HandledScreen<blockCuttingStation
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) /2;
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
+
+        if (handler.isCrafting()) {
+            drawTexture(matrices, x+102, y+41, 176, 0,8, handler.getScaleProgress());
+        }
     }
     public void render(MatrixStack matrixStack, int mouseX, int mouseY, float delta) {
         renderBackground(matrixStack);
