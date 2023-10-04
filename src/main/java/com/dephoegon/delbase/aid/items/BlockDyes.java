@@ -10,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
@@ -37,9 +36,9 @@ public class BlockDyes extends DyeItem {
     }
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> toolTip, TooltipContext context) {
         super.appendTooltip(stack, world, toolTip, context);
-        if(!(HShift()) && !(HCtrl()) && tip0 != null) { toolTip.add(new TranslatableText(tip0)); } //if neither pressed, show tip0 (if not empty)
-        if(HCtrl() && tip2 != null) { toolTip.add(new TranslatableText(tip2)); }//if ctrl, show tip2 (if not empty), do first
-        if(HShift() && tip1 != null) { toolTip.add(new TranslatableText(tip1)); } //if shift, show tip1 (if not empty)
+        if(!(HShift()) && !(HCtrl()) && tip0 != null) { toolTip.add(Text.translatable(tip0)); } //if neither pressed, show tip0 (if not empty)
+        if(HCtrl() && tip2 != null) { toolTip.add(Text.translatable(tip2)); }//if ctrl, show tip2 (if not empty), do first
+        if(HShift() && tip1 != null) { toolTip.add(Text.translatable(tip1)); } //if shift, show tip1 (if not empty)
     }
     public ActionResult useOnBlock(@NotNull ItemUsageContext context) {
         World world = context.getWorld();

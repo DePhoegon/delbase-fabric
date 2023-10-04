@@ -1,7 +1,7 @@
 package com.dephoegon.delbase.block.slabs;
 
 import com.dephoegon.delbase.Delbase;
-import com.dephoegon.delbase.aid.block.stock.energySlab;
+import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlabEnergy;
 import com.dephoegon.delbase.block.baseModBlocks;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
@@ -32,6 +32,6 @@ public class slabSandsEnergy extends baseModBlocks {
     public static final SlabBlock BROWN_SAND_SLAB_ENERGY = energySandSlabHelper("brown_sand_slab_energy", BROWN_SAND);
     public static final SlabBlock BLACK_SAND_SLAB_ENERGY = energySandSlabHelper("black_sand_slab_energy", BLACK_SAND);
 
-    private static SlabBlock energySandSlabHelper(String name, Block block) { return (SlabBlock) registerBlock(name, new energySlab(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.SAND).luminance((blockstate) -> 5), "","","", null)); }
+    private static SlabBlock energySandSlabHelper(String name, Block block) { return (SlabBlock) registerBlock(name, new sandSlabEnergy(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.SAND).luminance((blockstate) -> 5), "","","")); }
     public static void registerColoredSandSlabs() { Delbase.LOGGER.info("Registering Energy Colored Sand Slabs for "+Delbase.Delbase_ID); }
 }

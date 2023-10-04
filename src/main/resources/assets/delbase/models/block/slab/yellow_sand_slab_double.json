@@ -1,7 +1,7 @@
 { 
   "parent": "minecraft:block/cube_column", 
   "textures": { 
-    "end": "minecraft:block/yellow_concrete_powder",
-    "side": "minecraft:block/yellow_concrete_powder"
+    "end": "delbase:block/yellow_sand",
+    "side": "delbase:block/yellow_sand"
   } 
 } 

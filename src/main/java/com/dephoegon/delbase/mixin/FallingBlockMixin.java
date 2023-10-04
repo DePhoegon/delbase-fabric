@@ -9,6 +9,7 @@ import net.minecraft.block.SandBlock;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -16,8 +17,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Random;
 
 import static net.minecraft.block.Blocks.RED_SAND;
 import static net.minecraft.block.Blocks.SAND;
@@ -49,9 +48,10 @@ public class FallingBlockMixin extends Block {
             }
             return;
         }
-        if (!canFallThrough(world.getBlockState(pos.down())) || pos.getY() < world.getBottomY()) { return; }
-        FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
-        this.configureFallingBlockEntity(fallingBlockEntity, null);
+        if (canFallThrough(world.getBlockState(pos.down())) && pos.getY() >= world.getBottomY()) {
+            FallingBlockEntity fallingBlockEntity = FallingBlockEntity.spawnFromBlock(world, pos, state);
+            this.configureFallingBlockEntity(fallingBlockEntity, null);
+        }
     }
     @Unique
     private boolean targetedGravityBlock(Block block) {

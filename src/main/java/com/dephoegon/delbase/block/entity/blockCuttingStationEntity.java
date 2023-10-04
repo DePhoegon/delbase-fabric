@@ -19,7 +19,6 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
@@ -105,12 +104,12 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
         return inventory;
     }
     public Text getDisplayName() {
-        return new TranslatableText("block.delbase.block_cutting_station");
+        return Text.translatable("block.delbase.block_cutting_station");
     }
     @Nullable
     @Override
     public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new blockCuttingStationScreenHandler(syncId, inv, this);
+        return new blockCuttingStationScreenHandler(syncId, inv, this, this.propertyDelegate);
     }
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
