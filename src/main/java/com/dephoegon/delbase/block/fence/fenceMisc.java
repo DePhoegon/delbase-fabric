@@ -60,17 +60,17 @@ public class fenceMisc extends baseModBlocks {
     public static final FenceBlock PACKED_MUD_FENCE = noToolTipFAid("packed_mud_fence", PACKED_MUD, BlockSoundGroup.PACKED_MUD);
     public static final FenceGateBlock PACKED_MUD_FENCE_GATE_BLOCK = noToolTipFgAid("packed_mud_fence_gate", PACKED_MUD, BlockSoundGroup.PACKED_MUD);
     public static final FenceBlock MUD_FENCE = noToolTipFAid("mud_fence", MUD, BlockSoundGroup.MUD);
-    public static final FenceGateBlock MUD_FENCE_GATE_BLOCK = noToolTipFgAid("mud_fence_gate", MUD, BlockSoundGroup.MUD);
+    public static final FenceGateBlock MUD_FENCE_GATE = noToolTipFgAid("mud_fence_gate", MUD, BlockSoundGroup.MUD);
     public static final FenceBlock MUDDY_MANGROVE_ROOT_FENCE = noToolTipFAid("muddy_mangrove_root_fence", MUDDY_MANGROVE_ROOTS, BlockSoundGroup.MUDDY_MANGROVE_ROOTS);
-    public static final FenceGateBlock MUDDY_MANGROVE_ROOT_FENCE_GATE_BLOCK = noToolTipFgAid("muddy_mangrove_root_fence_gate", MUDDY_MANGROVE_ROOTS, BlockSoundGroup.MUDDY_MANGROVE_ROOTS);
+    public static final FenceGateBlock MUDDY_MANGROVE_ROOT_FENCE_GATE = noToolTipFgAid("muddy_mangrove_root_fence_gate", MUDDY_MANGROVE_ROOTS, BlockSoundGroup.MUDDY_MANGROVE_ROOTS);
     public static final FenceBlock MANGROVE_ROOT_FENCE = noToolTipFAid("mangrove_root_fence", MANGROVE_ROOTS, BlockSoundGroup.MANGROVE_ROOTS, 0, 30, 60);
-    public static final FenceGateBlock MANGROVE_ROOT_FENCE_GATE_BLOCK = noToolTipFgAid("mangrove_root_fence_gate", MANGROVE_ROOTS, BlockSoundGroup.MANGROVE_ROOTS, 0 , 30, 60);
+    public static final FenceGateBlock MANGROVE_ROOT_FENCE_GATE = noToolTipFgAid("mangrove_root_fence_gate", MANGROVE_ROOTS, BlockSoundGroup.MANGROVE_ROOTS, 0 , 30, 60);
     public static final FenceBlock OCHRE_FROGLIGHT_FENCE = noToolTipFAid("ochre_froglight_fence", OCHRE_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
-    public static final FenceGateBlock OCHRE_FROGLIGHT_FENCE_GATE_BLOCK = noToolTipFgAid("ochre_froglight_fence_gate", OCHRE_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
+    public static final FenceGateBlock OCHRE_FROGLIGHT_FENCE_GATE = noToolTipFgAid("ochre_froglight_fence_gate", OCHRE_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
     public static final FenceBlock VERDANT_FROGLIGHT_FENCE = noToolTipFAid("verdant_froglight_fence", VERDANT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
-    public static final FenceGateBlock VERDANT_FROGLIGHT_FENCE_GATE_BLOCK = noToolTipFgAid("verdant_froglight_fence_gate", VERDANT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
+    public static final FenceGateBlock VERDANT_FROGLIGHT_FENCE_GATE = noToolTipFgAid("verdant_froglight_fence_gate", VERDANT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
     public static final FenceBlock PEARLESCENT_FROGLIGHT_FENCE = noToolTipFAid("pearlescent_froglight_fence", PEARLESCENT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
-    public static final FenceGateBlock PEARLESCENT_FROGLIGHT_FENCE_GATE_BLOCK = noToolTipFgAid("pearlescent_froglight_fence_gate", PEARLESCENT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
+    public static final FenceGateBlock PEARLESCENT_FROGLIGHT_FENCE_GATE = noToolTipFgAid("pearlescent_froglight_fence_gate", PEARLESCENT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
 
     private static FenceBlock noToolTipFAid(String name, Block block) { return fenceBlockAid(name, block, BlockSoundGroup.STONE, "","", ""); }
     private static FenceBlock noToolTipFAid(String name, Block block, BlockSoundGroup blockSoundGroup) { return fenceBlockAid(name, block, blockSoundGroup, "","", ""); }

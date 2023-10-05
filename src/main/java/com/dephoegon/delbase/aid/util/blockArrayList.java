@@ -34,9 +34,6 @@ public abstract class blockArrayList {
     private static ArrayList<Object> fall_hold = new ArrayList<>();
     private static ArrayList<Object> concretePowder_list = new ArrayList<>();
     private static ArrayList<Object> sand_list = new ArrayList<>();
-    private static final ArrayList<? extends Block> birchLeaves = new ArrayList<>();
-    private static final ArrayList<? extends Block> spruceLeaves = new ArrayList<>();
-    private static final ArrayList<? extends Block> coloredLeaves = new ArrayList<>();
     @Contract(value = " -> new", pure = true)
     public static Block @NotNull [] getBirchLeaves() {
         return new Block[]{BIRCH_HEDGE, BIRCH_LEAF_FENCE, BIRCH_LEAF_FENCE_GATE, BIRCH_LEAF_SLAB, BIRCH_LEAF_STAIR};
@@ -55,7 +52,7 @@ public abstract class blockArrayList {
     }
     @Contract(value = " -> new", pure = true)
     public static Block @NotNull [] getMiscCutout() {
-        return new Block[]{MANGROVE_ROOT_FENCE, MANGROVE_ROOT_FENCE_GATE_BLOCK, MANGROVE_ROOT_SLAB, MANGROVE_ROOT_STAIR, MANGROVE_ROOT_WALL};
+        return new Block[]{MANGROVE_ROOT_FENCE, MANGROVE_ROOT_FENCE_GATE, MANGROVE_ROOT_SLAB, MANGROVE_ROOT_STAIR, MANGROVE_ROOT_WALL};
     }
     @Contract(value = " -> new", pure = true)
     public static Block @NotNull [] getNonColoredLeaves() {
