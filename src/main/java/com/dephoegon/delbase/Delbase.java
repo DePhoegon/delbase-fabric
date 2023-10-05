@@ -15,9 +15,7 @@ import static com.dephoegon.delbase.aid.util.regLists.RegisterClientFirst;
 
 public class Delbase implements ModInitializer, ClientModInitializer {
 	public static final String Delbase_ID = "delbase";
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
+
     public static final Logger LOGGER = LoggerFactory.getLogger(Delbase_ID);
 	public static config configHolder;
 
