@@ -2,6 +2,6 @@
 "parent": "delbase:block/template/fence_gate",
 "textures": {
 "texture": "delbase:block/sandstone_top",
-"postside": "minecraft:block/chiseled_sandstone"
+"postside": "delbase:block/chiseled_sandstone"
 }
 }

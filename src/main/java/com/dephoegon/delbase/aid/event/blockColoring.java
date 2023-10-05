@@ -18,8 +18,18 @@ public class blockColoring {
     private static final Block[] spruce = blockArrayList.getSpruceLeaves();
     private static final Block[] birch = blockArrayList.getBirchLeaves();
     private static final Block[] colored = blockArrayList.getColoredLeaves();
+    private static final Block[] mangrove = blockArrayList.getMangroveLeaves();
+    private static final Block[] misc = blockArrayList.getMiscCutout();
+    private static final Block[] nonColoredLeaves = blockArrayList.getNonColoredLeaves();
 
     public static void setLeafColors() {
+        Arrays.stream(misc).forEach(root -> BlockRenderLayerMap.INSTANCE.putBlock(root, RenderLayer.getCutoutMipped()));
+        Arrays.stream(nonColoredLeaves).forEach(root -> BlockRenderLayerMap.INSTANCE.putBlock(root, RenderLayer.getCutoutMipped()));
+        Arrays.stream(mangrove).forEach(leaf -> {
+            ColorProviderRegistry.BLOCK.register(blockColoring::getMangroveColor, leaf);
+            ColorProviderRegistry.ITEM.register((stack, tintIndex) -> FoliageColors.getMangroveColor(), leaf);
+            BlockRenderLayerMap.INSTANCE.putBlock(leaf, RenderLayer.getCutoutMipped());
+        });
         Arrays.stream(spruce).forEach(leaf -> {
             ColorProviderRegistry.BLOCK.register(blockColoring::getSpruceColor, leaf);
             ColorProviderRegistry.ITEM.register((stack, tintIndex) -> FoliageColors.getSpruceColor(), leaf);
@@ -37,6 +47,7 @@ public class blockColoring {
         });
     }
     public static int getSpruceColor(BlockState state, @Nullable BlockRenderView world, @Nullable BlockPos pos, int tintIndex) { return FoliageColors.getSpruceColor(); }
+    public static int getMangroveColor(BlockState state, @Nullable BlockRenderView world, @Nullable BlockPos pos, int tintIndex) { return FoliageColors.getMangroveColor(); }
     public static int getBirchColor(BlockState state, @Nullable BlockRenderView world, @Nullable BlockPos pos, int tintIndex) { return FoliageColors.getBirchColor(); }
     public static int getFoliageColor(BlockState state, @Nullable BlockRenderView world, @Nullable BlockPos pos, int tintIndex) {
         if (world == null || pos == null) { return FoliageColors.getDefaultColor(); }

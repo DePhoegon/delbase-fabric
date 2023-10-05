@@ -28,6 +28,8 @@ public class wallWoods extends baseModBlocks {
     public static final WallBlock JUNGLE_LOG_WALL = noTooltipHelper("jungle_log_wall", JUNGLE_WOOD, STRIPPED_JUNGLE_LOG_WALL, true);
     public static final WallBlock BIRCH_WOOD_WALL = noTooltipHelper("birch_wood_wall", BIRCH_WOOD, STRIPPED_BIRCH_WOOD_WALL, true);
     public static final WallBlock BIRCH_LOG_WALL = noTooltipHelper("birch_log_wall", BIRCH_WOOD, STRIPPED_BIRCH_LOG_WALL, true);
+    public static final WallBlock MANGROVE_WOOD_WALL = noTooltipHelper("mangrove_wood_wall", MANGROVE_WOOD, STRIPPED_MANGROVE_WOOD_WALL, true);
+    public static final WallBlock MANGROVE_LOG_WALL = noTooltipHelper("mangrove_log_wall", MANGROVE_WOOD, STRIPPED_MANGROVE_LOG_WALL, true);
 
     private static WallBlock noTooltipHelper(String name, Block block, WallBlock strippedState, boolean Burns) {
         if (Burns) { return woodWallHelper(name, block, "", "", "", strippedState, 3001, 5, 10); }

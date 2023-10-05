@@ -27,6 +27,8 @@ public class wallStrippedWoods extends baseModBlocks {
     public static final WallBlock STRIPPED_JUNGLE_LOG_WALL = noTooltipHelper("stripped_jungle_log_wall", JUNGLE_WOOD, true);
     public static final WallBlock STRIPPED_BIRCH_WOOD_WALL = noTooltipHelper("stripped_birch_wood_wall", BIRCH_WOOD, true);
     public static final WallBlock STRIPPED_BIRCH_LOG_WALL = noTooltipHelper("stripped_birch_log_wall", BIRCH_WOOD, true);
+    public static final WallBlock STRIPPED_MANGROVE_WOOD_WALL = noTooltipHelper("stripped_mangrove_wood_wall", MANGROVE_WOOD, true);
+    public static final WallBlock STRIPPED_MANGROVE_LOG_WALL = noTooltipHelper("stripped_mangrove_log_wall", MANGROVE_WOOD, true);
 
     private static WallBlock noTooltipHelper(String name, Block block, boolean Burns) {
         if (Burns) { return woodWallHelper(name, block, "", "", "", null, 3001, 5, 10); }

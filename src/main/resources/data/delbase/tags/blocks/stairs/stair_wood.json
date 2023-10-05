@@ -9,6 +9,7 @@
     "delbase:stripped_acacia_wood_stair",
     "delbase:stripped_jungle_wood_stair",
     "delbase:stripped_birch_wood_stair",
+    "delbase:stripped_mangrove_wood_stair",
     "delbase:spruce_wood_stair",
     "delbase:oak_wood_stair",
     "delbase:warped_hyphae_stair",
@@ -16,6 +17,7 @@
     "delbase:dark_oak_wood_stair",
     "delbase:acacia_wood_stair",
     "delbase:jungle_wood_stair",
-    "delbase:birch_wood_stair"
+    "delbase:birch_wood_stair",
+    "delbase:mangrove_wood_stair"
   ]
 }

@@ -31,6 +31,14 @@ public class stairMisc extends baseModBlocks {
     public static final StairsBlock SHROOMLIGHT_STAIR = noToolTipFAid("shroomlight_stair", SHROOMLIGHT, BlockSoundGroup.SHROOMLIGHT, 15);
     public static final StairsBlock MAGMA_BLOCK_STAIR = noToolTipFAid("magma_block_stair", MAGMA_BLOCK, 3);
     public static final StairsBlock DEEPSLATE_STAIR = noToolTipFAid("deepslate_stair", DEEPSLATE, BlockSoundGroup.DEEPSLATE);
+    public static final StairsBlock MUD_STAIR = noToolTipFAid("mud_stair", MUD, BlockSoundGroup.MUD);
+    public static final StairsBlock PACKED_MUD_STAIR = noToolTipFAid("packed_mud_stair", PACKED_MUD, BlockSoundGroup.PACKED_MUD);
+    public static final StairsBlock SCULK_STAIR = noToolTipFAid("sculk_stair", SCULK, BlockSoundGroup.SCULK);
+    public static final StairsBlock MUDDY_MANGROVE_ROOT_STAIR = noToolTipFAid("muddy_mangrove_root_stair", MUDDY_MANGROVE_ROOTS, BlockSoundGroup.MUDDY_MANGROVE_ROOTS);
+    public static final StairsBlock MANGROVE_ROOT_STAIR = noToolTipFAid("mangrove_root_stair", MANGROVE_ROOTS, BlockSoundGroup.MANGROVE_ROOTS, 0, 30, 60);
+    public static final StairsBlock OCHRE_FROGLIGHT_STAIR = noToolTipFAid("ochre_froglight_stair", OCHRE_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
+    public static final StairsBlock VERDANT_FROGLIGHT_STAIR = noToolTipFAid("verdant_froglight_stair", VERDANT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
+    public static final StairsBlock PEARLESCENT_FROGLIGHT_STAIR = noToolTipFAid("pearlescent_froglight_stair", PEARLESCENT_FROGLIGHT, BlockSoundGroup.FROGLIGHT, 15);
 
     private static StairsBlock noToolTipFAid(String name, Block block) { return stairsBlockAid(name, block, BlockSoundGroup.STONE, "","", ""); }
     private static StairsBlock noToolTipFAid(String name, Block block, BlockSoundGroup blockSoundGroup) { return stairsBlockAid(name, block, blockSoundGroup, "","", ""); }

@@ -29,6 +29,8 @@ public class stoneFences extends baseModBlocks {
     public static final FenceGateBlock DEEPSLATE_BRICK_FENCE_GATE = noToolTipFgAid("deepslate_brick_fence_gate", DEEPSLATE_BRICKS, BlockSoundGroup.DEEPSLATE);
     public static final FenceBlock BRICK_FENCE = noToolTipFAid("brick_fence", BRICKS, BlockSoundGroup.NETHER_BRICKS);
     public static final FenceGateBlock BRICK_FENCE_GATE = noToolTipFgAid("brick_fence_gate", BRICKS, BlockSoundGroup.NETHER_BRICKS);
+    public static final FenceBlock MUD_BRICK_FENCE = noToolTipFAid("mud_brick_fence", MUD_BRICKS, BlockSoundGroup.MUD_BRICKS);
+    public static final FenceGateBlock MUD_BRICK_FENCE_GATE = noToolTipFgAid("mud_brick_fence_gate", MUD_BRICKS, BlockSoundGroup.MUD_BRICKS);
 
     private static FenceBlock noToolTipFAid(String name, Block block, BlockSoundGroup soundGroup) { return fenceBlockAid(name, block, soundGroup, "","", "", null); }
     private static FenceGateBlock noToolTipFgAid(String name, Block block, BlockSoundGroup soundGroup) { return fenceGateBlockAid(name, block, soundGroup, "","", "", null); }

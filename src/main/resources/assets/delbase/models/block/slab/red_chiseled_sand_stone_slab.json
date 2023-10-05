@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "delbase:block/red_sandstone_top",
     "top": "delbase:block/red_sandstone_top",
-    "side": "minecraft:block/chiseled_red_sandstone"
+    "side": "delbase:block/chiseled_red_sandstone"
   }
 }

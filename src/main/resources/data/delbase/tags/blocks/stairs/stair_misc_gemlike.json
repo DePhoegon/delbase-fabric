@@ -4,6 +4,7 @@
     "delbase:glowstone_stair",
     "delbase:chiseled_quartz_stair",
     "delbase:quartz_brick_stair",
-    "delbase:quartz_pillar_stair"
+    "delbase:quartz_pillar_stair",
+    "delbase:sculk_stair"
   ]
 }

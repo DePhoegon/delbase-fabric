@@ -2,6 +2,7 @@ package com.dephoegon.delbase.aid.inventory;
 
 import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 public class slotControls {
     public static boolean isValidBlockCutterItem(ItemStack itemStack, int slot) {
@@ -12,7 +13,7 @@ public class slotControls {
             default -> false;
         };
     }
-    private static boolean isValidPlans(ItemStack itemStack) { return listArrays.getFullPlanSlotArray().contains(itemStack.getItem()); }
+    private static boolean isValidPlans(@NotNull ItemStack itemStack) { return listArrays.getFullPlanSlotArray().contains(itemStack.getItem()); }
     private static boolean isValidOutput() { return false; }
     private static boolean isValidInput(ItemStack itemStack) { return !isValidPlans(itemStack); }
 }

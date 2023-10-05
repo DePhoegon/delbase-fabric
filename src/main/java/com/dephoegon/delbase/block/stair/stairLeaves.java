@@ -20,6 +20,7 @@ public class stairLeaves extends baseModBlocks {
     public static final StairsBlock DARK_OAK_LEAF_STAIR = noToolTipAid("dark_oak_leaf_stair", DARK_OAK_LEAVES);
     public static final StairsBlock AZALEA_LEAF_STAIR = noToolTipAid("azalea_leaf_stair", AZALEA_LEAVES);
     public static final StairsBlock FLOWERING_AZALEA_LEAF_STAIR = noToolTipAid("flowering_azalea_leaf_stair", FLOWERING_AZALEA_LEAVES);
+    public static StairsBlock MANGROVE_LEAF_STAIR = noToolTipAid("mangrove_leaf_stair", MANGROVE_LEAVES);
 
     private static StairsBlock noToolTipAid(String name, Block block) { return leafStairHelper(name, block, "", "", ""); }
     private static StairsBlock leafStairHelper(String name, @NotNull Block block, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.GRASS), norm, Shift, Ctrl, null), 30, 60); }

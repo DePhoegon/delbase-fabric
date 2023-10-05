@@ -45,6 +45,10 @@ public class strippedWoodenFences extends baseModBlocks {
     public static final FenceGateBlock STRIPPED_WARPED_HYPHAE_FENCE_GATE = noToolTipFgAid("stripped_warped_hyphae_fence_gate", WARPED_HYPHAE, false);
     public static final FenceBlock STRIPPED_WARPED_STEM_FENCE = noToolTipFAid("stripped_warped_stem_fence", WARPED_HYPHAE, false);
     public static final FenceGateBlock STRIPPED_WARPED_STEM_FENCE_GATE = noToolTipFgAid("stripped_warped_stem_fence_gate", WARPED_HYPHAE, false);
+    public static final FenceBlock STRIPPED_MANGROVE_WOOD_FENCE = noToolTipFAid("stripped_mangrove_wood_fence", MANGROVE_WOOD, true);
+    public static final FenceGateBlock STRIPPED_MANGROVE_WOOD_FENCE_GATE = noToolTipFgAid("stripped_mangrove_wood_fence_gate", MANGROVE_WOOD, true);
+    public static final FenceBlock STRIPPED_MANGROVE_LOG_FENCE = noToolTipFAid("stripped_mangrove_log_fence", MANGROVE_WOOD, true);
+    public static final FenceGateBlock STRIPPED_MANGROVE_LOG_FENCE_GATE = noToolTipFgAid("stripped_mangrove_log_fence_gate", MANGROVE_WOOD, true);
 
     private static FenceBlock noToolTipFAid(String name, Block block, boolean burnable) {
         if (burnable) { return burnFenceBlockAid(name, block, "", "", ""); }

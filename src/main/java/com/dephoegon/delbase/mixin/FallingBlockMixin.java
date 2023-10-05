@@ -24,10 +24,7 @@ import static net.minecraft.block.FallingBlock.canFallThrough;
 
 @Mixin(FallingBlock.class)
 public class FallingBlockMixin extends Block {
-    public FallingBlockMixin(Settings settings) {
-        super(settings);
-    }
-
+    public FallingBlockMixin(Settings settings) { super(settings); }
     /**
      * @author
      * DePhoegon

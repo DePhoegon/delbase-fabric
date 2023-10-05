@@ -3,6 +3,12 @@
   "values": [
     "delbase:dried_kelp_wall",
     "delbase:shroomlight_wall",
+    "delbase:mud_wall",
+    "delbase:muddy_mangrove_root_wall",
+    "delbase:mangrove_root_wall",
+    "delbase:ochre_froglight_wall",
+    "delbase:verdant_froglight_wall",
+    "delbase:pearlescent_froglight_wall",
     "#delbase:hedges/hedge_misc_woodlike"
   ]
 }

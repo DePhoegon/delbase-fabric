@@ -9,6 +9,7 @@
     "delbase:stripped_acacia_wood_slab",
     "delbase:stripped_jungle_wood_slab",
     "delbase:stripped_birch_wood_slab",
+    "delbase:stripped_mangrove_wood_slab",
     "delbase:spruce_wood_slab",
     "delbase:oak_wood_slab",
     "delbase:warped_hyphae_slab",
@@ -16,6 +17,7 @@
     "delbase:dark_oak_wood_slab",
     "delbase:acacia_wood_slab",
     "delbase:jungle_wood_slab",
-    "delbase:birch_wood_slab"
+    "delbase:birch_wood_slab",
+    "delbase:mangrove_wood_slab"
   ]
 }

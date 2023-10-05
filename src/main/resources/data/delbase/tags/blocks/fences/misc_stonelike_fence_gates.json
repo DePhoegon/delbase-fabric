@@ -23,6 +23,8 @@
     "delbase:deepslate_tile_fence_gate",
     "delbase:polished_deepslate_fence_gate",
     "delbase:deepslate_brick_fence_gate",
+    "delbase:mud_brick_fence_gate",
+    "delbase:packed_mud_fence_gate",
     "delbase:brick_fence_gate"
   ]
 }
