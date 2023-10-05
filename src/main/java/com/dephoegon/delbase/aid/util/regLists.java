@@ -1,6 +1,7 @@
 package com.dephoegon.delbase.aid.util;
 
 import com.dephoegon.delbase.aid.event.blockColoring;
+import com.dephoegon.delbase.aid.world.serverAccess;
 import com.dephoegon.delbase.block.axis.axisCutSandStones;
 import com.dephoegon.delbase.block.entity.blockEntities;
 import com.dephoegon.delbase.block.fence.*;
@@ -117,5 +118,8 @@ public class regLists {
         slabTerracotta.registerTerracottaSlab();
         stairTerracotta.registerTerracottaStair();
         wallTerracotta.registerTerracottaWall();
+
+        //Post Items
+        serverAccess.init();
     }
 }

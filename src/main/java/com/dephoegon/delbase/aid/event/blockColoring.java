@@ -18,8 +18,10 @@ public class blockColoring {
     private static final Block[] spruce = blockArrayList.getSpruceLeaves();
     private static final Block[] birch = blockArrayList.getBirchLeaves();
     private static final Block[] colored = blockArrayList.getColoredLeaves();
+    private static final Block[] nonColoredLeaves = blockArrayList.getNonColoredLeaves();
 
     public static void setLeafColors() {
+        Arrays.stream(nonColoredLeaves).forEach(root -> BlockRenderLayerMap.INSTANCE.putBlock(root, RenderLayer.getCutoutMipped()));
         Arrays.stream(spruce).forEach(leaf -> {
             ColorProviderRegistry.BLOCK.register(blockColoring::getSpruceColor, leaf);
             ColorProviderRegistry.ITEM.register((stack, tintIndex) -> FoliageColors.getSpruceColor(), leaf);
