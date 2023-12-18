@@ -1,0 +1,17 @@
+Port to 1.20
+
+Things removed
+- Removed existing config dependency
+
+Things Added
+- Added Config (Forge config port)
+
+Things Done
+- Swapped Config settings
+- Adjusted FenceGate reg, to WoodTypes.
+
+Things To-Do
+- Update methods for fabric from 1.19.3 to 1.20
+- Combe files for methods needing to be updated.
+- Fix the things for update.
+- Add 1.20 wood & leafy things.

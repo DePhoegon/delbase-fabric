@@ -2,6 +2,7 @@ package com.dephoegon.delbase.block.entity;
 
 import com.dephoegon.delbase.aid.inventory.ImplementedInventory;
 import com.dephoegon.delbase.aid.inventory.slotControls;
+import com.dephoegon.delbase.aid.world.config;
 import com.dephoegon.delbase.recipe.blockCutterStationRecipes;
 import com.dephoegon.delbase.screen.blockCuttingStationScreenHandler;
 import net.minecraft.block.*;
@@ -42,7 +43,7 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(invSize, ItemStack.EMPTY);
     protected final PropertyDelegate propertyDelegate;
     private int progress = 0;
-    private int maxProgress = configHolder.stationCraftTime;
+    private int maxProgress = config.BLOCK_CUTTING_STATION_CRAFT_TIME.get();
     public blockCuttingStationEntity(BlockPos pos, BlockState state) {
         super(blockEntities.BLOCK_CUTTER_ENTITY, pos, state);
         this.propertyDelegate = new PropertyDelegate() {

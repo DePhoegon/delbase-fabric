@@ -8,6 +8,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.WoodType;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static net.minecraft.block.Blocks.*;
@@ -43,7 +44,7 @@ public class leafFences extends baseModBlocks {
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceGateBlock fenceGateBlockAid(String name, Block block, BlockSoundGroup group, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(group).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null), 30, 60);
+        return  (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(group).nonOpaque().suffocates(baseModBlocks::never).blockVision(baseModBlocks::never), NormToolTip, ShiftToolTip, CtrlToolTip, null, WoodType.BIRCH), 30, 60);
     }
     public static void registerLeafFences() { Delbase.LOGGER.info("Registering Leaf Fences for "+Delbase.Delbase_ID); }
 }

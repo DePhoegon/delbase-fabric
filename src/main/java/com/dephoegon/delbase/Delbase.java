@@ -2,12 +2,12 @@ package com.dephoegon.delbase;
 
 import com.dephoegon.delbase.aid.util.regLists;
 import com.dephoegon.delbase.aid.world.config;
-import dev.toma.configuration.Configuration;
-import dev.toma.configuration.config.format.ConfigFormats;
+import fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
+import net.minecraftforge.fml.config.ModConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,10 +17,9 @@ public class Delbase implements ModInitializer, ClientModInitializer {
 	public static final String Delbase_ID = "delbase";
 
     public static final Logger LOGGER = LoggerFactory.getLogger(Delbase_ID);
-	public static config configHolder;
 
 	public void onInitialize() {
-		configHolder = Configuration.registerConfig(config.class, ConfigFormats.yaml()).getConfigInstance();
+		ForgeConfigRegistry.INSTANCE.register(Delbase_ID, ModConfig.Type.COMMON, config.SPEC, "delbase-common.toml");
 		regLists.RegisterBaseEvents();
 		regLists.RegisterFirstList();
 		regLists.RegisterSecondList();

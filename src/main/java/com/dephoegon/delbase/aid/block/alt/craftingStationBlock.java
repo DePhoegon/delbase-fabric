@@ -112,7 +112,7 @@ public class craftingStationBlock extends BlockWithEntity implements BlockEntity
         };
     }
     public BlockState getPlacementState(@NotNull ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getPlayerFacing().getOpposite());
+        return this.getDefaultState().with(FACING, ctx.getPlayerLookDirection().getOpposite());
     }
     public BlockState rotate(@NotNull BlockState state, @NotNull BlockRotation rotation) {
         return state.with(FACING, rotation.rotate(state.get(FACING)));

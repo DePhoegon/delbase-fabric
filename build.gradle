@@ -23,6 +23,10 @@ repositories {
 			includeGroup "curse.maven"
 		}
 	}
+	maven {
+		name = "Fuzs Mod Resources"
+		url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
+	}
 }
 
 dependencies {
@@ -36,7 +40,7 @@ dependencies {
 
 	modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_ver}"
 	include "vazkii.patchouli:Patchouli:${project.patchouli_ver}"
-	modImplementation "curse.maven:${project.config_project}:${project.config_fileID}"
+	modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${config_ver}"
 }
 
 processResources {
