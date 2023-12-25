@@ -4,11 +4,12 @@ import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
 import com.dephoegon.delbase.screen.slot.inputSlot;
 import com.dephoegon.delbase.screen.slot.outSlot;
 import com.dephoegon.delbase.screen.slot.planSlot;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
-import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ArrayPropertyDelegate;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -20,13 +21,13 @@ import static com.dephoegon.delbase.block.entity.blockCuttingStationEntity.*;
 public class blockCuttingStationScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
-    public blockCuttingStationScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(blockCuttingStationEntity.invSize), new ArrayPropertyDelegate(2));
+    public blockCuttingStationScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
+        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(buf.readBlockPos()), new ArrayPropertyDelegate(2));
     }
-    public blockCuttingStationScreenHandler(int syncId, @NotNull PlayerInventory playerInventory, Inventory inventory, PropertyDelegate delegate) {
+    public blockCuttingStationScreenHandler(int syncId, @NotNull PlayerInventory playerInventory, BlockEntity blockEntity, PropertyDelegate delegate) {
         super(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, syncId);
-        checkSize(inventory, blockCuttingStationEntity.invSize);
-        this.inventory = inventory;
+        checkSize((Inventory) blockEntity, blockCuttingStationEntity.invSize);
+        this.inventory = (Inventory) blockEntity;
         inventory.onOpen(playerInventory.player);
         this.addSlot(new inputSlot(inventory, inputSlot, 57, 18));
         this.addSlot(new outSlot(inventory, outSlot, 80, 60));
@@ -52,7 +53,7 @@ public class blockCuttingStationScreenHandler extends ScreenHandler {
     public ItemStack quickMove(PlayerEntity player, int invSlot) {
         ItemStack newStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(invSlot);
-        if (slot != null && slot.hasStack()) {
+        if (slot.hasStack()) {
             ItemStack originalStack = slot.getStack();
             newStack = originalStack.copy();
             if (invSlot < this.inventory.size()) {

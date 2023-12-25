@@ -404,14 +404,13 @@ public class colorMixInteractions {
                     //Slabs
                         blockReplacer.SlabPlacement(world, blockPos, blockState, place_me);
                 case 4 ->
-                    //Axis, lock_cut used to mix 'non-axis' default blocks with axis blocks in the set (cut_sandstone // cut_red_sandstone) as example
+                    //Axis, lock_cut used to mix 'non-axis' default blocks with axis blocks in the set or use (cut_sandstone // cut_red_sandstone) as example
                     //Is triggered only one base block & red block, (foolish method) possible to rework stack to allow cutLocking on any... but no reason to atm
                         blockReplacer.AxisPlacement(world, blockPos, blockState, place_me, lock_cut);
                 case 5 ->
                     //DefaultBocks with no special placements
+                    //AxisPlacement set to do default states on which suits default blocks
                         blockReplacer.AxisPlacement(world, blockPos, blockState, place_me, true);
-
-                //AxisPlacement set to do default states on which suits default blocks
                 case 6 ->
                     //Fence Blocks
                         blockReplacer.FencePlacement(world, blockPos, blockState, place_me);
@@ -422,7 +421,6 @@ public class colorMixInteractions {
             }
             playerEntity.getMainHandStack().setCount(playerEntity.getMainHandStack().getCount()-1);
             return ActionResult.SUCCESS;
-
         } else return ActionResult.FAIL;
     }
 }

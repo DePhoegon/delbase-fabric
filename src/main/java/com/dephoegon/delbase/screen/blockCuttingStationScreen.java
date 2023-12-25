@@ -4,9 +4,9 @@ import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.inventory.listArrays;
 import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.render.GameRenderer;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.text.Text;
@@ -29,28 +29,29 @@ public class blockCuttingStationScreen extends HandledScreen<blockCuttingStation
         titleX = (backgroundWidth - textRenderer.getWidth(title)) /2 ;
     }
     @Override
-    protected void drawBackground(MatrixStack matrices, float delta, int mouseX, int mouseY) {
+    protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F,1.0F,1.0F,1.0F);
         Item item = handler.getSlot(blockCuttingStationEntity.planSlot).getStack().getItem();
+        Identifier HOLD = EMPTY_TEXTURE;
         if (listArrays.getFullPlanSlotArray().contains(item)) {
-            if (item == WALL_PLANS.asItem()) { RenderSystem.setShaderTexture(0, PLANS_WALL_TEXTURE); }
-            if (item == FENCE_PLANS.asItem()) { RenderSystem.setShaderTexture(0, PLANS_FENCE_TEXTURE); }
-            if (item == FENCE_GATE_PLANS.asItem()) { RenderSystem.setShaderTexture(0, PLANS_FENCE_GATE_TEXTURE); }
-            if (item == SLAB_PLANS.asItem()) { RenderSystem.setShaderTexture(0, PLANS_SLAB_TEXTURE); }
-            if (item == STAIR_PLANS.asItem()) { RenderSystem.setShaderTexture(0, PLANS_STAIR_TEXTURE); }
-            if (item == ARMOR_COMPOUND.asItem()) { RenderSystem.setShaderTexture(0, COMPOUND_TEXTURE); }
-        } else { RenderSystem.setShaderTexture(0, EMPTY_TEXTURE); }
+            if (item == WALL_PLANS.asItem()) { HOLD = PLANS_WALL_TEXTURE; }
+            if (item == FENCE_PLANS.asItem()) { HOLD = PLANS_FENCE_TEXTURE; }
+            if (item == FENCE_GATE_PLANS.asItem()) { HOLD = PLANS_FENCE_GATE_TEXTURE; }
+            if (item == SLAB_PLANS.asItem()) { HOLD = PLANS_SLAB_TEXTURE; }
+            if (item == STAIR_PLANS.asItem()) { HOLD = PLANS_STAIR_TEXTURE; }
+            if (item == ARMOR_COMPOUND.asItem()) { HOLD = COMPOUND_TEXTURE; }
+        }
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) /2;
-        drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
+        context.drawTexture(HOLD, x, y, 0, 0, backgroundWidth, backgroundHeight);
         if (handler.isCrafting()) {
-            drawTexture(matrices, x+102, y+41, 176, 0,8, handler.getScaledProgress());
+            context.drawTexture(HOLD, x+102, y+41, 176, 0,8, handler.getScaledProgress());
         }
     }
-    public void render(MatrixStack matrixStack, int mouseX, int mouseY, float delta) {
-        renderBackground(matrixStack);
-        super.render(matrixStack, mouseX, mouseY, delta);
-        drawMouseoverTooltip(matrixStack, mouseX, mouseY);
+    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
+        renderBackground(context);
+        super.render(context, mouseX, mouseY, delta);
+        drawMouseoverTooltip(context, mouseX, mouseY);
     }
 }

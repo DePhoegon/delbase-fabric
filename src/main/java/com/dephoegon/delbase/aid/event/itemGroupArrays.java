@@ -1,10 +1,13 @@
 package com.dephoegon.delbase.aid.event;
 
 import com.dephoegon.delbase.block.axis.axisCutSandStones;
-import com.dephoegon.delbase.block.fence.chiseledSandStoneFences;
-import com.dephoegon.delbase.block.fence.concreteFences;
-import com.dephoegon.delbase.block.fence.cutSandStoneFence;
-import com.dephoegon.delbase.block.general.machineBlock;
+import com.dephoegon.delbase.block.fence.*;
+import com.dephoegon.delbase.block.general.*;
+import com.dephoegon.delbase.block.gravity.gravColorSands;
+import com.dephoegon.delbase.block.gravity.gravColorSolidSand;
+import com.dephoegon.delbase.block.slabs.*;
+import com.dephoegon.delbase.block.stair.*;
+import com.dephoegon.delbase.block.wall.*;
 import com.dephoegon.delbase.item.BlockCutterItems;
 import com.dephoegon.delbase.item.ShiftingDyes;
 import net.minecraft.item.Item;
@@ -13,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 
 public class itemGroupArrays {
-    public static @NotNull ArrayList<Item> axisBlocks() {
+    private static @NotNull ArrayList<Item> axisBlocks() {
         ArrayList<Item> out = new ArrayList<>();
         out.add(axisCutSandStones.BLOOD_CUT_SAND_STONE.asItem());
         out.add(axisCutSandStones.WHITE_CUT_SAND_STONE.asItem());
@@ -33,12 +36,12 @@ public class itemGroupArrays {
         out.add(axisCutSandStones.BLACK_CUT_SAND_STONE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> machineBlock() {
+    private static @NotNull ArrayList<Item> machineBlock() {
         ArrayList<Item> out = new ArrayList<>();
         out.add(machineBlock.BLOCK_CUTTER_STATION.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> chiseledSandStoneFence() {
+    private static @NotNull ArrayList<Item> chiseledSandStoneFence() {
         ArrayList<Item> out = new ArrayList<>();
         out.add(chiseledSandStoneFences.WHITE_CHISELED_SAND_STONE_FENCE.asItem());
         out.add(chiseledSandStoneFences.WHITE_CHISELED_SAND_STONE_FENCE_GATE.asItem());
@@ -78,7 +81,7 @@ public class itemGroupArrays {
         out.add(chiseledSandStoneFences.BLOOD_CHISELED_SAND_STONE_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> concreteFence() {
+    private static @NotNull ArrayList<Item> concreteFence() {
         ArrayList<Item> out = new ArrayList<>();
         out.add(concreteFences.WHITE_CONCRETE_FENCE.asItem());
         out.add(concreteFences.WHITE_CONCRETE_FENCE_GATE.asItem());
@@ -114,302 +117,1350 @@ public class itemGroupArrays {
         out.add(concreteFences.BLACK_CONCRETE_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> cutSandStoneFence() {
+    private static @NotNull ArrayList<Item> cutSandStoneFence() {
         ArrayList<Item> out = new ArrayList<>();
         out.add(cutSandStoneFence.WHITE_CUT_SAND_STONE_FENCE.asItem());
         out.add(cutSandStoneFence.WHITE_CUT_SAND_STONE_FENCE_GATE.asItem());
         out.add(cutSandStoneFence.ORANGE_CUT_SAND_STONE_FENCE.asItem());
         out.add(cutSandStoneFence.ORANGE_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.MAGENTA_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.MAGENTA_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.LIGHT_BLUE_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.LIGHT_BLUE_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.YELLOW_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.YELLOW_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.LIME_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.LIME_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.PINK_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.PINK_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.GRAY_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.GRAY_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.CYAN_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.CYAN_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.LIGHT_GRAY_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.LIGHT_GRAY_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.PURPLE_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.PURPLE_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.BLUE_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.BLUE_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.BROWN_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.BROWN_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.GREEN_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.GREEN_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.RED_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.RED_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.BLACK_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.BLACK_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.BLOOD_CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.BLOOD_CUT_SAND_STONE_FENCE_GATE.asItem());
+        out.add(cutSandStoneFence.CUT_SAND_STONE_FENCE.asItem());
+        out.add(cutSandStoneFence.CUT_SAND_STONE_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> fenceMisc() {
+    private static @NotNull ArrayList<Item> fenceMisc() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(fenceMisc.GLOWSTONE_FENCE.asItem());
+        out.add(fenceMisc.GLOWSTONE_FENCE_GATE.asItem());
+        out.add(fenceMisc.COBBLED_BASALT_FENCE.asItem());
+        out.add(fenceMisc.COBBLED_BASALT_FENCE_GATE.asItem());
+        out.add(fenceMisc.BASALT_FENCE.asItem());
+        out.add(fenceMisc.BASALT_FENCE_GATE.asItem());
+        out.add(fenceMisc.SMOOTH_BASALT_FENCE.asItem());
+        out.add(fenceMisc.SMOOTH_BASALT_FENCE_GATE.asItem());
+        out.add(fenceMisc.POLISHED_BASALT_FENCE.asItem());
+        out.add(fenceMisc.POLISHED_BASALT_FENCE_GATE.asItem());
+        out.add(fenceMisc.END_STONE_FENCE.asItem());
+        out.add(fenceMisc.END_STONE_FENCE_GATE.asItem());
+        out.add(fenceMisc.DRIPSTONE_FENCE.asItem());
+        out.add(fenceMisc.DRIPSTONE_FENCE_GATE.asItem());
+        out.add(fenceMisc.CRACKED_POLISHED_BLACKSTONE_BRICK_FENCE.asItem());
+        out.add(fenceMisc.CRACKED_POLISHED_BLACKSTONE_BRICK_FENCE_GATE.asItem());
+        out.add(fenceMisc.RAW_GOLD_FENCE.asItem());
+        out.add(fenceMisc.RAW_GOLD_FENCE_GATE.asItem());
+        out.add(fenceMisc.RAW_COPPER_FENCE.asItem());
+        out.add(fenceMisc.RAW_COPPER_FENCE_GATE.asItem());
+        out.add(fenceMisc.RAW_IRON_FENCE.asItem());
+        out.add(fenceMisc.RAW_IRON_FENCE_GATE.asItem());
+        out.add(fenceMisc.PURPUR_BLOCK_FENCE.asItem());
+        out.add(fenceMisc.PURPUR_BLOCK_FENCE_GATE.asItem());
+        out.add(fenceMisc.COAL_BLOCK_FENCE.asItem());
+        out.add(fenceMisc.COAL_BLOCK_FENCE_GATE.asItem());
+        out.add(fenceMisc.CHISELED_POLISHED_BLACKSTONE_FENCE.asItem());
+        out.add(fenceMisc.CHISELED_POLISHED_BLACKSTONE_FENCE_GATE.asItem());
+        out.add(fenceMisc.BONE_BLOCK_FENCE.asItem());
+        out.add(fenceMisc.BONE_BLOCK_FENCE_GATE.asItem());
+        out.add(fenceMisc.DRIED_KELP_FENCE.asItem());
+        out.add(fenceMisc.DRIED_KELP_FENCE_GATE.asItem());
+        out.add(fenceMisc.NETHERRACK_FENCE.asItem());
+        out.add(fenceMisc.NETHERRACK_FENCE_GATE.asItem());
+        out.add(fenceMisc.SHROOMLIGHT_FENCE.asItem());
+        out.add(fenceMisc.SHROOMLIGHT_FENCE_GATE.asItem());
+        out.add(fenceMisc.MAGMA_BLOCK_FENCE.asItem());
+        out.add(fenceMisc.MAGMA_BLOCK_FENCE_GATE.asItem());
+        out.add(fenceMisc.NETHERRACK_FENCE.asItem());
+        out.add(fenceMisc.NETHERRACK_FENCE_GATE.asItem());
+        out.add(fenceMisc.RED_NETHERBRICK_FENCE.asItem());
+        out.add(fenceMisc.RED_NETHERBRICK_FENCE_GATE.asItem());
+        out.add(fenceMisc.SCULK_FENCE.asItem());
+        out.add(fenceMisc.SCULK_FENCE_GATE_BLOCK.asItem());
+        out.add(fenceMisc.PACKED_MUD_FENCE.asItem());
+        out.add(fenceMisc.PACKED_MUD_FENCE_GATE_BLOCK.asItem());
+        out.add(fenceMisc.MUD_FENCE.asItem());
+        out.add(fenceMisc.MUD_FENCE_GATE.asItem());
+        out.add(fenceMisc.MUDDY_MANGROVE_ROOT_FENCE.asItem());
+        out.add(fenceMisc.MUDDY_MANGROVE_ROOT_FENCE_GATE.asItem());
+        out.add(fenceMisc.MANGROVE_ROOT_FENCE.asItem());
+        out.add(fenceMisc.MANGROVE_ROOT_FENCE_GATE.asItem());
+        out.add(fenceMisc.OCHRE_FROGLIGHT_FENCE.asItem());
+        out.add(fenceMisc.OCHRE_FROGLIGHT_FENCE_GATE.asItem());
+        out.add(fenceMisc.VERDANT_FROGLIGHT_FENCE.asItem());
+        out.add(fenceMisc.VERDANT_FROGLIGHT_FENCE_GATE.asItem());
+        out.add(fenceMisc.PEARLESCENT_FROGLIGHT_FENCE.asItem());
+        out.add(fenceMisc.PEARLESCENT_FROGLIGHT_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> leafFence() {
+    private static @NotNull ArrayList<Item> leafFence() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(leafFences.OAK_LEAF_FENCE.asItem());
+        out.add(leafFences.OAK_LEAF_FENCE_GATE.asItem());
+        out.add(leafFences.SPRUCE_LEAF_FENCE.asItem());
+        out.add(leafFences.SPRUCE_LEAF_FENCE_GATE.asItem());
+        out.add(leafFences.BIRCH_LEAF_FENCE.asItem());
+        out.add(leafFences.BIRCH_LEAF_FENCE_GATE.asItem());
+        out.add(leafFences.ACACIA_LEAF_FENCE.asItem());
+        out.add(leafFences.ACACIA_LEAF_FENCE_GATE.asItem());
+        out.add(leafFences.JUNGLE_LEAF_FENCE.asItem());
+        out.add(leafFences.JUNGLE_LEAF_FENCE_GATE.asItem());
+        out.add(leafFences.DARK_OAK_LEAF_FENCE.asItem());
+        out.add(leafFences.DARK_OAK_LEAF_FENCE_GATE.asItem());
+        out.add(leafFences.AZALEA_LEAF_FENCE.asItem());
+        out.add(leafFences.AZALEA_LEAF_FENCE_GATE.asItem());
+        out.add(leafFences.FLOWERING_AZALEA_LEAF_FENCE.asItem());
+        out.add(leafFences.FLOWERING_AZALEA_LEAF_FENCE_GATE.asItem());
+        out.add(leafFences.MANGROVE_LEAF_FENCE.asItem());
+        out.add(leafFences.MANGROVE_LEAF_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> quartzFences() {
+    private static @NotNull ArrayList<Item> quartzFences() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(quartzFences.QUARTZ_BRICKS_FENCE.asItem());
+        out.add(quartzFences.QUARTZ_BRICKS_FENCE_GATE.asItem());
+        out.add(quartzFences.QUARTZ_BLOCK_FENCE.asItem());
+        out.add(quartzFences.QUARTZ_BLOCK_FENCE_GATE.asItem());
+        out.add(quartzFences.SMOOTH_QUARTZ_FENCE.asItem());
+        out.add(quartzFences.SMOOTH_QUARTZ_FENCE_GATE.asItem());
+        out.add(quartzFences.CHISELED_QUARTZ_BLOCK_FENCE.asItem());
+        out.add(quartzFences.CHISELED_QUARTZ_BLOCK_FENCE_GATE.asItem());
+        out.add(quartzFences.QUARTZ_PILLAR_FENCE.asItem());
+        out.add(quartzFences.QUARTZ_PILLAR_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> sandFences() {
+    private static @NotNull ArrayList<Item> sandFences() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(sandFences.WHITE_SAND_FENCE.asItem());
+        out.add(sandFences.WHITE_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.ORANGE_SAND_FENCE.asItem());
+        out.add(sandFences.ORANGE_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.MAGENTA_SAND_FENCE.asItem());
+        out.add(sandFences.MAGENTA_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.LIGHT_BLUE_SAND_FENCE.asItem());
+        out.add(sandFences.LIGHT_BLUE_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.YELLOW_SAND_FENCE.asItem());
+        out.add(sandFences.YELLOW_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.LIME_SAND_FENCE.asItem());
+        out.add(sandFences.LIME_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.PINK_SAND_FENCE.asItem());
+        out.add(sandFences.PINK_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.GRAY_SAND_FENCE.asItem());
+        out.add(sandFences.GRAY_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.LIGHT_GRAY_SAND_FENCE.asItem());
+        out.add(sandFences.LIGHT_GRAY_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.CYAN_SAND_FENCE.asItem());
+        out.add(sandFences.CYAN_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.PURPLE_SAND_FENCE.asItem());
+        out.add(sandFences.PURPLE_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.BLUE_SAND_FENCE.asItem());
+        out.add(sandFences.BLUE_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.BROWN_SAND_FENCE.asItem());
+        out.add(sandFences.BROWN_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.GREEN_SAND_FENCE.asItem());
+        out.add(sandFences.GREEN_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.RED_SAND_FENCE.asItem());
+        out.add(sandFences.RED_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.BLACK_SAND_FENCE.asItem());
+        out.add(sandFences.BLACK_SAND_FENCE_GATE.asItem());
+        out.add(sandFences.SAND_FENCE.asItem());
+        out.add(sandFences.SAND_FENCE_GATE.asItem());
+        out.add(sandFences.BLOOD_SAND_FENCE.asItem());
+        out.add(sandFences.BLOOD_SAND_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> sandStoneFences() {
+    private static @NotNull ArrayList<Item> sandStoneFences() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(sandStoneFences.WHITE_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.WHITE_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.ORANGE_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.ORANGE_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.MAGENTA_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.MAGENTA_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.LIGHT_BLUE_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.LIGHT_BLUE_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.YELLOW_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.YELLOW_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.LIME_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.LIME_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.PINK_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.PINK_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.GRAY_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.GRAY_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.LIGHT_GRAY_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.LIGHT_GRAY_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.CYAN_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.CYAN_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.PURPLE_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.PURPLE_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.BLUE_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.BLUE_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.BROWN_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.BROWN_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.GREEN_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.GREEN_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.RED_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.RED_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.BLACK_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.BLACK_SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.SAND_STONE_FENCE_GATE.asItem());
+        out.add(sandStoneFences.BLOOD_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.BLOOD_SAND_STONE_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> smoothSandStoneFences() {
+    private static @NotNull ArrayList<Item> smoothSandStoneFences() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(smoothSandStoneFences.WHITE_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.WHITE_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.ORANGE_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.ORANGE_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.MAGENTA_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.MAGENTA_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.LIGHT_BLUE_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.LIGHT_BLUE_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.YELLOW_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.YELLOW_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.LIME_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.LIME_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.PINK_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.PINK_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.GRAY_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.GRAY_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.LIGHT_GRAY_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.LIGHT_GRAY_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.CYAN_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.CYAN_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.PURPLE_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.PURPLE_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.BLUE_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.BLUE_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.BROWN_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.BROWN_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.GREEN_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.GREEN_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.RED_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.RED_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.BLACK_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.BLACK_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.SMOOTH_SAND_STONE_FENCE_GATE.asItem());
+        out.add(smoothSandStoneFences.BLOOD_SMOOTH_SAND_STONE_FENCE.asItem());
+        out.add(smoothSandStoneFences.BLOOD_SMOOTH_SAND_STONE_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stoneFences() {
+    private static @NotNull ArrayList<Item> stoneFences() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stoneFences.STONE_FENCE.asItem());
+        out.add(stoneFences.STONE_FENCE_GATE.asItem());
+        out.add(stoneFences.COBBLESTONE_FENCE.asItem());
+        out.add(stoneFences.COBBLESTONE_FENCE_GATE.asItem());
+        out.add(stoneFences.DEEPSLATE_FENCE.asItem());
+        out.add(stoneFences.DEEPSLATE_FENCE_GATE.asItem());
+        out.add(stoneFences.COBBLED_DEEPSLATE_FENCE.asItem());
+        out.add(stoneFences.COBBLED_DEEPSLATE_FENCE_GATE.asItem());
+        out.add(stoneFences.DEEPSLATE_TILE_FENCE.asItem());
+        out.add(stoneFences.DEEPSLATE_TILE_FENCE_GATE.asItem());
+        out.add(stoneFences.POLISHED_DEEPSLATE_FENCE.asItem());
+        out.add(stoneFences.POLISHED_DEEPSLATE_FENCE_GATE.asItem());
+        out.add(stoneFences.DEEPSLATE_BRICK_FENCE.asItem());
+        out.add(stoneFences.DEEPSLATE_BRICK_FENCE_GATE.asItem());
+        out.add(stoneFences.BRICK_FENCE.asItem());
+        out.add(stoneFences.BRICK_FENCE_GATE.asItem());
+        out.add(stoneFences.MUD_BRICK_FENCE.asItem());
+        out.add(stoneFences.MUD_BRICK_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> strippedWoodenFences() {
+    private static @NotNull ArrayList<Item> strippedWoodenFences() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(strippedWoodenFences.STRIPPED_ACACIA_WOOD_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_ACACIA_WOOD_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_ACACIA_LOG_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_ACACIA_LOG_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_BIRCH_WOOD_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_BIRCH_WOOD_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_BIRCH_LOG_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_BIRCH_LOG_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_CRIMSON_HYPHAE_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_CRIMSON_STEM_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_CRIMSON_STEM_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_DARK_OAK_WOOD_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_DARK_OAK_WOOD_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_DARK_OAK_LOG_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_DARK_OAK_LOG_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_JUNGLE_WOOD_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_JUNGLE_WOOD_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_JUNGLE_LOG_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_JUNGLE_LOG_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_OAK_WOOD_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_OAK_WOOD_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_OAK_LOG_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_OAK_LOG_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_SPRUCE_WOOD_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_SPRUCE_WOOD_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_SPRUCE_LOG_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_SPRUCE_LOG_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_WARPED_HYPHAE_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_WARPED_HYPHAE_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_WARPED_STEM_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_WARPED_STEM_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_MANGROVE_WOOD_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_MANGROVE_WOOD_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_MANGROVE_LOG_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_MANGROVE_LOG_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> terracottaFences() {
+    private static @NotNull ArrayList<Item> terracottaFences() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(terracottaFences.WHITE_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.WHITE_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.ORANGE_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.ORANGE_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.MAGENTA_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.MAGENTA_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.LIGHT_BLUE_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.LIGHT_BLUE_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.YELLOW_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.YELLOW_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.LIME_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.LIME_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.PINK_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.PINK_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.GRAY_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.GRAY_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.LIGHT_GRAY_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.LIGHT_GRAY_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.CYAN_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.CYAN_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.PURPLE_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.PURPLE_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.BLUE_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.BLUE_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.BROWN_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.BROWN_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.GREEN_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.GREEN_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.RED_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.RED_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.BLACK_TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.BLACK_TERRACOTTA_FENCE_GATE.asItem());
+        out.add(terracottaFences.TERRACOTTA_FENCE.asItem());
+        out.add(terracottaFences.TERRACOTTA_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> woodenFences() {
+    private static @NotNull ArrayList<Item> woodenFences() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(woodenFences.ACACIA_WOOD_FENCE.asItem());
+        out.add(woodenFences.ACACIA_WOOD_FENCE_GATE.asItem());
+        out.add(woodenFences.ACACIA_LOG_FENCE.asItem());
+        out.add(woodenFences.ACACIA_LOG_FENCE_GATE.asItem());
+        out.add(woodenFences.BIRCH_WOOD_FENCE.asItem());
+        out.add(woodenFences.BIRCH_WOOD_FENCE_GATE.asItem());
+        out.add(woodenFences.BIRCH_LOG_FENCE.asItem());
+        out.add(woodenFences.BIRCH_LOG_FENCE_GATE.asItem());
+        out.add(woodenFences.CRIMSON_HYPHAE_FENCE.asItem());
+        out.add(woodenFences.CRIMSON_HYPHAE_FENCE_GATE.asItem());
+        out.add(woodenFences.CRIMSON_STEM_FENCE.asItem());
+        out.add(woodenFences.CRIMSON_STEM_FENCE_GATE.asItem());
+        out.add(woodenFences.DARK_OAK_WOOD_FENCE.asItem());
+        out.add(woodenFences.DARK_OAK_WOOD_FENCE_GATE.asItem());
+        out.add(woodenFences.DARK_OAK_LOG_FENCE.asItem());
+        out.add(woodenFences.DARK_OAK_LOG_FENCE_GATE.asItem());
+        out.add(woodenFences.JUNGLE_WOOD_FENCE.asItem());
+        out.add(woodenFences.JUNGLE_WOOD_FENCE_GATE.asItem());
+        out.add(woodenFences.JUNGLE_LOG_FENCE.asItem());
+        out.add(woodenFences.JUNGLE_LOG_FENCE_GATE.asItem());
+        out.add(woodenFences.OAK_WOOD_FENCE.asItem());
+        out.add(woodenFences.OAK_WOOD_FENCE_GATE.asItem());
+        out.add(woodenFences.OAK_LOG_FENCE.asItem());
+        out.add(woodenFences.OAK_LOG_FENCE_GATE.asItem());
+        out.add(woodenFences.SPRUCE_WOOD_FENCE.asItem());
+        out.add(woodenFences.SPRUCE_WOOD_FENCE_GATE.asItem());
+        out.add(woodenFences.SPRUCE_LOG_FENCE.asItem());
+        out.add(woodenFences.SPRUCE_LOG_FENCE_GATE.asItem());
+        out.add(woodenFences.WARPED_HYPHAE_FENCE.asItem());
+        out.add(woodenFences.WARPED_HYPHAE_FENCE_GATE.asItem());
+        out.add(woodenFences.WARPED_STEM_FENCE.asItem());
+        out.add(woodenFences.WARPED_STEM_FENCE_GATE.asItem());
+        out.add(woodenFences.MANGROVE_WOOD_FENCE.asItem());
+        out.add(woodenFences.MANGROVE_WOOD_FENCE_GATE_BLOCK.asItem());
+        out.add(woodenFences.MANGROVE_LOG_FENCE.asItem());
+        out.add(woodenFences.MANGROVE_LOG_FENCE_GATE_BLOCK.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> ashBlocks() {
+    private static @NotNull ArrayList<Item> ashBlocks() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(ashBlocks.ASH_SLAB.asItem());
+        out.add(ashBlocks.ASH_STAIR.asItem());
+        out.add(ashBlocks.ASH_LOG.asItem());
+        out.add(ashBlocks.ASH_WALL.asItem());
+        out.add(ashBlocks.ASH_BLOCK.asItem());
+        out.add(ashBlocks.ASH_FENCE.asItem());
+        out.add(ashBlocks.ASH_FENCE_GATE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> genChiseledSandStones() {
+    private static @NotNull ArrayList<Item> genChiseledSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(genChiseledSandStones.BLOOD_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.WHITE_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.ORANGE_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.MAGENTA_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.YELLOW_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.LIME_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.PINK_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.GRAY_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.CYAN_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.PURPLE_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.BLUE_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.GREEN_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.BROWN_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.BLACK_CHISELED_SAND_STONE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> genSandStones() {
+    private static @NotNull ArrayList<Item> genSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(genSandStones.BLOOD_SAND_STONE.asItem());
+        out.add(genSandStones.WHITE_SAND_STONE.asItem());
+        out.add(genSandStones.ORANGE_SAND_STONE.asItem());
+        out.add(genSandStones.MAGENTA_SAND_STONE.asItem());
+        out.add(genSandStones.LIGHT_BLUE_SAND_STONE.asItem());
+        out.add(genSandStones.YELLOW_SAND_STONE.asItem());
+        out.add(genSandStones.LIME_SAND_STONE.asItem());
+        out.add(genSandStones.PINK_SAND_STONE.asItem());
+        out.add(genSandStones.GRAY_SAND_STONE.asItem());
+        out.add(genSandStones.LIGHT_GRAY_SAND_STONE.asItem());
+        out.add(genSandStones.CYAN_SAND_STONE.asItem());
+        out.add(genSandStones.PURPLE_SAND_STONE.asItem());
+        out.add(genSandStones.BLUE_SAND_STONE.asItem());
+        out.add(genSandStones.GREEN_SAND_STONE.asItem());
+        out.add(genSandStones.BROWN_SAND_STONE.asItem());
+        out.add(genSandStones.BLACK_SAND_STONE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> genSmoothSandStones() {
+    private static @NotNull ArrayList<Item> genSmoothSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(genSmoothSandStones.BLOOD_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.WHITE_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.ORANGE_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.MAGENTA_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.LIGHT_BLUE_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.YELLOW_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.LIME_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.PINK_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.GRAY_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.CYAN_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.PURPLE_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.BLUE_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.GREEN_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.BROWN_SMOOTH_SAND_STONE.asItem());
+        out.add(genSmoothSandStones.BLACK_SMOOTH_SAND_STONE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> misc() {
+    private static @NotNull ArrayList<Item> misc() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(misc.HARDENED_OAK_PLANKS.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> gravColorSands() {
+    private static @NotNull ArrayList<Item> gravColorSands() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(gravColorSands.BLOOD_SAND.asItem());
+        out.add(gravColorSands.WHITE_SAND.asItem());
+        out.add(gravColorSands.ORANGE_SAND.asItem());
+        out.add(gravColorSands.MAGENTA_SAND.asItem());
+        out.add(gravColorSands.LIGHT_BLUE_SAND.asItem());
+        out.add(gravColorSands.LIGHT_GRAY_SAND.asItem());
+        out.add(gravColorSands.YELLOW_SAND.asItem());
+        out.add(gravColorSands.LIME_SAND.asItem());
+        out.add(gravColorSands.PINK_SAND.asItem());
+        out.add(gravColorSands.GRAY_SAND.asItem());
+        out.add(gravColorSands.CYAN_SAND.asItem());
+        out.add(gravColorSands.PURPLE_SAND.asItem());
+        out.add(gravColorSands.BLUE_SAND.asItem());
+        out.add(gravColorSands.GREEN_SAND.asItem());
+        out.add(gravColorSands.BROWN_SAND.asItem());
+        out.add(gravColorSands.BLACK_SAND.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> gravColorSolidSands() {
+    private static @NotNull ArrayList<Item> gravColorSolidSands() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(gravColorSolidSand.SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.RED_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.WHITE_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.ORANGE_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.LIGHT_BLUE_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.YELLOW_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.LIME_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.PINK_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.GRAY_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.PURPLE_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.CYAN_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.BLUE_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.GREEN_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.BROWN_SOLID_SAND.asItem());
+        out.add(gravColorSolidSand.BLACK_SOLID_SAND.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabChiseledSandStones() {
+    private static @NotNull ArrayList<Item> slabChiseledSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabChiseledSandStones.CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.RED_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.BLOOD_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.WHITE_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.ORANGE_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.MAGENTA_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.LIGHT_BLUE_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.YELLOW_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.LIME_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.PINK_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.GRAY_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.LIGHT_GRAY_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.PURPLE_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.BLUE_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.GREEN_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.BROWN_CHISELED_SAND_STONE_SLAB.asItem());
+        out.add(slabChiseledSandStones.BLACK_CHISELED_SAND_STONE_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabChiseledSandStoneEnergy() {
+    private static @NotNull ArrayList<Item> slabChiseledSandStoneEnergy() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabChiseledSandStonesEnergy.CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.RED_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.BLOOD_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.WHITE_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.ORANGE_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.MAGENTA_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.LIGHT_BLUE_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.YELLOW_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.LIME_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.PINK_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.GRAY_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.LIGHT_GRAY_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.CYAN_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.PURPLE_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.BLUE_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.GREEN_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.BROWN_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabChiseledSandStonesEnergy.BLACK_CHISELED_SAND_STONE_SLAB_ENERGY.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabConcrete() {
+    private static @NotNull ArrayList<Item> slabConcrete() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabConcrete.RED_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.WHITE_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.ORANGE_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.MAGENTA_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.LIGHT_BLUE_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.YELLOW_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.LIME_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.PINK_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.GRAY_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.LIGHT_GRAY_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.CYAN_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.PURPLE_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.BLUE_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.GREEN_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.BROWN_CONCRETE_SLAB.asItem());
+        out.add(slabConcrete.BLACK_CONCRETE_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabCutSandStones() {
+    private static @NotNull ArrayList<Item> slabCutSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabCutSandStones.BLOOD_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.WHITE_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.ORANGE_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.MAGENTA_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.LIGHT_BLUE_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.YELLOW_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.LIME_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.PINK_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.GRAY_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.LIGHT_GRAY_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.CYAN_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.PURPLE_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.BLUE_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.GREEN_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.BROWN_CUT_SAND_STONE_SLAB.asItem());
+        out.add(slabCutSandStones.BLACK_CUT_SAND_STONE_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabCutSandStonesEnergy() {
+    private static @NotNull ArrayList<Item> slabCutSandStonesEnergy() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabCutSandStonesEnergy.CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.RED_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.BLOOD_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.WHITE_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.ORANGE_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.MAGENTA_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.LIGHT_BLUE_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.YELLOW_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.LIME_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.PINK_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.GRAY_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.LIGHT_GRAY_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.CYAN_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.PURPLE_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.BLUE_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.GREEN_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.BROWN_CUT_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabCutSandStonesEnergy.BLACK_CUT_SAND_STONE_SLAB_ENERGY.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabLeaves() {
+    private static @NotNull ArrayList<Item> slabLeaves() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabLeaves.OAK_LEAF_SLAB.asItem());
+        out.add(slabLeaves.JUNGLE_LEAF_SLAB.asItem());
+        out.add(slabLeaves.SPRUCE_LEAF_SLAB.asItem());
+        out.add(slabLeaves.BIRCH_LEAF_SLAB.asItem());
+        out.add(slabLeaves.ACACIA_LEAF_SLAB.asItem());
+        out.add(slabLeaves.DARK_OAK_LEAF_SLAB.asItem());
+        out.add(slabLeaves.AZALEA_LEAF_SLAB.asItem());
+        out.add(slabLeaves.FLOWERING_AZALEA_LEAF_SLAB.asItem());
+        out.add(slabLeaves.MANGROVE_LEAF_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabMisc() {
+    private static @NotNull ArrayList<Item> slabMisc() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabMisc.END_STONE_SLAB.asItem());
+        out.add(slabMisc.BONE_BLOCK_SLAB.asItem());
+        out.add(slabMisc.DRIED_KELP_SLAB.asItem());
+        out.add(slabMisc.GLOWSTONE_SLAB.asItem());
+        out.add(slabMisc.BASALT_SLAB.asItem());
+        out.add(slabMisc.POLISHED_BASALT_SLAB.asItem());
+        out.add(slabMisc.SMOOTH_BASALT_SLAB.asItem());
+        out.add(slabMisc.RAW_COPPER_SLAB.asItem());
+        out.add(slabMisc.RAW_GOLD_SLAB.asItem());
+        out.add(slabMisc.RAW_IRON_SLAB.asItem());
+        out.add(slabMisc.COAL_BLOCK_SLAB.asItem());
+        out.add(slabMisc.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.asItem());
+        out.add(slabMisc.CHISELED_POLISHED_BLACKSTONE_SLAB.asItem());
+        out.add(slabMisc.DRIPSTONE_SLAB.asItem());
+        out.add(slabMisc.NETHERRACK_SLAB.asItem());
+        out.add(slabMisc.SHROOMLIGHT_SLAB.asItem());
+        out.add(slabMisc.MAGMA_BLOCK_SLAB.asItem());
+        out.add(slabMisc.DEEPSLATE_SLAB.asItem());
+        out.add(slabMisc.PACKED_MUD_SLAB.asItem());
+        out.add(slabMisc.SCULK_SLAB.asItem());
+        out.add(slabMisc.MUD_SLAB.asItem());
+        out.add(slabMisc.MUDDY_MANGROVE_ROOT_SLAB.asItem());
+        out.add(slabMisc.MANGROVE_ROOT_SLAB.asItem());
+        out.add(slabMisc.OCHRE_FROGLIGHT_SLAB.asItem());
+        out.add(slabMisc.VERDANT_FROGLIGHT_SLAB.asItem());
+        out.add(slabMisc.PEARLESCENT_FROGLIGHT_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabQuartz() {
+    private static @NotNull ArrayList<Item> slabQuartz() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabQuartz.CHISELED_QUARTZ_SLAB.asItem());
+        out.add(slabQuartz.QUARTZ_BRICK_SLAB.asItem());
+        out.add(slabQuartz.QUARTZ_PILLAR_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabSands() {
+    private static @NotNull ArrayList<Item> slabSands() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabSands.SAND_SLAB.asItem());
+        out.add(slabSands.RED_SAND_SLAB.asItem());
+        out.add(slabSands.WHITE_SAND_SLAB.asItem());
+        out.add(slabSands.BLOOD_SAND_SLAB.asItem());
+        out.add(slabSands.WHITE_SAND_SLAB.asItem());
+        out.add(slabSands.ORANGE_SAND_SLAB.asItem());
+        out.add(slabSands.MAGENTA_SAND_SLAB.asItem());
+        out.add(slabSands.LIGHT_BLUE_SAND_SLAB.asItem());
+        out.add(slabSands.LIGHT_GRAY_SAND_SLAB.asItem());
+        out.add(slabSands.YELLOW_SAND_SLAB.asItem());
+        out.add(slabSands.LIME_SAND_SLAB.asItem());
+        out.add(slabSands.PINK_SAND_SLAB.asItem());
+        out.add(slabSands.GRAY_SAND_SLAB.asItem());
+        out.add(slabSands.PURPLE_SAND_SLAB.asItem());
+        out.add(slabSands.CYAN_SAND_SLAB.asItem());
+        out.add(slabSands.BLUE_SAND_SLAB.asItem());
+        out.add(slabSands.GREEN_SAND_SLAB.asItem());
+        out.add(slabSands.BROWN_SAND_SLAB.asItem());
+        out.add(slabSands.BLACK_SAND_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabSandsEnergy() {
+    private static @NotNull ArrayList<Item> slabSandsEnergy() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabSandsEnergy.SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.RED_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.BLOOD_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.WHITE_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.ORANGE_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.MAGENTA_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.LIGHT_BLUE_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.YELLOW_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.LIME_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.PINK_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.GRAY_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.LIGHT_GRAY_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.CYAN_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.PURPLE_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.BLUE_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.GREEN_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.BROWN_SAND_SLAB_ENERGY.asItem());
+        out.add(slabSandsEnergy.BLACK_SAND_SLAB_ENERGY.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabSandStones() {
+    private static @NotNull ArrayList<Item> slabSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabSandStones.BLOOD_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.WHITE_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.ORANGE_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.MAGENTA_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.LIGHT_BLUE_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.YELLOW_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.LIME_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.PINK_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.GRAY_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.LIGHT_GRAY_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.CYAN_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.PURPLE_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.BLUE_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.GREEN_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.BROWN_SAND_STONE_SLAB.asItem());
+        out.add(slabSandStones.BLACK_SAND_STONE_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabSandStonesEnergy() {
+    private static @NotNull ArrayList<Item> slabSandStonesEnergy() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabSandStonesEnergy.SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.RED_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.BLOOD_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.WHITE_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.ORANGE_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.MAGENTA_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.LIGHT_BLUE_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.YELLOW_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.LIME_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.PINK_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.GRAY_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.LIGHT_GRAY_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.CYAN_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.PURPLE_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.BLUE_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.GREEN_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.BROWN_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSandStonesEnergy.BLACK_SAND_STONE_SLAB_ENERGY.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabSmoothSandStones() {
+    private static @NotNull ArrayList<Item> slabSmoothSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabSmoothSandStones.BLOOD_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.WHITE_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.ORANGE_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.MAGENTA_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.LIGHT_BLUE_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.YELLOW_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.LIME_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.PINK_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.GRAY_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.LIGHT_GRAY_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.CYAN_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.PURPLE_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.BLUE_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.GREEN_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.BROWN_SMOOTH_SAND_STONE_SLAB.asItem());
+        out.add(slabSmoothSandStones.BLACK_SMOOTH_SAND_STONE_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabSmoothSandStonesEnergy() {
+    private static @NotNull ArrayList<Item> slabSmoothSandStonesEnergy() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabSmoothSandStonesEnergy.SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.RED_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.BLOOD_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.WHITE_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.ORANGE_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.MAGENTA_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.LIGHT_BLUE_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.YELLOW_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.LIME_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.PINK_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.GRAY_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.LIGHT_GRAY_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.CYAN_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.PURPLE_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.BLUE_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.GREEN_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.BROWN_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
+        out.add(slabSmoothSandStonesEnergy.BLACK_SMOOTH_SAND_STONE_SLAB_ENERGY.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabStrippedWoods() {
+    private static @NotNull ArrayList<Item> slabStrippedWoods() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabStrippedWoods.STRIPPED_SPRUCE_WOOD_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_SPRUCE_LOG_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_OAK_WOOD_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_OAK_LOG_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_WARPED_HYPHAE_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_WARPED_STEM_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_CRIMSON_HYPHAE_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_CRIMSON_STEM_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_DARK_OAK_WOOD_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_DARK_OAK_LOG_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_ACACIA_WOOD_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_ACACIA_LOG_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_JUNGLE_WOOD_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_JUNGLE_LOG_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_BIRCH_WOOD_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_BIRCH_LOG_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_MANGROVE_WOOD_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_MANGROVE_LOG_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabTerracotta() {
+    private static @NotNull ArrayList<Item> slabTerracotta() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabTerracotta.WHITE_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.ORANGE_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.MAGENTA_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.LIGHT_BLUE_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.YELLOW_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.LIME_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.PINK_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.GRAY_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.LIGHT_GRAY_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.CYAN_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.PURPLE_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.BLUE_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.BROWN_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.GREEN_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.RED_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.BLACK_TERRACOTTA_SLAB.asItem());
+        out.add(slabTerracotta.TERRACOTTA_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> slabWoods() {
+    private static @NotNull ArrayList<Item> slabWoods() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(slabWood.SPRUCE_WOOD_SLAB.asItem());
+        out.add(slabWood.SPRUCE_LOG_SLAB.asItem());
+        out.add(slabWood.OAK_WOOD_SLAB.asItem());
+        out.add(slabWood.OAK_LOG_SLAB.asItem());
+        out.add(slabWood.WARPED_HYPHAE_SLAB.asItem());
+        out.add(slabWood.WARPED_STEM_SLAB.asItem());
+        out.add(slabWood.CRIMSON_HYPHAE_SLAB.asItem());
+        out.add(slabWood.CRIMSON_STEM_SLAB.asItem());
+        out.add(slabWood.DARK_OAK_WOOD_SLAB.asItem());
+        out.add(slabWood.DARK_OAK_LOG_SLAB.asItem());
+        out.add(slabWood.ACACIA_WOOD_SLAB.asItem());
+        out.add(slabWood.ACACIA_LOG_SLAB.asItem());
+        out.add(slabWood.JUNGLE_WOOD_SLAB.asItem());
+        out.add(slabWood.JUNGLE_LOG_SLAB.asItem());
+        out.add(slabWood.BIRCH_WOOD_SLAB.asItem());
+        out.add(slabWood.BIRCH_LOG_SLAB.asItem());
+        out.add(slabWood.MANGROVE_WOOD_SLAB.asItem());
+        out.add(slabWood.MANGROVE_LOG_SLAB.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairChiseledSandStones() {
+    private static @NotNull ArrayList<Item> stairChiseledSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairChiseledSandStones.CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.RED_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.BLOOD_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.WHITE_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.ORANGE_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.MAGENTA_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.LIGHT_BLUE_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.YELLOW_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.LIME_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.PINK_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.GRAY_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.LIGHT_GRAY_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.CYAN_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.PURPLE_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.BLUE_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.GREEN_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.BROWN_CHISELED_SAND_STONE_STAIR.asItem());
+        out.add(stairChiseledSandStones.BLACK_CHISELED_SAND_STONE_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairConcrete() {
+    private static @NotNull ArrayList<Item> stairConcrete() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairConcrete.RED_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.WHITE_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.ORANGE_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.MAGENTA_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.LIGHT_BLUE_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.YELLOW_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.LIME_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.PINK_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.GRAY_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.LIGHT_GRAY_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.CYAN_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.PURPLE_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.BLUE_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.GREEN_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.BROWN_CONCRETE_STAIR.asItem());
+        out.add(stairConcrete.BLACK_CONCRETE_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairCutSandStones() {
+    private static @NotNull ArrayList<Item> stairCutSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairCutSandStones.CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.RED_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.BLOOD_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.WHITE_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.ORANGE_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.MAGENTA_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.LIGHT_BLUE_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.YELLOW_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.LIME_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.PINK_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.GRAY_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.LIGHT_GRAY_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.CYAN_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.PURPLE_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.BLUE_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.GREEN_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.BROWN_CUT_SAND_STONE_STAIR.asItem());
+        out.add(stairCutSandStones.BLACK_CUT_SAND_STONE_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairLeaves() {
+    private static @NotNull ArrayList<Item> stairLeaves() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairLeaves.OAK_LEAF_STAIR.asItem());
+        out.add(stairLeaves.JUNGLE_LEAF_STAIR.asItem());
+        out.add(stairLeaves.BIRCH_LEAF_STAIR.asItem());
+        out.add(stairLeaves.SPRUCE_LEAF_STAIR.asItem());
+        out.add(stairLeaves.ACACIA_LEAF_STAIR.asItem());
+        out.add(stairLeaves.DARK_OAK_LEAF_STAIR.asItem());
+        out.add(stairLeaves.AZALEA_LEAF_STAIR.asItem());
+        out.add(stairLeaves.FLOWERING_AZALEA_LEAF_STAIR.asItem());
+        out.add(stairLeaves.MANGROVE_LEAF_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairMisc() {
+    private static @NotNull ArrayList<Item> stairMisc() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairMisc.END_STONE_STAIR.asItem());
+        out.add(stairMisc.BONE_BLOCK_STAIR.asItem());
+        out.add(stairMisc.DRIED_KELP_STAIR.asItem());
+        out.add(stairMisc.GLOWSTONE_STAIR.asItem());
+        out.add(stairMisc.BASALT_STAIR.asItem());
+        out.add(stairMisc.COBBLED_BASALT_STAIR.asItem());
+        out.add(stairMisc.POLISHED_BASALT_STAIR.asItem());
+        out.add(stairMisc.SMOOTH_BASALT_STAIR.asItem());
+        out.add(stairMisc.RAW_COPPER_STAIR.asItem());
+        out.add(stairMisc.RAW_GOLD_STAIR.asItem());
+        out.add(stairMisc.RAW_IRON_STAIR.asItem());
+        out.add(stairMisc.COAL_BLOCK_STAIR.asItem());
+        out.add(stairMisc.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIR.asItem());
+        out.add(stairMisc.CHISELED_POLISHED_BLACKSTONE_STAIR.asItem());
+        out.add(stairMisc.DRIPSTONE_STAIR.asItem());
+        out.add(stairMisc.NETHERRACK_STAIR.asItem());
+        out.add(stairMisc.SHROOMLIGHT_STAIR.asItem());
+        out.add(stairMisc.MAGMA_BLOCK_STAIR.asItem());
+        out.add(stairMisc.DEEPSLATE_STAIR.asItem());
+        out.add(stairMisc.PACKED_MUD_STAIR.asItem());
+        out.add(stairMisc.SCULK_STAIR.asItem());
+        out.add(stairMisc.MUD_STAIR.asItem());
+        out.add(stairMisc.MUDDY_MANGROVE_ROOT_STAIR.asItem());
+        out.add(stairMisc.MANGROVE_ROOT_STAIR.asItem());
+        out.add(stairMisc.OCHRE_FROGLIGHT_STAIR.asItem());
+        out.add(stairMisc.VERDANT_FROGLIGHT_STAIR.asItem());
+        out.add(stairMisc.PEARLESCENT_FROGLIGHT_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairQuartz() {
+    private static @NotNull ArrayList<Item> stairQuartz() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairQuartz.CHISELED_QUARTZ_STAIR.asItem());
+        out.add(stairQuartz.QUARTZ_BRICK_STAIR.asItem());
+        out.add(stairQuartz.QUARTZ_PILLAR_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairSands() {
+    private static @NotNull ArrayList<Item> stairSands() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairSands.SAND_STAIR.asItem());
+        out.add(stairSands.RED_SAND_STAIR.asItem());
+        out.add(stairSands.BLOOD_SAND_STAIR.asItem());
+        out.add(stairSands.WHITE_SAND_STAIR.asItem());
+        out.add(stairSands.ORANGE_SAND_STAIR.asItem());
+        out.add(stairSands.MAGENTA_SAND_STAIR.asItem());
+        out.add(stairSands.LIGHT_BLUE_SAND_STAIR.asItem());
+        out.add(stairSands.LIGHT_GRAY_SAND_STAIR.asItem());
+        out.add(stairSands.YELLOW_SAND_STAIR.asItem());
+        out.add(stairSands.LIME_SAND_STAIR.asItem());
+        out.add(stairSands.PINK_SAND_STAIR.asItem());
+        out.add(stairSands.GRAY_SAND_STAIR.asItem());
+        out.add(stairSands.PURPLE_SAND_STAIR.asItem());
+        out.add(stairSands.CYAN_SAND_STAIR.asItem());
+        out.add(stairSands.BLUE_SAND_STAIR.asItem());
+        out.add(stairSands.GREEN_SAND_STAIR.asItem());
+        out.add(stairSands.BROWN_SAND_STAIR.asItem());
+        out.add(stairSands.BLACK_SAND_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairSandStones() {
+    private static @NotNull ArrayList<Item> stairSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairSandStones.BLOOD_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.WHITE_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.ORANGE_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.MAGENTA_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.LIGHT_BLUE_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.YELLOW_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.LIME_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.PINK_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.GRAY_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.LIGHT_GRAY_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.CYAN_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.PURPLE_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.BLUE_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.GREEN_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.BROWN_SAND_STONE_STAIR.asItem());
+        out.add(stairSandStones.BLACK_SAND_STONE_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairSmoothSandStones() {
+    private static @NotNull ArrayList<Item> stairSmoothSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairSmoothSandStones.BLOOD_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.WHITE_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.ORANGE_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.MAGENTA_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.LIGHT_BLUE_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.YELLOW_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.LIME_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.PINK_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.GRAY_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.LIGHT_GRAY_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.CYAN_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.PURPLE_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.BLUE_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.GREEN_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.BROWN_SMOOTH_SAND_STONE_STAIR.asItem());
+        out.add(stairSmoothSandStones.BLACK_SMOOTH_SAND_STONE_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairStrippedWoods() {
+    private static @NotNull ArrayList<Item> stairStrippedWoods() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairStrippedWoods.STRIPPED_SPRUCE_WOOD_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_SPRUCE_LOG_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_OAK_WOOD_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_OAK_LOG_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_WARPED_HYPHAE_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_WARPED_STEM_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_CRIMSON_HYPHAE_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_CRIMSON_STEM_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_DARK_OAK_WOOD_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_DARK_OAK_LOG_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_ACACIA_WOOD_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_ACACIA_LOG_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_JUNGLE_WOOD_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_JUNGLE_LOG_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_BIRCH_WOOD_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_BIRCH_LOG_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_MANGROVE_WOOD_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_MANGROVE_LOG_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairTerracotta() {
+    private static @NotNull ArrayList<Item> stairTerracotta() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairTerracotta.WHITE_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.ORANGE_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.MAGENTA_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.LIGHT_BLUE_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.YELLOW_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.LIME_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.PINK_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.GRAY_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.LIGHT_GRAY_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.CYAN_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.PURPLE_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.BLUE_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.BROWN_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.GREEN_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.RED_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.BLACK_TERRACOTTA_STAIR.asItem());
+        out.add(stairTerracotta.TERRACOTTA_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> stairWoods() {
+    private static @NotNull ArrayList<Item> stairWoods() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(stairWoods.SPRUCE_WOOD_STAIR.asItem());
+        out.add(stairWoods.SPRUCE_LOG_STAIR.asItem());
+        out.add(stairWoods.OAK_WOOD_STAIR.asItem());
+        out.add(stairWoods.OAK_LOG_STAIR.asItem());
+        out.add(stairWoods.WARPED_HYPHAE_STAIR.asItem());
+        out.add(stairWoods.WARPED_STEM_STAIR.asItem());
+        out.add(stairWoods.CRIMSON_HYPHAE_STAIR.asItem());
+        out.add(stairWoods.CRIMSON_STEM_STAIR.asItem());
+        out.add(stairWoods.DARK_OAK_WOOD_STAIR.asItem());
+        out.add(stairWoods.DARK_OAK_LOG_STAIR.asItem());
+        out.add(stairWoods.ACACIA_WOOD_STAIR.asItem());
+        out.add(stairWoods.ACACIA_LOG_STAIR.asItem());
+        out.add(stairWoods.JUNGLE_WOOD_STAIR.asItem());
+        out.add(stairWoods.JUNGLE_LOG_STAIR.asItem());
+        out.add(stairWoods.BIRCH_WOOD_STAIR.asItem());
+        out.add(stairWoods.BIRCH_LOG_STAIR.asItem());
+        out.add(stairWoods.MANGROVE_WOOD_STAIR.asItem());
+        out.add(stairWoods.MANGROVE_LOG_STAIR.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> hedgeLeaves() {
+    private static @NotNull ArrayList<Item> hedgeLeaves() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(hedgeLeaves.OAK_HEDGE.asItem());
+        out.add(hedgeLeaves.JUNGLE_HEDGE.asItem());
+        out.add(hedgeLeaves.BIRCH_HEDGE.asItem());
+        out.add(hedgeLeaves.SPRUCE_HEDGE.asItem());
+        out.add(hedgeLeaves.ACACIA_HEDGE.asItem());
+        out.add(hedgeLeaves.AZALEA_HEDGE.asItem());
+        out.add(hedgeLeaves.FLOWERING_AZALEA_HEDGE.asItem());
+        out.add(hedgeLeaves.MANGROVE_HEDGE.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallChiseledSandStones() {
+    private static @NotNull ArrayList<Item> wallChiseledSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallChiseledSandStones.CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.RED_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.BLOOD_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.WHITE_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.ORANGE_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.MAGENTA_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.LIGHT_BLUE_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.YELLOW_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.LIME_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.PINK_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.GRAY_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.LIGHT_GRAY_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.CYAN_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.PURPLE_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.BLUE_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.GREEN_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.BROWN_CHISELED_SAND_STONE_WALL.asItem());
+        out.add(wallChiseledSandStones.BLACK_CHISELED_SAND_STONE_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallConcrete() {
+    private static @NotNull ArrayList<Item> wallConcrete() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallConcrete.RED_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.WHITE_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.ORANGE_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.MAGENTA_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.LIGHT_BLUE_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.YELLOW_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.LIME_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.PINK_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.GRAY_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.LIGHT_GRAY_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.CYAN_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.PURPLE_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.BLUE_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.BROWN_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.BLACK_CONCRETE_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallCutSandStones() {
+    private static @NotNull ArrayList<Item> wallCutSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallCutSandStones.CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.RED_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.BLOOD_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.WHITE_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.ORANGE_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.MAGENTA_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.LIGHT_BLUE_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.YELLOW_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.LIME_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.PINK_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.GRAY_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.LIGHT_GRAY_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.CYAN_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.PURPLE_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.BLUE_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.GREEN_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.BROWN_CUT_SAND_STONE_WALL.asItem());
+        out.add(wallCutSandStones.BLACK_CUT_SAND_STONE_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallMisc() {
+    private static @NotNull ArrayList<Item> wallMisc() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallMisc.END_STONE_WALL.asItem());
+        out.add(wallMisc.PURPUR_BLOCK_WALL.asItem());
+        out.add(wallMisc.BONE_BLOCK_WALL.asItem());
+        out.add(wallMisc.DRIED_KELP_WALL.asItem());
+        out.add(wallMisc.GLOWSTONE_WALL.asItem());
+        out.add(wallMisc.BASALT_WALL.asItem());
+        out.add(wallMisc.COBBLED_BASALT_WALL.asItem());
+        out.add(wallMisc.POLISHED_BASALT_WALL.asItem());
+        out.add(wallMisc.SMOOTH_BASALT_WALL.asItem());
+        out.add(wallMisc.RAW_COPPER_WALL.asItem());
+        out.add(wallMisc.RAW_GOLD_WALL.asItem());
+        out.add(wallMisc.RAW_IRON_WALL.asItem());
+        out.add(wallMisc.COAL_BLOCK_WALL.asItem());
+        out.add(wallMisc.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL.asItem());
+        out.add(wallMisc.CHISELED_POLISHED_BLACKSTONE_WALL.asItem());
+        out.add(wallMisc.DRIPSTONE_WALL.asItem());
+        out.add(wallMisc.NETHERRACK_WALL.asItem());
+        out.add(wallMisc.SHROOMLIGHT_WALL.asItem());
+        out.add(wallMisc.MAGMA_BLOCK_WALL.asItem());
+        out.add(wallMisc.DEEPSLATE_WALL.asItem());
+        out.add(wallMisc.STONE_WALL.asItem());
+        out.add(wallMisc.PACKED_MUD_WALL.asItem());
+        out.add(wallMisc.SCULK_WALL.asItem());
+        out.add(wallMisc.MUD_WALL.asItem());
+        out.add(wallMisc.MUDDY_MANGROVE_ROOT_WALL.asItem());
+        out.add(wallMisc.MANGROVE_ROOT_WALL.asItem());
+        out.add(wallMisc.OCHRE_FROGLIGHT_WALL.asItem());
+        out.add(wallMisc.VERDANT_FROGLIGHT_WALL.asItem());
+        out.add(wallMisc.PEARLESCENT_FROGLIGHT_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallQuartz() {
+    private static @NotNull ArrayList<Item> wallQuartz() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallQuartz.CHISELED_QUARTZ_WALL.asItem());
+        out.add(wallQuartz.QUARTZ_BRICK_WALL.asItem());
+        out.add(wallQuartz.QUARTZ_PILLAR_WALL.asItem());
+        out.add(wallQuartz.QUARTZ_WALL.asItem());
+        out.add(wallQuartz.SMOOTH_QUARTZ_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallSands() {
+    private static @NotNull ArrayList<Item> wallSands() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallSands.SAND_WALL.asItem());
+        out.add(wallSands.RED_SAND_WALL.asItem());
+        out.add(wallSands.BLOOD_SAND_WALL.asItem());
+        out.add(wallSands.WHITE_SAND_WALL.asItem());
+        out.add(wallSands.ORANGE_SAND_WALL.asItem());
+        out.add(wallSands.MAGENTA_SAND_WALL.asItem());
+        out.add(wallSands.LIGHT_BLUE_SAND_WALL.asItem());
+        out.add(wallSands.LIGHT_GRAY_SAND_WALL.asItem());
+        out.add(wallSands.YELLOW_SAND_WALL.asItem());
+        out.add(wallSands.LIME_SAND_WALL.asItem());
+        out.add(wallSands.PINK_SAND_WALL.asItem());
+        out.add(wallSands.GRAY_SAND_WALL.asItem());
+        out.add(wallSands.PURPLE_SAND_WALL.asItem());
+        out.add(wallSands.BLUE_SAND_WALL.asItem());
+        out.add(wallSands.GREEN_SAND_WALL.asItem());
+        out.add(wallSands.BROWN_SAND_WALL.asItem());
+        out.add(wallSands.BLACK_SAND_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallSandStones() {
+    private static @NotNull ArrayList<Item> wallSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallSandStones.BLOOD_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.WHITE_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.ORANGE_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.MAGENTA_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.LIGHT_BLUE_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.YELLOW_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.LIME_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.PINK_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.GRAY_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.LIGHT_GRAY_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.CYAN_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.PURPLE_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.BLUE_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.GREEN_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.BROWN_SAND_STONE_WALL.asItem());
+        out.add(wallSandStones.BLACK_SAND_STONE_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallSmoothSandStones() {
+    private static @NotNull ArrayList<Item> wallSmoothSandStones() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallSmoothSandStones.SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.RED_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.BLOOD_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.WHITE_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.ORANGE_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.MAGENTA_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.LIGHT_BLUE_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.YELLOW_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.LIME_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.PINK_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.GRAY_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.LIGHT_GRAY_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.CYAN_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.PURPLE_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.BLUE_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.GREEN_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.BROWN_SMOOTH_SAND_STONE_WALL.asItem());
+        out.add(wallSmoothSandStones.BLACK_SMOOTH_SAND_STONE_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallStrippedWoods() {
+    private static @NotNull ArrayList<Item> wallStrippedWoods() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallStrippedWoods.STRIPPED_SPRUCE_WOOD_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_SPRUCE_LOG_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_OAK_WOOD_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_OAK_LOG_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_WARPED_HYPHAE_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_WARPED_STEM_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_CRIMSON_HYPHAE_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_CRIMSON_STEM_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_DARK_OAK_WOOD_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_DARK_OAK_LOG_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_ACACIA_WOOD_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_ACACIA_LOG_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_JUNGLE_WOOD_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_JUNGLE_LOG_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_BIRCH_WOOD_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_BIRCH_LOG_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_MANGROVE_WOOD_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_MANGROVE_LOG_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallTerracotta() {
+    private static @NotNull ArrayList<Item> wallTerracotta() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallTerracotta.WHITE_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.ORANGE_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.MAGENTA_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.LIGHT_BLUE_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.YELLOW_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.LIME_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.PINK_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.GRAY_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.LIGHT_GRAY_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.CYAN_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.PURPLE_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.BLUE_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.BROWN_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.GREEN_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.RED_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.BLACK_TERRACOTTA_WALL.asItem());
+        out.add(wallTerracotta.TERRACOTTA_WALL.asItem());
         return out;
     }
-    public static @NotNull ArrayList<Item> wallWoods() {
+    private static @NotNull ArrayList<Item> wallWoods() {
         ArrayList<Item> out = new ArrayList<>();
-
+        out.add(wallWoods.SPRUCE_WOOD_WALL.asItem());
+        out.add(wallWoods.SPRUCE_LOG_WALL.asItem());
+        out.add(wallWoods.OAK_WOOD_WALL.asItem());
+        out.add(wallWoods.OAK_LOG_WALL.asItem());
+        out.add(wallWoods.WARPED_HYPHAE_WALL.asItem());
+        out.add(wallWoods.WARPED_STEM_WALL.asItem());
+        out.add(wallWoods.CRIMSON_HYPHAE_WALL.asItem());
+        out.add(wallWoods.CRIMSON_STEM_WALL.asItem());
+        out.add(wallWoods.DARK_OAK_WOOD_WALL.asItem());
+        out.add(wallWoods.DARK_OAK_LOG_WALL.asItem());
+        out.add(wallWoods.ACACIA_WOOD_WALL.asItem());
+        out.add(wallWoods.ACACIA_LOG_WALL.asItem());
+        out.add(wallWoods.JUNGLE_WOOD_WALL.asItem());
+        out.add(wallWoods.JUNGLE_LOG_WALL.asItem());
+        out.add(wallWoods.BIRCH_WOOD_WALL.asItem());
+        out.add(wallWoods.BIRCH_LOG_WALL.asItem());
+        out.add(wallWoods.MANGROVE_WOOD_WALL.asItem());
+        out.add(wallWoods.MANGROVE_LOG_WALL.asItem());
         return out;
     }
     public static @NotNull ArrayList<Item> getDelBlocks() {
@@ -434,6 +1485,8 @@ public class itemGroupArrays {
         delBlocks.addAll(genChiseledSandStones());
         delBlocks.addAll(genSmoothSandStones());
         delBlocks.addAll(misc());
+        delBlocks.addAll(gravColorSands());
+        delBlocks.addAll(gravColorSolidSands());
         delBlocks.addAll(slabChiseledSandStones());
         delBlocks.addAll(slabChiseledSandStoneEnergy());
         delBlocks.addAll(slabConcrete());
@@ -466,17 +1519,19 @@ public class itemGroupArrays {
         delBlocks.addAll(hedgeLeaves());
         delBlocks.addAll(wallChiseledSandStones());
         delBlocks.addAll(wallConcrete());
+        delBlocks.addAll(wallCutSandStones());
         delBlocks.addAll(wallChiseledSandStones());
         delBlocks.addAll(wallMisc());
         delBlocks.addAll(wallQuartz());
         delBlocks.addAll(wallSands());
         delBlocks.addAll(wallSandStones());
+        delBlocks.addAll(wallSmoothSandStones());
         delBlocks.addAll(wallStrippedWoods());
         delBlocks.addAll(wallTerracotta());
         delBlocks.addAll(wallWoods());
         return delBlocks;
     }
-    public static @NotNull ArrayList<Item> blockCutterItems() {
+    private static @NotNull ArrayList<Item> blockCutterItems() {
         ArrayList<Item> out = new ArrayList<>();
         out.add(BlockCutterItems.ARMOR_COMPOUND);
         out.add(BlockCutterItems.WALL_PLANS);
@@ -486,7 +1541,7 @@ public class itemGroupArrays {
         out.add(BlockCutterItems.STAIR_PLANS);
         return out;
     }
-    public static @NotNull ArrayList<Item> shiftingDyes() {
+    private static @NotNull ArrayList<Item> shiftingDyes() {
         ArrayList<Item> out = new ArrayList<>();
         out.add(ShiftingDyes.CLEANSE_SHIFT_DYE);
         out.add(ShiftingDyes.RED_SHIFT_DYE);

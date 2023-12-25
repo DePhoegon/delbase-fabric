@@ -30,6 +30,7 @@ public class regLists {
     }
     // Blocks & Classes that need to be registered first before called ont by others
     public static void RegisterBaseEvents() {
+        itemGroupLogic.registerItemGroups();
         blockArrayList.setBlockArrays();
         modRecipes.registerRecipes();
     }

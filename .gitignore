@@ -45,6 +45,7 @@ run/*.json
 run/crash-reports
 run/servers.*
 run/mod-errors
+run/.fabric
 
 # java
 

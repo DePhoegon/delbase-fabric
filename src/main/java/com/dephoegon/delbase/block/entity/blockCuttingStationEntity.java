@@ -16,6 +16,7 @@ import net.minecraft.inventory.SidedInventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -29,7 +30,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
-import static com.dephoegon.delbase.Delbase.configHolder;
 import static com.dephoegon.delbase.aid.recipe.TierRandomDropAid.*;
 import static com.dephoegon.delbase.aid.recipe.countAid.netheriteDiamondBonus;
 import static com.dephoegon.delbase.item.BlockCutterItems.*;
@@ -154,14 +154,15 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
         for (int i = 0; i < entity.inventory.size(); i++) { inventory.setStack(i, entity.getStack(i)); }
 
         assert level != null;
+        DynamicRegistryManager rpHold = level.getRegistryManager();
         Optional<blockCutterStationRecipes> match = level.getRecipeManager()
                 .getFirstMatch(blockCutterStationRecipes.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
-            Item resultItem = match.get().getOutput().getItem();
+            Item resultItem = match.get().getOutput(rpHold).getItem();
             String keyString = "none";
             boolean skipOutputSlot = false;
-            int count = match.get().getOutput().getCount();
+            int count = match.get().getOutput(rpHold).getCount();
             if (entity.getStack(planSlot).getItem() == ARMOR_COMPOUND.asItem()) {
                 Item le_item = entity.getStack(inputSlot).getItem();
                 boolean skipCompoundEat = false;
@@ -191,13 +192,13 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
                         skipOutputSlot = true;
                         keyString = "netherite";
                         if (le_item instanceof SwordItem) {
-                            count = configHolder.netherriteSwordDiamondBonus;
+                            count = config.NETHERRITE_SWORD_BONUS.get();
                         }
                         if (le_item instanceof AxeItem) {
-                            count = configHolder.netherriteAxeDiamondBonus;
+                            count = config.NETHERRITE_AXE_BONUS.get();
                         }
                         if (le_item instanceof PickaxeItem) {
-                            count = configHolder.netherritePickAxeDiamondBonus;
+                            count = config.NETHERRITE_PICKAXE_BONUS.get();
                         }
                         if (le_item instanceof HoeItem || le_item instanceof ShovelItem) {
                             count = 1;
@@ -218,12 +219,12 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
                 int returnSize;
                 SimpleInventory stone = null;
                 if (keyString.equals("stone")) {
-                    returnSize = configHolder.stoneSalvageRolls;
+                    returnSize = config.STONE_SALVAGE_ROLLS.get();
                     stone = stoneContainer(returnSize);
                     //stone confetti
                 }
                 if (keyString.equals("wood")){
-                    returnSize = configHolder.woodSalvageRolls;
+                    returnSize = config.WOOD_SALVAGE_ROLLS.get();
                     stone = woodContainer(returnSize);
                     //wooden confetti
                 }
@@ -259,7 +260,7 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
         if (match.isPresent()){
             Item planSlotItem;
             if (entity.getStack(planSlot).isEmpty()) { return false; } else { planSlotItem = entity.getStack(planSlot).getItem(); }
-            ItemStack resultItem = match.get().getOutput();
+            ItemStack resultItem = match.get().getOutput(world1.getRegistryManager());
             int count = resultItem.getCount();
             if (resultItem.getItem() instanceof BlockItem tOutput) {
                 if (tOutput.getBlock() instanceof SlabBlock) {
@@ -280,17 +281,14 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
                 }
             } // Just because I like to enforce plan usage, & possibly avoid any overlooked items.
             // Counting Aids
-            return canInsertAmountIntoOutputSlot(inventory, count) && canInsertItemIntoOutputSlot(inventory, resultItem);
+            return canUseOutput(inventory, resultItem, count, entity);
         } else return false;
     }
-    private static boolean hasNotReachedStackLimit(@NotNull blockCuttingStationEntity entity) {
-        return entity.getStack(outSlot).getCount() < entity.getStack(outSlot).getMaxCount();
+    private static boolean canUseOutput(@NotNull SimpleInventory inventory, @NotNull ItemStack output, int variableOut, @NotNull blockCuttingStationEntity entity) {
+        if (entity.getStack(outSlot).isEmpty()) { return true; }
+        if (entity.getStack(outSlot).getItem() == output.getItem()) {
+            return inventory.getStack(outSlot).getMaxCount() >= inventory.getStack(outSlot).getCount() + variableOut;
+        }
+        return false;
     }
-    private static boolean canInsertItemIntoOutputSlot(@NotNull SimpleInventory inventory, @NotNull ItemStack output) {
-        return inventory.getStack(blockCuttingStationEntity.outSlot).getItem() == output.getItem() || inventory.getStack(blockCuttingStationEntity.outSlot).isEmpty();
-    }
-    private static boolean canInsertAmountIntoOutputSlot(@NotNull SimpleInventory inventory, int variableOut) {
-        return inventory.getStack(blockCuttingStationEntity.outSlot).getMaxCount() >= inventory.getStack(blockCuttingStationEntity.outSlot).getCount()+variableOut;
-    }
-
 }

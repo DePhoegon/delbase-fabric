@@ -47,9 +47,9 @@ public class strippedWoodenFences extends baseModBlocks {
     public static final FenceBlock STRIPPED_WARPED_STEM_FENCE = noToolTipFAid("stripped_warped_stem_fence", WARPED_HYPHAE, false);
     public static final FenceGateBlock STRIPPED_WARPED_STEM_FENCE_GATE = noToolTipFgAid("stripped_warped_stem_fence_gate", WARPED_HYPHAE, WoodType.WARPED, false);
     public static final FenceBlock STRIPPED_MANGROVE_WOOD_FENCE = noToolTipFAid("stripped_mangrove_wood_fence", STRIPPED_OAK_WOOD, true);
-    public static final FenceGateBlock STRIPPED_MANGROVE_WOOD_FENCE_GATE_BLOCK = noToolTipFgAid("stripped_mangrove_wood_fence_gate", STRIPPED_OAK_WOOD, WoodType.MANGROVE, true);
+    public static final FenceGateBlock STRIPPED_MANGROVE_WOOD_FENCE_GATE = noToolTipFgAid("stripped_mangrove_wood_fence_gate", STRIPPED_OAK_WOOD, WoodType.MANGROVE, true);
     public static final FenceBlock STRIPPED_MANGROVE_LOG_FENCE = noToolTipFAid("stripped_mangrove_log_fence", STRIPPED_OAK_WOOD, true);
-    public static final FenceGateBlock STRIPPED_MANGROVE_LOG_FENCE_GATE_BLOCK = noToolTipFgAid("stripped_mangrove_log_fence_gate", STRIPPED_OAK_WOOD, WoodType.MANGROVE, true);
+    public static final FenceGateBlock STRIPPED_MANGROVE_LOG_FENCE_GATE = noToolTipFgAid("stripped_mangrove_log_fence_gate", STRIPPED_OAK_WOOD, WoodType.MANGROVE, true);
 
     private static FenceBlock noToolTipFAid(String name, Block block, boolean burnable) {
         if (burnable) { return burnFenceBlockAid(name, block, "", "", ""); }

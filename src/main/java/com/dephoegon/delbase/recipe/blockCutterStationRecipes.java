@@ -7,6 +7,7 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
+import net.minecraft.registry.DynamicRegistryManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
@@ -25,12 +26,13 @@ public class blockCutterStationRecipes implements Recipe<SimpleInventory> {
         this.recipeItems = recipeItems;
     }
     @Override
-    public boolean matches(@NotNull SimpleInventory inventory, World world) {
+    public boolean matches(@NotNull SimpleInventory inventory, @NotNull World world) {
+        if (world.isClient()) { return false; }
         return (recipeItems.get(jsonIngredientItem).test(inventory.getStack(blockCuttingStationEntity.inputSlot)) && recipeItems.get(jsonPlanItem).test(inventory.getStack(blockCuttingStationEntity.planSlot)));
     }
 
     @Override
-    public ItemStack craft(SimpleInventory inventory) {
+    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
         return output;
     }
 
@@ -38,22 +40,19 @@ public class blockCutterStationRecipes implements Recipe<SimpleInventory> {
     public boolean fits(int width, int height) {
         return true;
     }
-
-    @Override
-    public ItemStack getOutput() {
-        return output.copy();
+    public DefaultedList<Ingredient> getIngredients() {
+        DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
+        list.addAll(recipeItems);
+        return list;
     }
-
     @Override
-    public Identifier getId() {
-        return id;
-    }
-
+    public ItemStack getOutput(DynamicRegistryManager registryManager) { return output.copy(); }
+    @Override
+    public Identifier getId() { return id; }
     @Override
     public RecipeSerializer<?> getSerializer() {
         return Serializer.INSTANCE;
     }
-
     @Override
     public RecipeType<?> getType() {
         return Type.INSTANCE;
@@ -94,7 +93,7 @@ public class blockCutterStationRecipes implements Recipe<SimpleInventory> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);
             }
-            buf.writeItemStack(recipe.getOutput());
+            buf.writeItemStack(recipe.getOutput(null));
         }
     }
 }
