@@ -1,17 +1,16 @@
 package com.dephoegon.delbase.aid.recipe;
 
+import com.dephoegon.delbase.aid.world.config;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import org.jetbrains.annotations.NotNull;
 
-import static com.dephoegon.delbase.Delbase.configHolder;
-
 public class countAid {
 
-    private static final int nether_chest = configHolder.netherriteChestDiamondBonus;
-    private static final int nether_helmet = configHolder.netherriteHelmetDiamondBonus;
-    private static final int nether_legs = configHolder.netherriteLeggingsDiamondBonus;
-    private static final int nether_boot = configHolder.netherriteBootsDiamondBonus;
+    private static final int nether_chest = config.NETHERRITE_CHEST_DIAMOND_BONUS.get();
+    private static final int nether_helmet = config.NETHERRITE_HELMET_DIAMOND_BONUS.get();
+    private static final int nether_legs = config.NETHERRITE_LEGGINGS_DIAMOND_BONUS.get();
+    private static final int nether_boot = config.NETHERRITE_BOOTS_DIAMOND_BONUS.get();
 
     public static int netheriteDiamondBonus(@NotNull ArmorItem recycle) {
         int count = 1;
