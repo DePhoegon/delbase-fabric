@@ -23,7 +23,7 @@ public class wallCutSandStones extends baseModBlocks {
     public static final WallBlock YELLOW_CUT_SAND_STONE_WALL = noToolTipAid("yellow_cut_sand_stone_wall", YELLOW_SAND_STONE);
     public static final WallBlock LIME_CUT_SAND_STONE_WALL = noToolTipAid("lime_cut_sand_stone_wall", LIME_SAND_STONE);
     public static final WallBlock PINK_CUT_SAND_STONE_WALL = noToolTipAid("pink_cut_sand_stone_wall", PINK_SAND_STONE);
-    public static final WallBlock GRAY_CUT_SAND_STONE_WALL = noToolTipAid("gray_cut_sand_stone_wall", GREEN_SAND_STONE);
+    public static final WallBlock GRAY_CUT_SAND_STONE_WALL = noToolTipAid("gray_cut_sand_stone_wall", GRAY_SAND_STONE);
     public static final WallBlock LIGHT_GRAY_CUT_SAND_STONE_WALL = noToolTipAid("light_gray_cut_sand_stone_wall", LIGHT_GRAY_SAND_STONE);
     public static final WallBlock CYAN_CUT_SAND_STONE_WALL = noToolTipAid("cyan_cut_sand_stone_wall", CYAN_SAND_STONE);
     public static final WallBlock PURPLE_CUT_SAND_STONE_WALL = noToolTipAid("purple_cut_sand_stone_wall", PURPLE_SAND_STONE);

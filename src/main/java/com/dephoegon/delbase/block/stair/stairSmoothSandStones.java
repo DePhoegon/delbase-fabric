@@ -19,7 +19,7 @@ public class stairSmoothSandStones extends baseModBlocks {
     public static final StairsBlock YELLOW_SMOOTH_SAND_STONE_STAIR = noToolTipAid("yellow_smooth_sand_stone_stair", YELLOW_SAND_STONE);
     public static final StairsBlock LIME_SMOOTH_SAND_STONE_STAIR = noToolTipAid("lime_smooth_sand_stone_stair", LIME_SAND_STONE);
     public static final StairsBlock PINK_SMOOTH_SAND_STONE_STAIR = noToolTipAid("pink_smooth_sand_stone_stair", PINK_SAND_STONE);
-    public static final StairsBlock GRAY_SMOOTH_SAND_STONE_STAIR = noToolTipAid("gray_smooth_sand_stone_stair", GREEN_SAND_STONE);
+    public static final StairsBlock GRAY_SMOOTH_SAND_STONE_STAIR = noToolTipAid("gray_smooth_sand_stone_stair", GRAY_SAND_STONE);
     public static final StairsBlock LIGHT_GRAY_SMOOTH_SAND_STONE_STAIR = noToolTipAid("light_gray_smooth_sand_stone_stair", LIGHT_GRAY_SAND_STONE);
     public static final StairsBlock CYAN_SMOOTH_SAND_STONE_STAIR = noToolTipAid("cyan_smooth_sand_stone_stair", CYAN_SAND_STONE);
     public static final StairsBlock PURPLE_SMOOTH_SAND_STONE_STAIR = noToolTipAid("purple_smooth_sand_stone_stair", PURPLE_SAND_STONE);

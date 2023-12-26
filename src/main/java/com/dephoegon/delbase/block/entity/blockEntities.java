@@ -9,10 +9,9 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 public class blockEntities {
-    public static BlockEntityType<blockCuttingStationEntity> BLOCK_CUTTER_ENTITY;
+    public static final BlockEntityType<blockCuttingStationEntity> BLOCK_CUTTER_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Delbase.Delbase_ID, "block_cutting_station_entity"), FabricBlockEntityTypeBuilder.create(blockCuttingStationEntity::new, machineBlock.BLOCK_CUTTER_STATION).build());
 
     public static void registerAllBlockEntities() {
-        BLOCK_CUTTER_ENTITY = Registry.register(Registries.BLOCK_ENTITY_TYPE, new Identifier(Delbase.Delbase_ID, "block_cutting_station_entity"),
-                FabricBlockEntityTypeBuilder.create(blockCuttingStationEntity::new, machineBlock.BLOCK_CUTTER_STATION).build(null));
+        Delbase.LOGGER.info("Registering BlockCutter");
     }
 }

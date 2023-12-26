@@ -18,7 +18,7 @@ public class genSmoothSandStones extends baseModBlocks {
     public static final Block YELLOW_SMOOTH_SAND_STONE = noToolTipAid("yellow_smooth_sand_stone", YELLOW_SAND_STONE);
     public static final Block LIME_SMOOTH_SAND_STONE = noToolTipAid("lime_smooth_sand_stone", LIME_SAND_STONE);
     public static final Block PINK_SMOOTH_SAND_STONE = noToolTipAid("pink_smooth_sand_stone", PINK_SAND_STONE);
-    public static final Block GRAY_SMOOTH_SAND_STONE = noToolTipAid("gray_smooth_sand_stone", GREEN_SAND_STONE);
+    public static final Block GRAY_SMOOTH_SAND_STONE = noToolTipAid("gray_smooth_sand_stone", GRAY_SAND_STONE);
     public static final Block LIGHT_GRAY_SMOOTH_SAND_STONE = noToolTipAid("light_gray_smooth_sand_stone", LIGHT_GRAY_SAND_STONE);
     public static final Block CYAN_SMOOTH_SAND_STONE = noToolTipAid("cyan_smooth_sand_stone", CYAN_SAND_STONE);
     public static final Block PURPLE_SMOOTH_SAND_STONE = noToolTipAid("purple_smooth_sand_stone", PURPLE_SAND_STONE);

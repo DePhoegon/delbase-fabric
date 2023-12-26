@@ -23,7 +23,7 @@ public class slabCutSandStonesEnergy extends baseModBlocks {
     public static final SlabBlock YELLOW_CUT_SAND_STONE_SLAB_ENERGY = noToolTipAid("yellow_cut_sand_stone_slab_energy", YELLOW_SAND_STONE);
     public static final SlabBlock LIME_CUT_SAND_STONE_SLAB_ENERGY = noToolTipAid("lime_cut_sand_stone_slab_energy", LIME_SAND_STONE);
     public static final SlabBlock PINK_CUT_SAND_STONE_SLAB_ENERGY = noToolTipAid("pink_cut_sand_stone_slab_energy", PINK_SAND_STONE);
-    public static final SlabBlock GRAY_CUT_SAND_STONE_SLAB_ENERGY = noToolTipAid("gray_cut_sand_stone_slab_energy", GREEN_SAND_STONE);
+    public static final SlabBlock GRAY_CUT_SAND_STONE_SLAB_ENERGY = noToolTipAid("gray_cut_sand_stone_slab_energy", GRAY_SAND_STONE);
     public static final SlabBlock LIGHT_GRAY_CUT_SAND_STONE_SLAB_ENERGY = noToolTipAid("light_gray_cut_sand_stone_slab_energy", LIGHT_GRAY_SAND_STONE);
     public static final SlabBlock CYAN_CUT_SAND_STONE_SLAB_ENERGY = noToolTipAid("cyan_cut_sand_stone_slab_energy", CYAN_SAND_STONE);
     public static final SlabBlock PURPLE_CUT_SAND_STONE_SLAB_ENERGY = noToolTipAid("purple_cut_sand_stone_slab_energy", PURPLE_SAND_STONE);

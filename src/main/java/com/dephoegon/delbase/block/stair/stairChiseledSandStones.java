@@ -23,7 +23,7 @@ public class stairChiseledSandStones extends baseModBlocks {
     public static final StairsBlock YELLOW_CHISELED_SAND_STONE_STAIR = noToolTipAid("yellow_chiseled_sand_stone_stair", YELLOW_SAND_STONE);
     public static final StairsBlock LIME_CHISELED_SAND_STONE_STAIR = noToolTipAid("lime_chiseled_sand_stone_stair", LIME_SAND_STONE);
     public static final StairsBlock PINK_CHISELED_SAND_STONE_STAIR = noToolTipAid("pink_chiseled_sand_stone_stair", PINK_SAND_STONE);
-    public static final StairsBlock GRAY_CHISELED_SAND_STONE_STAIR = noToolTipAid("gray_chiseled_sand_stone_stair", GREEN_SAND_STONE);
+    public static final StairsBlock GRAY_CHISELED_SAND_STONE_STAIR = noToolTipAid("gray_chiseled_sand_stone_stair", GRAY_SAND_STONE);
     public static final StairsBlock LIGHT_GRAY_CHISELED_SAND_STONE_STAIR = noToolTipAid("light_gray_chiseled_sand_stone_stair", LIGHT_GRAY_SAND_STONE);
     public static final StairsBlock CYAN_CHISELED_SAND_STONE_STAIR = noToolTipAid("cyan_chiseled_sand_stone_stair", CYAN_SAND_STONE);
     public static final StairsBlock PURPLE_CHISELED_SAND_STONE_STAIR = noToolTipAid("purple_chiseled_sand_stone_stair", PURPLE_SAND_STONE);

@@ -57,7 +57,6 @@ public class fenceMisc extends baseModBlocks {
     public static final FenceGateBlock RED_NETHERBRICK_FENCE_GATE = noToolTipFgAid("red_netherbrick_fence_gate", RED_NETHER_BRICKS, BlockSoundGroup.NETHER_BRICKS);
     public static final FenceBlock SCULK_FENCE = noToolTipFAid("sculk_fence", SCULK, BlockSoundGroup.SCULK);
     public static final FenceGateBlock SCULK_FENCE_GATE_BLOCK = noToolTipFgAid("sculk_fence_gate", SCULK, BlockSoundGroup.SCULK);
-
     public static final FenceBlock PACKED_MUD_FENCE = noToolTipFAid("packed_mud_fence", PACKED_MUD, BlockSoundGroup.PACKED_MUD);
     public static final FenceGateBlock PACKED_MUD_FENCE_GATE_BLOCK = noToolTipFgAid("packed_mud_fence_gate", PACKED_MUD, BlockSoundGroup.PACKED_MUD);
     public static final FenceBlock MUD_FENCE = noToolTipFAid("mud_fence", MUD, BlockSoundGroup.MUD);

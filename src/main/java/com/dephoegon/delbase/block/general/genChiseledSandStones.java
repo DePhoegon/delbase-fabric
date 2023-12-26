@@ -18,7 +18,7 @@ public class genChiseledSandStones extends baseModBlocks {
     public static final Block YELLOW_CHISELED_SAND_STONE = noToolTipAid("yellow_chiseled_sand_stone", YELLOW_SAND_STONE);
     public static final Block LIME_CHISELED_SAND_STONE = noToolTipAid("lime_chiseled_sand_stone", LIME_SAND_STONE);
     public static final Block PINK_CHISELED_SAND_STONE = noToolTipAid("pink_chiseled_sand_stone", PINK_SAND_STONE);
-    public static final Block GRAY_CHISELED_SAND_STONE = noToolTipAid("gray_chiseled_sand_stone", GREEN_SAND_STONE);
+    public static final Block GRAY_CHISELED_SAND_STONE = noToolTipAid("gray_chiseled_sand_stone", GRAY_SAND_STONE);
     public static final Block LIGHT_GRAY_CHISELED_SAND_STONE = noToolTipAid("light_gray_chiseled_sand_stone", LIGHT_GRAY_SAND_STONE);
     public static final Block CYAN_CHISELED_SAND_STONE = noToolTipAid("cyan_chiseled_sand_stone", CYAN_SAND_STONE);
     public static final Block PURPLE_CHISELED_SAND_STONE = noToolTipAid("purple_chiseled_sand_stone", PURPLE_SAND_STONE);

@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
+import org.jetbrains.annotations.NotNull;
 
 import static net.minecraft.block.Blocks.*;
 
@@ -29,6 +30,6 @@ public class stairConcrete extends baseModBlocks {
     public static final StairsBlock BLACK_CONCRETE_STAIR = noToolTipAid("black_concrete_stair", BLACK_CONCRETE);
 
     private static StairsBlock noToolTipAid(String name, Block block) { return chiseledSandStoneHelper(name, block, "", "", ""); }
-    private static StairsBlock chiseledSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new concreteStair(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
+    private static StairsBlock chiseledSandStoneHelper(String name, @NotNull Block block, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new concreteStair(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
     public static void registerConcreteStair() { Delbase.LOGGER.info("Registering Concrete Stairs for "+Delbase.Delbase_ID); }
 }

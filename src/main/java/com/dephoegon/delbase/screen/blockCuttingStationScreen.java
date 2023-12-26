@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.Item;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.NotNull;
 
 import static com.dephoegon.delbase.item.BlockCutterItems.*;
 
@@ -26,29 +27,38 @@ public class blockCuttingStationScreen extends HandledScreen<blockCuttingStation
 
     protected void  init() {
         super.init();
-        titleX = (backgroundWidth - textRenderer.getWidth(title)) /2 ;
+        titleX = (backgroundWidth - textRenderer.getWidth(title))/2;
     }
     @Override
-    protected void drawBackground(DrawContext context, float delta, int mouseX, int mouseY) {
+    protected void drawBackground(@NotNull DrawContext context, float delta, int mouseX, int mouseY) {
+        Item item = handler.getSlot(blockCuttingStationEntity.planSlot).getStack().getItem();
+        Identifier HOLD = getIdentifier(item);
+
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderColor(1.0F,1.0F,1.0F,1.0F);
-        Item item = handler.getSlot(blockCuttingStationEntity.planSlot).getStack().getItem();
-        Identifier HOLD = EMPTY_TEXTURE;
-        if (listArrays.getFullPlanSlotArray().contains(item)) {
-            if (item == WALL_PLANS.asItem()) { HOLD = PLANS_WALL_TEXTURE; }
-            if (item == FENCE_PLANS.asItem()) { HOLD = PLANS_FENCE_TEXTURE; }
-            if (item == FENCE_GATE_PLANS.asItem()) { HOLD = PLANS_FENCE_GATE_TEXTURE; }
-            if (item == SLAB_PLANS.asItem()) { HOLD = PLANS_SLAB_TEXTURE; }
-            if (item == STAIR_PLANS.asItem()) { HOLD = PLANS_STAIR_TEXTURE; }
-            if (item == ARMOR_COMPOUND.asItem()) { HOLD = COMPOUND_TEXTURE; }
-        }
+        RenderSystem.setShaderTexture(0, HOLD);
+
         int x = (width - backgroundWidth) / 2;
         int y = (height - backgroundHeight) /2;
         context.drawTexture(HOLD, x, y, 0, 0, backgroundWidth, backgroundHeight);
-        if (handler.isCrafting()) {
-            context.drawTexture(HOLD, x+102, y+41, 176, 0,8, handler.getScaledProgress());
-        }
+        drawProgress(context, x, y, HOLD);
     }
+    private void drawProgress(DrawContext context, int x, int y, Identifier texture) {
+        if (handler.isCrafting()) { context.drawTexture(texture, x+102, y+41, 176, 0,8, handler.getScaledProgress()); }
+    }
+    @NotNull
+    private static Identifier getIdentifier(@NotNull Item item) {
+        Identifier HOLD;
+        if (item.equals(WALL_PLANS)) { HOLD = PLANS_WALL_TEXTURE; }
+        else if (item.equals(FENCE_PLANS)) { HOLD = PLANS_FENCE_TEXTURE; }
+        else if (item.equals(FENCE_GATE_PLANS)) { HOLD = PLANS_FENCE_GATE_TEXTURE; }
+        else if (item.equals(SLAB_PLANS)) { HOLD = PLANS_SLAB_TEXTURE; }
+        else if (item.equals(STAIR_PLANS)) { HOLD = PLANS_STAIR_TEXTURE; }
+        else if (item.equals(ARMOR_COMPOUND)) { HOLD = COMPOUND_TEXTURE; }
+        else { HOLD = EMPTY_TEXTURE; }
+        return HOLD;
+    }
+
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
         renderBackground(context);
         super.render(context, mouseX, mouseY, delta);

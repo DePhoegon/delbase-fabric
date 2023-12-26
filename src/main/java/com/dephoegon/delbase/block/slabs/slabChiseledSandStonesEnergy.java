@@ -23,7 +23,7 @@ public class slabChiseledSandStonesEnergy extends baseModBlocks {
     public static final SlabBlock YELLOW_CHISELED_SAND_STONE_SLAB_ENERGY = noToolTipAid("yellow_chiseled_sand_stone_slab_energy", YELLOW_SAND_STONE);
     public static final SlabBlock LIME_CHISELED_SAND_STONE_SLAB_ENERGY = noToolTipAid("lime_chiseled_sand_stone_slab_energy", LIME_SAND_STONE);
     public static final SlabBlock PINK_CHISELED_SAND_STONE_SLAB_ENERGY = noToolTipAid("pink_chiseled_sand_stone_slab_energy", PINK_SAND_STONE);
-    public static final SlabBlock GRAY_CHISELED_SAND_STONE_SLAB_ENERGY = noToolTipAid("gray_chiseled_sand_stone_slab_energy", GREEN_SAND_STONE);
+    public static final SlabBlock GRAY_CHISELED_SAND_STONE_SLAB_ENERGY = noToolTipAid("gray_chiseled_sand_stone_slab_energy", GRAY_SAND_STONE);
     public static final SlabBlock LIGHT_GRAY_CHISELED_SAND_STONE_SLAB_ENERGY = noToolTipAid("light_gray_chiseled_sand_stone_slab_energy", LIGHT_GRAY_SAND_STONE);
     public static final SlabBlock CYAN_CHISELED_SAND_STONE_SLAB_ENERGY = noToolTipAid("cyan_chiseled_sand_stone_slab_energy", CYAN_SAND_STONE);
     public static final SlabBlock PURPLE_CHISELED_SAND_STONE_SLAB_ENERGY = noToolTipAid("purple_chiseled_sand_stone_slab_energy", PURPLE_SAND_STONE);

@@ -19,7 +19,7 @@ public class slabSandStones extends baseModBlocks {
     public static final SlabBlock YELLOW_SAND_STONE_SLAB = noToolTipAid("yellow_sand_stone_slab", YELLOW_SAND_STONE);
     public static final SlabBlock LIME_SAND_STONE_SLAB = noToolTipAid("lime_sand_stone_slab", LIME_SAND_STONE);
     public static final SlabBlock PINK_SAND_STONE_SLAB = noToolTipAid("pink_sand_stone_slab", PINK_SAND_STONE);
-    public static final SlabBlock GRAY_SAND_STONE_SLAB = noToolTipAid("gray_sand_stone_slab", GREEN_SAND_STONE);
+    public static final SlabBlock GRAY_SAND_STONE_SLAB = noToolTipAid("gray_sand_stone_slab", GRAY_SAND_STONE);
     public static final SlabBlock LIGHT_GRAY_SAND_STONE_SLAB = noToolTipAid("light_gray_sand_stone_slab", LIGHT_GRAY_SAND_STONE);
     public static final SlabBlock CYAN_SAND_STONE_SLAB = noToolTipAid("cyan_sand_stone_slab", CYAN_SAND_STONE);
     public static final SlabBlock PURPLE_SAND_STONE_SLAB = noToolTipAid("purple_sand_stone_slab", PURPLE_SAND_STONE);

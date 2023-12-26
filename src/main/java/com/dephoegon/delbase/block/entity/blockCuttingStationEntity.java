@@ -5,21 +5,21 @@ import com.dephoegon.delbase.aid.inventory.slotControls;
 import com.dephoegon.delbase.aid.world.config;
 import com.dephoegon.delbase.recipe.blockCutterStationRecipes;
 import com.dephoegon.delbase.screen.blockCuttingStationScreenHandler;
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.inventory.SidedInventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
@@ -35,7 +35,7 @@ import static com.dephoegon.delbase.aid.recipe.countAid.netheriteDiamondBonus;
 import static com.dephoegon.delbase.item.BlockCutterItems.*;
 import static net.minecraft.item.Items.DIAMOND;
 
-public class blockCuttingStationEntity extends BlockEntity implements NamedScreenHandlerFactory, ImplementedInventory, SidedInventory, Inventory {
+public class blockCuttingStationEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
     public static final int invSize = 3;
     public static final int planSlot = 2;
     public static final int inputSlot = 0;
@@ -63,54 +63,16 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
             public int size() { return 2; }
         };
     }
-
-    public int size() { return inventory.size(); }
-    public boolean isEmpty() { return inventory.stream().allMatch(ItemStack::isEmpty); }
-    public ItemStack getStack(int slot) { return inventory.get(slot); }
-    public ItemStack removeStack(int slot) { return Inventories.removeStack(inventory, slot); }
-    public void setStack(int slot, ItemStack stack) {
-        inventory.set(slot, stack);
-        if (stack.getCount() > getMaxCountPerStack()) {
-            stack.setCount(getMaxCountPerStack());
-        }
-        markDirty();
-    }
-    public void clear() {
-        inventory.clear();
-    }
-    public int[] getAvailableSlots(Direction side) {
-        // Return the index of the slot that is accessible from the given side
-        if (side == Direction.DOWN) {
-            return new int[]{outSlot};
-        } else if (side == Direction.UP) {
-            return new int[]{inputSlot};
-        } else {
-            return new int[]{planSlot};
-        }
-    }
-    public boolean canInsert(int slot, ItemStack stack, Direction dir) {
-        // Only allow insertion into the specified slot from the given side
-        int[] availableSlots = getAvailableSlots(dir);
-        for (int availableSlot : availableSlots) {
-            return slot == availableSlot && slotControls.isValidBlockCutterItem(stack, slot);
-        }
-        return false;
-    }
-    public boolean canExtract(int slot, ItemStack stack, Direction dir) {
-        // Allow extraction from any slot
-        return true;
-    }
     @Override
-    public DefaultedList<ItemStack> getItems() {
-        return inventory;
+    public void writeScreenOpeningData(ServerPlayerEntity player, @NotNull PacketByteBuf buf) {
+        buf.writeBlockPos(this.pos);
     }
     public Text getDisplayName() {
         return Text.translatable("block.delbase.block_cutting_station");
     }
-    @Nullable
     @Override
-    public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) {
-        return new blockCuttingStationScreenHandler(syncId, inv, this, this.propertyDelegate);
+    public DefaultedList<ItemStack> getItems() {
+        return inventory;
     }
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
@@ -118,11 +80,15 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
         Inventories.writeNbt(nbt, inventory);
     }
     public void readNbt(NbtCompound nbt) {
-        Inventories.readNbt(nbt, inventory);
-        progress = nbt.getInt("block_cutting_station.progress");
         super.readNbt(nbt);
+        progress = nbt.getInt("block_cutting_station.progress");
+        Inventories.readNbt(nbt, inventory);
     }
-    public static void tick(World world, BlockPos pos, BlockState state, blockCuttingStationEntity entity) {
+    @Nullable
+    @Override
+    public ScreenHandler createMenu(int syncId, PlayerInventory inv, PlayerEntity player) { return new blockCuttingStationScreenHandler(syncId, inv, this, this.propertyDelegate); }
+    public static void tick(@NotNull World world, BlockPos pos, BlockState state, blockCuttingStationEntity entity) {
+        if (world.isClient()) { return; }
         if (hasRecipe(entity)) {
             entity.progress++;
             markDirty(world, pos, state);
@@ -133,20 +99,6 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
         }
     }
     private void resetProgress() { this.progress = 0; }
-    @SuppressWarnings("SameParameterValue")
-    private static ItemStack extractItem(@NotNull ItemStack itemStack, int amount) {
-        ItemStack out = ItemStack.EMPTY;
-        if (itemStack.getCount() - amount < 1) { return out; }
-        out = itemStack;
-        out.setCount(itemStack.getCount()-amount);
-        return out;
-    }
-    private static void dropContents(@NotNull World world, BlockPos pos, @NotNull SimpleInventory inventory) {
-        for (int i = 0; i < inventory.size(); i++) {
-            world.spawnEntity(new ItemEntity(world, pos.getX()+0.5, pos.getY()+0.5, pos.getZ()+0.5, new ItemStack(inventory.getStack(i).getItem())));
-        }
-        inventory.clear();
-    }
     private static void craftItem(@NotNull blockCuttingStationEntity entity) {
         World level = entity.world;
         BlockPos worldPosition = entity.getPos();
@@ -284,6 +236,58 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
             return canUseOutput(inventory, resultItem, count, entity);
         } else return false;
     }
+
+    public int size() { return inventory.size(); }
+    public boolean isEmpty() { return inventory.stream().allMatch(ItemStack::isEmpty); }
+    public ItemStack getStack(int slot) { return inventory.get(slot); }
+    public ItemStack removeStack(int slot) { return Inventories.removeStack(inventory, slot); }
+    public void setStack(int slot, ItemStack stack) {
+        inventory.set(slot, stack);
+        if (stack.getCount() > getMaxCountPerStack()) {
+            stack.setCount(getMaxCountPerStack());
+        }
+        markDirty();
+    }
+    public void clear() {
+        inventory.clear();
+    }
+    public int[] getAvailableSlots(Direction side) {
+        // Return the index of the slot that is accessible from the given side
+        if (side == Direction.DOWN) {
+            return new int[]{outSlot};
+        } else if (side == Direction.UP) {
+            return new int[]{inputSlot};
+        } else {
+            return new int[]{planSlot};
+        }
+    }
+    public boolean canInsert(int slot, ItemStack stack, Direction dir) {
+        // Only allow insertion into the specified slot from the given side
+        int[] availableSlots = getAvailableSlots(dir);
+        for (int availableSlot : availableSlots) {
+            return slot == availableSlot && slotControls.isValidBlockCutterItem(stack, slot);
+        }
+        return false;
+    }
+    public boolean canExtract(int slot, ItemStack stack, Direction dir) {
+        // Allow extraction from any slot
+        return true;
+    }
+    @SuppressWarnings("SameParameterValue")
+    private static ItemStack extractItem(@NotNull ItemStack itemStack, int amount) {
+        ItemStack out = ItemStack.EMPTY;
+        if (itemStack.getCount() - amount < 1) { return out; }
+        out = itemStack;
+        out.setCount(itemStack.getCount()-amount);
+        return out;
+    }
+    private static void dropContents(@NotNull World world, BlockPos pos, @NotNull SimpleInventory inventory) {
+        for (int i = 0; i < inventory.size(); i++) {
+            world.spawnEntity(new ItemEntity(world, pos.getX()+0.5, pos.getY()+0.5, pos.getZ()+0.5, new ItemStack(inventory.getStack(i).getItem())));
+        }
+        inventory.clear();
+    }
+
     private static boolean canUseOutput(@NotNull SimpleInventory inventory, @NotNull ItemStack output, int variableOut, @NotNull blockCuttingStationEntity entity) {
         if (entity.getStack(outSlot).isEmpty()) { return true; }
         if (entity.getStack(outSlot).getItem() == output.getItem()) {

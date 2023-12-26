@@ -23,7 +23,7 @@ public class wallSmoothSandStones extends baseModBlocks {
     public static final WallBlock YELLOW_SMOOTH_SAND_STONE_WALL = noToolTipAid("yellow_smooth_sand_stone_wall", YELLOW_SAND_STONE);
     public static final WallBlock LIME_SMOOTH_SAND_STONE_WALL = noToolTipAid("lime_smooth_sand_stone_wall", LIME_SAND_STONE);
     public static final WallBlock PINK_SMOOTH_SAND_STONE_WALL = noToolTipAid("pink_smooth_sand_stone_wall", PINK_SAND_STONE);
-    public static final WallBlock GRAY_SMOOTH_SAND_STONE_WALL = noToolTipAid("gray_smooth_sand_stone_wall", GREEN_SAND_STONE);
+    public static final WallBlock GRAY_SMOOTH_SAND_STONE_WALL = noToolTipAid("gray_smooth_sand_stone_wall", GRAY_SAND_STONE);
     public static final WallBlock LIGHT_GRAY_SMOOTH_SAND_STONE_WALL = noToolTipAid("light_gray_smooth_sand_stone_wall", LIGHT_GRAY_SAND_STONE);
     public static final WallBlock CYAN_SMOOTH_SAND_STONE_WALL = noToolTipAid("cyan_smooth_sand_stone_wall", CYAN_SAND_STONE);
     public static final WallBlock PURPLE_SMOOTH_SAND_STONE_WALL = noToolTipAid("purple_smooth_sand_stone_wall", PURPLE_SAND_STONE);

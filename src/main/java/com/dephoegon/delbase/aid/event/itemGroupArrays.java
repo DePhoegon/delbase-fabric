@@ -12,6 +12,7 @@ import com.dephoegon.delbase.item.BlockCutterItems;
 import com.dephoegon.delbase.item.ShiftingDyes;
 import net.minecraft.item.Item;
 import org.jetbrains.annotations.NotNull;
+import org.spongepowered.asm.util.ObfuscationUtil;
 
 import java.util.ArrayList;
 
@@ -197,8 +198,7 @@ public class itemGroupArrays {
         out.add(fenceMisc.SHROOMLIGHT_FENCE_GATE.asItem());
         out.add(fenceMisc.MAGMA_BLOCK_FENCE.asItem());
         out.add(fenceMisc.MAGMA_BLOCK_FENCE_GATE.asItem());
-        out.add(fenceMisc.NETHERRACK_FENCE.asItem());
-        out.add(fenceMisc.NETHERRACK_FENCE_GATE.asItem());
+        out.add(fenceMisc.NETHERBRICK_FENCE_GATE.asItem());
         out.add(fenceMisc.RED_NETHERBRICK_FENCE.asItem());
         out.add(fenceMisc.RED_NETHERBRICK_FENCE_GATE.asItem());
         out.add(fenceMisc.SCULK_FENCE.asItem());
@@ -304,7 +304,7 @@ public class itemGroupArrays {
         out.add(sandStoneFences.MAGENTA_SAND_STONE_FENCE.asItem());
         out.add(sandStoneFences.MAGENTA_SAND_STONE_FENCE_GATE.asItem());
         out.add(sandStoneFences.LIGHT_BLUE_SAND_STONE_FENCE.asItem());
-        out.add(sandStoneFences.LIGHT_BLUE_SAND_STONE_FENCE.asItem());
+        out.add(sandStoneFences.LIGHT_BLUE_SAND_STONE_FENCE_GATE.asItem());
         out.add(sandStoneFences.YELLOW_SAND_STONE_FENCE.asItem());
         out.add(sandStoneFences.YELLOW_SAND_STONE_FENCE_GATE.asItem());
         out.add(sandStoneFences.LIME_SAND_STONE_FENCE.asItem());
@@ -532,10 +532,12 @@ public class itemGroupArrays {
         out.add(genChiseledSandStones.WHITE_CHISELED_SAND_STONE.asItem());
         out.add(genChiseledSandStones.ORANGE_CHISELED_SAND_STONE.asItem());
         out.add(genChiseledSandStones.MAGENTA_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.LIGHT_BLUE_CHISELED_SAND_STONE.asItem());
         out.add(genChiseledSandStones.YELLOW_CHISELED_SAND_STONE.asItem());
         out.add(genChiseledSandStones.LIME_CHISELED_SAND_STONE.asItem());
         out.add(genChiseledSandStones.PINK_CHISELED_SAND_STONE.asItem());
         out.add(genChiseledSandStones.GRAY_CHISELED_SAND_STONE.asItem());
+        out.add(genChiseledSandStones.LIGHT_GRAY_CHISELED_SAND_STONE.asItem());
         out.add(genChiseledSandStones.CYAN_CHISELED_SAND_STONE.asItem());
         out.add(genChiseledSandStones.PURPLE_CHISELED_SAND_STONE.asItem());
         out.add(genChiseledSandStones.BLUE_CHISELED_SAND_STONE.asItem());
@@ -788,7 +790,6 @@ public class itemGroupArrays {
         out.add(slabSands.RED_SAND_SLAB.asItem());
         out.add(slabSands.WHITE_SAND_SLAB.asItem());
         out.add(slabSands.BLOOD_SAND_SLAB.asItem());
-        out.add(slabSands.WHITE_SAND_SLAB.asItem());
         out.add(slabSands.ORANGE_SAND_SLAB.asItem());
         out.add(slabSands.MAGENTA_SAND_SLAB.asItem());
         out.add(slabSands.LIGHT_BLUE_SAND_SLAB.asItem());
@@ -1225,6 +1226,7 @@ public class itemGroupArrays {
         out.add(hedgeLeaves.BIRCH_HEDGE.asItem());
         out.add(hedgeLeaves.SPRUCE_HEDGE.asItem());
         out.add(hedgeLeaves.ACACIA_HEDGE.asItem());
+        out.add(hedgeLeaves.DARK_OAK_HEDGE.asItem());
         out.add(hedgeLeaves.AZALEA_HEDGE.asItem());
         out.add(hedgeLeaves.FLOWERING_AZALEA_HEDGE.asItem());
         out.add(hedgeLeaves.MANGROVE_HEDGE.asItem());
@@ -1267,6 +1269,7 @@ public class itemGroupArrays {
         out.add(wallConcrete.CYAN_CONCRETE_WALL.asItem());
         out.add(wallConcrete.PURPLE_CONCRETE_WALL.asItem());
         out.add(wallConcrete.BLUE_CONCRETE_WALL.asItem());
+        out.add(wallConcrete.GREEN_CONCRETE_WALL.asItem());
         out.add(wallConcrete.BROWN_CONCRETE_WALL.asItem());
         out.add(wallConcrete.BLACK_CONCRETE_WALL.asItem());
         return out;
@@ -1350,6 +1353,7 @@ public class itemGroupArrays {
         out.add(wallSands.PINK_SAND_WALL.asItem());
         out.add(wallSands.GRAY_SAND_WALL.asItem());
         out.add(wallSands.PURPLE_SAND_WALL.asItem());
+        out.add(wallSands.CYAN_SAND_WALL.asItem());
         out.add(wallSands.BLUE_SAND_WALL.asItem());
         out.add(wallSands.GREEN_SAND_WALL.asItem());
         out.add(wallSands.BROWN_SAND_WALL.asItem());
@@ -1520,7 +1524,6 @@ public class itemGroupArrays {
         delBlocks.addAll(wallChiseledSandStones());
         delBlocks.addAll(wallConcrete());
         delBlocks.addAll(wallCutSandStones());
-        delBlocks.addAll(wallChiseledSandStones());
         delBlocks.addAll(wallMisc());
         delBlocks.addAll(wallQuartz());
         delBlocks.addAll(wallSands());

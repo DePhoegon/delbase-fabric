@@ -23,8 +23,10 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.stream.Stream;
 
+@SuppressWarnings("deprecation")
 public class craftingStationBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
@@ -112,7 +114,7 @@ public class craftingStationBlock extends BlockWithEntity implements BlockEntity
         };
     }
     public BlockState getPlacementState(@NotNull ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, ctx.getPlayerLookDirection().getOpposite());
+        return this.getDefaultState().with(FACING, Objects.requireNonNull(ctx.getPlayer()).getHorizontalFacing().getOpposite());
     }
     public BlockState rotate(@NotNull BlockState state, @NotNull BlockRotation rotation) {
         return state.with(FACING, rotation.rotate(state.get(FACING)));
@@ -127,14 +129,10 @@ public class craftingStationBlock extends BlockWithEntity implements BlockEntity
 
     /* Block Entity */
 
-    public BlockRenderType getRenderType(BlockState state) {
-        return BlockRenderType.MODEL;
-    }
+    public BlockRenderType getRenderType(BlockState state) { return BlockRenderType.MODEL; }
     @Nullable
     @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new blockCuttingStationEntity(pos, state);
-    }
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) { return new blockCuttingStationEntity(pos, state); }
     public void onStateReplaced(@NotNull BlockState state, World world, BlockPos pos, @NotNull BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
             BlockEntity blockEntity = world.getBlockEntity(pos);
@@ -146,8 +144,8 @@ public class craftingStationBlock extends BlockWithEntity implements BlockEntity
         }
     }
     public ActionResult onUse(BlockState state, @NotNull World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (!world.isClient) {
-            NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
+        if (!world.isClient()) {
+            NamedScreenHandlerFactory screenHandlerFactory = ((blockCuttingStationEntity) world.getBlockEntity(pos));
 
             if (screenHandlerFactory != null) { player.openHandledScreen(screenHandlerFactory); }
         }

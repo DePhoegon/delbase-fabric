@@ -21,18 +21,20 @@ import static com.dephoegon.delbase.block.entity.blockCuttingStationEntity.*;
 public class blockCuttingStationScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
-    public blockCuttingStationScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
+    public final blockCuttingStationEntity blockEntity;
+    public blockCuttingStationScreenHandler(int syncId, PlayerInventory playerInventory, @NotNull PacketByteBuf buf) {
         this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(buf.readBlockPos()), new ArrayPropertyDelegate(2));
     }
     public blockCuttingStationScreenHandler(int syncId, @NotNull PlayerInventory playerInventory, BlockEntity blockEntity, PropertyDelegate delegate) {
         super(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, syncId);
         checkSize((Inventory) blockEntity, blockCuttingStationEntity.invSize);
         this.inventory = (Inventory) blockEntity;
+        this.propertyDelegate = delegate;
         inventory.onOpen(playerInventory.player);
+        this.blockEntity = (blockCuttingStationEntity) blockEntity;
         this.addSlot(new inputSlot(inventory, inputSlot, 57, 18));
         this.addSlot(new outSlot(inventory, outSlot, 80, 60));
         this.addSlot(new planSlot(inventory, planSlot, 103, 18));
-        this.propertyDelegate = delegate;
 
         addPlayerInventory(playerInventory);
         addPlayerHotBar(playerInventory);
@@ -57,12 +59,8 @@ public class blockCuttingStationScreenHandler extends ScreenHandler {
             ItemStack originalStack = slot.getStack();
             newStack = originalStack.copy();
             if (invSlot < this.inventory.size()) {
-                if(!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true)) {
-                    return ItemStack.EMPTY;
-                }
-            } else if (!this.insertItem(originalStack, 0, this.inventory.size(), false)) {
-                return ItemStack.EMPTY;
-            }
+                if(!this.insertItem(originalStack, this.inventory.size(), this.slots.size(), true)) { return ItemStack.EMPTY; }
+            } else if (!this.insertItem(originalStack, 0, this.inventory.size(), false)) { return ItemStack.EMPTY; }
 
             if (originalStack.isEmpty()) { slot.setStack(ItemStack.EMPTY); }
             else { slot.markDirty(); }

@@ -23,7 +23,7 @@ public class wallChiseledSandStones extends baseModBlocks {
     public static final WallBlock YELLOW_CHISELED_SAND_STONE_WALL = noToolTipAid("yellow_chiseled_sand_stone_wall", YELLOW_SAND_STONE);
     public static final WallBlock LIME_CHISELED_SAND_STONE_WALL = noToolTipAid("lime_chiseled_sand_stone_wall", LIME_SAND_STONE);
     public static final WallBlock PINK_CHISELED_SAND_STONE_WALL = noToolTipAid("pink_chiseled_sand_stone_wall", PINK_SAND_STONE);
-    public static final WallBlock GRAY_CHISELED_SAND_STONE_WALL = noToolTipAid("gray_chiseled_sand_stone_wall", GREEN_SAND_STONE);
+    public static final WallBlock GRAY_CHISELED_SAND_STONE_WALL = noToolTipAid("gray_chiseled_sand_stone_wall", GRAY_SAND_STONE);
     public static final WallBlock LIGHT_GRAY_CHISELED_SAND_STONE_WALL = noToolTipAid("light_gray_chiseled_sand_stone_wall", LIGHT_GRAY_SAND_STONE);
     public static final WallBlock CYAN_CHISELED_SAND_STONE_WALL = noToolTipAid("cyan_chiseled_sand_stone_wall", CYAN_SAND_STONE);
     public static final WallBlock PURPLE_CHISELED_SAND_STONE_WALL = noToolTipAid("purple_chiseled_sand_stone_wall", PURPLE_SAND_STONE);

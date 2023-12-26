@@ -23,7 +23,7 @@ public class slabChiseledSandStones extends baseModBlocks {
     public static final SlabBlock YELLOW_CHISELED_SAND_STONE_SLAB = noToolTipAid("yellow_chiseled_sand_stone_slab", YELLOW_SAND_STONE);
     public static final SlabBlock LIME_CHISELED_SAND_STONE_SLAB = noToolTipAid("lime_chiseled_sand_stone_slab", LIME_SAND_STONE);
     public static final SlabBlock PINK_CHISELED_SAND_STONE_SLAB = noToolTipAid("pink_chiseled_sand_stone_slab", PINK_SAND_STONE);
-    public static final SlabBlock GRAY_CHISELED_SAND_STONE_SLAB = noToolTipAid("gray_chiseled_sand_stone_slab", GREEN_SAND_STONE);
+    public static final SlabBlock GRAY_CHISELED_SAND_STONE_SLAB = noToolTipAid("gray_chiseled_sand_stone_slab", GRAY_SAND_STONE);
     public static final SlabBlock LIGHT_GRAY_CHISELED_SAND_STONE_SLAB = noToolTipAid("light_gray_chiseled_sand_stone_slab", LIGHT_GRAY_SAND_STONE);
     public static final SlabBlock CYAN_CHISELED_SAND_STONE_SLAB = noToolTipAid("cyan_chiseled_sand_stone_slab", CYAN_SAND_STONE);
     public static final SlabBlock PURPLE_CHISELED_SAND_STONE_SLAB = noToolTipAid("purple_chiseled_sand_stone_slab", PURPLE_SAND_STONE);

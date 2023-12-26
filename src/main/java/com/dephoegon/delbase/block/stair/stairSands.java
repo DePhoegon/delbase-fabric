@@ -7,6 +7,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
+import org.jetbrains.annotations.NotNull;
 
 import static com.dephoegon.delbase.block.gravity.gravColorSands.*;
 import static net.minecraft.block.Blocks.RED_SAND;
@@ -32,7 +33,7 @@ public class stairSands extends baseModBlocks {
     public static final StairsBlock BROWN_SAND_STAIR = colorSolidSandHelper("brown_sand_stair", BROWN_SAND);
     public static final StairsBlock BLACK_SAND_STAIR = colorSolidSandHelper("black_sand_stair", BLACK_SAND);
 
-    private static StairsBlock colorSolidSandHelper(String name, Block block) {
+    private static StairsBlock colorSolidSandHelper(String name, @NotNull Block block) {
         return (StairsBlock) registerBlock(name, new sandStair(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.SAND), "tooltip.delbase.info.more", "tooltip.delbase.sand.solid.info", "tooltip.delbase.sand.solid.flavor"));
     }
     public static void registerColoredSands() { Delbase.LOGGER.info("Registering Colored Sands for "+Delbase.Delbase_ID); }

@@ -2,3 +2,24 @@ Initial adapting to 1.20
 
 disabled/commented out Patchouli book
 -- not available for 1.20
+
+_----------
+
+1.20 - Initial Port adaptation done
+
+Things done
+- existing items brought in
+- Block cutter UI fixed
+- Block cutter Crafting Fixed
+- Concrete Color Fixed
+
+Things to do
+- Fix 'Unknown Recipe Category' Error " delbase:block_cutting/delbase:block_cutter/stair/special/mangrove_root_stair_block_cutter "
+- Add in 1.20 blocks to parity.
+-- Include Crafting JSON
+-- Include Model Files
+-- Include Registration
+- Verify Leaves/Roots colors & cutout.
+
+Things to skip
+- REI, until 1.20.1
