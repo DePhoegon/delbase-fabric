@@ -7,6 +7,8 @@
     "minecraft:acacia_fence_gate",
     "minecraft:jungle_fence_gate",
     "minecraft:birch_fence_gate",
-    "minecraft:mangrove_fence_gate"
+    "minecraft:mangrove_fence_gate",
+    "minecraft:cherry_fence_gate",
+    "minecraft:bamboo_fence_gate"
   ]
 }

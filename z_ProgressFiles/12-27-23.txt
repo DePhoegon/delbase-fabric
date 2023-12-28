@@ -1,0 +1,48 @@
+Alternate JSON format for recipes.
+---- Serializer - read Function
+@Override
+        public blockCutterStationRecipes read(Identifier id, JsonObject json) {
+            blockCutterRecipeJsonFormat recipeJson = new Gson().fromJson(json, blockCutterRecipeJsonFormat.class);
+
+            Ingredient planItem = Ingredient.fromJson(recipeJson.planItem);
+            Ingredient usedItem = Ingredient.fromJson(recipeJson.usedItem);
+            if (recipeJson.planItem == null || recipeJson.usedItem == null || recipeJson.outputItem == null) { throw new JsonSyntaxException("Invalid JSON format of DelBase Block Cutter Recipe");
+            }
+            if (recipeJson.outputAmount < 1) { recipeJson.outputAmount = 1; }
+            if (recipeJson.outputAmount > 64) { recipeJson.outputAmount = 64; }
+
+            Item outputItem = ShapedRecipe.outputFromJson(recipeJson.outputItem).getItem();
+            ItemStack output = new ItemStack(outputItem, recipeJson.outputAmount);
+
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(2, Ingredient.EMPTY);
+            inputs.set(0, planItem);
+            inputs.set(1, usedItem);
+
+            return new blockCutterStationRecipes(id, output, inputs);
+        }
+------
+------ support class
+static class blockCutterRecipeJsonFormat {
+        JsonObject planItem;
+        JsonObject usedItem;
+        JsonObject outputItem;
+        int outputAmount;
+    }
+------
+------ JSON recipe Example
+{
+"type": "delbase:block_cutting",
+  "planItem" : {
+    "item": "delbase:fence_plans"
+  },
+  "usedItem": {
+    "item": "delbase:black_solid_sand"
+  },
+  "output": {
+    "item": "delbase:black_sand_fence"
+  },
+  "outputAmount": 1
+}
+------
+
+Mostly Done. Just Finalized Testing to be done to verify functionality in a full shake down.

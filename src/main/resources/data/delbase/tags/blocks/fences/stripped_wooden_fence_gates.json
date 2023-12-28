@@ -18,6 +18,8 @@
     "delbase:stripped_spruce_wood_fence_gate",
     "delbase:stripped_spruce_log_fence_gate",
     "delbase:stripped_warped_hyphae_fence_gate",
-    "delbase:stripped_warped_stem_fence_gate"
+    "delbase:stripped_warped_stem_fence_gate",
+    "delbase:stripped_cherry_log_fence_gate",
+    "delbase:stripped_cherry_wood_fence_gate"
   ]
 }

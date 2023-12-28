@@ -20,6 +20,7 @@ public class slabLeaves extends baseModBlocks {
     public static final SlabBlock AZALEA_LEAF_SLAB = noToolTipAid("azalea_leaf_slab", AZALEA_LEAVES, BlockSoundGroup.AZALEA_LEAVES);
     public static final SlabBlock FLOWERING_AZALEA_LEAF_SLAB = noToolTipAid("flowering_azalea_leaf_slab", FLOWERING_AZALEA_LEAVES, BlockSoundGroup.FLOWERING_AZALEA);
     public static final SlabBlock MANGROVE_LEAF_SLAB = noToolTipAid("mangrove_leaf_slab", MANGROVE_LEAVES, BlockSoundGroup.GRASS);
+    public static final SlabBlock CHERRY_LEAF_SLAB = noToolTipAid("cherry_leaf_slab", CHERRY_LEAVES, BlockSoundGroup.CHERRY_LEAVES);
 
     private static SlabBlock noToolTipAid(String name, Block block) { return leafSlabHelper(name, block, BlockSoundGroup.GRASS, "", "", ""); }
     private static SlabBlock noToolTipAid(String name, Block block, BlockSoundGroup soundGroup) { return leafSlabHelper(name, block, soundGroup, "", "", ""); }

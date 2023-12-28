@@ -21,6 +21,7 @@ public class stairLeaves extends baseModBlocks {
     public static final StairsBlock AZALEA_LEAF_STAIR = noToolTipAid("azalea_leaf_stair", OAK_STAIRS, BlockSoundGroup.AZALEA_LEAVES);
     public static final StairsBlock FLOWERING_AZALEA_LEAF_STAIR = noToolTipAid("flowering_azalea_leaf_stair", OAK_STAIRS, BlockSoundGroup.FLOWERING_AZALEA);
     public static final StairsBlock MANGROVE_LEAF_STAIR = noToolTipAid("mangrove_leaf_stair", MANGROVE_STAIRS, BlockSoundGroup.GLASS);
+    public static final StairsBlock CHERRY_LEAF_STAIR = noToolTipAid("cherry_leaf_stair", CHERRY_STAIRS, BlockSoundGroup.CHERRY_LEAVES);
 
     private static StairsBlock noToolTipAid(String name, Block block) { return leafStairHelper(name, block, BlockSoundGroup.GRASS, "", "", ""); }
     private static StairsBlock noToolTipAid(String name, Block block, BlockSoundGroup group) { return leafStairHelper(name, block, group, "", "", ""); }

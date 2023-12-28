@@ -32,6 +32,8 @@ public class leafFences extends baseModBlocks {
     public static final FenceGateBlock FLOWERING_AZALEA_LEAF_FENCE_GATE = noToolTipFgAid("flowering_azalea_leaf_fence_gate", FLOWERING_AZALEA_LEAVES);
     public static final FenceBlock MANGROVE_LEAF_FENCE = noToolTipFAid("mangrove_leaf_fence", MANGROVE_LEAVES, BlockSoundGroup.GLASS);
     public static final FenceGateBlock MANGROVE_LEAF_FENCE_GATE = noToolTipFgAid("mangrove_leaf_fence_gate", MANGROVE_LEAVES, BlockSoundGroup.GLASS);
+    public static final FenceBlock CHERRY_LEAF_FENCE = noToolTipFAid("cherry_leaf_fence", CHERRY_LEAVES, BlockSoundGroup.CHERRY_LEAVES);
+    public static final FenceGateBlock CHERRY_LEAF_FENCE_GATE = noToolTipFgAid("cherry_leaf_fence_gate", CHERRY_LEAVES, BlockSoundGroup.CHERRY_LEAVES);
 
 
     private static FenceBlock noToolTipFAid(String name, Block block) { return fenceBlockAid(name, block, BlockSoundGroup.GRASS, "","", ""); }

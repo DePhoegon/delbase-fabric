@@ -23,4 +23,7 @@ public class listArrays {
     }
     public static @NotNull ArrayList<Item> getPlanOnlyArray() { return setPlansOnlyArray(); }
     public static @NotNull ArrayList<Item> getFullPlanSlotArray() { return setFullArray(setPlansOnlyArray()); }
+    public static boolean isNotPlanSlotItem(Item item) {
+        return !getFullPlanSlotArray().contains(item);
+    }
 }

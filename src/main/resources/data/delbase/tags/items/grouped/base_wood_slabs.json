@@ -7,6 +7,9 @@
     "minecraft:mangrove_slab",
     "minecraft:jungle_slab",
     "minecraft:acacia_slab",
-    "minecraft:dark_oak_slab"
+    "minecraft:dark_oak_slab",
+    "minecraft:cherry_slab",
+    "minecraft:bamboo_slab",
+    "minecraft:bamboo_mosaic_slab"
   ]
 }

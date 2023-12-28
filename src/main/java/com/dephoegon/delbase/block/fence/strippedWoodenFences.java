@@ -50,6 +50,10 @@ public class strippedWoodenFences extends baseModBlocks {
     public static final FenceGateBlock STRIPPED_MANGROVE_WOOD_FENCE_GATE = noToolTipFgAid("stripped_mangrove_wood_fence_gate", STRIPPED_OAK_WOOD, WoodType.MANGROVE, true);
     public static final FenceBlock STRIPPED_MANGROVE_LOG_FENCE = noToolTipFAid("stripped_mangrove_log_fence", STRIPPED_OAK_WOOD, true);
     public static final FenceGateBlock STRIPPED_MANGROVE_LOG_FENCE_GATE = noToolTipFgAid("stripped_mangrove_log_fence_gate", STRIPPED_OAK_WOOD, WoodType.MANGROVE, true);
+    public static final FenceBlock STRIPPED_CHERRY_WOOD_FENCE = noToolTipFAid("stripped_cherry_wood_fence", STRIPPED_CHERRY_WOOD, true);
+    public static final FenceGateBlock STRIPPED_CHERRY_WOOD_FENCE_GATE = noToolTipFgAid("stripped_cherry_wood_fence_gate", STRIPPED_CHERRY_WOOD, WoodType.CHERRY, true);
+    public static final FenceBlock STRIPPED_CHERRY_LOG_FENCE = noToolTipFAid("stripped_cherry_log_fence", STRIPPED_CHERRY_WOOD, true);
+    public static final FenceGateBlock STRIPPED_CHERRY_LOG_FENCE_GATE = noToolTipFgAid("stripped_cherry_log_fence_gate", STRIPPED_CHERRY_WOOD, WoodType.CHERRY, true);
 
     private static FenceBlock noToolTipFAid(String name, Block block, boolean burnable) {
         if (burnable) { return burnFenceBlockAid(name, block, "", "", ""); }

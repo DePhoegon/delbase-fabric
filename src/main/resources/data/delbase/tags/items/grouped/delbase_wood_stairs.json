@@ -15,6 +15,9 @@
     "delbase:jungle_log_stair",
     "delbase:birch_log_stair",
     "delbase:mangrove_log_stair",
+    "delbase:cherry_wood_stair",
+    "delbase:cherry_log_stair",
+    "delbase:bamboo_block_stair",
     "delbase:stripped_spruce_wood_stair",
     "delbase:stripped_oak_wood_stair",
     "delbase:stripped_dark_oak_wood_stair",
@@ -28,6 +31,9 @@
     "delbase:stripped_acacia_log_stair",
     "delbase:stripped_jungle_log_stair",
     "delbase:stripped_birch_log_stair",
-    "delbase:stripped_mangrove_log_stair"
+    "delbase:stripped_mangrove_log_stair",
+    "delbase:stripped_cherry_wood_stair",
+    "delbase:stripped_cherry_log_stair",
+    "delbase:stripped_bamboo_block_stair"
   ]
 }

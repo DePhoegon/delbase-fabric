@@ -1,6 +1,6 @@
 {
-  "name": "Renewable Blocks",
-  "icon": "minecraft:sand",
+  "name": "Block Variants",
+  "icon": "minecraft:red_dye",
   "category": "delbase:get_started",
   "pages": [
     {

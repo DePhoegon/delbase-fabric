@@ -12,7 +12,6 @@ import com.dephoegon.delbase.item.BlockCutterItems;
 import com.dephoegon.delbase.item.ShiftingDyes;
 import net.minecraft.item.Item;
 import org.jetbrains.annotations.NotNull;
-import org.spongepowered.asm.util.ObfuscationUtil;
 
 import java.util.ArrayList;
 
@@ -239,6 +238,8 @@ public class itemGroupArrays {
         out.add(leafFences.FLOWERING_AZALEA_LEAF_FENCE_GATE.asItem());
         out.add(leafFences.MANGROVE_LEAF_FENCE.asItem());
         out.add(leafFences.MANGROVE_LEAF_FENCE_GATE.asItem());
+        out.add(leafFences.CHERRY_LEAF_FENCE.asItem());
+        out.add(leafFences.CHERRY_LEAF_FENCE_GATE.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> quartzFences() {
@@ -435,6 +436,10 @@ public class itemGroupArrays {
         out.add(strippedWoodenFences.STRIPPED_MANGROVE_WOOD_FENCE_GATE.asItem());
         out.add(strippedWoodenFences.STRIPPED_MANGROVE_LOG_FENCE.asItem());
         out.add(strippedWoodenFences.STRIPPED_MANGROVE_LOG_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_CHERRY_WOOD_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_CHERRY_WOOD_FENCE_GATE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_CHERRY_LOG_FENCE.asItem());
+        out.add(strippedWoodenFences.STRIPPED_CHERRY_LOG_FENCE_GATE.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> terracottaFences() {
@@ -513,6 +518,10 @@ public class itemGroupArrays {
         out.add(woodenFences.MANGROVE_WOOD_FENCE_GATE_BLOCK.asItem());
         out.add(woodenFences.MANGROVE_LOG_FENCE.asItem());
         out.add(woodenFences.MANGROVE_LOG_FENCE_GATE_BLOCK.asItem());
+        out.add(woodenFences.CHERRY_WOOD_FENCE.asItem());
+        out.add(woodenFences.CHERRY_WOOD_FENCE_GATE_BLOCK.asItem());
+        out.add(woodenFences.CHERRY_LOG_FENCE.asItem());
+        out.add(woodenFences.CHERRY_LOG_FENCE_GATE_BLOCK.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> ashBlocks() {
@@ -745,6 +754,7 @@ public class itemGroupArrays {
         out.add(slabLeaves.AZALEA_LEAF_SLAB.asItem());
         out.add(slabLeaves.FLOWERING_AZALEA_LEAF_SLAB.asItem());
         out.add(slabLeaves.MANGROVE_LEAF_SLAB.asItem());
+        out.add(slabLeaves.CHERRY_LEAF_SLAB.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> slabMisc() {
@@ -932,6 +942,9 @@ public class itemGroupArrays {
         out.add(slabStrippedWoods.STRIPPED_BIRCH_LOG_SLAB.asItem());
         out.add(slabStrippedWoods.STRIPPED_MANGROVE_WOOD_SLAB.asItem());
         out.add(slabStrippedWoods.STRIPPED_MANGROVE_LOG_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_CHERRY_WOOD_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_CHERRY_LOG_SLAB.asItem());
+        out.add(slabStrippedWoods.STRIPPED_BAMBOO_SLAB.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> slabTerracotta() {
@@ -975,6 +988,9 @@ public class itemGroupArrays {
         out.add(slabWood.BIRCH_LOG_SLAB.asItem());
         out.add(slabWood.MANGROVE_WOOD_SLAB.asItem());
         out.add(slabWood.MANGROVE_LOG_SLAB.asItem());
+        out.add(slabWood.CHERRY_WOOD_SLAB.asItem());
+        out.add(slabWood.CHERRY_LOG_SLAB.asItem());
+        out.add(slabWood.BAMBOO_BLOCK_SLAB.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> stairChiseledSandStones() {
@@ -1052,6 +1068,7 @@ public class itemGroupArrays {
         out.add(stairLeaves.AZALEA_LEAF_STAIR.asItem());
         out.add(stairLeaves.FLOWERING_AZALEA_LEAF_STAIR.asItem());
         out.add(stairLeaves.MANGROVE_LEAF_STAIR.asItem());
+        out.add(stairLeaves.CHERRY_LEAF_STAIR.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> stairMisc() {
@@ -1174,6 +1191,9 @@ public class itemGroupArrays {
         out.add(stairStrippedWoods.STRIPPED_BIRCH_LOG_STAIR.asItem());
         out.add(stairStrippedWoods.STRIPPED_MANGROVE_WOOD_STAIR.asItem());
         out.add(stairStrippedWoods.STRIPPED_MANGROVE_LOG_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_CHERRY_WOOD_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_CHERRY_LOG_STAIR.asItem());
+        out.add(stairStrippedWoods.STRIPPED_BAMBOO_BLOCK_STAIR.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> stairTerracotta() {
@@ -1217,6 +1237,9 @@ public class itemGroupArrays {
         out.add(stairWoods.BIRCH_LOG_STAIR.asItem());
         out.add(stairWoods.MANGROVE_WOOD_STAIR.asItem());
         out.add(stairWoods.MANGROVE_LOG_STAIR.asItem());
+        out.add(stairWoods.CHERRY_WOOD_STAIR.asItem());
+        out.add(stairWoods.CHERRY_LOG_STAIR.asItem());
+        out.add(stairWoods.BAMBOO_BLOCK_STAIR.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> hedgeLeaves() {
@@ -1230,6 +1253,7 @@ public class itemGroupArrays {
         out.add(hedgeLeaves.AZALEA_HEDGE.asItem());
         out.add(hedgeLeaves.FLOWERING_AZALEA_HEDGE.asItem());
         out.add(hedgeLeaves.MANGROVE_HEDGE.asItem());
+        out.add(hedgeLeaves.CHERRY_HEDGE.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> wallChiseledSandStones() {
@@ -1422,6 +1446,11 @@ public class itemGroupArrays {
         out.add(wallStrippedWoods.STRIPPED_BIRCH_LOG_WALL.asItem());
         out.add(wallStrippedWoods.STRIPPED_MANGROVE_WOOD_WALL.asItem());
         out.add(wallStrippedWoods.STRIPPED_MANGROVE_LOG_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_CHERRY_WOOD_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_CHERRY_LOG_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_BAMBOO_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_BAMBOO_MOSAIC_WALL.asItem());
+        out.add(wallStrippedWoods.STRIPPED_BAMBOO_PLANK_WALL.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> wallTerracotta() {
@@ -1465,6 +1494,11 @@ public class itemGroupArrays {
         out.add(wallWoods.BIRCH_LOG_WALL.asItem());
         out.add(wallWoods.MANGROVE_WOOD_WALL.asItem());
         out.add(wallWoods.MANGROVE_LOG_WALL.asItem());
+        out.add(wallWoods.CHERRY_WOOD_WALL.asItem());
+        out.add(wallWoods.CHERRY_LOG_WALL.asItem());
+        out.add(wallWoods.BAMBOO_WALL.asItem());
+        out.add(wallWoods.BAMBOO_MOSAIC_WALL.asItem());
+        out.add(wallWoods.BAMBOO_PLANK_WALL.asItem());
         return out;
     }
     public static @NotNull ArrayList<Item> getDelBlocks() {

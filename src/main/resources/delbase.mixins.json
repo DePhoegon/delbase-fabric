@@ -7,7 +7,8 @@
     "FallingBlockMixin",
     "DeadBushBlockMixin",
     "CactusBlockMixin",
-    "SugarCaneBlockMixin"
+    "SugarCaneBlockMixin",
+    "ClientRecipeBookMixin"
   ],
   "injectors": {
     "defaultRequire": 1

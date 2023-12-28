@@ -30,6 +30,9 @@ public class stairWoods extends baseModBlocks {
     public static final StairsBlock BIRCH_LOG_STAIR = noTooltipHelper("birch_log_stair", BIRCH_WOOD, STRIPPED_BIRCH_LOG_STAIR, true);
     public static final StairsBlock MANGROVE_WOOD_STAIR = noTooltipHelper("mangrove_wood_stair", MANGROVE_WOOD, STRIPPED_MANGROVE_WOOD_STAIR, true);
     public static final StairsBlock MANGROVE_LOG_STAIR = noTooltipHelper("mangrove_log_stair", MANGROVE_WOOD, STRIPPED_MANGROVE_LOG_STAIR, true);
+    public static final StairsBlock CHERRY_WOOD_STAIR = noTooltipHelper("cherry_wood_stair", MANGROVE_WOOD, STRIPPED_CHERRY_WOOD_STAIR, true);
+    public static final StairsBlock CHERRY_LOG_STAIR = noTooltipHelper("cherry_log_stair", MANGROVE_WOOD, STRIPPED_CHERRY_LOG_STAIR, true);
+    public static final StairsBlock BAMBOO_BLOCK_STAIR = noTooltipHelper("bamboo_block_stair", OAK_WOOD, STRIPPED_BAMBOO_BLOCK_STAIR, true);
 
     private static StairsBlock noTooltipHelper(String name, Block block, StairsBlock strippedState, boolean Burns) {
         if (Burns) { return woodStairHelper(name, block, "", "", "", strippedState, 3001, 5, 10); }

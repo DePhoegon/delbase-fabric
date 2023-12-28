@@ -51,6 +51,10 @@ public class woodenFences extends baseModBlocks {
     public static final FenceGateBlock MANGROVE_WOOD_FENCE_GATE_BLOCK = noToolTipFgAid("mangrove_wood_fence_gate", OAK_WOOD, STRIPPED_MANGROVE_WOOD_FENCE_GATE, WoodType.MANGROVE, true);
     public static final FenceBlock MANGROVE_LOG_FENCE = noToolTipFAid("mangrove_log_fence", OAK_WOOD, STRIPPED_MANGROVE_LOG_FENCE, true);
     public static final FenceGateBlock MANGROVE_LOG_FENCE_GATE_BLOCK = noToolTipFgAid("mangrove_log_fence_gate", OAK_WOOD, STRIPPED_MANGROVE_LOG_FENCE_GATE, WoodType.MANGROVE, true);
+    public static final FenceBlock CHERRY_WOOD_FENCE = noToolTipFAid("cherry_wood_fence", CHERRY_WOOD, STRIPPED_CHERRY_WOOD_FENCE, true);
+    public static final FenceGateBlock CHERRY_WOOD_FENCE_GATE_BLOCK = noToolTipFgAid("cherry_wood_fence_gate", CHERRY_WOOD, STRIPPED_CHERRY_WOOD_FENCE_GATE, WoodType.MANGROVE, true);
+    public static final FenceBlock CHERRY_LOG_FENCE = noToolTipFAid("cherry_log_fence", CHERRY_WOOD, STRIPPED_CHERRY_LOG_FENCE, true);
+    public static final FenceGateBlock CHERRY_LOG_FENCE_GATE_BLOCK = noToolTipFgAid("cherry_log_fence_gate", CHERRY_WOOD, STRIPPED_CHERRY_LOG_FENCE_GATE, WoodType.MANGROVE, true);
 
     private static FenceBlock noToolTipFAid(String name, Block block, FenceBlock strippedState, boolean burnable) {
         if (burnable) { return burnFenceBlockAid(name, block, strippedState, "", "", ""); }
