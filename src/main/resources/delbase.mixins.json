@@ -8,8 +8,11 @@
     "DeadBushBlockMixin",
     "CactusBlockMixin",
     "SugarCaneBlockMixin",
+  ],
+  "client": [
     "ClientRecipeBookMixin"
   ],
+  "server": [],
   "injectors": {
     "defaultRequire": 1
   }
