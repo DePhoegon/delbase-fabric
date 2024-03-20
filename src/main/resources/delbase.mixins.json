@@ -7,7 +7,7 @@
     "FallingBlockMixin",
     "DeadBushBlockMixin",
     "CactusBlockMixin",
-    "SugarCaneBlockMixin",
+    "SugarCaneBlockMixin"
   ],
   "client": [
     "ClientRecipeBookMixin"
