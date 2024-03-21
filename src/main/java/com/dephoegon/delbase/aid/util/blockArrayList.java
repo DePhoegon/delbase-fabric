@@ -28,13 +28,11 @@ public abstract class blockArrayList {
     private static ArrayList<Object> general_list = new ArrayList<>();
     private static ArrayList<Object> gravity_list = new ArrayList<>();
     private static ArrayList<Object> wall_list = new ArrayList<>();
+    private static ArrayList<Object> vanilla_wood_list = new ArrayList<>();
     private static ArrayList<Object> axis_list = new ArrayList<>();
     private static ArrayList<Object> fall_hold = new ArrayList<>();
     private static ArrayList<Object> concretePowder_list = new ArrayList<>();
     private static ArrayList<Object> sand_list = new ArrayList<>();
-    private static final ArrayList<? extends Block> birchLeaves = new ArrayList<>();
-    private static final ArrayList<? extends Block> spruceLeaves = new ArrayList<>();
-    private static final ArrayList<? extends Block> coloredLeaves = new ArrayList<>();
     @Contract(value = " -> new", pure = true)
     public static Block @NotNull [] getBirchLeaves() {
         return new Block[]{BIRCH_HEDGE, BIRCH_LEAF_FENCE, BIRCH_LEAF_FENCE_GATE, BIRCH_LEAF_SLAB, BIRCH_LEAF_STAIR};
@@ -190,8 +188,6 @@ public abstract class blockArrayList {
     public static ArrayList<Object> getGeneral_list() { return general_list; }
 
     private static void setGravity_list() {
-        setSand_list();
-        setConcretePowder_list();
         ArrayList<Object> gravity_set = new ArrayList<>();
         gravity_set.addAll(sand_list);
         gravity_set.addAll(concretePowder_list);
@@ -205,6 +201,23 @@ public abstract class blockArrayList {
         sand_set.add(RED_SAND.getDefaultState());
         sand_list = sand_set;
     }
+    public static ArrayList<Object> getVanilla_wood_list() { return vanilla_wood_list; }
+    private static void setVanillaWoodList() {
+        ArrayList<Object> setWood_list = new ArrayList<>();
+        setWood_list.add(STRIPPED_DARK_OAK_WOOD.getDefaultState());
+        setWood_list.add(DARK_OAK_WOOD.getDefaultState());
+        setWood_list.add(STRIPPED_ACACIA_WOOD.getDefaultState());
+        setWood_list.add(ACACIA_WOOD.getDefaultState());
+        setWood_list.add(STRIPPED_JUNGLE_WOOD.getDefaultState());
+        setWood_list.add(JUNGLE_WOOD.getDefaultState());
+        setWood_list.add(STRIPPED_BIRCH_WOOD.getDefaultState());
+        setWood_list.add(BIRCH_WOOD.getDefaultState());
+        setWood_list.add(STRIPPED_SPRUCE_WOOD.getDefaultState());
+        setWood_list.add(SPRUCE_WOOD.getDefaultState());
+        setWood_list.add(STRIPPED_OAK_WOOD.getDefaultState());
+        setWood_list.add(OAK_WOOD.getDefaultState());
+        vanilla_wood_list = setWood_list;
+    }
     public static ArrayList<Object> getSand_list() { return sand_list; }
     private static void setWall_list() {
         ArrayList<Object> wall_set = new ArrayList<>();
@@ -216,11 +229,14 @@ public abstract class blockArrayList {
 
     // call methods to set private lists, called first in register list to avoid any issue
     public static void setBlockArrays() {
+        setSand_list();
+        setConcretePowder_list();
         setFall_hold();
         setGeneral_list();
         setSlab_list();
         setStair_list();
         setGravity_list();
+        setVanillaWoodList();
         setWall_list();
         setAxis_list();
     }
