@@ -35,6 +35,7 @@ public class FallingBlockMixin extends Block {
     @SuppressWarnings({"deprecation", "JavadocDeclaration"})
     @Overwrite
     public void scheduledTick(@NotNull BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (!FallingBlock.canFallThrough(world.getBlockState(pos.down())) || pos.getY() < world.getBottomY()) { return; }
         if (targetedGravityBlock(state.getBlock())) {
             boolean falls = !(state.getBlock() instanceof modSandBlock mod) || mod.getFall();
             if (falls) {
