@@ -2,7 +2,7 @@ package com.dephoegon.delbase.block.entity;
 
 import com.dephoegon.delbase.aid.inventory.ImplementedInventory;
 import com.dephoegon.delbase.aid.inventory.slotControls;
-import com.dephoegon.delbase.recipe.blockCutterStationRecipes;
+import com.dephoegon.delbase.aid.recipe.blockCutterStationRecipes;
 import com.dephoegon.delbase.screen.blockCuttingStationScreenHandler;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -31,6 +31,7 @@ import java.util.Optional;
 import static com.dephoegon.delbase.Delbase.configHolder;
 import static com.dephoegon.delbase.aid.recipe.TierRandomDropAid.*;
 import static com.dephoegon.delbase.aid.recipe.countAid.netheriteDiamondBonus;
+import static com.dephoegon.delbase.aid.util.burntReplacer.threshHold;
 import static com.dephoegon.delbase.item.BlockCutterItems.*;
 import static net.minecraft.item.Items.DIAMOND;
 
@@ -153,8 +154,7 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
         for (int i = 0; i < entity.inventory.size(); i++) { inventory.setStack(i, entity.getStack(i)); }
 
         assert level != null;
-        Optional<blockCutterStationRecipes> match = level.getRecipeManager()
-                .getFirstMatch(blockCutterStationRecipes.Type.INSTANCE, inventory, level);
+        Optional<blockCutterStationRecipes> match = level.getRecipeManager().getFirstMatch(blockCutterStationRecipes.Type.INSTANCE, inventory, level);
 
         if (match.isPresent()) {
             Item resultItem = match.get().getOutput().getItem();
@@ -163,7 +163,8 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
             int count = match.get().getOutput().getCount();
             if (entity.getStack(planSlot).getItem() == ARMOR_COMPOUND.asItem()) {
                 Item le_item = entity.getStack(inputSlot).getItem();
-                boolean skipCompoundEat = false;
+                int armCompCount = match.get().getPlans().getCount();
+                boolean compoundEat = true;
                 if (le_item instanceof ArmorItem recycle) {
                     if (recycle.getMaterial() == ArmorMaterials.NETHERITE) {
                         count = 1;
@@ -178,16 +179,17 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
                 if (le_item instanceof ToolItem tieredItem) {
                     if (tieredItem.getMaterial() == ToolMaterials.STONE) {
                         skipOutputSlot = true;
-                        skipCompoundEat = true;
+                        compoundEat = threshHold(100, 25);
                         keyString = "stone";
                     }
                     if (tieredItem.getMaterial() == ToolMaterials.WOOD) {
                         skipOutputSlot = true;
-                        skipCompoundEat = true;
+                        compoundEat = threshHold(100, 50);
                         keyString = "wood";
                     }
                     if (tieredItem.getMaterial() == ToolMaterials.NETHERITE) {
                         skipOutputSlot = true;
+                        compoundEat = threshHold(100, 10);
                         keyString = "netherite";
                         if (le_item instanceof SwordItem) {
                             count = configHolder.netherriteSwordDiamondBonus;
@@ -208,8 +210,8 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
                         //Special Behaviors for the Tiers of items
                     }
                 }
-                if (!(skipCompoundEat)){
-                    entity.setStack(planSlot, extractItem(entity.getStack(planSlot), 1));
+                if (compoundEat){
+                    entity.setStack(planSlot, extractItem(entity.getStack(planSlot), armCompCount));
                 }
             }
             entity.setStack(inputSlot, extractItem(entity.getStack(inputSlot), 1));
@@ -228,20 +230,17 @@ public class blockCuttingStationEntity extends BlockEntity implements NamedScree
                 }
                 if (keyString.equals("netherite")) {
                     stone = netheriteToolsBonus(count);
-                    entity.setStack(outSlot, new ItemStack(resultItem,
-                            entity.getStack(outSlot).getCount() + 1));
+                    entity.setStack(outSlot, new ItemStack(resultItem, entity.getStack(outSlot).getCount() + 1));
                     //put into the slot, as Netherite is a high tier. diamond(s) still allowed pop out like confetti.
                 }
                 if (keyString.equals("tools")) {
                     stone = ToolsBonus();
-                    entity.setStack(outSlot, new ItemStack(resultItem,
-                            entity.getStack(outSlot).getCount() + count));
+                    entity.setStack(outSlot, new ItemStack(resultItem, entity.getStack(outSlot).getCount() + count));
                     //pops sticks like confetti, puts the output item
                 }
                 dropContents(level, worldPosition, stone);
             } else {
-                entity.setStack(outSlot, new ItemStack(resultItem,
-                        entity.getStack(outSlot).getCount() + count));
+                entity.setStack(outSlot, new ItemStack(resultItem, entity.getStack(outSlot).getCount() + count));
             }
             entity.resetProgress();
         }
