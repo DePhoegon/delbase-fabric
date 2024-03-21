@@ -1,4 +1,4 @@
-package com.dephoegon.delbase.recipe;
+package com.dephoegon.delbase.aid.recipe;
 
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

@@ -1,5 +1,7 @@
 package com.dephoegon.delbase.aid.inventory;
 
+import com.dephoegon.delbase.aid.items.compoundPlans;
+import com.dephoegon.delbase.aid.items.cutterPlans;
 import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
 import net.minecraft.item.ItemStack;
 
@@ -12,7 +14,7 @@ public class slotControls {
             default -> false;
         };
     }
-    private static boolean isValidPlans(ItemStack itemStack) { return listArrays.getFullPlanSlotArray().contains(itemStack.getItem()); }
+    private static boolean isValidPlans(ItemStack itemStack) { return itemStack.getItem() instanceof compoundPlans || itemStack.getItem() instanceof cutterPlans; }
     private static boolean isValidOutput() { return false; }
     private static boolean isValidInput(ItemStack itemStack) { return !isValidPlans(itemStack); }
 }

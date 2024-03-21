@@ -1,7 +1,6 @@
 package com.dephoegon.delbase.screen;
 
 import com.dephoegon.delbase.Delbase;
-import com.dephoegon.delbase.aid.inventory.listArrays;
 import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.DrawContext;
