@@ -1,5 +1,6 @@
 package com.dephoegon.delbase.aid.recipe;
 
+import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.items.compoundPlans;
 import com.dephoegon.delbase.aid.items.cutterPlans;
 import com.google.gson.JsonObject;
@@ -70,26 +71,35 @@ public class blockCutterStationRecipes implements Recipe<SimpleInventory> {
         public static final String ID = "block_cutting";
         public @NotNull blockCutterStationRecipes read(@NotNull Identifier id, @NotNull JsonObject json) {
             ItemStack output = capAtMaxStackSize(ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output")));
-            ItemStack input = capAtMaxStackSize(ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "input")));
             ItemStack plan = capAtMaxStackSize(ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "plans")));
+            ItemStack input = capAtMaxStackSize(ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "input")));
 
             return new blockCutterStationRecipes(id, output, plan, input);
         }
         public blockCutterStationRecipes read(@NotNull Identifier id, @NotNull PacketByteBuf pBuffer) {
             final ItemStack output = capAtMaxStackSize(pBuffer.readItemStack());
-            final ItemStack input = capAtMaxStackSize(pBuffer.readItemStack());
             final ItemStack plans = capAtMaxStackSize(pBuffer.readItemStack());
+            final ItemStack input = capAtMaxStackSize(pBuffer.readItemStack());
             return new blockCutterStationRecipes(id, output, plans, input);
         }
         public void write(@NotNull PacketByteBuf pBuffer, @NotNull blockCutterStationRecipes pRecipe) {
             pBuffer.writeItemStack(capAtMaxStackSize(pRecipe.output));
-            pBuffer.writeItemStack(capAtMaxStackSize(pRecipe.input));
             pBuffer.writeItemStack(capAtMaxStackSize(pRecipe.plan));
+            pBuffer.writeItemStack(capAtMaxStackSize(pRecipe.input));
         }
         @Contract("_ -> param1")
         private @NotNull ItemStack capAtMaxStackSize(@NotNull ItemStack stack) {
-            if (stack.getCount() > stack.getMaxCount()) { stack.setCount(stack.getMaxCount()); }
-            if (stack.getCount() < 1) { stack.setCount(1); }
+            int fCount = 0;
+            int iCount = stack.getCount();
+            if (iCount > stack.getMaxCount()) {
+                fCount = stack.getMaxCount();
+                stack.setCount(stack.getMaxCount());
+            }
+            if (iCount < 1) {
+                fCount = 1;
+                stack.setCount(1);
+            }
+            if (fCount != 0) { Delbase.LOGGER.warn(stack.getItem().asItem().toString() + " - in a recipe has an improper count size - "+ iCount +" - Set to count of -> "+ fCount); }
             return stack;
         }
     }

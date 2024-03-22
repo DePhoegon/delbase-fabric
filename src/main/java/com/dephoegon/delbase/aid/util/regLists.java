@@ -121,5 +121,6 @@ public class regLists {
 
         //Post Items
         serverAccess.init();
+        screenHandlers.registerScreenHandlers();
     }
 }
