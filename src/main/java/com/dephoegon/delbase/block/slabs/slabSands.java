@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.slabs;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlab;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -33,7 +33,7 @@ public class slabSands extends baseModBlocks {
     public static final SlabBlock BLACK_SAND_SLAB = colorSolidSandHelper("black_sand_slab", BLACK_SAND);
 
     private static SlabBlock colorSolidSandHelper(String name, Block block) {
-        return (SlabBlock) registerBlock(name, new sandSlab(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.SAND), "", "", ""));
+        return (SlabBlock) registerBlock(name, new sandSlab(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.SAND), "", "", ""));
     }
     public static void registerColoredSands() { Delbase.LOGGER.info("Registering Colored Sands for "+Delbase.Delbase_ID); }
 }

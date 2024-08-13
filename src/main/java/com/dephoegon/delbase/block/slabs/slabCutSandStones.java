@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.slabs;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.slab.cutSandStoneSlab;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -29,6 +29,6 @@ public class slabCutSandStones extends baseModBlocks {
     public static final SlabBlock BLACK_CUT_SAND_STONE_SLAB = noToolTipAid("black_cut_sand_stone_slab", BLACK_SAND_STONE);
 
     private static SlabBlock noToolTipAid(String name, Block block) { return cutSandStoneHelper(name, block, "", "", ""); }
-    private static SlabBlock cutSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new cutSandStoneSlab(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
+    private static SlabBlock cutSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new cutSandStoneSlab(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
     public static void registerCutSandStoneSlabs() { Delbase.LOGGER.info("Registering Cut SandStone Slabs for "+Delbase.Delbase_ID); }
 }

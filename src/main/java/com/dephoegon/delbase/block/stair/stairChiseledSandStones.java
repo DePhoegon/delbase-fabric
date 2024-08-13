@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.stair;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.stair.chiseledSandStoneStair;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -33,6 +33,6 @@ public class stairChiseledSandStones extends baseModBlocks {
     public static final StairsBlock BLACK_CHISELED_SAND_STONE_STAIR = noToolTipAid("black_chiseled_sand_stone_stair", BLACK_SAND_STONE);
 
     private static StairsBlock noToolTipAid(String name, Block block) { return chiseledSandStoneHelper(name, block, "", "", ""); }
-    private static StairsBlock chiseledSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new chiseledSandStoneStair(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
+    private static StairsBlock chiseledSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new chiseledSandStoneStair(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
     public static void registerCutSandStoneStairs() { Delbase.LOGGER.info("Registering Chiseled SandStone Stairs for "+Delbase.Delbase_ID); }
 }

@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.stair;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.stair.terracottaStair;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -30,6 +30,6 @@ public class stairTerracotta extends baseModBlocks {
     public static final StairsBlock TERRACOTTA_STAIR = noToolTipAid("terracotta_stair", TERRACOTTA);
 
     private static StairsBlock noToolTipAid(String name, Block block) { return terracottaHelper(name, block, "", "", ""); }
-    private static StairsBlock terracottaHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new terracottaStair(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.CALCITE), norm, Shift, Ctrl)); }
+    private static StairsBlock terracottaHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new terracottaStair(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.CALCITE), norm, Shift, Ctrl)); }
     public static void registerTerracottaStair() { Delbase.LOGGER.info("Registering Terracotta Stairs for "+Delbase.Delbase_ID); }
 }

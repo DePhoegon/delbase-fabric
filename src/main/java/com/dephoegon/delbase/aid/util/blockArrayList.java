@@ -1,7 +1,6 @@
 package com.dephoegon.delbase.aid.util;
 
-import com.dephoegon.delbase.aid.block.stock.solidSandBlock;
-import com.dephoegon.delbase.aid.block.grav.nonColoredSolidSandBlock;
+import com.dephoegon.delbase.aid.block.grav.coloredSolidGravBlock;
 import com.dephoegon.delbase.aid.block.stock.energySlab;
 import net.minecraft.block.Block;
 import org.jetbrains.annotations.Contract;
@@ -76,8 +75,7 @@ public abstract class blockArrayList {
     }
     private static boolean checkBlockClass(Block block) {
        if (block instanceof energySlab) { return true; }
-       if (block instanceof nonColoredSolidSandBlock) { return true; }
-        return block instanceof solidSandBlock;
+        return block instanceof coloredSolidGravBlock;
     }
     private static ArrayList<Object> getFall_hold() { return fall_hold; }
     public static boolean checkFallLock(@NotNull Block block) {

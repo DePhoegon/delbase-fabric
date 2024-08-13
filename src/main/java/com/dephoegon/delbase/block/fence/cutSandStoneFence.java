@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.fence;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.fence.cutSandStoneFenceGate;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
@@ -56,11 +56,11 @@ public class cutSandStoneFence extends baseModBlocks {
     private static FenceGateBlock noToolTipFgAid(String name, Block block) { return fenceGateBlockAid(name, block, "","", ""); }
     @SuppressWarnings("SameParameterValue")
     private static FenceBlock fenceBlockAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceBlock) registerBlock(name, new com.dephoegon.delbase.aid.block.colorshift.fence.cutSandStoneFence(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip));
+        return  (FenceBlock) registerBlock(name, new com.dephoegon.delbase.aid.block.colorshift.fence.cutSandStoneFence(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip));
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceGateBlock fenceGateBlockAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceGateBlock) registerBlock(name, new cutSandStoneFenceGate(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip));
+        return  (FenceGateBlock) registerBlock(name, new cutSandStoneFenceGate(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip));
     }
     public static void registerCutSandStoneFences() { Delbase.LOGGER.info("Registering Cut SandStone Fences for "+Delbase.Delbase_ID); }
 }

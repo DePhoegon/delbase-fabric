@@ -4,11 +4,7 @@ import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.alt.strippedWoodFence;
 import com.dephoegon.delbase.aid.block.alt.strippedWoodFenceGate;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.FenceBlock;
-import net.minecraft.block.FenceGateBlock;
-import net.minecraft.block.WoodType;
+import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static net.minecraft.block.Blocks.*;
@@ -64,19 +60,19 @@ public class strippedWoodenFences extends baseModBlocks {
         return fenceGateBlockAid(name, block, type, "","", ""); }
     @SuppressWarnings("SameParameterValue")
     private static FenceBlock fenceBlockAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceBlock) registerBlock(name, new strippedWoodFence(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip));
+        return  (FenceBlock) registerBlock(name, new strippedWoodFence(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip));
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceGateBlock fenceGateBlockAid(String name, Block block, WoodType type, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceGateBlock) registerBlock(name, new strippedWoodFenceGate(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, type));
+        return  (FenceGateBlock) registerBlock(name, new strippedWoodFenceGate(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, type));
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceBlock burnFenceBlockAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceBlock) registerBlock(name, new strippedWoodFence(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip),true, 1000, 5, 10);
+        return  (FenceBlock) registerBlock(name, new strippedWoodFence(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip),true, 1000, 5, 10);
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceGateBlock burnFenceGateBlockAid(String name, Block block, WoodType type, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceGateBlock) registerBlock(name, new strippedWoodFenceGate(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, type),true, 1000, 5, 10);
+        return  (FenceGateBlock) registerBlock(name, new strippedWoodFenceGate(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, type),true, 1000, 5, 10);
     }
     public static void registerStrippedWoodenFences() { Delbase.LOGGER.info("Registering Stripped Wooden Fences for "+Delbase.Delbase_ID); }
 }

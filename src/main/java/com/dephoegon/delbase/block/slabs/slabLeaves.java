@@ -1,9 +1,9 @@
 package com.dephoegon.delbase.block.slabs;
 
 import com.dephoegon.delbase.Delbase;
-import com.dephoegon.delbase.aid.block.stock.slabBlock;
+import com.dephoegon.delbase.aid.block.stock.modSlabBlock;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -24,6 +24,6 @@ public class slabLeaves extends baseModBlocks {
 
     private static SlabBlock noToolTipAid(String name, Block block) { return leafSlabHelper(name, block, BlockSoundGroup.GRASS, "", "", ""); }
     private static SlabBlock noToolTipAid(String name, Block block, BlockSoundGroup soundGroup) { return leafSlabHelper(name, block, soundGroup, "", "", ""); }
-    private static SlabBlock leafSlabHelper(String name, Block block, BlockSoundGroup soundGroup, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new slabBlock(FabricBlockSettings.copyOf(block).sounds(soundGroup), norm, Shift, Ctrl, null), 30, 60); }
+    private static SlabBlock leafSlabHelper(String name, Block block, BlockSoundGroup soundGroup, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new modSlabBlock(AbstractBlock.Settings.copy(block).sounds(soundGroup), norm, Shift, Ctrl, null), 30, 60); }
     public static void registerLeafSlabs() { Delbase.LOGGER.info("Registering Leaf Slabs for "+Delbase.Delbase_ID); }
 }

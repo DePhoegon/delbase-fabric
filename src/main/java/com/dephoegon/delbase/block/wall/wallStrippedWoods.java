@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.wall;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.alt.strippedWoodWall;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -46,10 +46,10 @@ public class wallStrippedWoods extends baseModBlocks {
         WallBlock hold;
         if (fuelTime > 0) {
             hold = (WallBlock) registerBlock(name,
-                    new strippedWoodWall(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedWall), true, fuelTime, burnChance, burnSpread);
+                    new strippedWoodWall(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedWall), true, fuelTime, burnChance, burnSpread);
         } else {
             hold = (WallBlock) registerBlock(name,
-                    new strippedWoodWall(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedWall)
+                    new strippedWoodWall(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedWall)
             );
         }
         return hold;

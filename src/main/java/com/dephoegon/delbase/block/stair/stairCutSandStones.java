@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.stair;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.stair.cutSandStoneStair;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -33,6 +33,6 @@ public class stairCutSandStones extends baseModBlocks {
     public static final StairsBlock BLACK_CUT_SAND_STONE_STAIR = noToolTipAid("black_cut_sand_stone_stair", BLACK_SAND_STONE);
 
     private static StairsBlock noToolTipAid(String name, Block block) { return cutSandStoneHelper(name, block, "", "", ""); }
-    private static StairsBlock cutSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new cutSandStoneStair(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
+    private static StairsBlock cutSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new cutSandStoneStair(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
     public static void registerCutSandStoneStairs() { Delbase.LOGGER.info("Registering Cut SandStone Stairs for "+Delbase.Delbase_ID); }
 }

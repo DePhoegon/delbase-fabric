@@ -2,13 +2,9 @@ package com.dephoegon.delbase.block.fence;
 
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.stock.fenceBlock;
-import com.dephoegon.delbase.aid.block.stock.fenceGateBlock;
+import com.dephoegon.delbase.aid.block.stock.modFenceGate;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.minecraft.block.Block;
-import net.minecraft.block.FenceBlock;
-import net.minecraft.block.FenceGateBlock;
-import net.minecraft.block.WoodType;
+import net.minecraft.block.*;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static net.minecraft.block.Blocks.*;
@@ -91,34 +87,34 @@ public class fenceMisc extends baseModBlocks {
         return fenceGateBlockAid(name, block, blockSoundGroup, fuelTime, burnChance, burnSpread, "", "", "");
     }
     private static FenceBlock fenceBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, int fuelTime, int burnChance, int burnSpread, String norm, String shift, String ctrl) {
-        return (FenceBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), norm, shift, ctrl, null), true, fuelTime, burnChance, burnSpread);
+        return (FenceBlock) registerBlock(name, new fenceBlock(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), norm, shift, ctrl, null), true, fuelTime, burnChance, burnSpread);
     }
     private static FenceGateBlock fenceGateBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, int fuelTime, int burnChance, int burnSpread, String norm, String shift, String ctrl) {
-        return (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), norm, shift, ctrl, null, WoodType.OAK), true, fuelTime, burnChance, burnSpread);
+        return (FenceGateBlock) registerBlock(name, new modFenceGate(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), norm, shift, ctrl, null, WoodType.OAK), true, fuelTime, burnChance, burnSpread);
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceBlock fenceBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null));
+        return  (FenceBlock) registerBlock(name, new fenceBlock(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null));
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceGateBlock fenceGateBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null, WoodType.OAK));
+        return  (FenceGateBlock) registerBlock(name, new modFenceGate(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null, WoodType.OAK));
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceBlock fenceBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, int fuelTime, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null), fuelTime);
+        return  (FenceBlock) registerBlock(name, new fenceBlock(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null), fuelTime);
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceGateBlock fenceGateBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, int fuelTime, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null, WoodType.OAK), fuelTime);
+        return  (FenceGateBlock) registerBlock(name, new modFenceGate(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null, WoodType.OAK), fuelTime);
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceBlock fenceBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, String NormToolTip, String ShiftToolTip, String CtrlToolTip, int light) {
-        return  (FenceBlock) registerBlock(name, new fenceBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup).luminance((blockstate) -> light), NormToolTip, ShiftToolTip, CtrlToolTip, null));
+        return  (FenceBlock) registerBlock(name, new fenceBlock(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup).luminance((blockstate) -> light), NormToolTip, ShiftToolTip, CtrlToolTip, null));
     }
     @SuppressWarnings("SameParameterValue")
     private static FenceGateBlock fenceGateBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, String NormToolTip, String ShiftToolTip, String CtrlToolTip, int light) {
-        return  (FenceGateBlock) registerBlock(name, new fenceGateBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup).luminance((blockstate) -> light), NormToolTip, ShiftToolTip, CtrlToolTip, null, WoodType.OAK));
+        return  (FenceGateBlock) registerBlock(name, new modFenceGate(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup).luminance((blockstate) -> light), NormToolTip, ShiftToolTip, CtrlToolTip, null, WoodType.OAK));
     }
     public static void registerMiscFences() { Delbase.LOGGER.info("Registering MISC Fences for "+Delbase.Delbase_ID); }
 }

@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.wall;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.wall.chiseledSandStoneWall;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -33,6 +33,6 @@ public class wallChiseledSandStones extends baseModBlocks {
     public static final WallBlock BLACK_CHISELED_SAND_STONE_WALL = noToolTipAid("black_chiseled_sand_stone_wall", BLACK_SAND_STONE);
 
     private static WallBlock noToolTipAid(String name, Block block) { return chiseledSandStoneHelper(name, block, "", "", ""); }
-    private static WallBlock chiseledSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new chiseledSandStoneWall(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
+    private static WallBlock chiseledSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new chiseledSandStoneWall(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
     public static void registerChiseledSandStonewalls() { Delbase.LOGGER.info("Registering Chiseled SandStone walls for "+Delbase.Delbase_ID); }
 }

@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.slabs;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.slab.terracottaSlab;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -30,6 +30,6 @@ public class slabTerracotta extends baseModBlocks {
     public static final SlabBlock TERRACOTTA_SLAB = noToolTipAid("terracotta_slab", TERRACOTTA);
 
     private static SlabBlock noToolTipAid(String name, Block block) { return terracottaHelper(name, block, "", "", ""); }
-    private static SlabBlock terracottaHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new terracottaSlab(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.CALCITE), norm, Shift, Ctrl)); }
+    private static SlabBlock terracottaHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new terracottaSlab(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.CALCITE), norm, Shift, Ctrl)); }
     public static void registerTerracottaSlab() { Delbase.LOGGER.info("Registering Terracotta Slabs for "+Delbase.Delbase_ID); }
 }

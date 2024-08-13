@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.stair;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.alt.strippedWoodStair;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -44,10 +44,10 @@ public class stairStrippedWoods extends baseModBlocks {
         StairsBlock hold;
         if (fuelTime > 0) {
             hold = (StairsBlock) registerBlock(name,
-                    new strippedWoodStair(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedStair), true, fuelTime, burnChance, burnSpread);
+                    new strippedWoodStair(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedStair), true, fuelTime, burnChance, burnSpread);
         } else {
             hold = (StairsBlock) registerBlock(name,
-                    new strippedWoodStair(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedStair)
+                    new strippedWoodStair(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedStair)
             );
         }
         return hold;

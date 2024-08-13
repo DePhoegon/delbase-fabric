@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.general;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.gen.chiseledSandStone;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.sound.BlockSoundGroup;
 
@@ -30,7 +30,7 @@ public class genChiseledSandStones extends baseModBlocks {
     private static Block noToolTipAid(String name, Block block) { return genBlockRegAid(name, block, "", "", ""); }
     @SuppressWarnings("SameParameterValue")
     private static Block genBlockRegAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return registerBlock(name, new chiseledSandStone(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip));
+        return registerBlock(name, new chiseledSandStone(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip));
     }
     public static void registerChiseledSandStoneBlock() { Delbase.LOGGER.info("Registering Chiseled Sandstones for "+Delbase.Delbase_ID); }
 }

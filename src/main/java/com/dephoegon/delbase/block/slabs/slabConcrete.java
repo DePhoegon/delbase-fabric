@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.slabs;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.slab.concreteSlab;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -29,6 +29,6 @@ public class slabConcrete extends baseModBlocks {
     public static final SlabBlock BLACK_CONCRETE_SLAB = noToolTipAid("black_concrete_slab", BLACK_CONCRETE);
 
     private static SlabBlock noToolTipAid(String name, Block block) { return chiseledSandStoneHelper(name, block, "", "", ""); }
-    private static SlabBlock chiseledSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new concreteSlab(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
+    private static SlabBlock chiseledSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (SlabBlock) registerBlock(name, new concreteSlab(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
     public static void registerConcreteSlab() { Delbase.LOGGER.info("Registering Concrete Slabs for "+Delbase.Delbase_ID); }
 }

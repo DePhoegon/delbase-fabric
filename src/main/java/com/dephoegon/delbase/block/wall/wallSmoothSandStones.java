@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.wall;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.wall.smoothSandStoneWall;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -33,6 +33,6 @@ public class wallSmoothSandStones extends baseModBlocks {
     public static final WallBlock BLACK_SMOOTH_SAND_STONE_WALL = noToolTipAid("black_smooth_sand_stone_wall", BLACK_SAND_STONE);
 
     private static WallBlock noToolTipAid(String name, Block block) { return smoothSandStoneHelper(name, block, "", "", ""); }
-    private static WallBlock smoothSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new smoothSandStoneWall(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
+    private static WallBlock smoothSandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new smoothSandStoneWall(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
     public static void registerSmoothSandStonewalls() { Delbase.LOGGER.info("Registering Smooth SandStone walls for "+Delbase.Delbase_ID); }
 }

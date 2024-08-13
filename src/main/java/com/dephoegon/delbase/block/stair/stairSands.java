@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.stair;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.stair.sandStair;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -34,7 +34,7 @@ public class stairSands extends baseModBlocks {
     public static final StairsBlock BLACK_SAND_STAIR = colorSolidSandHelper("black_sand_stair", BLACK_SAND);
 
     private static StairsBlock colorSolidSandHelper(String name, @NotNull Block block) {
-        return (StairsBlock) registerBlock(name, new sandStair(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.SAND), "tooltip.delbase.info.more", "tooltip.delbase.sand.solid.info", "tooltip.delbase.sand.solid.flavor"));
+        return (StairsBlock) registerBlock(name, new sandStair(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.SAND), "tooltip.delbase.info.more", "tooltip.delbase.sand.solid.info", "tooltip.delbase.sand.solid.flavor"));
     }
     public static void registerColoredSands() { Delbase.LOGGER.info("Registering Colored Sands for "+Delbase.Delbase_ID); }
 }

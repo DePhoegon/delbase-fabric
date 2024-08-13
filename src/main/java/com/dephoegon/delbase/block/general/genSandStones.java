@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.general;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.gen.normSandStone;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
 import net.minecraft.sound.BlockSoundGroup;
@@ -32,8 +32,8 @@ public class genSandStones extends baseModBlocks {
     private static Block noToolTipAidOverRide(String name, Block block) { return genBlockRegAid(name, block, null, "", "", ""); }
     @SuppressWarnings("SameParameterValue")
     private static Block genBlockRegAid(String name, Block block, MapColor color, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        if (color == null) { return registerBlock(name, new normSandStone(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip)); } else {
-            return registerBlock(name, new normSandStone(FabricBlockSettings.copyOf(block).mapColor(color).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip));
+        if (color == null) { return registerBlock(name, new normSandStone(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip)); } else {
+            return registerBlock(name, new normSandStone(AbstractBlock.Settings.copy(block).mapColor(color).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip));
         }
     }
     public static void registerSandStone() { Delbase.LOGGER.info("Registering SandStones for "+Delbase.Delbase_ID); }

@@ -1,10 +1,11 @@
 package com.dephoegon.delbase.mixin;
 
+import com.dephoegon.delbase.aid.block.colorshift.grav.sandBlock;
+import com.dephoegon.delbase.aid.block.colorshift.grav.solidSandBlock;
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlab;
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlabEnergy;
 import com.dephoegon.delbase.aid.block.colorshift.stair.sandStair;
 import com.dephoegon.delbase.aid.block.colorshift.wall.sandWall;
-import com.dephoegon.delbase.aid.block.stock.modSandBlock;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.BlockHalf;
 import net.minecraft.block.enums.SlabType;
@@ -23,7 +24,7 @@ public class DeadBushBlockMixin {
     private void canPlantOnTop(@NotNull BlockState floor, BlockView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         // Check if the block is cactus, dead bush, or sugar cane
         Block groundBlock = floor.getBlock();
-        if (groundBlock instanceof modSandBlock) { cir.setReturnValue(true); }
+        if (groundBlock instanceof sandBlock || groundBlock instanceof solidSandBlock) { cir.setReturnValue(true); }
         if (groundBlock instanceof sandSlab || groundBlock instanceof sandSlabEnergy) {
             SlabType type = floor.get(SlabBlock.TYPE);
             if (type != SlabType.BOTTOM) { cir.setReturnValue(true); }

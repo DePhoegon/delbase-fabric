@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.wall;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.wall.terracottaWall;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -30,6 +30,6 @@ public class wallTerracotta extends baseModBlocks {
     public static final WallBlock TERRACOTTA_WALL = noToolTipAid("terracotta_wall", TERRACOTTA);
 
     private static WallBlock noToolTipAid(String name, Block block) { return terracottaHelper(name, block, "", "", ""); }
-    private static WallBlock terracottaHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new terracottaWall(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.CALCITE), norm, Shift, Ctrl)); }
+    private static WallBlock terracottaHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new terracottaWall(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.CALCITE), norm, Shift, Ctrl)); }
     public static void registerTerracottaWall() { Delbase.LOGGER.info("Registering Terracotta Walls for "+Delbase.Delbase_ID); }
 }

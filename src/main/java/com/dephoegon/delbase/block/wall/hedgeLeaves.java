@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.wall;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.stock.wallBlock;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -24,6 +24,6 @@ public class hedgeLeaves extends baseModBlocks {
 
     private static WallBlock noToolTipAid(String name, Block block) { return leafWallHelper(name, block, BlockSoundGroup.GLASS, "", "", ""); }
     private static WallBlock noToolTipAid(String name, Block block, BlockSoundGroup group) { return leafWallHelper(name, block, group, "", "", ""); }
-    private static WallBlock leafWallHelper(String name, Block block, BlockSoundGroup group, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new wallBlock(FabricBlockSettings.copyOf(block).sounds(group), norm, Shift, Ctrl, null), 30, 60); }
+    private static WallBlock leafWallHelper(String name, Block block, BlockSoundGroup group, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new wallBlock(AbstractBlock.Settings.copy(block).sounds(group), norm, Shift, Ctrl, null), 30, 60); }
     public static void registerLeafSlabs() { Delbase.LOGGER.info("Registering Leaf Hedges for "+Delbase.Delbase_ID); }
 }

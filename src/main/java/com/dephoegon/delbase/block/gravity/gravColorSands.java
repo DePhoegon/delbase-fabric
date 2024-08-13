@@ -3,11 +3,11 @@ package com.dephoegon.delbase.block.gravity;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.grav.sandBlock;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.ColoredFallingBlock;
 import net.minecraft.block.MapColor;
-import net.minecraft.block.SandBlock;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.util.ColorCode;
 
 import static net.minecraft.block.Blocks.SAND;
 
@@ -31,7 +31,7 @@ public class gravColorSands extends baseModBlocks {
     public static final ColoredFallingBlock BLACK_SAND = colorSandHelper(0x000000, "black_sand", MapColor.TERRACOTTA_BLACK);
 
     private static ColoredFallingBlock colorSandHelper(int dustColor, String name, MapColor mapColor) {
-        return (ColoredFallingBlock) registerBlock(name, new sandBlock(dustColor, FabricBlockSettings.copyOf(SAND).mapColor(mapColor).strength(0.5f).sounds(BlockSoundGroup.SAND), "tooltip.delbase.info.more", "tooltip.delbase.sand.hold.info", "tooltip.delbase.sand.hold.flavor", true));
+        return (ColoredFallingBlock) registerBlock(name, new sandBlock(new ColorCode(dustColor), AbstractBlock.Settings.copy(SAND).mapColor(mapColor).strength(0.5f).sounds(BlockSoundGroup.SAND), "tooltip.delbase.info.more", "tooltip.delbase.sand.hold.info", "tooltip.delbase.sand.hold.flavor", true));
     }
     public static void registerColoredSands() { Delbase.LOGGER.info("Registering Colored Sands for "+Delbase.Delbase_ID); }
 }

@@ -20,7 +20,7 @@ public class colorMixInteractions {
         boolean place = false;
         boolean lock_cut = false;
         if (inHand.equals(cleanse.getItem()) && BaseDefaultBlock != null) {
-            if (TargetBlock != BaseDefaultBlock && BaseDefaultBlock != null) {
+            if (TargetBlock != BaseDefaultBlock) {
                 place = true;
             }
             if (TargetBlock == RedBaseDefaultBlock && RedBaseDefaultBlock != null) {

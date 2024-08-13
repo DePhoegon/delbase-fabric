@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.axis;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.axis.cutSandStone;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.PillarBlock;
 
@@ -30,7 +30,7 @@ public class axisCutSandStones extends baseModBlocks {
     private static PillarBlock noTtCutSandStoneAid(String name, Block block) { return cutSandStonesRegisterAid(name, block, "", "", ""); }
     @SuppressWarnings("SameParameterValue")
     private static PillarBlock cutSandStonesRegisterAid(String name, Block block, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (PillarBlock) registerBlock(name, new cutSandStone(FabricBlockSettings.copyOf(block), NormToolTip, ShiftToolTip, CtrlToolTip));
+        return  (PillarBlock) registerBlock(name, new cutSandStone(AbstractBlock.Settings.copy(block), NormToolTip, ShiftToolTip, CtrlToolTip));
     }
     public static void registerCutSandStones() { Delbase.LOGGER.info("Registering Cut Sand Stones for "+Delbase.Delbase_ID); }
 }

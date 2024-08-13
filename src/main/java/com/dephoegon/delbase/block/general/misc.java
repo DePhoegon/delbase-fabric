@@ -1,9 +1,9 @@
 package com.dephoegon.delbase.block.general;
 
 import com.dephoegon.delbase.Delbase;
-import com.dephoegon.delbase.aid.block.stock.genBlock;
+import com.dephoegon.delbase.aid.block.stock.modGenBlock;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.sound.BlockSoundGroup;
 
@@ -15,7 +15,7 @@ public class misc extends baseModBlocks {
     private static Block noToolTipAid(String name) { return genBlockRegAid(name, "", "", ""); }
     @SuppressWarnings("SameParameterValue")
     private static Block genBlockRegAid(String name, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return registerBlock(name, new genBlock(FabricBlockSettings.copyOf(STONE).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip, null));
+        return registerBlock(name, new modGenBlock(AbstractBlock.Settings.copy(STONE).sounds(BlockSoundGroup.STONE), NormToolTip, ShiftToolTip, CtrlToolTip, null));
     }
     public static void registerMiscBlock() { Delbase.LOGGER.info("Registering Misc Blocks for "+Delbase.Delbase_ID); }
 }

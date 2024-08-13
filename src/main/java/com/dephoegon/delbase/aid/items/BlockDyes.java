@@ -3,7 +3,6 @@ package com.dephoegon.delbase.aid.items;
 import com.dephoegon.delbase.aid.block.stock.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.DyeItem;
 import net.minecraft.item.Item;
@@ -16,7 +15,6 @@ import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -39,7 +37,7 @@ public class BlockDyes extends DyeItem {
         super.appendTooltip(stack, context, tooltip, type);
         if(!(HShift()) && !(HCtrl()) && tip0 != null) { tooltip.add(Text.translatable(tip0)); } //if neither pressed, show tip0 (if not empty)
         if(HCtrl() && tip2 != null) { tooltip.add(Text.translatable(tip2)); }//if ctrl, show tip2 (if not empty), do first
-        if(HShift() && tip1 != null) { tooltip.add(Text.translatable(tip1)); } //if shift, show tip1 (if not empty)
+        if(HShift() && tip1 != null) { tooltip.add(Text.translatable(tip1)); } //if shifted, show tip1 (if not empty)
     }
     public ActionResult useOnBlock(@NotNull ItemUsageContext context) {
         World world = context.getWorld();
@@ -51,16 +49,16 @@ public class BlockDyes extends DyeItem {
         Item dye_hand = player.getStackInHand(context.getHand()).getItem();
         boolean m_hand_dye = dye_hand.asItem() == player.getMainHandStack().getItem();
         if (m_hand_dye) {
-            if (block instanceof axisBlock || getAxis_list().contains(defaultBlockState)) {
+            if (block instanceof modPillarBlock || getAxis_list().contains(defaultBlockState)) {
                 return axis_select(world, blockpos, defaultBlockState, block, player, dye_hand);
             }
-            if (block instanceof slabBlock || getSlab_list().contains(defaultBlockState)) {
+            if (block instanceof modSlabBlock || getSlab_list().contains(defaultBlockState)) {
                 return slab_select(world, blockpos, defaultBlockState, block, player, dye_hand);
             }
-            if (block instanceof genBlock || getGeneral_list().contains(defaultBlockState)) {
+            if (block instanceof modGenBlock || getGeneral_list().contains(defaultBlockState)) {
                 return gen_select(world, blockpos, defaultBlockState, block, player, dye_hand);
             }
-            if (block instanceof modSandBlock || getGravity_list().contains(defaultBlockState)) {
+            if (block instanceof modColoredFallingBlock || getGravity_list().contains(defaultBlockState)) {
                 return grav_select(world, blockpos, defaultBlockState, block, player, dye_hand);
             }
             if (block instanceof stairBlock || getStair_list().contains(defaultBlockState)) {
@@ -72,7 +70,7 @@ public class BlockDyes extends DyeItem {
             if (block instanceof fenceBlock) {
                 return fence_select(world, blockpos, defaultBlockState, block, player, dye_hand);
             }
-            if (block instanceof fenceGateBlock) {
+            if (block instanceof modFenceGate) {
                 return fenceGate_select(world, blockpos, defaultBlockState, block, player, dye_hand);
             }
         }

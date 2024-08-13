@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.slabs;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.alt.woodSlab;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -45,10 +45,10 @@ public class slabWood extends baseModBlocks {
         SlabBlock hold;
         if (fuelTime > 0) {
             hold = (SlabBlock) registerBlock(name,
-                    new woodSlab(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedSlab), true, fuelTime, burnChance, burnSpread);
+                    new woodSlab(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedSlab), true, fuelTime, burnChance, burnSpread);
         } else {
             hold = (SlabBlock) registerBlock(name,
-                    new woodSlab(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedSlab)
+                    new woodSlab(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.WOOD), NormToolTip, ShiftToolTip, CtrlToolTip, strippedSlab)
             );
         }
         return hold;

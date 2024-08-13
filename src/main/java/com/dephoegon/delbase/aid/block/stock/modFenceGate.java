@@ -1,7 +1,8 @@
 package com.dephoegon.delbase.aid.block.stock;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.WoodType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
@@ -18,6 +19,7 @@ import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -25,24 +27,27 @@ import java.util.List;
 import static com.dephoegon.delbase.aid.util.kb.HCtrl;
 import static com.dephoegon.delbase.aid.util.kb.HShift;
 
-public class genBlock extends Block {
+public class modFenceGate extends FenceGateBlock {
     private final String tip0;
     private final String tip1;
     private final String tip2;
     private final BlockState strippedState;
-    public genBlock(Settings settings, @NotNull String normToolTip, String shiftToolTip, String ctrlToolTip, Block StrippedBlock) {
-        super(settings);
+    public modFenceGate(Settings settings, @NotNull String normToolTip, String shiftToolTip, String ctrlToolTip, FenceGateBlock StrippedFenceGateBlock, WoodType type) {
+        super(type, settings);
         if(normToolTip.isEmpty()) { tip0 = null; } else { tip0 = normToolTip; }
         if(shiftToolTip.isEmpty()) { tip1 = null; } else { tip1 = shiftToolTip; }
         if(ctrlToolTip.isEmpty()) { tip2 = null; } else { tip2 = ctrlToolTip; }
-        strippedState = StrippedBlock != null ? StrippedBlock.getDefaultState() : null;
+        strippedState = StrippedFenceGateBlock != null ? StrippedFenceGateBlock.getDefaultState() : null;
     }
-
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> toolTip, TooltipType type) {
         super.appendTooltip(stack, context, toolTip, type);
         if(!(HShift()) && !(HCtrl()) && tip0 != null) { toolTip.add(Text.translatable(tip0)); } //if neither pressed, show tip0 (if not empty)
         if(HCtrl() && tip2 != null) { toolTip.add(Text.translatable(tip2)); }//if ctrl, show tip2 (if not empty), do first
         if(HShift() && tip1 != null) { toolTip.add(Text.translatable(tip1)); } //if shift, show tip1 (if not empty)
+    }
+    @Contract(pure = true)
+    public static BlockState getStrippedState(@NotNull modFenceGate block) {
+        return  block.strippedState;
     }
     @Override
     public ItemActionResult onUseWithItem(@NotNull ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {

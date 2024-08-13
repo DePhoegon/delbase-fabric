@@ -1,7 +1,6 @@
 package com.dephoegon.delbase.block;
 
 import com.dephoegon.delbase.Delbase;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.block.Block;
@@ -20,12 +19,12 @@ public class baseModBlocks {
     protected static Block registerBlock(String name, Block block, int fuelTime) { return registerBlock(name, block, false, fuelTime, 0, 0); }
     protected static Block registerBlock(String name, Block block, boolean burnable, int fuelTime, int burnChance, int burnSpread) {
         if (fuelTime > 0) { registerBlockItem(name, block, fuelTime); } else { registerBlockItem(name, block); }
-        Block hold = Registry.register(Registries.BLOCK, new Identifier(Delbase.Delbase_ID, name), block);
+        Block hold = Registry.register(Registries.BLOCK, Identifier.of(Delbase.Delbase_ID, name), block);
         if (burnable) { FlammableBlockRegistry.getDefaultInstance().add(hold, burnChance, burnSpread); }
         return hold;
     }
     private static Item registerBlockItem(String name, Block block) {
-        return Registry.register(Registries.ITEM, new Identifier(Delbase.Delbase_ID, name), new BlockItem(block, new FabricItemSettings()));
+        return Registry.register(Registries.ITEM, Identifier.of(Delbase.Delbase_ID, name), new BlockItem(block, new Item.Settings()));
     }
     private static void registerBlockItem(String name, Block block, int fuelTime) {
         Item hold = registerBlockItem(name, block);

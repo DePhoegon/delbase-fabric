@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.stair;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.stock.stairBlock;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -50,19 +50,19 @@ public class stairMisc extends baseModBlocks {
         return stairsBlockAid(name, block, blockSoundGroup, fuelTime, burnChance, burnSpread, "", "", "");
     }
     private static StairsBlock stairsBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, int fuelTime, int burnChance, int burnSpread, String norm, String shift, String Ctrl) {
-        return (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), norm, shift, Ctrl, null), true, fuelTime, burnChance, burnSpread);
+        return (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), norm, shift, Ctrl, null), true, fuelTime, burnChance, burnSpread);
     }
     @SuppressWarnings("SameParameterValue")
     private static StairsBlock stairsBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null));
+        return  (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null));
     }
     @SuppressWarnings("SameParameterValue")
     private static StairsBlock stairsBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, int fuelTime, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null), fuelTime);
+        return  (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null), fuelTime);
     }
     @SuppressWarnings("SameParameterValue")
     private static StairsBlock stairsBlockAid(String name, @NotNull Block block, BlockSoundGroup blockSoundGroup, String NormToolTip, String ShiftToolTip, String CtrlToolTip, int light) {
-        return  (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(blockSoundGroup).luminance((blockstate) -> light), NormToolTip, ShiftToolTip, CtrlToolTip, null));
+        return  (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(blockSoundGroup).luminance((blockstate) -> light), NormToolTip, ShiftToolTip, CtrlToolTip, null));
     }
     public static void registerMiscFences() { Delbase.LOGGER.info("Registering MISC Fences for "+Delbase.Delbase_ID); }
 }

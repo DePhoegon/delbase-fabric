@@ -1,9 +1,9 @@
 package com.dephoegon.delbase.block.slabs;
 
 import com.dephoegon.delbase.Delbase;
-import com.dephoegon.delbase.aid.block.stock.slabBlock;
+import com.dephoegon.delbase.aid.block.stock.modSlabBlock;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -48,19 +48,19 @@ public class slabMisc extends baseModBlocks {
         return slabBlockAid(name, block, blockSoundGroup, fuelTime, burnChance, burnSpread, "", "", "");
     }
     private static SlabBlock slabBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, int fuelTime, int burnChance, int burnSpread, String norm, String shift, String Ctrl) {
-        return (SlabBlock) registerBlock(name, new slabBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), norm, shift, Ctrl, null), true, fuelTime, burnChance, burnSpread);
+        return (SlabBlock) registerBlock(name, new modSlabBlock(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), norm, shift, Ctrl, null), true, fuelTime, burnChance, burnSpread);
     }
     @SuppressWarnings("SameParameterValue")
     private static SlabBlock slabBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (SlabBlock) registerBlock(name, new slabBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null));
+        return  (SlabBlock) registerBlock(name, new modSlabBlock(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null));
     }
     @SuppressWarnings("SameParameterValue")
     private static SlabBlock slabBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, int fuelTime, String NormToolTip, String ShiftToolTip, String CtrlToolTip) {
-        return  (SlabBlock) registerBlock(name, new slabBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null), fuelTime);
+        return  (SlabBlock) registerBlock(name, new modSlabBlock(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup), NormToolTip, ShiftToolTip, CtrlToolTip, null), fuelTime);
     }
     @SuppressWarnings("SameParameterValue")
     private static SlabBlock slabBlockAid(String name, Block block, BlockSoundGroup blockSoundGroup, String NormToolTip, String ShiftToolTip, String CtrlToolTip, int light) {
-        return  (SlabBlock) registerBlock(name, new slabBlock(FabricBlockSettings.copyOf(block).sounds(blockSoundGroup).luminance((blockstate) -> light), NormToolTip, ShiftToolTip, CtrlToolTip, null));
+        return  (SlabBlock) registerBlock(name, new modSlabBlock(AbstractBlock.Settings.copy(block).sounds(blockSoundGroup).luminance((blockstate) -> light), NormToolTip, ShiftToolTip, CtrlToolTip, null));
     }
     public static void registerMiscFences() { Delbase.LOGGER.info("Registering MISC Fences for "+Delbase.Delbase_ID); }
 }

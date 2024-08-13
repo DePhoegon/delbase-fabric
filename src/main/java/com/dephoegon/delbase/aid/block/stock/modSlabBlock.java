@@ -1,7 +1,7 @@
 package com.dephoegon.delbase.aid.block.stock;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.PillarBlock;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
@@ -25,17 +25,17 @@ import java.util.List;
 import static com.dephoegon.delbase.aid.util.kb.HCtrl;
 import static com.dephoegon.delbase.aid.util.kb.HShift;
 
-public class axisBlock extends PillarBlock {
+public class modSlabBlock extends SlabBlock {
     private final String tip0;
     private final String tip1;
     private final String tip2;
     private final BlockState strippedState;
-    public axisBlock(Settings settings, @NotNull String normToolTip, String shiftToolTip, String ctrlToolTip, PillarBlock StrippedPillarBlock) {
+    public modSlabBlock(Settings settings, @NotNull String normToolTip, String shiftToolTip, String ctrlToolTip, SlabBlock StrippedSlabBlock) {
         super(settings);
         if(normToolTip.isEmpty()) { tip0 = null; } else { tip0 = normToolTip; }
         if(shiftToolTip.isEmpty()) { tip1 = null; } else { tip1 = shiftToolTip; }
         if(ctrlToolTip.isEmpty()) { tip2 = null; } else { tip2 = ctrlToolTip; }
-        strippedState = StrippedPillarBlock != null ? StrippedPillarBlock.getDefaultState() : null;
+        strippedState = StrippedSlabBlock != null ? StrippedSlabBlock.getDefaultState() : null;
     }
     public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> toolTip, TooltipType type) {
         super.appendTooltip(stack, context, toolTip, type);

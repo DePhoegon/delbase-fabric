@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.stair;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.stock.stairBlock;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -25,6 +25,6 @@ public class stairLeaves extends baseModBlocks {
 
     private static StairsBlock noToolTipAid(String name, Block block) { return leafStairHelper(name, block, BlockSoundGroup.GRASS, "", "", ""); }
     private static StairsBlock noToolTipAid(String name, Block block, BlockSoundGroup group) { return leafStairHelper(name, block, group, "", "", ""); }
-    private static StairsBlock leafStairHelper(String name, @NotNull Block block, BlockSoundGroup group, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), FabricBlockSettings.copyOf(block).sounds(group), norm, Shift, Ctrl, null), 30, 60); }
+    private static StairsBlock leafStairHelper(String name, @NotNull Block block, BlockSoundGroup group, String norm, String Shift, String Ctrl) { return (StairsBlock) registerBlock(name, new stairBlock(block.getDefaultState(), AbstractBlock.Settings.copy(block).sounds(group), norm, Shift, Ctrl, null), 30, 60); }
     public static void registerLeafStairs() { Delbase.LOGGER.info("Registering Leaf Stairs for "+Delbase.Delbase_ID); }
 }

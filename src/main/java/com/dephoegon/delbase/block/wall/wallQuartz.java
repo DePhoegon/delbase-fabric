@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.wall;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.alt.quartzWall;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -18,6 +18,6 @@ public class wallQuartz extends baseModBlocks {
     public static final WallBlock SMOOTH_QUARTZ_WALL = noToolTipAid("smooth_quartz_wall", SMOOTH_QUARTZ);
 
     private static WallBlock noToolTipAid(String name, Block block) { return quartzWallRegister(name, block, "", "", ""); }
-    private static WallBlock quartzWallRegister(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new quartzWall(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
+    private static WallBlock quartzWallRegister(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new quartzWall(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
     public static void registerConcreteWall() { Delbase.LOGGER.info("Registering Quartz Walls for "+Delbase.Delbase_ID); }
 }

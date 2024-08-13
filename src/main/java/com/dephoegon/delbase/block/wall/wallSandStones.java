@@ -3,7 +3,7 @@ package com.dephoegon.delbase.block.wall;
 import com.dephoegon.delbase.Delbase;
 import com.dephoegon.delbase.aid.block.colorshift.wall.sandStoneWall;
 import com.dephoegon.delbase.block.baseModBlocks;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.sound.BlockSoundGroup;
@@ -29,6 +29,6 @@ public class wallSandStones extends baseModBlocks {
     public static final WallBlock BLACK_SAND_STONE_WALL = noToolTipAid("black_sand_stone_wall", BLACK_SAND_STONE);
 
     private static WallBlock noToolTipAid(String name, Block block) { return SandStoneHelper(name, block, "", "", ""); }
-    private static WallBlock SandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new sandStoneWall(FabricBlockSettings.copyOf(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
+    private static WallBlock SandStoneHelper(String name, Block block, String norm, String Shift, String Ctrl) { return (WallBlock) registerBlock(name, new sandStoneWall(AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.STONE), norm, Shift, Ctrl)); }
     public static void registerSandStonewalls() { Delbase.LOGGER.info("Registering SandStone walls for "+Delbase.Delbase_ID); }
 }
