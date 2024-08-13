@@ -9,7 +9,7 @@ import net.minecraft.util.Identifier;
 
 public class BaseItems {
     protected static Item registerItem(String name, Item item) {
-        return Registry.register(Registries.ITEM, new Identifier(Delbase.Delbase_ID, name), item);
+        return Registry.register(Registries.ITEM, Identifier.of(Delbase.Delbase_ID, name), item);
     }
     protected static Item registerItem(String name, Item item, int burnTime) {
         Item out = registerItem(name, item);

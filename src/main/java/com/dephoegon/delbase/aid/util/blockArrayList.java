@@ -1,6 +1,6 @@
 package com.dephoegon.delbase.aid.util;
 
-import com.dephoegon.delbase.aid.block.colorshift.grav.solidSandBlock;
+import com.dephoegon.delbase.aid.block.stock.solidSandBlock;
 import com.dephoegon.delbase.aid.block.grav.nonColoredSolidSandBlock;
 import com.dephoegon.delbase.aid.block.stock.energySlab;
 import net.minecraft.block.Block;

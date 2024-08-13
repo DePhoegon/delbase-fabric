@@ -9,6 +9,7 @@ import net.minecraft.item.DyeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.DyeColor;
@@ -34,11 +35,11 @@ public class BlockDyes extends DyeItem {
         if(shiftToolTip.isEmpty()) { tip1 = null; } else { tip1 = shiftToolTip; }
         if(ctrlToolTip.isEmpty()) { tip2 = null; } else { tip2 = ctrlToolTip; }
     }
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> toolTip, TooltipContext context) {
-        super.appendTooltip(stack, world, toolTip, context);
-        if(!(HShift()) && !(HCtrl()) && tip0 != null) { toolTip.add(Text.translatable(tip0)); } //if neither pressed, show tip0 (if not empty)
-        if(HCtrl() && tip2 != null) { toolTip.add(Text.translatable(tip2)); }//if ctrl, show tip2 (if not empty), do first
-        if(HShift() && tip1 != null) { toolTip.add(Text.translatable(tip1)); } //if shift, show tip1 (if not empty)
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> tooltip, TooltipType type) {
+        super.appendTooltip(stack, context, tooltip, type);
+        if(!(HShift()) && !(HCtrl()) && tip0 != null) { tooltip.add(Text.translatable(tip0)); } //if neither pressed, show tip0 (if not empty)
+        if(HCtrl() && tip2 != null) { tooltip.add(Text.translatable(tip2)); }//if ctrl, show tip2 (if not empty), do first
+        if(HShift() && tip1 != null) { tooltip.add(Text.translatable(tip1)); } //if shift, show tip1 (if not empty)
     }
     public ActionResult useOnBlock(@NotNull ItemUsageContext context) {
         World world = context.getWorld();

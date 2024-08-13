@@ -2,21 +2,23 @@ package com.dephoegon.delbase.aid.block.stock;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
-import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
@@ -36,24 +38,24 @@ public class genBlock extends Block {
         strippedState = StrippedBlock != null ? StrippedBlock.getDefaultState() : null;
     }
 
-    public void appendTooltip(ItemStack stack, @Nullable BlockView world, List<Text> toolTip, TooltipContext options) {
-        super.appendTooltip(stack, world, toolTip, options);
+    public void appendTooltip(ItemStack stack, Item.TooltipContext context, List<Text> toolTip, TooltipType type) {
+        super.appendTooltip(stack, context, toolTip, type);
         if(!(HShift()) && !(HCtrl()) && tip0 != null) { toolTip.add(Text.translatable(tip0)); } //if neither pressed, show tip0 (if not empty)
         if(HCtrl() && tip2 != null) { toolTip.add(Text.translatable(tip2)); }//if ctrl, show tip2 (if not empty), do first
         if(HShift() && tip1 != null) { toolTip.add(Text.translatable(tip1)); } //if shift, show tip1 (if not empty)
     }
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, @NotNull PlayerEntity player, Hand hand, BlockHitResult hit) {
-        ItemStack stack = player.getStackInHand(hand);
-        if (stack.getItem() instanceof AxeItem && strippedState != null) {
-            world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
+    public ItemActionResult onUseWithItem(@NotNull ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (stack.getItem() instanceof AxeItem && strippedState != null && player.getAbilities().allowModifyWorld) {
             if (!world.isClient) {
+                world.playSound(player, pos, SoundEvents.ITEM_AXE_STRIP, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 world.setBlockState(pos, strippedState);
-                stack.damage(1, player, (p) -> p.sendToolBreakStatus(hand));
+                EquipmentSlot equipmentSlot = hand == Hand.MAIN_HAND ? EquipmentSlot.MAINHAND : EquipmentSlot.OFFHAND;
+                stack.damage(1, (ServerWorld) world, player instanceof ServerPlayerEntity sp ? sp : null, item -> player.sendEquipmentBreakStatus(item, equipmentSlot));
             }
             player.swingHand(hand);
-            return ActionResult.SUCCESS;
+            return ItemActionResult.SUCCESS;
         }
-        return super.onUse(state, world, pos, player, hand, hit);
+        return super.onUseWithItem(stack, state, world, pos, player, hand, hit);
     }
 }
