@@ -12,6 +12,7 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NbtCompound;
@@ -35,7 +36,7 @@ import static com.dephoegon.delbase.aid.recipe.countAid.netheriteDiamondBonus;
 import static com.dephoegon.delbase.item.BlockCutterItems.*;
 import static net.minecraft.item.Items.DIAMOND;
 
-public class blockCuttingStationEntity extends BlockEntity implements ExtendedScreenHandlerFactory, ImplementedInventory {
+public class blockCuttingStationEntity extends BlockEntity implements Inventory {
     public static final int invSize = 3;
     public static final int planSlot = 2;
     public static final int inputSlot = 0;
@@ -240,6 +241,15 @@ public class blockCuttingStationEntity extends BlockEntity implements ExtendedSc
     public int size() { return inventory.size(); }
     public boolean isEmpty() { return inventory.stream().allMatch(ItemStack::isEmpty); }
     public ItemStack getStack(int slot) { return inventory.get(slot); }
+
+    @Override
+    public ItemStack removeStack(int slot, int amount) {
+        ItemStack out = inventory.get(slot);
+        int slotInv = out.getCount();
+        if (slotInv - amount < 1) { out = ItemStack.EMPTY; } else { out.setCount(slotInv - amount); }
+        return out;
+    }
+
     public ItemStack removeStack(int slot) { return Inventories.removeStack(inventory, slot); }
     public void setStack(int slot, ItemStack stack) {
         inventory.set(slot, stack);
@@ -248,6 +258,12 @@ public class blockCuttingStationEntity extends BlockEntity implements ExtendedSc
         }
         markDirty();
     }
+
+    @Override
+    public boolean canPlayerUse(PlayerEntity player) {
+        return false;
+    }
+
     public void clear() {
         inventory.clear();
     }
