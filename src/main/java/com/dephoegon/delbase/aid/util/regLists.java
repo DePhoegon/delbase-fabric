@@ -14,18 +14,14 @@ import com.dephoegon.delbase.block.wall.*;
 import com.dephoegon.delbase.item.BlockCutterItems;
 import com.dephoegon.delbase.item.ShiftingDyes;
 import com.dephoegon.delbase.recipe.modRecipes;
-import com.dephoegon.delbase.screen.blockCuttingStationScreen;
 import com.dephoegon.delbase.screen.screenHandlers;
-import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.minecraft.client.gui.screen.ingame.HandledScreens;
-import net.minecraft.client.render.RenderLayer;
 
 public class regLists {
     //Client Only, Reg.
     public static void RegisterClientFirst() {
-        BlockRenderLayerMap.INSTANCE.putBlock(machineBlock.BLOCK_CUTTER_STATION, RenderLayer.getCutout());
+        // BlockRenderLayerMap.INSTANCE.putBlock(machineBlock.BLOCK_CUTTER_STATION, RenderLayer.getCutout());
         ModKeyBindings.registerKeyBinds();
-        HandledScreens.register(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, blockCuttingStationScreen::new);
+        // HandledScreens.register(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, blockCuttingStationScreen::new);
         blockColoring.setLeafColors();
     }
     // Blocks & Classes that need to be registered first before called ont by others

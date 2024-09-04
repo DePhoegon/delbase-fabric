@@ -34,7 +34,7 @@ public class gravColorSolidSand extends baseModBlocks {
     public static final ColoredFallingBlock BLACK_SOLID_SAND = colorSolidSandHelper(0x000000, "black_solid_sand", BLACK_SAND);
 
     private static ColoredFallingBlock colorSolidSandHelper(int dustColor, String name, Block block) {
-        return (ColoredFallingBlock) registerBlock(name, new solidSandBlock(new ColorCode(dustColor), AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.SAND), "tooltip.delbase.info.more", "tooltip.delbase.sand.solid.info", "tooltip.delbase.sand.solid.flavor", false));
+        return (ColoredFallingBlock) registerBlock(name, new solidSandBlock(new ColorCode(dustColor), AbstractBlock.Settings.copy(block).sounds(BlockSoundGroup.SAND), "tooltip.delbase.sand.solid.flavor", "", "", false));
     }
     public static void registerColoredSands() { Delbase.LOGGER.info("Registering Colored Sands for "+Delbase.Delbase_ID); }
 }

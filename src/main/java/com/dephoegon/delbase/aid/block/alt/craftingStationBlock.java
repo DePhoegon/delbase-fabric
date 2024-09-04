@@ -1,37 +1,18 @@
 package com.dephoegon.delbase.aid.block.alt;
 
-import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
-import com.dephoegon.delbase.block.entity.blockEntities;
-import net.minecraft.block.*;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityTicker;
-import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.screen.NamedScreenHandlerFactory;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.DirectionProperty;
-import net.minecraft.state.property.Properties;
-import net.minecraft.util.*;
-import net.minecraft.util.function.BooleanBiFunction;
-import net.minecraft.util.hit.BlockHitResult;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
-import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.Objects;
-import java.util.stream.Stream;
-
-@SuppressWarnings("deprecation")
-public class craftingStationBlock extends BlockWithEntity implements BlockEntityProvider {
+public class craftingStationBlock {
+    // extends BlockWithEntity implements BlockEntityProvider
+    /*
+    public static final MapCodec<craftingStationBlock> CODEC = craftingStationBlock.createCodec(craftingStationBlock::new);
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
     public craftingStationBlock(Settings settings) {
         super(settings);
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return CODEC;
     }
 
     private static final VoxelShape NORTH_SHAPE = Stream.of(
@@ -102,7 +83,6 @@ public class craftingStationBlock extends BlockWithEntity implements BlockEntity
             Block.createCuboidShape(15, 14,15, 16,16,16)
     ).reduce((v1, v2) -> VoxelShapes.combineAndSimplify(v1, v2, BooleanBiFunction.OR)).get();
 
-    @SuppressWarnings("deprecation")
     @Override
     public VoxelShape getOutlineShape(@NotNull BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(FACING)) {
@@ -127,7 +107,7 @@ public class craftingStationBlock extends BlockWithEntity implements BlockEntity
         builder.add(FACING);
     }
 
-    /* Block Entity */
+    // Block Entity
 
     public BlockRenderType getRenderType(BlockState state) { return BlockRenderType.MODEL; }
     @Nullable
@@ -143,7 +123,7 @@ public class craftingStationBlock extends BlockWithEntity implements BlockEntity
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }
-    public ActionResult onUse(BlockState state, @NotNull World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
         if (!world.isClient()) {
             NamedScreenHandlerFactory screenHandlerFactory = ((blockCuttingStationEntity) world.getBlockEntity(pos));
 
@@ -152,6 +132,7 @@ public class craftingStationBlock extends BlockWithEntity implements BlockEntity
         return ActionResult.SUCCESS;
     }
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, blockEntities.BLOCK_CUTTER_ENTITY, blockCuttingStationEntity::tick);
+        return validateTicker(type, blockEntities.BLOCK_CUTTER_ENTITY, blockCuttingStationEntity::tick);
     }
+    */
 }

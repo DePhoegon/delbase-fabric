@@ -1,5 +1,7 @@
 package com.dephoegon.delbase.mixin;
 
+import com.dephoegon.delbase.aid.block.colorshift.grav.sandBlock;
+import com.dephoegon.delbase.aid.block.colorshift.grav.solidSandBlock;
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlab;
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlabEnergy;
 import com.dephoegon.delbase.aid.block.colorshift.stair.sandStair;
@@ -25,10 +27,10 @@ public class SugarCaneBlockMixin {
         boolean modBLock = false;
         boolean waterLoggable = false;
         Block groundBlock = world.getBlockState(pos.down()).getBlock();
-        if (groundBlock instanceof modSandBlock) { modBLock = true; }
+        if (groundBlock instanceof sandBlock || groundBlock instanceof solidSandBlock) { modBLock = true; }
         if (groundBlock instanceof sandSlab || groundBlock instanceof sandSlabEnergy) {
             SlabType type = world.getBlockState(pos.down()).get(SlabBlock.TYPE);
-            if (type != SlabType.BOTTOM) { modBLock = true; waterLoggable = true;}
+            if (type != SlabType.BOTTOM) { modBLock = true; waterLoggable = type != SlabType.DOUBLE;}
         }
         if (groundBlock instanceof sandStair) {
             BlockHalf half = world.getBlockState(pos.down()).get(StairsBlock.HALF);

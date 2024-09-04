@@ -1,21 +1,8 @@
 package com.dephoegon.delbase.recipe;
 
-import com.dephoegon.delbase.Delbase;
-import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.recipe.*;
-import net.minecraft.registry.DynamicRegistryManager;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.JsonHelper;
-import net.minecraft.util.collection.DefaultedList;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
-
-public class blockCutterStationRecipes implements Recipe<SimpleInventory> {
+public class blockCutterStationRecipes  {
+    // implements Recipe<SimpleInventory>
+    /*
     private static final int jsonIngredientItem = 1;
     private static final int jsonPlanItem = 0;
     private final Identifier id;
@@ -34,16 +21,16 @@ public class blockCutterStationRecipes implements Recipe<SimpleInventory> {
     }
 
     @Override
-    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) { return output; }
+    public ItemStack craft(SimpleInventory inventory, RegistryWrapper.WrapperLookup registryManager) { return output; }
     @Override
     public boolean fits(int width, int height) { return true; }
+
     public DefaultedList<Ingredient> getIngredients() {
         DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
         list.addAll(recipeItems);
         return list;
     }
-    @Override
-    public ItemStack getOutput(DynamicRegistryManager registryManager) { return output.copy(); }
+    public ItemStack getResult(RegistryWrapper.WrapperLookup registriesLookup) { return output.copy(); }
     @Override
     public Identifier getId() { return this.id; }
     @Override
@@ -52,11 +39,12 @@ public class blockCutterStationRecipes implements Recipe<SimpleInventory> {
     public RecipeType<?> getType() { return Type.INSTANCE; }
     public static class Type implements RecipeType<blockCutterStationRecipes> {
         public static final Type INSTANCE = new Type();
-        public static final Identifier ID =  new Identifier(Delbase.Delbase_ID, blockCutterStationRecipes.id_name);
+        public static final Identifier ID =  Identifier.of(Delbase.Delbase_ID, blockCutterStationRecipes.id_name);
     }
     public static class Serializer implements RecipeSerializer<blockCutterStationRecipes> {
+
         public static final Serializer INSTANCE = new Serializer();
-        public static final Identifier ID = new Identifier(Delbase.Delbase_ID, blockCutterStationRecipes.id_name);
+        public static final Identifier ID = Identifier.of(Delbase.Delbase_ID, blockCutterStationRecipes.id_name);
         @Override
         public @NotNull blockCutterStationRecipes read(@NotNull Identifier id, @NotNull JsonObject json) {
             ItemStack output = ShapedRecipe.outputFromJson(JsonHelper.getObject(json, "output"));
@@ -82,7 +70,18 @@ public class blockCutterStationRecipes implements Recipe<SimpleInventory> {
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.write(buf);
             }
-            buf.writeItemStack(recipe.getOutput(null));
+            buf.writeItemStack(recipe.getResult(null));
+        }
+
+        @Override
+        public MapCodec<blockCutterStationRecipes> codec() {
+            return null;
+        }
+
+        @Override
+        public PacketCodec<RegistryByteBuf, blockCutterStationRecipes> packetCodec() {
+            return null;
         }
     }
+     */
 }

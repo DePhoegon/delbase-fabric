@@ -1,28 +1,15 @@
 package com.dephoegon.delbase.screen;
 
-import com.dephoegon.delbase.Delbase;
-import com.dephoegon.delbase.aid.inventory.listArrays;
-import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
-import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.gui.screen.ingame.HandledScreen;
-import net.minecraft.client.render.GameRenderer;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.item.Item;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
-import org.jetbrains.annotations.NotNull;
-
-import static com.dephoegon.delbase.item.BlockCutterItems.*;
-
-public class blockCuttingStationScreen extends HandledScreen<blockCuttingStationScreenHandler> {
-    private static final Identifier EMPTY_TEXTURE = new Identifier(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_empty.png");
-    private static final Identifier COMPOUND_TEXTURE = new Identifier(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_compound.png");
-    private static final Identifier PLANS_WALL_TEXTURE = new Identifier(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_wall.png");
-    private static final Identifier PLANS_SLAB_TEXTURE = new Identifier(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_slab.png");
-    private static final Identifier PLANS_STAIR_TEXTURE = new Identifier(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_stair.png");
-    private static final Identifier PLANS_FENCE_TEXTURE = new Identifier(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_fence.png");
-    private static final Identifier PLANS_FENCE_GATE_TEXTURE = new Identifier(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_fence_gate.png");
+public class blockCuttingStationScreen  {
+    // extends HandledScreen<blockCuttingStationScreenHandler>
+    /*
+    private static final Identifier EMPTY_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_empty.png");
+    private static final Identifier COMPOUND_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_compound.png");
+    private static final Identifier PLANS_WALL_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_wall.png");
+    private static final Identifier PLANS_SLAB_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_slab.png");
+    private static final Identifier PLANS_STAIR_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_stair.png");
+    private static final Identifier PLANS_FENCE_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_fence.png");
+    private static final Identifier PLANS_FENCE_GATE_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_fence_gate.png");
     public blockCuttingStationScreen(blockCuttingStationScreenHandler handler, PlayerInventory inventory, Text title) { super(handler, inventory, title); }
 
     protected void  init() {
@@ -64,4 +51,5 @@ public class blockCuttingStationScreen extends HandledScreen<blockCuttingStation
         super.render(context, mouseX, mouseY, delta);
         drawMouseoverTooltip(context, mouseX, mouseY);
     }
+    */
 }

@@ -38,7 +38,7 @@ public class itemGroupArrays {
     }
     private static @NotNull ArrayList<Item> machineBlock() {
         ArrayList<Item> out = new ArrayList<>();
-        out.add(machineBlock.BLOCK_CUTTER_STATION.asItem());
+        // out.add(machineBlock.BLOCK_CUTTER_STATION.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> chiseledSandStoneFence() {
@@ -1571,11 +1571,13 @@ public class itemGroupArrays {
     private static @NotNull ArrayList<Item> blockCutterItems() {
         ArrayList<Item> out = new ArrayList<>();
         out.add(BlockCutterItems.ARMOR_COMPOUND);
+        /*
         out.add(BlockCutterItems.WALL_PLANS);
         out.add(BlockCutterItems.SLAB_PLANS);
         out.add(BlockCutterItems.FENCE_PLANS);
         out.add(BlockCutterItems.FENCE_GATE_PLANS);
         out.add(BlockCutterItems.STAIR_PLANS);
+        */
         return out;
     }
     private static @NotNull ArrayList<Item> shiftingDyes() {

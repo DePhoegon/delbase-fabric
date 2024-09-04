@@ -1,0 +1,18 @@
+temporarily removed
+- block cutting station
+- Plan items for block cutter
+- screenHandler / BlockCutterStationScreen/Handler
+-- block cutter not implemented atm
+
+Backed up old recipesfor block cutter
+removed all block cutter recipes
+- except armor, tools, sand/gravel recipes w/ armor compound
+-- changed recipes to crafting table, shapeless
+
+corrected Cactus / sugarCaneBlock Mixins to point at the right things
+updated deadBush mixin to inline cir.setReturnValue calls for walls, stairs, slabs.
+commented out ClientRecipeBook Mixin
+- block cutter recipes not implemented
+
+left the patchouli book disabled
+- have not checked out if patchouli is in 1.21 yet

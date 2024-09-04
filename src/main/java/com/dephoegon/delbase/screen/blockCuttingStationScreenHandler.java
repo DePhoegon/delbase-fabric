@@ -1,24 +1,8 @@
 package com.dephoegon.delbase.screen;
 
-import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
-import com.dephoegon.delbase.screen.slot.inputSlot;
-import com.dephoegon.delbase.screen.slot.outSlot;
-import com.dephoegon.delbase.screen.slot.planSlot;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.Inventory;
-import net.minecraft.item.ItemStack;
-import net.minecraft.network.PacketByteBuf;
-import net.minecraft.screen.ArrayPropertyDelegate;
-import net.minecraft.screen.PropertyDelegate;
-import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.slot.Slot;
-import org.jetbrains.annotations.NotNull;
-
-import static com.dephoegon.delbase.block.entity.blockCuttingStationEntity.*;
-
-public class blockCuttingStationScreenHandler extends ScreenHandler {
+public class blockCuttingStationScreenHandler  {
+    //extends ScreenHandler
+    /*
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
     public final blockCuttingStationEntity blockEntity;
@@ -75,4 +59,5 @@ public class blockCuttingStationScreenHandler extends ScreenHandler {
     private void addPlayerHotBar(PlayerInventory playerInventory) {
         for (int i = 0; i < 9; ++i) { this.addSlot(new Slot(playerInventory, i, 8+ i*18, 144)); }
     }
+    */
 }

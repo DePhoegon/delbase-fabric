@@ -1,5 +1,6 @@
 package com.dephoegon.delbase.mixin;
 
+import com.dephoegon.delbase.aid.block.colorshift.grav.sandBlock;
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlab;
 import com.dephoegon.delbase.aid.block.colorshift.slab.sandSlabEnergy;
 import com.dephoegon.delbase.aid.block.colorshift.stair.sandStair;
@@ -20,7 +21,7 @@ public class CactusBlockMixin {
     private void canPlaceAt(@NotNull BlockState state, @NotNull WorldView world, @NotNull BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
         // Check if the block is cactus, dead bush, or sugar cane
         Block groundBlock = world.getBlockState(pos.down()).getBlock();
-        if (groundBlock instanceof modSandBlock) { cir.setReturnValue(true); }
+        if (groundBlock instanceof sandBlock) { cir.setReturnValue(true); }
         if (groundBlock instanceof sandSlab || groundBlock instanceof sandSlabEnergy) {
             SlabType type = world.getBlockState(pos.down()).get(SlabBlock.TYPE);
             if (type != SlabType.BOTTOM) { cir.setReturnValue(true); }
