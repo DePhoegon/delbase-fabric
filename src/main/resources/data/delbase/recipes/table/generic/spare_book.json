@@ -1,0 +1,21 @@
+{
+  "type": "patchouli:shapeless_book_recipe",
+  "ingredients": [
+    {
+      "tag": "delbase:grouped/dyes"
+    },
+    {
+      "item": "minecraft:book"
+    }
+  ],
+  "result": {
+    "type": "item",
+    "name": "patchouli:guide_book",
+    "functions": [
+      {
+        "function": "set_nbt",
+        "tag": "{\"patchouli:book\": \"delbase:reclaim\"}"
+      }
+    ]
+  }
+}

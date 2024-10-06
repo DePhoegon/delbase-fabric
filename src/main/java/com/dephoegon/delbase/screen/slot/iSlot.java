@@ -8,8 +8,8 @@ import org.jetbrains.annotations.NotNull;
 
 import static com.dephoegon.delbase.aid.inventory.slotControls.isValidBlockCutterItem;
 
-public class inputSlot extends Slot {
-    public inputSlot(Inventory inventory, int index, int x, int y) {
+public class iSlot extends Slot {
+    public iSlot(Inventory inventory, int index, int x, int y) {
         super(inventory, index, x, y);
     }
     @Override

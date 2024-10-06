@@ -1,6 +1,6 @@
 package com.dephoegon.delbase.recipe;
 
-public class blockCutterStationRecipes  {
+public class old_blockCutterStationRecipes {
     // implements Recipe<SimpleInventory>
     /*
     private static final int jsonIngredientItem = 1;

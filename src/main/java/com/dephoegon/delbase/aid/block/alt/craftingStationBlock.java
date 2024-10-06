@@ -1,19 +1,41 @@
 package com.dephoegon.delbase.aid.block.alt;
 
-public class craftingStationBlock {
-    // extends BlockWithEntity implements BlockEntityProvider
-    /*
+import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
+import com.dephoegon.delbase.block.entity.blockEntities;
+import com.mojang.serialization.MapCodec;
+import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.state.StateManager;
+import net.minecraft.state.property.DirectionProperty;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.BlockMirror;
+import net.minecraft.util.BlockRotation;
+import net.minecraft.util.ItemScatterer;
+import net.minecraft.util.function.BooleanBiFunction;
+import net.minecraft.util.hit.BlockHitResult;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
+import java.util.stream.Stream;
+
+public class craftingStationBlock extends BlockWithEntity implements BlockEntityProvider {
     public static final MapCodec<craftingStationBlock> CODEC = craftingStationBlock.createCodec(craftingStationBlock::new);
     public static final DirectionProperty FACING = Properties.HORIZONTAL_FACING;
 
-    public craftingStationBlock(Settings settings) {
-        super(settings);
-    }
+    public craftingStationBlock(AbstractBlock.Settings settings) { super(settings); }
 
-    @Override
-    protected MapCodec<? extends BlockWithEntity> getCodec() {
-        return CODEC;
-    }
+    protected MapCodec<? extends BlockWithEntity> getCodec() { return CODEC; }
 
     private static final VoxelShape NORTH_SHAPE = Stream.of(
             Block.createCuboidShape(2, 0, 11, 14, 12, 14),
@@ -93,25 +115,15 @@ public class craftingStationBlock {
             default -> FAIL_DEFAULT;
         };
     }
-    public BlockState getPlacementState(@NotNull ItemPlacementContext ctx) {
-        return this.getDefaultState().with(FACING, Objects.requireNonNull(ctx.getPlayer()).getHorizontalFacing().getOpposite());
-    }
-    public BlockState rotate(@NotNull BlockState state, @NotNull BlockRotation rotation) {
-        return state.with(FACING, rotation.rotate(state.get(FACING)));
-    }
+    public BlockState getPlacementState(@NotNull ItemPlacementContext ctx) { return this.getDefaultState().with(FACING, Objects.requireNonNull(ctx.getPlayer()).getHorizontalFacing().getOpposite()); }
+    public BlockState rotate(@NotNull BlockState state, @NotNull BlockRotation rotation) { return state.with(FACING, rotation.rotate(state.get(FACING))); }
     @Override
-    public BlockState mirror(@NotNull BlockState state, @NotNull BlockMirror mirror) {
-        return state.rotate(mirror.getRotation(state.get(FACING)));
-    }
-    protected void appendProperties(StateManager.@NotNull Builder<Block, BlockState> builder) {
-        builder.add(FACING);
-    }
+    public BlockState mirror(@NotNull BlockState state, @NotNull BlockMirror mirror) { return state.rotate(mirror.getRotation(state.get(FACING))); }
+    protected void appendProperties(StateManager.@NotNull Builder<Block, BlockState> builder) { builder.add(FACING); }
 
     // Block Entity
 
     public BlockRenderType getRenderType(BlockState state) { return BlockRenderType.MODEL; }
-    @Nullable
-    @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) { return new blockCuttingStationEntity(pos, state); }
     public void onStateReplaced(@NotNull BlockState state, World world, BlockPos pos, @NotNull BlockState newState, boolean moved) {
         if (state.getBlock() != newState.getBlock()) {
@@ -123,8 +135,8 @@ public class craftingStationBlock {
             super.onStateReplaced(state, world, pos, newState, moved);
         }
     }
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (!world.isClient()) {
+    public ActionResult onUse(BlockState state, @NotNull World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        if (!world.isClient() && player != null) {
             NamedScreenHandlerFactory screenHandlerFactory = ((blockCuttingStationEntity) world.getBlockEntity(pos));
 
             if (screenHandlerFactory != null) { player.openHandledScreen(screenHandlerFactory); }
@@ -134,5 +146,4 @@ public class craftingStationBlock {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return validateTicker(type, blockEntities.BLOCK_CUTTER_ENTITY, blockCuttingStationEntity::tick);
     }
-    */
 }

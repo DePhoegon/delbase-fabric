@@ -1,8 +1,22 @@
 package com.dephoegon.delbase.screen;
 
-public class blockCuttingStationScreen  {
-    // extends HandledScreen<blockCuttingStationScreenHandler>
-    /*
+import com.dephoegon.delbase.Delbase;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
+import net.minecraft.client.render.GameRenderer;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.item.Item;
+import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import org.jetbrains.annotations.NotNull;
+
+import static com.dephoegon.delbase.block.entity.blockCuttingStationEntity.planSlot;
+import static com.dephoegon.delbase.item.BlockCutterItems.*;
+
+public class blockCuttingStationScreen extends HandledScreen<blockCuttingStationScreenHandler> {
+    // extends
+
     private static final Identifier EMPTY_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_empty.png");
     private static final Identifier COMPOUND_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_compound.png");
     private static final Identifier PLANS_WALL_TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_wall.png");
@@ -18,7 +32,7 @@ public class blockCuttingStationScreen  {
     }
     @Override
     protected void drawBackground(@NotNull DrawContext context, float delta, int mouseX, int mouseY) {
-        Item item = handler.getSlot(blockCuttingStationEntity.planSlot).getStack().getItem();
+        Item item = handler.getSlot(planSlot).getStack().getItem();
         Identifier HOLD = getIdentifier(item);
 
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
@@ -47,9 +61,8 @@ public class blockCuttingStationScreen  {
     }
 
     public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        renderBackground(context);
+        renderBackground(context, mouseX, mouseY, delta);
         super.render(context, mouseX, mouseY, delta);
         drawMouseoverTooltip(context, mouseX, mouseY);
     }
-    */
 }

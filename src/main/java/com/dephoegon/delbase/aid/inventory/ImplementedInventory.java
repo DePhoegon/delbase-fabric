@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
  * License: <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>
  * @author Juuz
  */
+@SuppressWarnings("JavadocReference")
 @FunctionalInterface
 public interface ImplementedInventory extends SidedInventory {
     /**

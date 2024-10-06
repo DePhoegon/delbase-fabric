@@ -1,13 +1,29 @@
 package com.dephoegon.delbase.screen;
 
-public class blockCuttingStationScreenHandler  {
-    //extends ScreenHandler
-    /*
+import com.dephoegon.delbase.block.entity.blockCuttingStationEntity;
+import com.dephoegon.delbase.screen.slot.iSlot;
+import com.dephoegon.delbase.screen.slot.oSlot;
+import com.dephoegon.delbase.screen.slot.pSlot;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.Inventory;
+import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.slot.Slot;
+import net.minecraft.util.math.BlockPos;
+import org.jetbrains.annotations.NotNull;
+
+import static com.dephoegon.delbase.block.entity.blockCuttingStationEntity.*;
+
+public class blockCuttingStationScreenHandler extends ScreenHandler {
     private final Inventory inventory;
     private final PropertyDelegate propertyDelegate;
     public final blockCuttingStationEntity blockEntity;
-    public blockCuttingStationScreenHandler(int syncId, PlayerInventory playerInventory, @NotNull PacketByteBuf buf) {
-        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(buf.readBlockPos()), new ArrayPropertyDelegate(2));
+    public blockCuttingStationScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
+        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(pos), new ArrayPropertyDelegate(2));
     }
     public blockCuttingStationScreenHandler(int syncId, @NotNull PlayerInventory playerInventory, BlockEntity blockEntity, PropertyDelegate delegate) {
         super(screenHandlers.BLOCK_CUTTING_STATION_SCREEN_HANDLER, syncId);
@@ -16,9 +32,9 @@ public class blockCuttingStationScreenHandler  {
         this.propertyDelegate = delegate;
         inventory.onOpen(playerInventory.player);
         this.blockEntity = (blockCuttingStationEntity) blockEntity;
-        this.addSlot(new inputSlot(inventory, inputSlot, 57, 18));
-        this.addSlot(new outSlot(inventory, outSlot, 80, 60));
-        this.addSlot(new planSlot(inventory, planSlot, 103, 18));
+        this.addSlot(new iSlot(inventory, inputSlot, 57, 18));
+        this.addSlot(new oSlot(inventory, outSlot, 80, 60));
+        this.addSlot(new pSlot(inventory, planSlot, 103, 18));
 
         addPlayerInventory(playerInventory);
         addPlayerHotBar(playerInventory);
@@ -57,7 +73,8 @@ public class blockCuttingStationScreenHandler  {
         }
     }
     private void addPlayerHotBar(PlayerInventory playerInventory) {
-        for (int i = 0; i < 9; ++i) { this.addSlot(new Slot(playerInventory, i, 8+ i*18, 144)); }
+        for (int i = 0; i < 9; ++i) {
+            this.addSlot(new Slot(playerInventory, i, 8+ i*18, 144));
+        }
     }
-    */
 }
