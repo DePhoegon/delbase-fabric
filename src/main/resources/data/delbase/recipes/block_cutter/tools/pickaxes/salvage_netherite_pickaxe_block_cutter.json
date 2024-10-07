@@ -1,6 +1,6 @@
 {
   "type": "delbase:block_cutting",
-  "ingredients": [
+  "ingredient": [
     {
       "item": "delbase:armor_compound"
     },
