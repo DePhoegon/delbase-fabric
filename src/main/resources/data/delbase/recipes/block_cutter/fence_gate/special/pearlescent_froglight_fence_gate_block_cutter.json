@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_gate_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:pearlescent_froglight"
     },
-    {
-      "item": "minecraft:pearlescent_froglight"
+    "planslot": {
+        "item": "delbase:fence_gate_plans"
+    },
+    "output": {
+        "id": "delbase:pearlescent_froglight_fence_gate",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:pearlescent_froglight_fence_gate",
-    "count": 1
-  }
 }

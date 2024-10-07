@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:armor_compound"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:netherite_boots"
     },
-    {
-      "item": "minecraft:netherite_boots"
+    "planslot": {
+        "item": "delbase:armor_compound"
+    },
+    "output": {
+        "id": "minecraft:netherite_ingot",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:netherite_ingot",
-    "count": 2
-  }
 }

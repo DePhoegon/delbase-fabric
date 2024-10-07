@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:acacia_planks"
     },
-    {
-      "item": "minecraft:acacia_planks"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:acacia_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:acacia_stairs",
-    "count": 1
-  }
 }

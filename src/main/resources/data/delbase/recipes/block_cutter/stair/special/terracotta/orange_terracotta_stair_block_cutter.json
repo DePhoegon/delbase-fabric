@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:stair_plans"
-},
-{
-"item": "minecraft:orange_terracotta"
-}
-],
-"output": {
-"item": "delbase:orange_terracotta_stair",
-  "count": 1
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:orange_terracotta"
+    },
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "delbase:orange_terracotta_stair",
+        "count": 1
+    }
 }

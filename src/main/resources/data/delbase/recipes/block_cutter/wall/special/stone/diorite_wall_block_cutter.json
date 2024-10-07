@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:wall_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:diorite"
     },
-    {
-      "item": "minecraft:diorite"
+    "planslot": {
+        "item": "delbase:wall_plans"
+    },
+    "output": {
+        "id": "minecraft:diorite_wall",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:diorite_wall",
-    "count": 1
-  }
 }

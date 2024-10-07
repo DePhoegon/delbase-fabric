@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:wall_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:deepslate_tiles"
     },
-    {
-      "item": "minecraft:deepslate_tiles"
+    "planslot": {
+        "item": "delbase:wall_plans"
+    },
+    "output": {
+        "id": "minecraft:deepslate_tile_wall",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:deepslate_tile_wall",
-    "count": 1
-  }
 }

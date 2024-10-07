@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:fence_plans"
-},
-{
-"item": "minecraft:cracked_polished_blackstone_bricks"
-}
-],
-"output": {
-"item": "delbase:cracked_polished_blackstone_brick_fence",
-  "count": 1
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:cracked_polished_blackstone_bricks"
+    },
+    "planslot": {
+        "item": "delbase:fence_plans"
+    },
+    "output": {
+        "id": "delbase:cracked_polished_blackstone_brick_fence",
+        "count": 1
+    }
 }

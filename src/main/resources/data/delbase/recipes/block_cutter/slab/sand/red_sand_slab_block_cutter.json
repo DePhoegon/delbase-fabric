@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:slab_plans"
-},
-{
-"item": "delbase:red_solid_sand"
-}
-],
-"output": {
-"item": "delbase:red_sand_slab",
-  "count": 2
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "delbase:red_solid_sand"
+    },
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "delbase:red_sand_slab",
+        "count": 2
+    }
 }

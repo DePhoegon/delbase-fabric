@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:stair_plans"
-},
-{
-"item": "minecraft:glowstone"
-}
-],
-"output": {
-"item": "delbase:glowstone_stair",
-  "count": 1
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:glowstone"
+    },
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "delbase:glowstone_stair",
+        "count": 1
+    }
 }

@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:armor_compound"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:gravel"
     },
-    {
-      "item": "minecraft:gravel"
+    "planslot": {
+        "item": "delbase:armor_compound"
+    },
+    "output": {
+        "id": "minecraft:sand",
+        "count": 2
     }
-  ],
-  "output": {
-    "item": "minecraft:sand",
-    "count": 2
-  }
 }

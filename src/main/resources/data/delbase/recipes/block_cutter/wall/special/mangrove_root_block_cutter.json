@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:wall_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:mangrove_roots"
     },
-    {
-      "item": "minecraft:mangrove_roots"
+    "planslot": {
+        "item": "delbase:wall_plans"
+    },
+    "output": {
+        "id": "delbase:mangrove_root_wall",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:mangrove_root_wall",
-    "count": 1
-  }
 }

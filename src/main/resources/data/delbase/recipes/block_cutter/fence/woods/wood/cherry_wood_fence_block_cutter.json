@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:cherry_wood"
     },
-    {
-      "item": "minecraft:cherry_wood"
+    "planslot": {
+        "item": "delbase:fence_plans"
+    },
+    "output": {
+        "id": "delbase:cherry_wood_fence",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:cherry_wood_fence",
-    "count": 1
-  }
 }

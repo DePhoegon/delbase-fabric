@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:wall_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:sculk"
     },
-    {
-      "item": "minecraft:sculk"
+    "planslot": {
+        "item": "delbase:wall_plans"
+    },
+    "output": {
+        "id": "delbase:sculk_wall",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:sculk_wall",
-    "count": 1
-  }
 }

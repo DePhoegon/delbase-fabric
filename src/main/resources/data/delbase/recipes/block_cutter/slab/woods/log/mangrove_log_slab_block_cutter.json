@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:slab_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:mangrove_log"
     },
-    {
-      "item": "minecraft:mangrove_log"
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "delbase:mangrove_log_slab",
+        "count": 2
     }
-  ],
-  "output": {
-    "item": "delbase:mangrove_log_slab",
-    "count": 2
-  }
 }

@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:spruce_planks"
     },
-    {
-      "item": "minecraft:spruce_planks"
+    "planslot": {
+        "item": "delbase:fence_plans"
+    },
+    "output": {
+        "id": "minecraft:spruce_fence",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:spruce_fence",
-    "count": 1
-  }
 }

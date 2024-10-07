@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:prismarine"
     },
-    {
-      "item": "minecraft:prismarine"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:prismarine_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:prismarine_stairs",
-    "count": 1
-  }
 }

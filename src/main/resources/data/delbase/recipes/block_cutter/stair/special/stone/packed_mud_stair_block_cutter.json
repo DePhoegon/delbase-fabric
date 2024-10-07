@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:packed_mud"
     },
-    {
-      "item": "minecraft:packed_mud"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "delbase:packed_mud_stair",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:packed_mud_stair",
-    "count": 1
-  }
 }

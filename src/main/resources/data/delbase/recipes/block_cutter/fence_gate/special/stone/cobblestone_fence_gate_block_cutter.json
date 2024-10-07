@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_gate_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:cobblestone"
     },
-    {
-      "item": "minecraft:cobblestone"
+    "planslot": {
+        "item": "delbase:fence_gate_plans"
+    },
+    "output": {
+        "id": "delbase:cobblestone_fence_gate",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:cobblestone_fence_gate",
-    "count": 1
-  }
 }

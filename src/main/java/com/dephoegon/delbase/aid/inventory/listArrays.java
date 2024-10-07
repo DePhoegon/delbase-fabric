@@ -10,13 +10,11 @@ import static com.dephoegon.delbase.item.BlockCutterItems.*;
 public class listArrays {
     private static @NotNull ArrayList<Item> setPlansOnlyArray(){
         ArrayList<Item> tempArray = new ArrayList<>();
-        /*
         tempArray.add(WALL_PLANS.asItem());
         tempArray.add(FENCE_PLANS.asItem());
         tempArray.add(FENCE_GATE_PLANS.asItem());
         tempArray.add(SLAB_PLANS.asItem());
         tempArray.add(STAIR_PLANS.asItem());
-        */
         return tempArray;
     }
     private static @NotNull ArrayList<Item> setFullArray(@NotNull ArrayList<Item> list) {

@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_gate_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:birch_planks"
     },
-    {
-      "item": "minecraft:birch_planks"
+    "planslot": {
+        "item": "delbase:fence_gate_plans"
+    },
+    "output": {
+        "id": "minecraft:birch_fence_gate",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:birch_fence_gate",
-    "count": 1
-  }
 }

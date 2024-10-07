@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:mossy_cobblestone"
     },
-    {
-      "item": "minecraft:mossy_cobblestone"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:mossy_cobblestone_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:mossy_cobblestone_stairs",
-    "count": 1
-  }
 }

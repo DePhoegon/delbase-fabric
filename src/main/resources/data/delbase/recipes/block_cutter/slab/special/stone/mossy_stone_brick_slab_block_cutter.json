@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:slab_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:mossy_stone_bricks"
     },
-    {
-      "item": "minecraft:mossy_stone_bricks"
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "minecraft:mossy_stone_brick_slab",
+        "count": 2
     }
-  ],
-  "output": {
-    "item": "minecraft:mossy_stone_brick_slab",
-    "count": 2
-  }
 }

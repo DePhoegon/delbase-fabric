@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:armor_compound"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:wooden_hoe"
     },
-    {
-      "item": "minecraft:wooden_hoe"
+    "planslot": {
+        "item": "delbase:armor_compound"
+    },
+    "output": {
+        "id": "minecraft:dirt",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:dirt",
-    "count": 1
-  }
 }

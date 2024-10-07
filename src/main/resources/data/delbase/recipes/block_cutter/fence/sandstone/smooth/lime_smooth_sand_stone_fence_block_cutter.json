@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:fence_plans"
-},
-{
-"item": "delbase:lime_smooth_sand_stone"
-}
-],
-"output": {
-"item": "delbase:lime_smooth_sand_stone_fence",
-  "count": 1
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "delbase:lime_smooth_sand_stone"
+    },
+    "planslot": {
+        "item": "delbase:fence_plans"
+    },
+    "output": {
+        "id": "delbase:lime_smooth_sand_stone_fence",
+        "count": 1
+    }
 }

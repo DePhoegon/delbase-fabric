@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:stair_plans"
-},
-{
-"item": "minecraft:dark_oak_wood"
-}
-],
-"output": {
-"item": "delbase:dark_oak_wood_stair",
-  "count": 1
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:dark_oak_wood"
+    },
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "delbase:dark_oak_wood_stair",
+        "count": 1
+    }
 }

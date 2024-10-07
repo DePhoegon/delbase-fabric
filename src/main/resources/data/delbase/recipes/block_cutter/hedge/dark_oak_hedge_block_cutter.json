@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:wall_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:dark_oak_leaves"
     },
-    {
-      "item": "minecraft:dark_oak_leaves"
+    "planslot": {
+        "item": "delbase:wall_plans"
+    },
+    "output": {
+        "id": "delbase:dark_oak_hedge",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:dark_oak_hedge",
-    "count": 1
-  }
 }

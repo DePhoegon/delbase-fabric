@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:slab_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:cherry_log"
     },
-    {
-      "item": "minecraft:cherry_log"
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "delbase:cherry_log_slab",
+        "count": 2
     }
-  ],
-  "output": {
-    "item": "delbase:cherry_log_slab",
-    "count": 2
-  }
 }

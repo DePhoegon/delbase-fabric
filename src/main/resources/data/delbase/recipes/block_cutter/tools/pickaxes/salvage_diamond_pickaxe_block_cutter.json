@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:armor_compound"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:diamond_pickaxe"
     },
-    {
-      "item": "minecraft:diamond_pickaxe"
+    "planslot": {
+        "item": "delbase:armor_compound"
+    },
+    "output": {
+        "id": "minecraft:diamond",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:diamond",
-    "count": 1
-  }
 }

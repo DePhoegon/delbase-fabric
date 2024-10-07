@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:slab_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:polished_granite"
     },
-    {
-      "item": "minecraft:polished_granite"
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "minecraft:polished_granite_slab",
+        "count": 2
     }
-  ],
-  "output": {
-    "item": "minecraft:polished_granite_slab",
-    "count": 2
-  }
 }

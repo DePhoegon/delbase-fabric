@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:slab_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:birch_planks"
     },
-    {
-      "item": "minecraft:birch_planks"
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "minecraft:birch_slab",
+        "count": 2
     }
-  ],
-  "output": {
-    "item": "minecraft:birch_slab",
-    "count": 2
-  }
 }

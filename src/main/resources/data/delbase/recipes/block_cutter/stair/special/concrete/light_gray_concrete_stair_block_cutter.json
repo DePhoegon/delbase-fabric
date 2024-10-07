@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:stair_plans"
-},
-{
-"item": "minecraft:light_gray_concrete"
-}
-],
-"output": {
-"item": "delbase:light_gray_concrete_stair",
-  "count": 1
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:light_gray_concrete"
+    },
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "delbase:light_gray_concrete_stair",
+        "count": 1
+    }
 }

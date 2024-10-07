@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:slab_plans"
-},
-{
-"item": "minecraft:light_gray_concrete"
-}
-],
-"output": {
-"item": "delbase:light_gray_concrete_slab",
-  "count": 2
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:light_gray_concrete"
+    },
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "delbase:light_gray_concrete_slab",
+        "count": 2
+    }
 }

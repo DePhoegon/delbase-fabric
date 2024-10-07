@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:armor_compound"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:diamond_leggings"
     },
-    {
-      "item": "minecraft:diamond_leggings"
+    "planslot": {
+        "item": "delbase:armor_compound"
+    },
+    "output": {
+        "id": "minecraft:diamond",
+        "count": 4
     }
-  ],
-  "output": {
-    "item": "minecraft:diamond",
-    "count": 4
-  }
 }

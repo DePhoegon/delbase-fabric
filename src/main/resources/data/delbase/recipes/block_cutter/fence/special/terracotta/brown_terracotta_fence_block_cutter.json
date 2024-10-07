@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:fence_plans"
-},
-{
-"item": "minecraft:brown_terracotta"
-}
-],
-"output": {
-"item": "delbase:brown_terracotta_fence",
-  "count": 1
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:brown_terracotta"
+    },
+    "planslot": {
+        "item": "delbase:fence_plans"
+    },
+    "output": {
+        "id": "delbase:brown_terracotta_fence",
+        "count": 1
+    }
 }

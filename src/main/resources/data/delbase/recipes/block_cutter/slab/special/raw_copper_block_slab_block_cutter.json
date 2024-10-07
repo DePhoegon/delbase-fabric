@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:slab_plans"
-},
-{
-"item": "minecraft:raw_copper_block"
-}
-],
-"output": {
-"item": "delbase:raw_copper_slab",
-  "count": 2
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:raw_copper_block"
+    },
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "delbase:raw_copper_slab",
+        "count": 2
+    }
 }

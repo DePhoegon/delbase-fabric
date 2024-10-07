@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:armor_compound"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:golden_chestplate"
     },
-    {
-      "item": "minecraft:golden_chestplate"
+    "planslot": {
+        "item": "delbase:armor_compound"
+    },
+    "output": {
+        "id": "minecraft:gold_ingot",
+        "count": 5
     }
-  ],
-  "output": {
-    "item": "minecraft:gold_ingot",
-    "count": 5
-  }
 }

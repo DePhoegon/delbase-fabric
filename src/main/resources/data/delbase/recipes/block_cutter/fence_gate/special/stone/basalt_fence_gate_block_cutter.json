@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_gate_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "delbase:cobbled_basalt_fence_gate"
     },
-    {
-      "item": "delbase:cobbled_basalt_fence_gate"
+    "planslot": {
+        "item": "delbase:fence_gate_plans"
+    },
+    "output": {
+        "id": "delbase:basalt_fence_gate",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:basalt_fence_gate",
-    "count": 1
-  }
 }

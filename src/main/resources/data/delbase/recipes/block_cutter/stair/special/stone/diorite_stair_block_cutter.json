@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:diorite"
     },
-    {
-      "item": "minecraft:diorite"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:diorite_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:diorite_stairs",
-    "count": 1
-  }
 }

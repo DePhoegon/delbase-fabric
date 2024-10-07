@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:bamboo_planks"
     },
-    {
-      "item": "minecraft:bamboo_planks"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:bamboo_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:bamboo_stairs",
-    "count": 1
-  }
 }

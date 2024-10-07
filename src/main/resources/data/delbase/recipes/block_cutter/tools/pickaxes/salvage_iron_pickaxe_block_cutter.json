@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:armor_compound"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:iron_pickaxe"
     },
-    {
-      "item": "minecraft:iron_pickaxe"
+    "planslot": {
+        "item": "delbase:armor_compound"
+    },
+    "output": {
+        "id": "minecraft:iron_ingot",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:iron_ingot",
-    "count": 1
-  }
 }

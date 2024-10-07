@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:cherry_leaves"
     },
-    {
-      "item": "minecraft:cherry_leaves"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "delbase:cherry_leaf_stair",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:cherry_leaf_stair",
-    "count": 1
-  }
 }

@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_gate_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:bamboo_mosaic"
     },
-    {
-      "item": "minecraft:bamboo_mosaic"
+    "planslot": {
+        "item": "delbase:fence_gate_plans"
+    },
+    "output": {
+        "id": "minecraft:bamboo_fence_gate",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:bamboo_fence_gate",
-    "count": 1
-  }
 }

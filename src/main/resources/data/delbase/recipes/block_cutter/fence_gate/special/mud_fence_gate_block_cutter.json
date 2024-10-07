@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_gate_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:mud"
     },
-    {
-      "item": "minecraft:mud"
+    "planslot": {
+        "item": "delbase:fence_gate_plans"
+    },
+    "output": {
+        "id": "delbase:mud_fence_gate",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:mud_fence_gate",
-    "count": 1
-  }
 }

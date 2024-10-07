@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:end_stone_bricks"
     },
-    {
-      "item": "minecraft:end_stone_bricks"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:end_stone_brick_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:end_stone_brick_stairs",
-    "count": 1
-  }
 }

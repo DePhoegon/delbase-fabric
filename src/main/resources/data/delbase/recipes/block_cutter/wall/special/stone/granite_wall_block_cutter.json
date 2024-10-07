@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:wall_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:granite"
     },
-    {
-      "item": "minecraft:granite"
+    "planslot": {
+        "item": "delbase:wall_plans"
+    },
+    "output": {
+        "id": "minecraft:granite_wall",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:granite_wall",
-    "count": 1
-  }
 }

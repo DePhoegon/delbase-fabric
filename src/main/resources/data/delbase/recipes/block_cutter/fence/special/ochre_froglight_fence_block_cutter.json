@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:ochre_froglight"
     },
-    {
-      "item": "minecraft:ochre_froglight"
+    "planslot": {
+        "item": "delbase:fence_plans"
+    },
+    "output": {
+        "id": "delbase:ochre_froglight_fence",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:ochre_froglight_fence",
-    "count": 1
-  }
 }

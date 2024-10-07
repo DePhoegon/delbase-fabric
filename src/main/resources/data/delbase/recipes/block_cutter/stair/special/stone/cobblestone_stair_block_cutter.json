@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:cobblestone"
     },
-    {
-      "item": "minecraft:cobblestone"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:cobblestone_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:cobblestone_stairs",
-    "count": 1
-  }
 }

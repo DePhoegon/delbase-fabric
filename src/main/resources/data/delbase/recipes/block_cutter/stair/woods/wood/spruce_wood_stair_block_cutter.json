@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:stair_plans"
-},
-{
-"item": "minecraft:spruce_wood"
-}
-],
-"output": {
-"item": "delbase:spruce_wood_stair",
-  "count": 1
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:spruce_wood"
+    },
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "delbase:spruce_wood_stair",
+        "count": 1
+    }
 }

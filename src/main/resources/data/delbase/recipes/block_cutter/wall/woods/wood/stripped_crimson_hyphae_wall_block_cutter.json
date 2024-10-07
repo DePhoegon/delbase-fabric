@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:wall_plans"
-},
-{
-"item": "minecraft:stripped_crimson_hyphae"
-}
-],
-"output": {
-"item": "delbase:stripped_crimson_hyphae_wall",
-  "count": 1
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:stripped_crimson_hyphae"
+    },
+    "planslot": {
+        "item": "delbase:wall_plans"
+    },
+    "output": {
+        "id": "delbase:stripped_crimson_hyphae_wall",
+        "count": 1
+    }
 }

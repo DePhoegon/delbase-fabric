@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:fence_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:acacia_planks"
     },
-    {
-      "item": "minecraft:acacia_planks"
+    "planslot": {
+        "item": "delbase:fence_plans"
+    },
+    "output": {
+        "id": "minecraft:acacia_fence",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:acacia_fence",
-    "count": 1
-  }
 }

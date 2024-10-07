@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:flowering_azalea_leaves"
     },
-    {
-      "item": "minecraft:flowering_azalea_leaves"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "delbase:flowering_azalea_leaf_stair",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:flowering_azalea_leaf_stair",
-    "count": 1
-  }
 }

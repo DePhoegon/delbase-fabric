@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:polished_granite"
     },
-    {
-      "item": "minecraft:polished_granite"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:polished_granite_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:polished_granite_stairs",
-    "count": 1
-  }
 }

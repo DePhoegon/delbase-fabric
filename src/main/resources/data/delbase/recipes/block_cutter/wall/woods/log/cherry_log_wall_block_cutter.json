@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:wall_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:cherry_log"
     },
-    {
-      "item": "minecraft:cherry_log"
+    "planslot": {
+        "item": "delbase:wall_plans"
+    },
+    "output": {
+        "id": "delbase:cherry_log_wall",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:cherry_log_wall",
-    "count": 1
-  }
 }

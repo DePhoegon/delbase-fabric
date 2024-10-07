@@ -15,6 +15,7 @@ repositories {
 		name = "Fuzs Mod Resources"
 		url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/"
 	}
+	maven { url "https://maven.shedaniel.me" }
 }
 
 
@@ -37,6 +38,12 @@ dependencies {
 
 	// Config
 	modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${project.forge_config_version}"
+
+	// REI Stuff
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}"
+	modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:${project.rei_version}"
+	modApi "dev.architectury:architectury-fabric:${project.arc_fabric}"
+	modApi "me.shedaniel.cloth:cloth-config-fabric:${project.shed_cloth_config}"
 
 }
 

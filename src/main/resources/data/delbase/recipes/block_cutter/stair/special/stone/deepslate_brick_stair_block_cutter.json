@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:deepslate_bricks"
     },
-    {
-      "item": "minecraft:deepslate_bricks"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:deepslate_brick_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:deepslate_brick_stairs",
-    "count": 1
-  }
 }

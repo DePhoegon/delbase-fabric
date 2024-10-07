@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:warped_planks"
     },
-    {
-      "item": "minecraft:warped_planks"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "minecraft:warped_stairs",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "minecraft:warped_stairs",
-    "count": 1
-  }
 }

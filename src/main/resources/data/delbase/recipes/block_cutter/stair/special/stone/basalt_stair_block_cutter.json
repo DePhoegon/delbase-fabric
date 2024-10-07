@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:stair_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "delbase:cobbled_basalt_stair"
     },
-    {
-      "item": "delbase:cobbled_basalt_stair"
+    "planslot": {
+        "item": "delbase:stair_plans"
+    },
+    "output": {
+        "id": "delbase:basalt_stair",
+        "count": 1
     }
-  ],
-  "output": {
-    "item": "delbase:basalt_stair",
-    "count": 1
-  }
 }

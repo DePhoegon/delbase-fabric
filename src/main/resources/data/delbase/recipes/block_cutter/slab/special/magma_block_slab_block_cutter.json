@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:slab_plans"
-},
-{
-"item": "minecraft:magma_block"
-}
-],
-"output": {
-"item": "delbase:magma_block_slab",
-  "count": 2
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:magma_block"
+    },
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "delbase:magma_block_slab",
+        "count": 2
+    }
 }

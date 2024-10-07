@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:slab_plans"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:dark_oak_leaves"
     },
-    {
-      "item": "minecraft:dark_oak_leaves"
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "delbase:dark_oak_leaf_slab",
+        "count": 2
     }
-  ],
-  "output": {
-    "item": "delbase:dark_oak_leaf_slab",
-    "count": 2
-  }
 }

@@ -1,15 +1,13 @@
 {
-  "type": "delbase:block_cutting",
-  "ingredient": [
-    {
-      "item": "delbase:armor_compound"
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:leather_horse_armor"
     },
-    {
-      "item": "minecraft:leather_horse_armor"
+    "planslot": {
+        "item": "delbase:armor_compound"
+    },
+    "output": {
+        "id": "minecraft:leather",
+        "count": 5
     }
-  ],
-  "output": {
-    "item": "minecraft:leather",
-    "count": 5
-  }
 }

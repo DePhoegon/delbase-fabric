@@ -1,15 +1,13 @@
 {
-"type": "delbase:block_cutting",
-"ingredient": [
-{
-"item": "delbase:slab_plans"
-},
-{
-"item": "minecraft:chiseled_quartz_block"
-}
-],
-"output": {
-"item": "delbase:chiseled_quartz_slab",
-  "count": 2
-}
+    "type": "delbase:block_cutting",
+    "ingredient": {
+        "item": "minecraft:chiseled_quartz_block"
+    },
+    "planslot": {
+        "item": "delbase:slab_plans"
+    },
+    "output": {
+        "id": "delbase:chiseled_quartz_slab",
+        "count": 2
+    }
 }
