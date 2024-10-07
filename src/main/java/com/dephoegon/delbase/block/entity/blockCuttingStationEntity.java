@@ -3,7 +3,9 @@ package com.dephoegon.delbase.block.entity;
 import com.dephoegon.delbase.aid.inventory.ImplementedInventory;
 import com.dephoegon.delbase.aid.inventory.slotControls;
 import com.dephoegon.delbase.aid.world.config;
-import com.dephoegon.delbase.recipe.old_blockCutterStationRecipes;
+import com.dephoegon.delbase.recipe.cutterRecipe;
+import com.dephoegon.delbase.recipe.cutterRecipeInput;
+import com.dephoegon.delbase.recipe.modRecipes;
 import com.dephoegon.delbase.screen.blockCuttingStationScreenHandler;
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import net.minecraft.block.*;
@@ -19,7 +21,7 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.recipe.RecipeEntry;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
@@ -31,6 +33,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Objects;
 import java.util.Optional;
 
 import static com.dephoegon.delbase.aid.recipe.TierRandomDropAid.*;
@@ -70,35 +73,33 @@ public class blockCuttingStationEntity extends BlockEntity implements ExtendedSc
     }
 
     // Craft Related
-    public static void tick(@NotNull World world, BlockPos pos, BlockState state, blockCuttingStationEntity entity) {
+    public void tick(@NotNull World world, BlockPos pos, BlockState state) {
         if (world.isClient()) { return; }
-        if (hasRecipe(entity)) {
-            entity.progress++;
+        if (hasRecipe(this)) {
+            this.progress++;
             markDirty(world, pos, state);
-            if (entity.progress > entity.maxProgress) { craftItem(entity); }
+            if (this.progress > this.maxProgress) { craftItem(this); }
         } else  {
-            entity.resetProgress();
+            this.resetProgress();
             markDirty(world, pos, state);
         }
     }
     private void resetProgress() { this.progress = 0; }
-    private static void craftItem(@NotNull blockCuttingStationEntity entity) {
+    private void craftItem(@NotNull blockCuttingStationEntity entity) {
         World level = entity.world;
         BlockPos worldPosition = entity.getPos();
         SimpleInventory inventory = new SimpleInventory(entity.inventory.size());
         for (int i = 0; i < entity.inventory.size(); i++) { inventory.setStack(i, entity.getStack(i)); }
 
         assert level != null;
-        DynamicRegistryManager rpHold = level.getRegistryManager();
-        Optional<old_blockCutterStationRecipes> match = level.getRecipeManager()
-                .getFirstMatch(old_blockCutterStationRecipes.Type.INSTANCE, inventory, level);
+        Optional<RecipeEntry<cutterRecipe>> match = getCurrentRecipe();
 
         if (match.isPresent()) {
-            Item resultItem = match.get().getResult(rpHold).getItem();
+            ItemStack result = match.get().value().getResult(null);
             String keyString = "none";
             boolean skipOutputSlot = false;
-            int count = match.get().getResult(rpHold).getCount();
-            int matRequired = 1; // get via Recipe
+            int count = result.getCount();
+            int matRequired = 1; // get via Recipe ToDo later add in
             if (entity.getStack(planSlot).getItem() == ARMOR_COMPOUND.asItem()) {
                 int eatCount = 1; // Use Config to set later
                 Item le_item = entity.getStack(inputSlot).getItem();
@@ -155,46 +156,40 @@ public class blockCuttingStationEntity extends BlockEntity implements ExtendedSc
                 }
                 if (keyString.equals("netherite")) {
                     stone = netheriteToolsBonus(count);
-                    entity.setStack(outSlot, new ItemStack(resultItem, entity.getStack(outSlot).getCount() + 1));
+                    entity.setStack(outSlot, new ItemStack(result.getItem(), entity.getStack(outSlot).getCount() + count));
                     //put into the slot, as Netherite is a high tier. diamond(s) still allowed pop out like confetti.
                 }
                 if (keyString.equals("tools")) {
                     stone = ToolsBonus();
-                    entity.setStack(outSlot, new ItemStack(resultItem, entity.getStack(outSlot).getCount() + count));
+                    entity.setStack(outSlot, new ItemStack(result.getItem(), entity.getStack(outSlot).getCount() + count));
                     //pops sticks like confetti, puts the output item
                 }
                 dropContents(level, worldPosition, stone);
-            } else { entity.setStack(outSlot, new ItemStack(resultItem, entity.getStack(outSlot).getCount() + count)); }
+            } else { entity.setStack(outSlot, new ItemStack(result.getItem(), entity.getStack(outSlot).getCount() + count)); }
             entity.resetProgress();
         }
     }
-    private static boolean hasRecipe(@NotNull blockCuttingStationEntity entity) {
-        World world1 = entity.world;
+    private boolean hasRecipe(@NotNull blockCuttingStationEntity entity) {
+        Optional<RecipeEntry<cutterRecipe>> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) { return false; }
         SimpleInventory inventory = new SimpleInventory(entity.inventory.size());
         for (int i =0; i < entity.inventory.size(); i++) { inventory.setStack(i, entity.getStack(i)); }
 
-        assert world1 != null;
-        Optional<old_blockCutterStationRecipes> match = world1.getRecipeManager()
-                .getFirstMatch(old_blockCutterStationRecipes.Type.INSTANCE, inventory, world1);
-
-        if (match.isPresent()){
-            Item planSlotItem;
-            if (entity.getStack(planSlot).isEmpty()) { return false; } else { planSlotItem = entity.getStack(planSlot).getItem(); }
-            ItemStack resultItem = match.get().getResult(world1.getRegistryManager());
-            int count = resultItem.getCount();
-            if (resultItem.getItem() instanceof BlockItem tOutput) {
-                if (tOutput.getBlock() instanceof SlabBlock) {
-                    count = 1;
-                    if (planSlotItem != SLAB_PLANS.asItem()) { return false; }
-                }
-                if (tOutput.getBlock() instanceof WallBlock && planSlotItem != WALL_PLANS.asItem()) { return false; }
-                if (tOutput.getBlock() instanceof StairsBlock && planSlotItem != STAIR_PLANS.asItem()) { return false; }
-                if (tOutput.getBlock() instanceof FenceBlock && planSlotItem != FENCE_PLANS.asItem()) { return false; }
-                if (tOutput.getBlock() instanceof FenceGateBlock && planSlotItem != FENCE_GATE_PLANS.asItem()) { return false; }
-            } // Just because I like to enforce plan usage, & possibly avoid any overlooked items.
-            // Counting Aids
-            return canUseOutput(inventory, resultItem, count, entity);
-        } else return false;
+        Item planSlotItem = entity.getStack(planSlot).getItem();
+        ItemStack resultItem = recipe.get().value().getResult(null);
+        int count = resultItem.getCount();
+        if (resultItem.getItem() instanceof BlockItem tOutput) {
+            if (tOutput.getBlock() instanceof SlabBlock && planSlotItem != SLAB_PLANS.asItem()) { return false; }
+            if (tOutput.getBlock() instanceof WallBlock && planSlotItem != WALL_PLANS.asItem()) { return false; }
+            if (tOutput.getBlock() instanceof StairsBlock && planSlotItem != STAIR_PLANS.asItem()) { return false; }
+            if (tOutput.getBlock() instanceof FenceBlock && planSlotItem != FENCE_PLANS.asItem()) { return false; }
+            if (tOutput.getBlock() instanceof FenceGateBlock && planSlotItem != FENCE_GATE_PLANS.asItem()) { return false; }
+        } // Just because I like to enforce plan usage, & possibly avoid any overlooked items.
+        // Counting Aids
+        return canUseOutput(inventory, resultItem, count, entity);
+    }
+    private Optional<RecipeEntry<cutterRecipe>> getCurrentRecipe() {
+        return Objects.requireNonNull(this.getWorld()).getRecipeManager().getFirstMatch(modRecipes.CUTTER_RECIPE_RECIPE_TYPE, new cutterRecipeInput(inventory.getFirst(), inventory.get(planSlot)), this.getWorld());
     }
 
     // Data

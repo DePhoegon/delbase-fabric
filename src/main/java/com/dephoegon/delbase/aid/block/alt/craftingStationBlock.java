@@ -144,6 +144,6 @@ public class craftingStationBlock extends BlockWithEntity implements BlockEntity
         return ActionResult.SUCCESS;
     }
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return validateTicker(type, blockEntities.BLOCK_CUTTER_ENTITY, blockCuttingStationEntity::tick);
+        return validateTicker(type, blockEntities.BLOCK_CUTTER_ENTITY, (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
     }
 }
