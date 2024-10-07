@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S#S",
+    "S#S"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "#": {
+      "item": "minecraft:mangrove_leaves"
+    }
+  },
+  "result": {
+    "id": "delbase:mangrove_leaf_fence_gate",
+    "count": 2
+  }
+}

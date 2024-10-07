@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "delbase:armor_compound"
+    },
+    {
+      "item": "minecraft:chainmail_helmet"
+    }
+  ],
+  "result": {
+    "id": "minecraft:chain",
+    "count": 4
+  }
+}

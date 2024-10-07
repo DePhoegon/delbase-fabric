@@ -19,6 +19,9 @@
 		],
 		"fabric-datagen": [
 			"com.dephoegon.delbase.DelbaseDataGenerator"
+		],
+		"rei_client": [
+			"com.dephoegon.delbase.compat.delbaseREIClient"
 		]
 	},
 	"mixins": [

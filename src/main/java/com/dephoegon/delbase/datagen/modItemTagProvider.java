@@ -1,0 +1,91 @@
+package com.dephoegon.delbase.datagen;
+
+import com.dephoegon.delbase.aid.util.delbaseTags;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
+
+import java.util.concurrent.CompletableFuture;
+
+import static com.dephoegon.delbase.block.axis.axisCutSandStones.*;
+import static com.dephoegon.delbase.block.fence.strippedWoodenFences.*;
+import static com.dephoegon.delbase.block.fence.woodenFences.*;
+import static com.dephoegon.delbase.block.general.genChiseledSandStones.*;
+import static com.dephoegon.delbase.block.general.genSandStones.*;
+import static com.dephoegon.delbase.block.general.genSmoothSandStones.*;
+import static com.dephoegon.delbase.block.gravity.gravColorSands.*;
+import static com.dephoegon.delbase.block.slabs.slabStrippedWoods.*;
+import static com.dephoegon.delbase.block.slabs.slabWood.*;
+import static com.dephoegon.delbase.block.stair.stairStrippedWoods.*;
+import static com.dephoegon.delbase.block.stair.stairWoods.*;
+import static com.dephoegon.delbase.block.wall.wallStrippedWoods.*;
+import static com.dephoegon.delbase.block.wall.wallWoods.*;
+import static com.dephoegon.delbase.item.BlockCutterItems.ARMOR_COMPOUND;
+import static com.dephoegon.delbase.item.ShiftingDyes.*;
+
+public class modItemTagProvider extends FabricTagProvider.ItemTagProvider {
+    public modItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
+        super(output, completableFuture);
+    }
+
+    @Override
+    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+        //add to vanilla Tags
+        getOrCreateTagBuilder(ItemTags.SAND).addTag(delbaseTags.Items.SANDS);
+
+        //SandStone Sets
+        getOrCreateTagBuilder(delbaseTags.Items.BASE_SAND_STONE_SET).add(Items.CHISELED_SANDSTONE).add(Items.CUT_SANDSTONE).add(Items.SMOOTH_SANDSTONE).add(Items.SANDSTONE);
+        getOrCreateTagBuilder(delbaseTags.Items.RED_SAND_STONE_SET).add(Items.RED_SANDSTONE).add(Items.CUT_RED_SANDSTONE).add(Items.SMOOTH_RED_SANDSTONE).add(Items.CHISELED_RED_SANDSTONE);
+        getOrCreateTagBuilder(delbaseTags.Items.BLACK_SAND_STONE_SET).add(BLACK_CHISELED_SAND_STONE.asItem()).add(BLACK_SMOOTH_SAND_STONE.asItem()).add(BLACK_CUT_SAND_STONE.asItem()).add(BLACK_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.BLUE_SAND_STONE_SET).add(BLUE_CHISELED_SAND_STONE.asItem()).add(BLUE_SMOOTH_SAND_STONE.asItem()).add(BLUE_CUT_SAND_STONE.asItem()).add(BLUE_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.BROWN_SAND_STONE_SET).add(BROWN_CHISELED_SAND_STONE.asItem()).add(BROWN_SMOOTH_SAND_STONE.asItem()).add(BROWN_CUT_SAND_STONE.asItem()).add(BROWN_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.CYAN_SAND_STONE_SET).add(CYAN_CHISELED_SAND_STONE.asItem()).add(CYAN_SMOOTH_SAND_STONE.asItem()).add(CYAN_CUT_SAND_STONE.asItem()).add(CYAN_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.DARK_RED_SAND_STONE_SET).add(BLOOD_CHISELED_SAND_STONE.asItem()).add(BLOOD_SMOOTH_SAND_STONE.asItem()).add(BLOOD_CUT_SAND_STONE.asItem()).add(BLOOD_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.GRAY_SAND_STONE_SET).add(GRAY_CHISELED_SAND_STONE.asItem()).add(GRAY_SMOOTH_SAND_STONE.asItem()).add(GRAY_CUT_SAND_STONE.asItem()).add(GRAY_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.GREEN_SAND_STONE_SET).add(GREEN_CHISELED_SAND_STONE.asItem()).add(GREEN_SMOOTH_SAND_STONE.asItem()).add(GREEN_CUT_SAND_STONE.asItem()).add(GREEN_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.LIGHT_BLUE_SAND_STONE_SET).add(LIGHT_BLUE_CHISELED_SAND_STONE.asItem()).add(LIGHT_BLUE_SMOOTH_SAND_STONE.asItem()).add(LIGHT_BLUE_CUT_SAND_STONE.asItem()).add(LIGHT_BLUE_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.LIGHT_GRAY_SAND_STONE_SET).add(LIGHT_GRAY_CHISELED_SAND_STONE.asItem()).add(LIGHT_GRAY_SMOOTH_SAND_STONE.asItem()).add(LIGHT_GRAY_CUT_SAND_STONE.asItem()).add(LIGHT_GRAY_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.LIME_SAND_STONE_SET).add(LIME_CHISELED_SAND_STONE.asItem()).add(LIME_SMOOTH_SAND_STONE.asItem()).add(LIME_CUT_SAND_STONE.asItem()).add(LIME_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.MAGENTA_SAND_STONE_SET).add(MAGENTA_CHISELED_SAND_STONE.asItem()).add(MAGENTA_SMOOTH_SAND_STONE.asItem()).add(MAGENTA_CUT_SAND_STONE.asItem()).add(MAGENTA_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.ORANGE_SAND_STONE_SET).add(ORANGE_CHISELED_SAND_STONE.asItem()).add(ORANGE_SMOOTH_SAND_STONE.asItem()).add(ORANGE_CUT_SAND_STONE.asItem()).add(ORANGE_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.PINK_SAND_STONE_SET).add(PINK_CHISELED_SAND_STONE.asItem()).add(PINK_SMOOTH_SAND_STONE.asItem()).add(PINK_CUT_SAND_STONE.asItem()).add(PINK_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.PURPLE_SAND_STONE_SET).add(PURPLE_CHISELED_SAND_STONE.asItem()).add(PURPLE_SMOOTH_SAND_STONE.asItem()).add(PURPLE_CUT_SAND_STONE.asItem()).add(PURPLE_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.WHITE_SAND_STONE_SET).add(WHITE_CHISELED_SAND_STONE.asItem()).add(WHITE_SMOOTH_SAND_STONE.asItem()).add(WHITE_CUT_SAND_STONE.asItem()).add(WHITE_SAND_STONE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.YELLOW_SAND_STONE_SET).add(YELLOW_CHISELED_SAND_STONE.asItem()).add(YELLOW_SMOOTH_SAND_STONE.asItem()).add(YELLOW_CUT_SAND_STONE.asItem()).add(YELLOW_SAND_STONE.asItem());
+
+        //Grouping Logic
+        getOrCreateTagBuilder(delbaseTags.Items.BASALT_BLOCKS).add(Items.BASALT).add(Items.POLISHED_BASALT).add(Items.SMOOTH_BASALT);
+        getOrCreateTagBuilder(delbaseTags.Items.BLACKSTONE_BLOCKS).add(Items.BLACKSTONE).add(Items.POLISHED_BLACKSTONE).add(Items.CHISELED_POLISHED_BLACKSTONE);
+        getOrCreateTagBuilder(delbaseTags.Items.DEEPSLATE_BLOCKS).add(Items.DEEPSLATE).add(Items.POLISHED_BASALT).add(Items.CHISELED_DEEPSLATE).add(Items.DEEPSLATE_BRICKS).add(Items.DEEPSLATE_TILES);
+        getOrCreateTagBuilder(delbaseTags.Items.COMPOUND).addTag(delbaseTags.Items.DYES).add(ARMOR_COMPOUND);
+        getOrCreateTagBuilder(delbaseTags.Items.BASE_WOOD_FENCE_GATES).add(Items.SPRUCE_FENCE_GATE).add(Items.OAK_FENCE_GATE).add(Items.DARK_OAK_FENCE_GATE).add(Items.ACACIA_FENCE_GATE).add(Items.JUNGLE_FENCE_GATE).add(Items.BIRCH_FENCE_GATE).add(Items.MANGROVE_FENCE_GATE).add(Items.CHERRY_FENCE_GATE).add(Items.BAMBOO_FENCE_GATE);
+        getOrCreateTagBuilder(delbaseTags.Items.BASE_WOOD_FENCES).add(Items.SPRUCE_FENCE).add(Items.OAK_FENCE).add(Items.DARK_OAK_FENCE).add(Items.ACACIA_FENCE).add(Items.JUNGLE_FENCE).add(Items.BIRCH_FENCE).add(Items.MANGROVE_FENCE).add(Items.CHERRY_FENCE).add(Items.BAMBOO_FENCE);
+        getOrCreateTagBuilder(delbaseTags.Items.BASE_WOOD_SLABS).add(Items.SPRUCE_SLAB).add(Items.OAK_SLAB).add(Items.DARK_OAK_SLAB).add(Items.ACACIA_SLAB).add(Items.JUNGLE_SLAB).add(Items.BIRCH_SLAB).add(Items.MANGROVE_SLAB).add(Items.CHERRY_SLAB).add(Items.BAMBOO_SLAB).add(Items.BAMBOO_MOSAIC_SLAB);
+        getOrCreateTagBuilder(delbaseTags.Items.BASE_WOOD_STAIRS).add(Items.SPRUCE_STAIRS).add(Items.OAK_STAIRS).add(Items.DARK_OAK_STAIRS).add(Items.ACACIA_STAIRS).add(Items.JUNGLE_STAIRS).add(Items.BIRCH_STAIRS).add(Items.MANGROVE_STAIRS).add(Items.CHERRY_STAIRS).add(Items.BAMBOO_STAIRS).add(Items.BAMBOO_MOSAIC_STAIRS);
+
+        getOrCreateTagBuilder(delbaseTags.Items.DELBASE_WOOD_FENCE_GATE).add(SPRUCE_WOOD_FENCE_GATE.asItem()).add(OAK_WOOD_FENCE_GATE.asItem()).add(DARK_OAK_WOOD_FENCE_GATE.asItem()).add(ACACIA_WOOD_FENCE_GATE.asItem()).add(JUNGLE_WOOD_FENCE_GATE.asItem()).add(BIRCH_WOOD_FENCE_GATE.asItem()).add(MANGROVE_WOOD_FENCE_GATE_BLOCK.asItem()).add(CHERRY_WOOD_FENCE_GATE_BLOCK.asItem()).add(SPRUCE_WOOD_FENCE_GATE.asItem()).add(OAK_LOG_FENCE_GATE.asItem()).add(DARK_OAK_LOG_FENCE_GATE.asItem()).add(ACACIA_LOG_FENCE_GATE.asItem()).add(JUNGLE_LOG_FENCE_GATE.asItem()).add(BIRCH_LOG_FENCE_GATE.asItem()).add(MANGROVE_LOG_FENCE_GATE_BLOCK.asItem()).add(CHERRY_LOG_FENCE_GATE_BLOCK.asItem()).add(STRIPPED_SPRUCE_WOOD_FENCE_GATE.asItem()).add(STRIPPED_OAK_WOOD_FENCE_GATE.asItem()).add(STRIPPED_DARK_OAK_WOOD_FENCE_GATE.asItem()).add(STRIPPED_ACACIA_WOOD_FENCE_GATE.asItem()).add(STRIPPED_JUNGLE_WOOD_FENCE_GATE.asItem()).add(STRIPPED_BIRCH_WOOD_FENCE_GATE.asItem()).add(STRIPPED_MANGROVE_WOOD_FENCE_GATE.asItem()).add(STRIPPED_CHERRY_WOOD_FENCE_GATE.asItem()).add(STRIPPED_SPRUCE_LOG_FENCE_GATE.asItem()).add(STRIPPED_OAK_LOG_FENCE_GATE.asItem()).add(STRIPPED_DARK_OAK_LOG_FENCE_GATE.asItem()).add(STRIPPED_ACACIA_LOG_FENCE_GATE.asItem()).add(STRIPPED_JUNGLE_LOG_FENCE_GATE.asItem()).add(STRIPPED_BIRCH_LOG_FENCE_GATE.asItem()).add(STRIPPED_MANGROVE_LOG_FENCE_GATE.asItem()).add(STRIPPED_CHERRY_LOG_FENCE_GATE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.DELBASE_WOOD_FENCES).add(SPRUCE_WOOD_FENCE.asItem()).add(OAK_WOOD_FENCE.asItem()).add(DARK_OAK_WOOD_FENCE.asItem()).add(ACACIA_WOOD_FENCE.asItem()).add(JUNGLE_WOOD_FENCE.asItem()).add(BIRCH_WOOD_FENCE.asItem()).add(MANGROVE_WOOD_FENCE.asItem()).add(CHERRY_WOOD_FENCE.asItem()).add(SPRUCE_WOOD_FENCE.asItem()).add(OAK_LOG_FENCE.asItem()).add(DARK_OAK_LOG_FENCE.asItem()).add(ACACIA_LOG_FENCE.asItem()).add(JUNGLE_LOG_FENCE.asItem()).add(BIRCH_LOG_FENCE.asItem()).add(MANGROVE_LOG_FENCE.asItem()).add(CHERRY_LOG_FENCE.asItem()).add(STRIPPED_SPRUCE_WOOD_FENCE.asItem()).add(STRIPPED_OAK_WOOD_FENCE.asItem()).add(STRIPPED_DARK_OAK_WOOD_FENCE.asItem()).add(STRIPPED_ACACIA_WOOD_FENCE.asItem()).add(STRIPPED_JUNGLE_WOOD_FENCE.asItem()).add(STRIPPED_BIRCH_WOOD_FENCE.asItem()).add(STRIPPED_MANGROVE_WOOD_FENCE.asItem()).add(STRIPPED_CHERRY_WOOD_FENCE.asItem()).add(STRIPPED_SPRUCE_LOG_FENCE.asItem()).add(STRIPPED_OAK_LOG_FENCE.asItem()).add(STRIPPED_DARK_OAK_LOG_FENCE.asItem()).add(STRIPPED_ACACIA_LOG_FENCE.asItem()).add(STRIPPED_JUNGLE_LOG_FENCE.asItem()).add(STRIPPED_BIRCH_LOG_FENCE.asItem()).add(STRIPPED_MANGROVE_LOG_FENCE.asItem()).add(STRIPPED_CHERRY_LOG_FENCE.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.DELBASE_WOOD_SLABS).add(SPRUCE_WOOD_SLAB.asItem()).add(OAK_WOOD_SLAB.asItem()).add(DARK_OAK_WOOD_SLAB.asItem()).add(ACACIA_WOOD_SLAB.asItem()).add(JUNGLE_WOOD_SLAB.asItem()).add(BIRCH_WOOD_SLAB.asItem()).add(MANGROVE_WOOD_SLAB.asItem()).add(CHERRY_WOOD_SLAB.asItem()).add(SPRUCE_WOOD_SLAB.asItem()).add(OAK_LOG_SLAB.asItem()).add(DARK_OAK_LOG_SLAB.asItem()).add(ACACIA_LOG_SLAB.asItem()).add(JUNGLE_LOG_SLAB.asItem()).add(BIRCH_LOG_SLAB.asItem()).add(MANGROVE_LOG_SLAB.asItem()).add(CHERRY_LOG_SLAB.asItem()).add(STRIPPED_SPRUCE_WOOD_SLAB.asItem()).add(STRIPPED_OAK_WOOD_SLAB.asItem()).add(STRIPPED_DARK_OAK_WOOD_SLAB.asItem()).add(STRIPPED_ACACIA_WOOD_SLAB.asItem()).add(STRIPPED_JUNGLE_WOOD_SLAB.asItem()).add(STRIPPED_BIRCH_WOOD_SLAB.asItem()).add(STRIPPED_MANGROVE_WOOD_SLAB.asItem()).add(STRIPPED_CHERRY_WOOD_SLAB.asItem()).add(STRIPPED_SPRUCE_LOG_SLAB.asItem()).add(STRIPPED_OAK_LOG_SLAB.asItem()).add(STRIPPED_DARK_OAK_LOG_SLAB.asItem()).add(STRIPPED_ACACIA_LOG_SLAB.asItem()).add(STRIPPED_JUNGLE_LOG_SLAB.asItem()).add(STRIPPED_BIRCH_LOG_SLAB.asItem()).add(STRIPPED_MANGROVE_LOG_SLAB.asItem()).add(STRIPPED_CHERRY_LOG_SLAB.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.DELBASE_WOOD_STAIRS).add(SPRUCE_WOOD_STAIR.asItem()).add(OAK_WOOD_STAIR.asItem()).add(DARK_OAK_WOOD_STAIR.asItem()).add(ACACIA_WOOD_STAIR.asItem()).add(JUNGLE_WOOD_STAIR.asItem()).add(BIRCH_WOOD_STAIR.asItem()).add(MANGROVE_WOOD_STAIR.asItem()).add(CHERRY_WOOD_STAIR.asItem()).add(SPRUCE_WOOD_STAIR.asItem()).add(OAK_LOG_STAIR.asItem()).add(DARK_OAK_LOG_STAIR.asItem()).add(ACACIA_LOG_STAIR.asItem()).add(JUNGLE_LOG_STAIR.asItem()).add(BIRCH_LOG_STAIR.asItem()).add(MANGROVE_LOG_STAIR.asItem()).add(CHERRY_LOG_STAIR.asItem()).add(STRIPPED_SPRUCE_WOOD_STAIR.asItem()).add(STRIPPED_OAK_WOOD_STAIR.asItem()).add(STRIPPED_DARK_OAK_WOOD_STAIR.asItem()).add(STRIPPED_ACACIA_WOOD_STAIR.asItem()).add(STRIPPED_JUNGLE_WOOD_STAIR.asItem()).add(STRIPPED_BIRCH_WOOD_STAIR.asItem()).add(STRIPPED_MANGROVE_WOOD_STAIR.asItem()).add(STRIPPED_CHERRY_WOOD_STAIR.asItem()).add(STRIPPED_SPRUCE_LOG_STAIR.asItem()).add(STRIPPED_OAK_LOG_STAIR.asItem()).add(STRIPPED_DARK_OAK_LOG_STAIR.asItem()).add(STRIPPED_ACACIA_LOG_STAIR.asItem()).add(STRIPPED_JUNGLE_LOG_STAIR.asItem()).add(STRIPPED_BIRCH_LOG_STAIR.asItem()).add(STRIPPED_MANGROVE_LOG_STAIR.asItem()).add(STRIPPED_CHERRY_LOG_STAIR.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.DELBASE_WOOD_WALLS).add(SPRUCE_WOOD_WALL.asItem()).add(OAK_WOOD_WALL.asItem()).add(DARK_OAK_WOOD_WALL.asItem()).add(ACACIA_WOOD_WALL.asItem()).add(JUNGLE_WOOD_WALL.asItem()).add(BIRCH_WOOD_WALL.asItem()).add(MANGROVE_WOOD_WALL.asItem()).add(CHERRY_WOOD_WALL.asItem()).add(SPRUCE_WOOD_WALL.asItem()).add(OAK_LOG_WALL.asItem()).add(DARK_OAK_LOG_WALL.asItem()).add(ACACIA_LOG_WALL.asItem()).add(JUNGLE_LOG_WALL.asItem()).add(BIRCH_LOG_WALL.asItem()).add(MANGROVE_LOG_WALL.asItem()).add(CHERRY_LOG_WALL.asItem()).add(STRIPPED_SPRUCE_WOOD_WALL.asItem()).add(STRIPPED_OAK_WOOD_WALL.asItem()).add(STRIPPED_DARK_OAK_WOOD_WALL.asItem()).add(STRIPPED_ACACIA_WOOD_WALL.asItem()).add(STRIPPED_JUNGLE_WOOD_WALL.asItem()).add(STRIPPED_BIRCH_WOOD_WALL.asItem()).add(STRIPPED_MANGROVE_WOOD_WALL.asItem()).add(STRIPPED_CHERRY_WOOD_WALL.asItem()).add(STRIPPED_SPRUCE_LOG_WALL.asItem()).add(STRIPPED_OAK_LOG_WALL.asItem()).add(STRIPPED_DARK_OAK_LOG_WALL.asItem()).add(STRIPPED_ACACIA_LOG_WALL.asItem()).add(STRIPPED_JUNGLE_LOG_WALL.asItem()).add(STRIPPED_BIRCH_LOG_WALL.asItem()).add(STRIPPED_MANGROVE_LOG_WALL.asItem()).add(STRIPPED_CHERRY_LOG_WALL.asItem());
+
+        getOrCreateTagBuilder(delbaseTags.Items.DYES).addTag(delbaseTags.Items.SHIFTING_DYES).add(Items.BLUE_DYE).add(Items.BROWN_DYE).add(Items.CYAN_DYE).add(Items.GRAY_DYE).add(Items.GREEN_DYE).add(Items.LIGHT_BLUE_DYE).add(Items.LIGHT_GRAY_DYE).add(Items.LIME_DYE).add(Items.MAGENTA_DYE).add(Items.ORANGE_DYE).add(Items.PINK_DYE).add(Items.PURPLE_DYE).add(Items.RED_DYE).add(Items.WHITE_DYE).add(Items.YELLOW_DYE);
+        getOrCreateTagBuilder(delbaseTags.Items.LOGS).add(Items.SPRUCE_LOG).add(Items.OAK_LOG).add(Items.DARK_OAK_LOG).add(Items.ACACIA_LOG).add(Items.JUNGLE_LOG).add(Items.BIRCH_LOG).add(Items.MANGROVE_LOG).add(Items.BAMBOO_BLOCK).add(Items.CHERRY_LOG).add(Items.STRIPPED_SPRUCE_LOG).add(Items.STRIPPED_OAK_LOG).add(Items.STRIPPED_DARK_OAK_LOG).add(Items.STRIPPED_ACACIA_LOG).add(Items.STRIPPED_JUNGLE_LOG).add(Items.STRIPPED_BIRCH_LOG).add(Items.STRIPPED_MANGROVE_LOG).add(Items.STRIPPED_BAMBOO_BLOCK).add(Items.STRIPPED_CHERRY_LOG);
+        getOrCreateTagBuilder(delbaseTags.Items.QUARTZ_BLOCKS).add(Items.QUARTZ_BRICKS).add(Items.QUARTZ_BLOCK).add(Items.SMOOTH_QUARTZ).add(Items.CHISELED_QUARTZ_BLOCK).add(Items.QUARTZ_PILLAR);
+        getOrCreateTagBuilder(delbaseTags.Items.RAW_FOODS).add(Items.POTATO).add(Items.BAKED_POTATO).add(Items.POISONOUS_POTATO).add(Items.CARROT).add(Items.BEETROOT).add(Items.WHEAT).add(Items.BROWN_MUSHROOM).add(Items.RED_MUSHROOM).add(Items.COD).add(Items.SALMON).add(Items.PUFFERFISH).add(Items.CHICKEN).add(Items.ROTTEN_FLESH).add(Items.SPIDER_EYE).add(Items.RABBIT).add(Items.MUTTON).add(Items.CHORUS_FRUIT).add(Items.GLOW_BERRIES).add(Items.HONEY_BOTTLE).add(Items.DRIED_KELP);
+        getOrCreateTagBuilder(delbaseTags.Items.SANDS).add(Items.SAND).add(Items.RED_SAND).add(BLOOD_SAND.asItem()).add(WHITE_SAND.asItem()).add(ORANGE_SAND.asItem()).add(MAGENTA_SAND.asItem()).add(LIGHT_BLUE_SAND.asItem()).add(YELLOW_SAND.asItem()).add(LIME_SAND.asItem()).add(PINK_SAND.asItem()).add(GRAY_SAND.asItem()).add(LIGHT_GRAY_SAND.asItem()).add(CYAN_SAND.asItem()).add(PURPLE_SAND.asItem()).add(BLUE_SAND.asItem()).add(GREEN_SAND.asItem()).add(BROWN_SAND.asItem()).add(BLACK_SAND.asItem());
+        getOrCreateTagBuilder(delbaseTags.Items.SHIFTING_DYES).add(CLEANSE_SHIFT_DYE).add(RED_SHIFT_DYE).add(BLACK_SHIFT_DYE).add(BLUE_SHIFT_DYE).add(BROWN_SHIFT_DYE).add(CYAN_SHIFT_DYE).add(BLOOD_SHIFT_DYE).add(GRAY_SHIFT_DYE).add(GREEN_SHIFT_DYE).add(LIGHT_BLUE_SHIFT_DYE).add(LIGHT_GRAY_SHIFT_DYE).add(LIME_SHIFT_DYE).add(MAGENTA_SHIFT_DYE).add(ORANGE_SHIFT_DYE).add(PINK_SHIFT_DYE).add(PURPLE_SHIFT_DYE).add(RED_SHIFT_DYE).add(WHITE_SHIFT_DYE).add(YELLOW_SHIFT_DYE);
+        getOrCreateTagBuilder(delbaseTags.Items.STONE_BLOCKS).add(Items.STONE).add(Items.COBBLESTONE).add(Items.SMOOTH_STONE);
+        getOrCreateTagBuilder(delbaseTags.Items.WOODS).add(Items.SPRUCE_WOOD).add(Items.OAK_WOOD).add(Items.DARK_OAK_WOOD).add(Items.ACACIA_WOOD).add(Items.JUNGLE_WOOD).add(Items.BIRCH_WOOD).add(Items.MANGROVE_WOOD).add(Items.CHERRY_WOOD).add(Items.STRIPPED_SPRUCE_WOOD).add(Items.STRIPPED_OAK_WOOD).add(Items.STRIPPED_DARK_OAK_WOOD).add(Items.STRIPPED_ACACIA_WOOD).add(Items.STRIPPED_JUNGLE_WOOD).add(Items.STRIPPED_BIRCH_WOOD).add(Items.STRIPPED_MANGROVE_WOOD).add(Items.STRIPPED_CHERRY_WOOD);
+        //Ashes
+        getOrCreateTagBuilder(delbaseTags.Items.ASH_BLOCK).addTag(delbaseTags.Items.LOGS).addTag(delbaseTags.Items.WOODS);
+        getOrCreateTagBuilder(delbaseTags.Items.ASH_FENCE).addTag(delbaseTags.Items.BASE_WOOD_FENCES).addTag(delbaseTags.Items.DELBASE_WOOD_FENCES);
+        getOrCreateTagBuilder(delbaseTags.Items.ASH_FENCE_GATE).addTag(delbaseTags.Items.BASE_WOOD_FENCE_GATES).addTag(delbaseTags.Items.DELBASE_WOOD_FENCE_GATE);
+        getOrCreateTagBuilder(delbaseTags.Items.ASH_SLAB).addTag(delbaseTags.Items.BASE_WOOD_SLABS).addTag(delbaseTags.Items.DELBASE_WOOD_SLABS);
+        getOrCreateTagBuilder(delbaseTags.Items.ASH_STAIR).addTag(delbaseTags.Items.BASE_WOOD_STAIRS).addTag(delbaseTags.Items.DELBASE_WOOD_STAIRS);
+        getOrCreateTagBuilder(delbaseTags.Items.ASH_WALL).addTag(delbaseTags.Items.DELBASE_WOOD_WALLS);
+        getOrCreateTagBuilder(delbaseTags.Items.ENERGY_DUST).add(Items.GLOWSTONE_DUST).add(Items.REDSTONE);
+    }
+}
