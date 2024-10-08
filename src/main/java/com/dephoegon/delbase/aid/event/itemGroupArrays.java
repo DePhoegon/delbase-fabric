@@ -515,13 +515,13 @@ public class itemGroupArrays {
         out.add(woodenFences.WARPED_STEM_FENCE.asItem());
         out.add(woodenFences.WARPED_STEM_FENCE_GATE.asItem());
         out.add(woodenFences.MANGROVE_WOOD_FENCE.asItem());
-        out.add(woodenFences.MANGROVE_WOOD_FENCE_GATE_BLOCK.asItem());
+        out.add(woodenFences.MANGROVE_WOOD_FENCE_GATE.asItem());
         out.add(woodenFences.MANGROVE_LOG_FENCE.asItem());
-        out.add(woodenFences.MANGROVE_LOG_FENCE_GATE_BLOCK.asItem());
+        out.add(woodenFences.MANGROVE_LOG_FENCE_GATE.asItem());
         out.add(woodenFences.CHERRY_WOOD_FENCE.asItem());
-        out.add(woodenFences.CHERRY_WOOD_FENCE_GATE_BLOCK.asItem());
+        out.add(woodenFences.CHERRY_WOOD_FENCE_GATE.asItem());
         out.add(woodenFences.CHERRY_LOG_FENCE.asItem());
-        out.add(woodenFences.CHERRY_LOG_FENCE_GATE_BLOCK.asItem());
+        out.add(woodenFences.CHERRY_LOG_FENCE_GATE.asItem());
         return out;
     }
     private static @NotNull ArrayList<Item> ashBlocks() {

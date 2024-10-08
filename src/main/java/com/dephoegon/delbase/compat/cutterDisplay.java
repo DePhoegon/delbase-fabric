@@ -15,9 +15,5 @@ public class cutterDisplay extends BasicDisplay {
     public cutterDisplay(@NotNull RecipeEntry<cutterRecipe> recipeEntry) {
         super(EntryIngredients.ofIngredients(recipeEntry.value().getIngredients()), List.of(EntryIngredient.of(EntryStacks.of(recipeEntry.value().getResult(null))))); // No 'List.of()' for the inputs, as getIngredients is a list of 2, while get result isn't a list
     }
-
-    @Override
-    public CategoryIdentifier<?> getCategoryIdentifier() {
-        return cutterCategory.CUTTER_DISPLAY_CATEGORY_IDENTIFIER;
-    }
+    public CategoryIdentifier<?> getCategoryIdentifier() { return cutterCategory.CUTTER_DISPLAY_CATEGORY_IDENTIFIER; }
 }

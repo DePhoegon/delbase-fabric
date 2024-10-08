@@ -24,23 +24,10 @@ public class cutterCategory implements DisplayCategory<BasicDisplay> {
     public static final Identifier TEXTURE = Identifier.of(Delbase.Delbase_ID, "textures/gui/block_cutting_station_gui_jei.png");
     public static final CategoryIdentifier<cutterDisplay> CUTTER_DISPLAY_CATEGORY_IDENTIFIER = CategoryIdentifier.of(Delbase.Delbase_ID, cutterRecipe.id_name);
 
-
-    @Override
-    public CategoryIdentifier<? extends BasicDisplay> getCategoryIdentifier() {
-        return CUTTER_DISPLAY_CATEGORY_IDENTIFIER;
-    }
-
-    @Override
-    public Text getTitle() {
-        return Text.literal(cutterRecipe.id_name);
-    }
-
-    @Override
+    public CategoryIdentifier<? extends BasicDisplay> getCategoryIdentifier() { return CUTTER_DISPLAY_CATEGORY_IDENTIFIER; }
+    public Text getTitle() { return Text.literal(cutterRecipe.id_name); }
     public Renderer getIcon() { return EntryStacks.of(BLOCK_CUTTER_STATION.asItem().getDefaultStack()); }
-
-    public int getDisplayHeight() {
-        return 70; // 76x70
-    }
+    public int getDisplayHeight() { return 70; } // 76x70
     public List<Widget> setupDisplay(@NotNull BasicDisplay display, Rectangle bounds) {
         List<Widget> widgets = new LinkedList<>();
 
