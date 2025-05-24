@@ -11,11 +11,7 @@ base {
 }
 
 repositories {
-	maven {
-		// location of a maven mirror for JEI files, as a fallback
-		name = "ModMaven"
-		url = "https://modmaven.dev"
-	}
+
 	maven { url 'https://maven.blamejared.com' }
 	maven {
 		url "https://cursemaven.com"

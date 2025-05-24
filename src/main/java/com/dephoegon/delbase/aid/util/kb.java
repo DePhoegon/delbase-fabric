@@ -4,16 +4,16 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 
-import static com.dephoegon.delbase.aid.util.ModKeyBindings.L_CTRL;
-import static com.dephoegon.delbase.aid.util.ModKeyBindings.L_SHIFT;
+import static com.dephoegon.delbase.aid.util.ModKeyBindings.R_CTRL;
+import static com.dephoegon.delbase.aid.util.ModKeyBindings.R_SHIFT;
 import static net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper.getBoundKeyOf;
 import static net.minecraft.client.util.InputUtil.isKeyPressed;
 
 public class kb {
     //  Right ones commented code out. 1.18.2 is just ...   IDK, I've no luck with keybinding conflicts - will keep till I decide how to handle the rest of the versions.
-    private static boolean LShift() { return isKB_KeyBindDown(L_SHIFT); }
+    private static boolean LShift() { return isKB_KeyBindDown(R_SHIFT); }
     //private static boolean RShift() { return keyCheck(GLFW.GLFW_KEY_RIGHT_SHIFT); }
-    private static boolean LCtrl() { return isKB_KeyBindDown(L_CTRL); }
+    private static boolean LCtrl() { return isKB_KeyBindDown(R_CTRL); }
     // private static boolean RCtrl() { return keyCheck(GLFW.GLFW_KEY_RIGHT_CONTROL); }
     /*
     public static boolean HShift() { return isKeyBindDefault(L_SHIFT) ? LShift() || RShift() : LShift(); }
