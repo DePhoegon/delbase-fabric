@@ -10,8 +10,8 @@ import org.lwjgl.glfw.GLFW;
 
 @Environment(EnvType.CLIENT)
 public class ModKeyBindings {
-    public static KeyBinding L_SHIFT = registerKB_Keys("tooltip.key.shift", GLFW.GLFW_KEY_RIGHT_SHIFT);
-    public static KeyBinding L_CTRL = registerKB_Keys("tooltip.key.ctrl", GLFW.GLFW_KEY_RIGHT_CONTROL);
+    public static KeyBinding R_SHIFT = registerKB_Keys("tooltip.key.shift", GLFW.GLFW_KEY_RIGHT_SHIFT);
+    public static KeyBinding R_CTRL = registerKB_Keys("tooltip.key.ctrl", GLFW.GLFW_KEY_RIGHT_CONTROL);
 
     private static KeyBinding registerKB_Keys(String name, int keyCode) {
         return KeyBindingHelper.registerKeyBinding(new KeyBinding(name, InputUtil.Type.KEYSYM, keyCode, "tooltip.key.category"));
