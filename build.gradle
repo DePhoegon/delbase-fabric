@@ -1,13 +1,23 @@
 plugins {
-	id 'fabric-loom' version '1.4-SNAPSHOT'
+	id 'fabric-loom' version "${loom_version}"
 	id 'maven-publish'
 }
 
 version = project.mod_version+'-'+project.minecraft_version
+ext.target_version = project.mod_version
+ext.patch_target = project.patchouli_file_name
 group = project.maven_group
 
 base {
 	archivesName = project.archives_base_name
+}
+processResources {
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "mod_version": target_version,
+				"patch_target": patch_target
+	}
 }
 
 repositories {
@@ -38,18 +48,11 @@ dependencies {
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
-	// modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_ver}"
-	// include "vazkii.patchouli:Patchouli:${project.patchouli_ver}"
+	modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_file_name}"
+	//include "vazkii.patchouli:Patchouli:${project.patchouli_file_name}"
 	modApi "fuzs.forgeconfigapiport:forgeconfigapiport-fabric:${config_ver}"
 }
 
-processResources {
-	inputs.property "version", project.version
-
-	filesMatching("fabric.mod.json") {
-		expand "version": project.version
-	}
-}
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.release = 17

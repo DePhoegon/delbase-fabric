@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "delbase",
-	"version": "${version}",
+	"version": "${mod_version}",
 	"name": "DePhoegons Reclaim",
 	"description": "This is a decoration & resource reclamation mod.\nThe aesthetic of the pack is meant to be in-line the base game visuals.\nThe resource reclamation aspects are designed around non-modded armors.\nSupport/patch mods will be needed to extend to modded items/materials.",
 	"authors": [
@@ -26,10 +26,11 @@
 		"delbase.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.2",
-		"minecraft": "~1.20",
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"patchouli": ">=1.20.1-84"
 	},
 	"suggests": {
 		"another-mod": "delchoco"
