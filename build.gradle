@@ -4,12 +4,20 @@ plugins {
 }
 
 version = project.mod_version+'-'+project.minecraft_version
+ext.modded_version = project.mod_version
 group = project.maven_group
 
 base {
 	archivesName = project.archives_base_name
 }
 
+processResources {
+	inputs.property "version", project.version
+
+	filesMatching("fabric.mod.json") {
+		expand "mod_version": modded_version
+	}
+}
 repositories {
 
 	maven { url 'https://maven.blamejared.com' }
@@ -33,14 +41,6 @@ dependencies {
 	modImplementation "vazkii.patchouli:Patchouli:${project.patchouli_ver}"
 	include "vazkii.patchouli:Patchouli:${project.patchouli_ver}"
 	modImplementation "curse.maven:${project.config_project}:${project.config_fileID}"
-}
-
-processResources {
-	inputs.property "version", project.version
-
-	filesMatching("fabric.mod.json") {
-		expand "version": project.version
-	}
 }
 
 tasks.withType(JavaCompile).configureEach {
